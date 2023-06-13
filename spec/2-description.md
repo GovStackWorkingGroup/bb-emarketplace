@@ -4,6 +4,30 @@
 Set the context of the Building Block for the reader. The description should not assume that the reader has any experience of the GovStack system other than that found on the GovStack website.
 {% endhint %}
 
-_\<Example Description below>_
+\
 
-Registration services attribute a unique functional ID to a person, place or other entity to identify and access information about it. According to the World Bank, functional IDs are those that evolve out of a single use-case, such as voter IDs, health records, or bank cards, and are created with a specific purpose in mind, differing from foundational IDs which are created with a general purpose in mind. Registration services can also use the foundational ID or map it to the functional ID where such an identity exists. Examples of specific registration services include immunization, disease and citizenship records, as well as birth and death registration. The ensemble of utilities for capturing, recording, profiling, searching, retrieving and verifying this identity information is encapsulated as registration services. The information itself will be deposited into and retrieved from corresponding functional registries (see the Registries ICT Building Blocks). Registration services help profile entities by enabling the registration of different categories or groups and documenting their access to various services. These services also onboard users into a programme or service offered by an organization (eg rural advisory service), capturing related demography, profile and citizen ID information.
+
+This document allows an e-marketplace infrastructure to be created by connecting a set of interacting microservices. This infrastructure is fundamentally decentralized or federated, although all the services can exist on a single cloud. This specification does NOT assume any specific implementation architecture or technology. Rather, it defines the actors and the interfaces that need to be implemented by the transacting entities.
+
+E-marketplaces enable trade of products and/or services via electronic media. This is supported by innovative information and communication technologies to match supply and demand. A **government e-marketplace** enables the trade of products and/or services, where at least one of the transacting parties taking part in the transaction is the government or a government appointed body.&#x20;
+
+#### TODOs
+
+\<Need a little more content>
+
+\<Introduce the concept of E-Marketplace from the government perspective>
+
+\<Min requs that need to be addresses>
+
+\<G2P, P2G etc>
+
+\<Benefits of such an platform>
+
+\<Generic enough that>&#x20;
+
+\<Give some example use cases that has been considered in various sectors>
+
+\
+\
+
+
