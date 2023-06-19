@@ -1,11 +1,11 @@
+---
+description: >-
+  The version history table describes the major changes to the specifications
+  between published versions.
+---
+
 # 1 Version History
 
-{% hint style="success" %}
-Add a line to the version history table describing the major changes to the specifications between _published_ versions. Ideally, include links to issues and authors on GitHub.
-{% endhint %}
-
-_\<Example Version history>_
-
-| Version | Authors                                       | Comment                             |
-| ------- | --------------------------------------------- | ----------------------------------- |
-| 0.1     | Ravi Prakash V, Vikash Madduri, Umesh Mohanty | Added first drafts for each section |
+| Version | Authors                                                                                                                                                                            | Comment                                                   |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| 0.1     | Ravi Prakash, Dr. PS Ram Kumar, Vikash Madduri, Caroline Mulligan, Ibrahim Elbhery, Mohammed Elgendy, Sujith Nair, Umesh Mohanty, Bharath Ganapathy, Ben Vandersteen, Gavin Hayman | Developed use cases and first draft of full specification |
