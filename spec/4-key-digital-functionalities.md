@@ -6,6 +6,14 @@ The Key Digital Functionalities describe the core (required) functions that this
 Note, this section may be extended after the key functionalities have been listed to include any assumptions or context that is needed. Additionally, if the Building Block contains multiple components, the functionalities for each may be described.
 {% endhint %}
 
+To facilitate various activities and different actors as described in section 2, the E-Marketplace building block MUST have specific key digital functionalities. An e-marketplace transaction by definition should have a  consumer platform and a provider platform. &#x20;
+
+
+
+
+
+&#x20;  pre-determined start and ending date time, venue, resources (to carry out some activity associated with the event) and subscribers (to consume activities of an event). For example, a doctor (resource), may provide consultation (event), to a patient(subscriber), at a specific hospital (host-entity), on specific days and time (schedule) of which patient can book a specific day and time (Appointment). Similarly, the scheduler may be configured to alert a payroll application (Resource) to calculate salary payments (event) on last day of the month (schedule) and alert a payment building block (Resource) to transfer salaries to health workers (event) in Post-Partum Care program or subsidies to beneficiaries in USCT program on first day of month (schedule).
+
 1.
 
 Narrate the KDFs from the actor's pov
