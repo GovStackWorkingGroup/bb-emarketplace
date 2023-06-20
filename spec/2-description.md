@@ -55,6 +55,16 @@ Currently the following actors have been identified as "users" of the scheduler 
 
 The eMarketplace MUST be able to enable enable these actors to perform in their roles associated with one or more events.  More specifically, the eMarketplace should facilitate following activities of the actors:
 
+1. _The eMarketplace BB MUST enable Admins to_&#x20;
+
+* enable the registration process of both supplies and buyers.&#x20;
+* enable the verification of Foundational IDs come with no specified purpose or attached entitlement but functionalities simply let an entity prove who it is.
+* Captures only limited information about users, such as name, date of birth, address and gender
+* For a given set of credentials, fetches a corresponding ID if it exists in the registry
+* Uses different biometric methods to identify and authenticate users through means other than user photographs (eg fingerprints, iris scans, facial recognition) to ensure there are no duplicates or fakes, creating a highly trustworthy database
+* open bank accounts, buying SIM cards, receive entitlements from the government, sign forms electronically, invest in mutual funds and getting credit
+* Incorporate privacy into its design when the purpose of the authentication is not revealed if a service provider sends an authentication request.
+
 **2.1.1. The eMarketplace MUST enable Building Block Admins (Supplier and Buyer) to**
 
 * <mark style="color:green;">seek consent from the entities, peoples while registration</mark>
