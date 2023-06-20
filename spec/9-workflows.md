@@ -8,31 +8,43 @@ An internal workflow describes the internal processes that a Building Block need
 
 _\<Example Internal Workflows>_
 
-### 9.1 Start a workflow process via API.&#x20;
+```mermaid
+graph TD
+  Mermaid --> Diagram
+```
+
+### 9.1 Start a workflow process via API.
 
 This internal workflow is used by the Workflow Building Block to initiate a workflow process. An external application (Building Block) calls an API in the Workflow Building Block which will launch a workflow process. This functional requirement must also support submission of data payload through variables in the same API call.
 
-Examples:&#x20;
+Examples:
 
 * [PostPartum and Infant Care Use Case, Payment Step](https://govstack-global.atlassian.net/wiki/spaces/GH/pages/49381394/PostPartum-01-Example+Implementation+Original+-+multiple+steps): Validate the mother has completed all steps (visited a pediatrician, procured medicine and nutrition supplies, and visited the therapy center) by connecting to MCTS registry
 * [Unconditional Social Cash Transfer, Elibility Determination](https://govstack.gitbook.io/product-use-cases/product-use-case/inst-1-unconditional-social-cash-transfer): Send beneficiary data from Registration BB to Workflow BB
 
 ```mermaid
 sequenceDiagram
-
-External BB-->>Workflow BB: Call API to start workflow process
-Workflow BB-->>Workflow BB: Launch process
-Workflow BB-->>External BB: Return Process ID
+loop for each selected bidder
+  user->>host_application: submit details <br>requesting registration
+  host_application-->>emarketplacebb:<br>Post/bidder/new<br>{bidder_details}
+  note over emarketplacebb: check if it is a new bidder and avoid duplication
+  alt if it is a new bidder indeed:
+      note over emarketplacebb: Store credentials of bidder and generate new bidder id
+      emarketplacebb-->>host_application: return success token with bidder id 
+      host_application-->>user: publish new bidder id
+  else
+      emarketplacebb-->>host_application: return error code
+     host_application-->>user: publish error
+  end
+end
 
 ```
 
-
-
-### 9.2 Booking an appointment&#x20;
+### 9.2 Booking an appointment
 
 The first and somewhat unique use-case is related to the need for consent when the Individual is not yet provisioned in the System processing the data. In such cases, the workflow requires the creation of a valid and trusted Foundational ID to be linked with the Consent Record. Below is shown how a pre-registration use of consent workflow works.
 
-Examples:&#x20;
+Examples:
 
 * Postpartum Use Case, Appointment scheduling step: In this case, a health care worker will book an appointment into a specific slot. The Scheduler Building Block will leverage the Messaging Building Block to send a message to the patient with an appointment confirmation.
 
