@@ -10,9 +10,201 @@ These requirements should be defined by subject-matter experts and don’t have 
 If there are multiple functional components of a building block, the functional requirements for each component may have its own section
 {% endhint %}
 
+<figure><img src=".gitbook/assets/E-Marketplace BB Architecture V2.png" alt=""><figcaption><p>E Marketplace Building Block Functional Architecture</p></figcaption></figure>
+
 _\<Example Functional Requirements>_
 
-<figure><img src=".gitbook/assets/EMarketplace BB Block Diagram.png" alt=""><figcaption></figcaption></figure>
+### Internal functional components
+
+The E-Marketplace can be visualized as a black box with all key digital functionalities discussed in section 4. It does not assume any particular standard like REST for all internal resource management. A brief description of the functional requirements required to orchestrate each key digital functionality is given below, considering a minimum viable product perspective. Detailed design and more elaborate feature lists of these blocks can be customized by developers to optimally match respective implementation needs. It is also left to the application implementing this building block to receive the responses from the E-marketplace and present it appropriately and provision for associated user interface interactions.
+
+### 6.1 Searching
+
+6.1.1 The E-Marketplace must allow create / read / update or delete of a search intent
+
+6.1.2 It must allow addition / update of a context to the search intent
+
+6.1.3 It must allow the addition / removal / update of an item in the search intent
+
+6.1.4 It must allow the addition / removal / update of a category in the search intent
+
+6.1.5 It must allow the addition / removal / update of a fulfillment in the search intent
+
+6.1.6 It must allow the addition / removal / update of a payment in the search intent
+
+6.1.7 It must allow the transmission of the search request to a provider platform
+
+6.1.8 It must allow searching, sorting and filtering of a catalog by applying various filters
+
+### 6.2 Catalog Management
+
+6.2.1 The E-Marketplace must allow create / read / update or delete of a catalog
+
+6.2.2 It must allow create / read / update / delete of Items
+
+6.2.3 It must allow create / read / update / delete of Providers
+
+6.2.4 It must allow create / read / update / delete of Agents
+
+6.2.5 It must allow create / read / update / delete of Categories
+
+6.2.6 It must allow create / read / update / delete of Fulfillments
+
+6.2.7 It must allow create / read / update / delete of Payments
+
+6.2.8 Upon receiving a search request, it must return a linked catalog with matched items, categories, providers, fulfillments, and payments
+
+### 6.3 Inventory Management
+
+6.3.1 The E-Marketplace must allow updating the quantity and location of Items across multiple Providers&#x20;
+
+6.3.2 It must allow checking of availability of an Item in a catalog
+
+### 6.4 Quote Agreement
+
+6.4.1 The E-Marketplace must enable the construction of a cart (or a cart-like experience)  on the consumer platform
+
+6.4.2 It must allow addition / removal / update of multiple items and their respective quantities in the cart
+
+6.4.3 It must allow addition / removal / update of offers in the cart
+
+6.4.4 It must allow addition / removal / update of add-ons in the cart
+
+6.4.5 It must allow transmission of the cart from the consumer platform to the provider platform
+
+6.4.6 Upon receiving the cart from the consumer platform, it must allow the provider platform to check for the availability of items or add-ons in the cart
+
+6.4.7 It should check the validity of offers against the items in the cart
+
+6.4.8 it should dynamically calculate the quote based on the available items, offers, and add-ons
+
+6.4.9 It should allow addition / removal / update of the cart with the quote and its breakup
+
+6.4.10 It should transmit the cart with the updated quote from the provider platform to the consumer platform
+
+### 6.5 Terms Agreement
+
+6.5.1 The E-Marketplace must enable the construction of a draft order (or a pre-checkout like experience) on the consumer platform
+
+6.5.2 It must allow the addition / update / removal of billing details to the order
+
+6.5.3 It must allow the addition / update / deletion of fulfillment details to the order
+
+6.5.4 It must allow the transmission of the draft-order from the consumer platform to the provider platform
+
+6.5.5 It must re-calculate the quote based on fulfillment details
+
+6.5.6 It must check the serviceability of the order on the basis of agent availability
+
+6.5.7 It must re-check the availability of items, validity of offers and re-calculate the quote
+
+6.5.8 It must allow creation / addition / update of payment terms containing the payment stage, final payable amount, payment endpoint and payment schedule to the draft order
+
+6.5.9 It must allow addition of terms of service, cancellation, returns, replacements and refunds wherever applicable
+
+6.5.10 It must allow the transmission of the final draft order containing all the details of the order
+
+
+
+### 6.6 Contract Creation and Management
+
+6.6.1 The E-Marketplace must enable creation of a confirmed order with an Order ID
+
+6.6.2 It must allow update / deletion of a fulfillment state in the order
+
+6.6.3 It must allow the transmission of the final draft order from the consumer platform to the provider platform
+
+6.6.4 It must allow the transmission of the confirmed order from the provider platform to the consumer platform
+
+6.6.5 It must again allow re-checking of inventory availability before creating the order
+
+### 6.7 Contract Fulfillment
+
+6.7.1 The E-Marketplace must enable discovering and allocation of an Agent (if applicable) to the fulfillment of a confirmed order
+
+6.7.2 It must allow update of the fulfillment state of an order
+
+6.7.3 It must allow transmission of fulfillment status updates from the provider platform and the consumer platform
+
+6.7.4 It must allow fetching the latest copy of the order from a provider
+
+### 6.8 Tracking
+
+6.8.1 The E-Marketplace must enable fetching of tracking information related to the order
+
+6.8.2 It must allow real-time data to be transmitted from the provider to the consumer
+
+6.8.3 It must allow the consumer platform to transmit a webhook endpoint to the provider platform&#x20;
+
+6.8.4 It must allow the provider platform to transmit a tracking link to the consumer platform
+
+### 6.9 Cancellation
+
+6.9.1 It must allow creation of an order cancellation request
+
+6.9.2 It must allow creation of a canceled order
+
+6.9.3 It must allow addition of cancellation reason to the cancellation request
+
+6.9.4 It must allow de-allocation of fulfillment services and the agents associated with the fulfillment of the contract
+
+6.9.5 It must allow calculation of cancellation terms (if applicable) depending on the reason provided and time of the cancellation request
+
+6.9.6 It must be possible to add a link to the cancellation terms (including cancellation fee) document to the order
+
+6.9.7 It must allow transmission of the canceled order between the consumer and the provider
+
+### 6.10 Rating and Feedback
+
+6.10.1 The E-Marketplace must allow ratings for various rateable entities to be captured by people involved in a transaction
+
+6.10.2 It must allow the transmission of ratings from the consumer platform to the provider platform
+
+6.10.3 It must allow creation of a request to collect additional feedback related to a rating
+
+6.10.4 It must allow fetching of various rateable entities related to an order
+
+### 6.11 Support
+
+6.11.1 The E-Marketplace must allow support center information like email, phone number and chat URL in relation to an order to be transmitted between the consumer and the provider platforms&#x20;
+
+6.11.2 It must allow the creation/read/update/deletion of tickets in relation to an issue raised by a consumer, or an agent
+
+### 6.12 Information Mediator Interface
+
+6.12.1 This sub-block runs protocols to communicate with the information mediator Building Block for exposing e-marketplace services to external Building Blocks and applications.
+
+6.12.2 It also provides specific calls to APIs of information mediator Building Block to access services of external applications and Building Blocks.&#x20;
+
+6.12.3 It also handles any errors and failures in data exchange between the e-marketplace and other Building Blocks/Apps (such as backoff and retries, etc.).
+
+6.12.4 It routes error information if any to the logger sub-block.&#x20;
+
+6.12.5 It maintains a list of endpoint addresses of Information Mediator, other Building Blocks, and Applications.
+
+
+
+### 6.13 Payment Interface
+
+6.13.1 These are dedicated API interfaces defined in the Payment building block and hence not defined here
+
+6.13.2 The Payment interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Payment Building Block for sending payment collection or settlement instructions to existing payment infrastructures like Banking Systems, Credit Card Networks, Payment Gateways etc to facilitate payments made during a transaction in the E-Marketplace&#x20;
+
+### 6.14 E-Signature Interface
+
+6.14.1 These are dedicated API interfaces defined in the Signature Building Block and hence not defined here
+
+6.14.2 The E-Signature interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Signature Building Block for the digital signing and subsequent verification of each message that is transmitted between the consumer platform and the provider platform
+
+### 6.15 Registration Interface
+
+6.15.1 These are dedicated API interfaces defined in the Registration Building Block and hence not defined here
+
+6.15.2 The Registration interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Registration Building Block to enable users on the Consumer Platform and the Provider Platform to sign up on their respective platforms with the required information necessary to perform transactions on the E-Marketplace
+
+### ## Everything below this line is Draft. Please Ignore
+
+#### DO NOT DELETE
 
 ### 6.1 Discovery
 
