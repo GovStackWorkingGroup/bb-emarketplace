@@ -11,4 +11,3 @@
 * [8 Service APIs](8-service-apis.md)
 * [9 Internal Workflows](9-workflows.md)
 * [10 Other Resources](10-other-resources.md)
-* [eMarketplace Use cases](emarketplace-use-cases.md)
