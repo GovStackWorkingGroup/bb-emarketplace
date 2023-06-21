@@ -4,7 +4,7 @@
 
 {% endhint %}
 
-<pre class="language-markdown" data-overflow="wrap"><code class="lang-markdown"><strong>The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.
+<pre class="language-html" data-overflow="wrap"><code class="lang-html"><strong>The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.
 </strong>
 ## 7.1 Standards
 

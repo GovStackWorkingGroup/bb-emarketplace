@@ -20,9 +20,11 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 ### 6.1 Searching
 
-6.1.1 The E-Marketplace must allow create / read / update or delete of a search intent
+In order to allow a consumer to search contents in the emarket place this key digital functionality  has to address atleast the following functional requirements:
 
-6.1.2 It must allow addition / update of a context to the search intent
+6.1.1  Must allow create / read / update or delete of a specific search intent (example products/consumers/tenders/agents/etc.). It is preferred to have seperate end points for different search intents since it may be required to implement role based access to information of different intents
+
+6.1.2 Must allow filtering extraction of data from catalogs by a set of criteria related to the search intent (e.g. filter tenders based on specific region, value, etc). The filter criteria must be configurable for each type of intent.
 
 6.1.3 It must allow the addition / removal / update of an item in the search intent
 
@@ -143,6 +145,8 @@ The E-Marketplace can be visualized as a black box with all key digital function
 6.9.1 It must allow creation of an order cancellation request
 
 6.9.2 It must allow creation of a canceled order
+
+6.9.3 roll back all liabilities that were created based on this order before cancellation
 
 6.9.3 It must allow addition of cancellation reason to the cancellation request
 

@@ -35,7 +35,7 @@ The e-marketplace must allow a consumer to declare a search intent. It should al
 
 ## 4.2 Catalog Management
 
-This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products and services that can operate across multiple locations and timings. It is to be noted that this functionality does not only apply to catalogs of products and services. It can be used to publish any economic resource that has a fulfillment cycle (for example, it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update or delete catalogs, and any sub-component of this catalog like Items, Categories, Providers, Locations, Agents, Fulfillments, Payments and others.
+This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products and services that can operate across multiple locations and timings. It is to be noted that this functionality does not only apply to catalogs of products and services. It can be used to publish any economic resource that has a fulfillment cycle (for example, it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update or delete catalogs, and any sub-component of this catalog like Items, Categories, Providers, Locations, Agents, Fulfillments, Payments and others. In summary, the building block enables cataloging of various elements such as providers, products, services, consumers, tenders, agents, etc., such that they can be searched, retrieved, shared in appropriate workflows.&#x20;
 
 ## 4.3 Inventory Management
 
@@ -53,15 +53,17 @@ This key digital functionality of the e-marketplace building block should allow 
 
 This key digital functionality of the e-marketplace building block should allow the consumer to confirm an order. Bidders can confirm a bid in an auction. It should allow creation and confirmation of an order expressed as a dual-digitally signed contract, with the terms that were agreed upon. In case the terms require payment before the creation of the contract, it should also allow the transmission of the proof payment made from the payer to the payee. It should allow the provider to transmit a contract to the consumer. It should also allow the consumer to request the provider to update various elements of the contract. It should also allow updates to the terms of the contract and inform the consumer of the update. It should allow browsing of contracts based on its various attributes.
 
+
+
 ## 4.7 Contract Fulfillment
 
 This key digital functionality of the e-marketplace building block should allow the consumer of a service to receive various status updates regarding the fulfillment of a contract. This should also allow providers to send various fulfillment updates to the consumer. It should also allow providers to allocate service agents manually or algorithmically if and when required (for example, ambulance allocation as a response to a nearby emergency).
 
-## 4.8 Tracking
+## 4.8 Purchase Order fulfillment Tracking
 
 Consumers should be able to track the fulfillment of an order in real-time. Providers should be able to stream real-time data to the consumer related to the fulfillment of an order. This tracking is not necessarily geospatial, but can contain any information that provides the consumer with real-time information like tracking of physical variables like temperature, speed, countdown timers in bidding use cases. This functionality should render the real-time data to the consumer via a tracking page.&#x20;
 
-## 4.9 Cancellation
+## 4.9 Purchase Order Cancellation
 
 This key digital functionality of the e-marketplace building block should allow the consumer or the provider to cancel a contract. This functionality should allow a consumer to view the terms of cancellation sent by a provider in response to a cancellation request. It should also allow both the parties to see the canceled order. Providers should be able to request a cancellation reason along with additional information related to the reason for the cancellation. Consumers should be able to provide a cancellation reason and additional information related to the cancellation request.
 
@@ -87,7 +89,7 @@ This interface handles protocols to interact with the E-Signature Building Block
 
 ## 4.15 Registration Interface
 
-This interface handles protocols to interact with the Registration Building Block via the Information Mediator Building Block for signing up users on their respective platforms. Consumers should be able to sign up to Consumer Platforms through this interface.
+This interface handles protocols to interact with the Registration Building Block via the Information Mediator Building Block for signing up users on their respective platforms. Consumers should be able to sign up to Consumer Platforms through this interface. The building block would enable users to register consumers, providers, products, services, agents, into respective catalogs. A registered element of a catalog may be enabled or disabled from being used in the system.
 
 ## Everything below this line is DRAFT (Will be Removed Later)
 
