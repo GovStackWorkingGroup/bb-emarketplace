@@ -41,7 +41,7 @@ While there may be many of such use cases, within the current scope The function
 
 1. G2P-Use Case 1: Application for Pension Services by a citizen from the State Government
 2. [G2P-Use Case 2: Online Reservation System (ORS)](https://app.gitbook.com/o/pxmRWOPoaU8fUAbbcrus/s/PUIGDILlDRSOB6K47k6e/\~/changes/4/g2p-uc2-online-reservation-system-ors)
-3. [G2P-Use Case 3: Government Auctions Marketplace (GAM)](em-g2p-uc3-government-auctions-marketplace-gam/)
+3. [G2P-Use Case 3: Government Auctions Marketplace (GAM)](broken-reference)
 
 These use cases have business process with several steps, wherein specific steps that involve the e-marketplace building block services were studies as example implementations (such as registration, identification and verification of individual entities and users in various roles; publishing a catalogue of goods and services provided by various entities; selection of goods and services and provider entities; scheduling the life cycle events in procurement such as creation of purchase requisition, bid management, vendor assessment, awarding contract, monitoring contractors' deliverables,  outreach communication and messaging notifications about status of procurement/payment, etc.&#x20;
 
