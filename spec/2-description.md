@@ -51,7 +51,7 @@ Currently the following actors have been identified as "users" of the scheduler 
 * "Buyers" are who participate in events to perform various activities. Buyers MUST be registered in the eMarketplace Building Block before they can be enrolled in events. Resources MAY apply/respond to multiple goods and services in a catalogue. Hence a registered buyer SHOULD be able to offer services in parallel, if they are short listed by the Supplier.
 * "Subscribers" who participate in events to consume various activities. Subscribers must be registered in the eMarketplace before they can be enrolled in activities. Subscribers MAY be enrolled in multiple events and MAY be passive to suppliers requests.
 * Building block admins???
-* More actors ???
+* More actors ??? (property officer and Supply Property Management office in the case of GAM use case; internal teams does the bid evaluation and inform the buyer admin?; What if both the supplier and buyer are same entity as in the case of Sporting Goods Procurement use case?)
 
 The eMarketplace MUST be able to enable enable these actors to perform in their roles associated with one or more events.  More specifically, the eMarketplace should facilitate following activities of the actors:
 
@@ -86,6 +86,9 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 * to delegate the access management so that a particular role can perform only the tasks/activities that they are intended to.
 * to facilitate workflow management amongst active suppliers and buyers.
 * to handle exceptions when a registration is failed, unable to generate a purchase request etc.
+* to facilitate communication between both the parties, such as seeking clarification, responding to questions raised by the bidder on bidding process or any other etc.
+
+
 
 
 
@@ -118,6 +121,9 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 The following aspects are out of scope of the current version of the eMarketplace building block specifications considered in this document:
 
 * Any type of payments between two parties.
+* Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.
+
+
 
 
 
