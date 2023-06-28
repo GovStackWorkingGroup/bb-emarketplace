@@ -4,7 +4,7 @@
 
 {% endhint %}
 
-<pre class="language-html" data-overflow="wrap"><code class="lang-html"><strong>The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.
+<strong>The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.
 </strong>
 ## 7.1 Standards
 
@@ -729,4 +729,3 @@ Contains any additional or extended inputs required to confirm an order. This is
 | -------- | ------- | ------------------------------------------------------------------------------------------------------ |
 | form     | object  | [Form](#7324-form)                                                                                     |
 | required | boolean | Indicates whether the form data is mandatorily required by the Provider Platform to confirm the order. |
-</code></pre>
