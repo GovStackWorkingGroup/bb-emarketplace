@@ -16,7 +16,7 @@ _\<Example Functional Requirements>_
 
 ### Internal functional components
 
-The E-Marketplace can be visualized as a black box with all key digital functionalities discussed in section 4. It does not assume any particular standard like REST for all internal resource management. A brief description of the functional requirements required to orchestrate each key digital functionality is given below, considering a minimum viable product perspective. Detailed design and more elaborate feature lists of these blocks can be customized by developers to optimally match respective implementation needs. It is also left to the application implementing this building block to receive the responses from the E-marketplace and present it appropriately and provision for associated user interface interactions.
+The E-Marketplace can be visualized as a black box with all key digital functionalities discussed in section 4. It does not assume any particular standard like REST for all internal resource management. A brief description of the functional requirements required to orchestrate each key digital functionality is given below, <mark style="color:blue;">considering the development of a</mark> minimum viable product ~~perspective~~. Detailed design and more elaborate feature lists of these blocks can be customized by developers to optimally match respective implementation needs. It is also left to the application implementing this building block to receive the responses from the E-marketplace and present it appropriately and provision for associated user interface interactions.
 
 ### 6.1 Searching
 
@@ -24,7 +24,7 @@ In order to allow a consumer to search contents in the emarket place this key di
 
 6.1.1  Must allow create / read / update or delete of a specific search intent (example products/consumers/tenders/agents/etc.). It is preferred to have seperate end points for different search intents since it may be required to implement role based access to information of different intents
 
-6.1.2 Must allow filtering extraction of data from catalogs by a set of criteria related to the search intent (e.g. filter tenders based on specific region, value, etc). The filter criteria must be configurable for each type of intent.
+6.1.2 Must allow filtering extraction of data from catalogs by a set of criteria related to the search intent (e.g. filter tenders based on specific region, value, <mark style="color:blue;">department, type of service, geography, availability of time slots</mark> etc). The filter criteria must be configurable for each type of intent.
 
 6.1.3 It must allow the addition / removal / update of an item in the search intent
 
@@ -186,8 +186,6 @@ In order to allow a consumer to search contents in the emarket place this key di
 
 6.12.5 It maintains a list of endpoint addresses of Information Mediator, other Building Blocks, and Applications.
 
-
-
 ### 6.13 Payment Interface
 
 6.13.1 These are dedicated API interfaces defined in the Payment building block and hence not defined here
@@ -205,6 +203,14 @@ In order to allow a consumer to search contents in the emarket place this key di
 6.15.1 These are dedicated API interfaces defined in the Registration Building Block and hence not defined here
 
 6.15.2 The Registration interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Registration Building Block to enable users on the Consumer Platform and the Provider Platform to sign up on their respective platforms with the required information necessary to perform transactions on the E-Marketplace
+
+### <mark style="color:red;">6.16  Digital Identity & Verification Interface</mark>
+
+
+
+### <mark style="color:red;">6.17 Communication and Outreach</mark>
+
+
 
 ### ## Everything below this line is Draft. Please Ignore
 

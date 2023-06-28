@@ -51,11 +51,12 @@ Currently the following actors have been identified as "users" of the scheduler 
 * "Buyers" are who participate in events to perform various activities. Buyers MUST be registered in the eMarketplace Building Block before they can be enrolled in events. Resources MAY apply/respond to multiple goods and services in a catalogue. Hence a registered buyer SHOULD be able to offer services in parallel, if they are short listed by the Supplier.
 * "Subscribers" who participate in events to consume various activities. Subscribers must be registered in the eMarketplace before they can be enrolled in activities. Subscribers MAY be enrolled in multiple events and MAY be passive to suppliers requests.
 * Building block admins???
-* More actors ??? (property officer and Supply Property Management office in the case of GAM use case; internal teams does the bid evaluation and inform the buyer admin?; What if both the supplier and buyer are same entity as in the case of Sporting Goods Procurement use case?)
+* <mark style="color:blue;">"Internal team member" who participates in the internal activities such as technical and financial evaluation of the bids received on the buyer side; preparation of documents and coordination across business development, technical, managerial teams on supplier side. The corresponsing "internal team member" communicates with the "supplier" or "buyer", respectively.</mark>
+* More actors ??? (property officer and Supply Property Management office in the case of GAM use case; internal teams does the bid evaluation and inform the buyer admin?)
 
 The eMarketplace MUST be able to enable enable these actors to perform in their roles associated with one or more events.  More specifically, the eMarketplace should facilitate following activities of the actors:
 
-1. _The eMarketplace BB MUST enable Admins to_&#x20;
+### **The eMarketplace BB MUST enable Admins to**
 
 * enable the registration process of both supplies and buyers.&#x20;
 * enable the verification of Foundational IDs come with no specified purpose or attached entitlement but functionalities simply let an entity prove who it is.
@@ -88,10 +89,6 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 * to handle exceptions when a registration is failed, unable to generate a purchase request etc.
 * to facilitate communication between both the parties, such as seeking clarification, responding to questions raised by the bidder on bidding process or any other etc.
 
-
-
-
-
 **2.1.2  The eMarketplace MUST enable buyers and subscribers to**
 
 * search and extract their own registration details in the eMarketplace
@@ -121,7 +118,7 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 The following aspects are out of scope of the current version of the eMarketplace building block specifications considered in this document:
 
 * Any type of payments between two parties.
-* Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.
+* _<mark style="color:red;">Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.</mark>_
 
 
 
