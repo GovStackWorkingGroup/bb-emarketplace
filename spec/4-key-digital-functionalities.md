@@ -98,6 +98,18 @@ This interface handles protocols to interact with the Registration Building Bloc
 
 <mark style="color:blue;">The building block should facilitate various out reach activities through social media, online, offline activities to create awareness and interest amongst the stakeholders about the eMarketplace. For example, a notification may be widespread for a fixed duration of time. Interested stakeholders may subscribe to the eMarketplace application/channel to receive notifications/messages of their interest.</mark>
 
+
+
+## <mark style="color:blue;">**4.18 Content Management Interface**</mark>
+
+## <mark style="color:blue;">**4.19 Workflow Interface**</mark>
+
+## <mark style="color:blue;">**4.20 Dashboard & Business Analytics Interface**</mark>
+
+## <mark style="color:blue;">**4.21 GIS BB Interface**</mark>
+
+## <mark style="color:blue;">**4.22 Consent Management Interface**</mark>
+
 ## Everything below this line is DRAFT (Will be Removed Later)
 
 ### _DO NOT DELETE_
