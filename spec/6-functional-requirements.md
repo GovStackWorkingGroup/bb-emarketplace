@@ -26,35 +26,44 @@ In order to allow a consumer to search contents in the emarket place this key di
 
 6.1.2 Must allow filtering extraction of data from catalogs by a set of criteria related to the search intent (e.g. filter tenders based on specific region, value, <mark style="color:blue;">department, type of service, geography, availability of time slots</mark> etc). The filter criteria must be configurable for each type of intent.
 
-6.1.3 It must allow the addition / removal / update of an item in the search intent
+6.1.3 The e-marketplace must allow creation of a search request with a context and a message. The context MUST contain the action performed (“search”), the location where the search is limited to (ex: country, city, area code etc), the domain / category of search (ex: healthcare, services, etc), the identity of the platform generating the search (ex: domain name), the callback url of the platform generating the search.
 
-6.1.4 It must allow the addition / removal / update of a category in the search intent
+6.1.4 The context MUST also contain a unique transaction ID to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. The search context must contain a timestamp denoting the time of the search.
 
-6.1.5 It must allow the addition / removal / update of a fulfillment in the search intent
+6.1.5 It should allow addition of an intent to the message. Intent should contain fulfillment details in case the customer wants their order fulfilled in a specific way. If there is a preferred method of payment the intent should contain the payment details.The intent should define the category of the search.If search criteria is specific to an offer, intent must contain the offer detail.
 
-6.1.6 It must allow the addition / removal / update of a payment in the search intent
+6.1.6 Before making an actual call for search , if a user wants to modify the criteria , the system should provide the flexibility to update the search criteria, ex- search is to be modified for category,payment type etc.
 
-6.1.7 It must allow the transmission of the search request to a provider platform
+6.1.7 Once a call is made and the user wants to make a next search call which can not be fulfilled with the existing data from the previous search call, the system should be able to use the selected fields and the modified fields for the next search call.
 
-6.1.8 It must allow searching, sorting and filtering of a catalog by applying various filters
+6.1.8 It must be able to transmit the search request along with all the search parameters to the provider platform.
+
+6.1.9 Once the response is received the marketplace should be able to filter the received data based on the filters modification by the user.Ex- all the products from retail domain are received now a filter based on the product type is applied.
+
+\
+
 
 ### 6.2 Catalog Management
 
-6.2.1 The E-Marketplace must allow create / read / update or delete of a catalog
+6.2.1 The e-marketplace must allow creation of a catalog request for which  context is required and should have a message.
 
-6.2.2 It must allow create / read / update / delete of Items
+6.2.2 The context is used to describe the metadata of the details provided in the message part. The context must contain an action.It also must contain a unique transaction ID received by the search request to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. It must contain a timestamp denoting the time of the search requested for the catalog.
 
-6.2.3 It must allow create / read / update / delete of Providers
+6.2.3 The  message must contain catalog.Catalog is used to describe the products or services provided by the platform. The catalog is formed on the basis of the search request made by the user and the data is filtered accordingly and added to the catalog.
 
-6.2.4 It must allow create / read / update / delete of Agents
+6.2.4 Catalog should contain description, it will have description of the product or service. it can have short description, long description, describing images.
 
-6.2.5 It must allow create / read / update / delete of Categories
+6.2.5 Catalog should contain fulfilments, it will provide the details about the fulfillment mode, if the e-marketplace takes the responsibility of the fulfillment.
 
-6.2.6 It must allow create / read / update / delete of Fulfillments
+6.2.6 Catalog should contain payments, it provides details about the payment terms offered by the e-marketplace. The terms can be overridden by the providers section, in case e-marketplace does not take responsibility for the payments.
 
-6.2.7 It must allow create / read / update / delete of Payments
+6.2.7 Catalog should provide exp, it will provide details about the time (timestamp) after which the catalog will not be valid. Ex- A limited time offer on a service/product.
 
-6.2.8 Upon receiving a search request, it must return a linked catalog with matched items, categories, providers, fulfillments, and payments
+6.2.8 Catalog should contain ttl, ttl describes the time to live for the catalog after which catalog expires.
+
+6.2.9 Once the e-marketplace should provide a mechanism to handle the response(catalog) for a search , it should display the products/services in the catalog properly and should be able to filter the products at the UI layer also.
+
+6.2.10 Upon receiving a search request, it must return a linked catalog with matched items, categories, providers, fulfillments, and payments
 
 ### 6.3 Inventory Management
 
