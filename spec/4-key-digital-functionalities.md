@@ -26,15 +26,21 @@ To facilitate various activities and different actors as described in section 2,
 10. Fulfillments (like appointments, tender approval, delivery of goods and services)
 11. <mark style="color:blue;">Procurement lifecycle activities (from bid invitation to ordering to feedback, milestone deliverables, monitoring, archiving)</mark>
 
-The E-Marketplace building block must utilize the above objects <mark style="color:blue;">**(activities?**</mark><mark style="color:blue;">)</mark> to primarily support various consumer-provider interactions like discovery, ordering, fulfillment, and post-fulfillment. For example, A patient (Consumer) on WhatsApp (Consumer Platform) can search (Discovery) for a doctor (Agent) by his name (Intent). This request can be sent to ORS (Provider Platform) that returns a list of Hospitals (Providers), with the various services offered (Catalog). Once identified, the patient (Consumer) can book an appointment (Order) with the Doctor(Agent).
+The key digital functionalities would include at minimum the following:
+
+1.
+
+The E-Marketplace building block must utilize the above objects to primarily support various consumer-provider interactions like discovery, ordering, fulfillment, and post-fulfillment. For example, A patient (Consumer) on WhatsApp (Consumer Platform) can search (Discovery) for a doctor (Agent) by his name (Intent). This request can be sent to ORS (Provider Platform) that returns a list of Hospitals (Providers), with the various services offered (Catalog). Once identified, the patient (Consumer) can book an appointment (Order) with the Doctor(Agent).
+
+
 
 The various actors and their activities described in section 2 must be supported by a set of non-redundant, Key Digital Functionalities listed below:
 
-## 4.1 Searching
+## 4.1 Searching (Search Management)
 
 The e-marketplace must allow a consumer to declare a search intent. It should allow a consumer to search and browse a catalog of items <mark style="color:blue;">(goods and services)</mark>. It is to be noted that this intent does not only apply to searching for products or services. Any consumer who wants to search for an economic resource can use this functionality (for example, a citizen can search for products or services offered by government institutions like hospitals, or public services; or a business can search for tenders floated by a government department). This is done by specifying various attributes like item they are looking for, the category of items they want to search, the location where they want to limit their search to, the location they want their product or service delivered, the time when then want to receive the item, who they want to buy from (for example, It must allow businesses to discover catalogs of tenders that have been floated by a specific government department). This key digital functionality should also allow a consumer to view catalogs returned on a federated network. It should also allow users to browse catalogs across multiple providers, filter search results, browse items under a specific category, and view details of a specific Item. <mark style="color:blue;">The search results shall be fetched in chrological order (latest to old; vice versa; and archived).</mark>
 
-## 4.2 Catalog Management
+## 4.2 Subscriber Management
 
 This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products and services that can operate across multiple locations and timings. It is to be noted that this functionality does not only apply to catalogs of products and services. It can be used to publish any economic resource that has a fulfillment cycle (for example, it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update or delete catalogs, and any sub-component of this catalog like Items, Categories, Providers, Locations, Agents, Fulfillments, Payments and others. In summary, the building block enables cataloging of various elements such as providers, products, services, consumers, tenders, agents, etc., such that they can be searched, retrieved, shared in appropriate workflows.&#x20;
 
@@ -42,7 +48,7 @@ This key digital functionality should allow providers to quickly and efficiently
 
 Authorized users of provider platforms should be able to manage inventory of various resources available in a catalog. Providers should be able to manage the availability of products, agents, vehicles etc, <mark style="color:blue;">dynamically/on real time basis,</mark> in this building block.
 
-## 4.4 Quote Agreement
+## 4.4 Quote Agreement (Quote Management)
 
 This key digital functionality of the e-marketplace building block should allow consumers to select items, offers, and add-ons from a catalog and build an order. It should be able to transmit them to the respective provider and request a quote. Using this functionality, consumers should be able to bid for items <mark style="color:blue;">(one or more)</mark> selected from <mark style="color:blue;">(one or more different sources/vendors)</mark> a catalog. It should also be able to render the quotation agreed between transacting entities. Providers should be able to calculate a quote basis the items, offers and add-ons selected. Providers should also be able to add dynamic offers without being specifically requested by the consumer. For example, a consumer should be able to add items from a provider's catalog, add offers, select add-ons into a common cart and view the total cart value. Similarly, a business should be able to create a bid for a tender and submit it to the provider for evaluation. This functionality should also allow providers to request additional information from the consumer that is required to proceed to the next stage. This functionality should also allow providers to transmit requests to the consumer to allow consented data sharing required to calculate a quote.
 
@@ -58,7 +64,7 @@ This key digital functionality of the e-marketplace building block should allow 
 
 This key digital functionality of the e-marketplace building block should allow the consumer of a service to receive various status updates regarding the fulfillment of a contract. This should also allow providers to send various fulfillment updates to the consumer. It should also allow providers to allocate service agents manually or algorithmically if and when required (for example, ambulance allocation as a response to a nearby emergency). <mark style="color:blue;">The contract fulfilment could be having a long duration of workflow (for ex. 3 years), depending upon the nature of the contract signed. The building block should be able to facilitate all the processes and reflect dynamic status of a signed contract with updates/remarks/comments. For example, the sign-off agreement with feedback, lessons learnt report shall be submitted as and when the project finishes formally.</mark>
 
-## 4.8 Purchase Order fulfillment Tracking
+## 4.8 Purchase Order fulfillment Tracking (Purchase Order Management)
 
 Consumers should be able to track the fulfillment of an order in real-time. Providers should be able to stream real-time data to the consumer related to the fulfillment of an order. This tracking is not necessarily geospatial, but can contain any information that provides the consumer with real-time information like tracking of physical variables like temperature, speed, countdown timers in bidding use cases. This functionality should render the real-time data to the consumer via a tracking page.&#x20;
 
@@ -66,11 +72,11 @@ Consumers should be able to track the fulfillment of an order in real-time. Prov
 
 This key digital functionality of the e-marketplace building block should allow the consumer or the provider to cancel a contract. This functionality should allow a consumer to view the terms of cancellation sent by a provider in response to a cancellation request. It should also allow both the parties to see the canceled order. Providers should be able to request a cancellation reason along with additional information related to the reason for the cancellation. Consumers should be able to provide a cancellation reason and additional information related to the cancellation request. <mark style="color:blue;">Once a cancellation is agreed by both the parties, the current and historical data related to this activity/chain of activities shall be rolled back or archived, as per the policy.</mark>
 
-## 4.10 Rating and Feedback
+## 4.10 Rating and Feedback (Feedback Management)
 
 Users of this key digital functionality should be able to rate various entities involved in the fulfillment of a contract.  These users can be both consumers and providers. A consumer should be able to rate various aspects of the service like the agent, vehicle, quality of service, customer support etc. A provider’s agent should be able to rate the consumer as well. Upon receipt of a rating, a provider can ask for additional feedback related to the rating. <mark style="color:blue;">This means that the activity can occur throughoout the cycle of various activities, not just at the end of a single process.</mark>
 
-## 4.11 Support
+## 4.11 Support (Support Management)
 
 Users of this key digital functionality should be able contact the support center to enquire about any issues that they may be facing and create a ticket. Customer support executives should be able to view details of a contract, fetch related information, view open tickets, and resolve them. If needed, customer support executives can fetch the contact details of a provider, or their agents to gain more information related to the fulfillment of an order.&#x20;
 
@@ -98,6 +104,8 @@ This interface handles protocols to interact with the Registration Building Bloc
 
 <mark style="color:blue;">The building block should facilitate various out reach activities through social media, online, offline activities to create awareness and interest amongst the stakeholders about the eMarketplace. For example, a notification may be widespread for a fixed duration of time. Interested stakeholders may subscribe to the eMarketplace application/channel to receive notifications/messages of their interest.</mark>
 
+<mark style="color:blue;">(Arch 5.3)</mark>
+
 ## <mark style="color:blue;">**4.18 Content Management Interface**</mark>
 
 <mark style="color:blue;">This interface should be able to enable the adminstrators to moderate, curate, access and share the content creation. The interface can create details about eMarketplace, create knowledge banks, best practice repositories. It should also be able to connect the BB with social media, able to publish the digital advertisements.</mark>
@@ -117,6 +125,10 @@ This interface handles protocols to interact with the Registration Building Bloc
 ## <mark style="color:blue;">**4.22 Consent Management Interface**</mark>
 
 <mark style="color:blue;">This interface should allow an application or system to acquire and validate consent from an authorized user in order to grant access or permissions for carrying out a task. Biometric identities, digital signatures or simply SMS messages may be used to provide consent.</mark>
+
+## <mark style="color:blue;">**4.23 Messaging Interface**</mark>
+
+## <mark style="color:blue;">**4.24 Scheduling Interface**</mark>
 
 ## Everything below this line is DRAFT (Will be Removed Later)
 
