@@ -128,7 +128,11 @@ This interface handles protocols to interact with the Registration Building Bloc
 
 ## <mark style="color:blue;">**4.23 Messaging Interface**</mark>
 
+<mark style="color:blue;">This interface should act as a secured communication channel between users and service providers. Security features, logging, back-up, encrypted and non encrypted messages (such as notifications, reminders, alerts), chatbot services.</mark>
+
 ## <mark style="color:blue;">**4.24 Scheduling Interface**</mark>
+
+<mark style="color:blue;">This interface shall be able to orchestrate processes automatically. For example, when a bidder submits documents, it shall trigget certain series of steps/processes, send an alert by email and SMS, update the stock of remaining items, number of goods and services in active phase etc. It shall also complete the lifecycleof processes involved in a process. For example, from initiation to closure of a series of activities involved in ordering an item/goods/services.</mark>
 
 ## Everything below this line is DRAFT (Will be Removed Later)
 
