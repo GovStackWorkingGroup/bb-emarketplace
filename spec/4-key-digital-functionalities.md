@@ -98,17 +98,25 @@ This interface handles protocols to interact with the Registration Building Bloc
 
 <mark style="color:blue;">The building block should facilitate various out reach activities through social media, online, offline activities to create awareness and interest amongst the stakeholders about the eMarketplace. For example, a notification may be widespread for a fixed duration of time. Interested stakeholders may subscribe to the eMarketplace application/channel to receive notifications/messages of their interest.</mark>
 
-
-
 ## <mark style="color:blue;">**4.18 Content Management Interface**</mark>
+
+<mark style="color:blue;">This interface should be able to enable the adminstrators to moderate, curate, access and share the content creation. The interface can create details about eMarketplace, create knowledge banks, best practice repositories. It should also be able to connect the BB with social media, able to publish the digital advertisements.</mark>
 
 ## <mark style="color:blue;">**4.19 Workflow Interface**</mark>
 
+<mark style="color:blue;">This interface should be able to automate and orchestrate capabilities for specified business processes within and across Building Blocks. The initiation of a workflow, for example-submission of related documents for procurement/purchase request, shall be automated till the fulfilment of that order/request/cancellation.</mark>&#x20;
+
 ## <mark style="color:blue;">**4.20 Dashboard & Business Analytics Interface**</mark>
+
+<mark style="color:blue;">This interface should be able to data visualize key statistics such number of procurements/items with different status such as active, fulfilled, cancelled. It should be able to indicate archived/historical data as well. The interface should offer data driven insights (risk analysis, predicitive analytics) on most and least consumed goods and services, volume, financial details on monthly and yearly basis.</mark>
 
 ## <mark style="color:blue;">**4.21 GIS BB Interface**</mark>
 
+<mark style="color:blue;">The Geographic Information System (GIS) interface should be able to identify, tag, analyze locations of goods and services, persons, entities, piece of equipment, locations with timestamps. This will enable to track the goods and services when they are under active lifecycle of eMarketplace BB.</mark>
+
 ## <mark style="color:blue;">**4.22 Consent Management Interface**</mark>
+
+<mark style="color:blue;">This interface should allow an application or system to acquire and validate consent from an authorized user in order to grant access or permissions for carrying out a task. Biometric identities, digital signatures or simply SMS messages may be used to provide consent.</mark>
 
 ## Everything below this line is DRAFT (Will be Removed Later)
 
