@@ -20,170 +20,125 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 ### 6.1 Searching
 
-In order to allow a consumer to search contents in the emarket place this key digital functionality  has to address atleast the following functional requirements:
+### 6.1 Searching&#x20;
 
-6.1.1  Must allow create / read / update or delete of a specific search intent (example products/consumers/tenders/agents/etc.). It is preferred to have seperate end points for different search intents since it may be required to implement role based access to information of different intents
-
-6.1.2 Must allow filtering extraction of data from catalogs by a set of criteria related to the search intent (e.g. filter tenders based on specific region, value, <mark style="color:blue;">department, type of service, geography, availability of time slots</mark> etc). The filter criteria must be configurable for each type of intent.
-
-6.1.3 The e-marketplace must allow creation of a search request with a context and a message. The context MUST contain the action performed (“search”), the location where the search is limited to (ex: country, city, area code etc), the domain / category of search (ex: healthcare, services, etc), the identity of the platform generating the search (ex: domain name), the callback url of the platform generating the search.
-
-6.1.4 The context MUST also contain a unique transaction ID to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. The search context must contain a timestamp denoting the time of the search.
-
-6.1.5 It should allow addition of an intent to the message. Intent should contain fulfillment details in case the customer wants their order fulfilled in a specific way. If there is a preferred method of payment the intent should contain the payment details.The intent should define the category of the search.If search criteria is specific to an offer, intent must contain the offer detail.
-
-6.1.6 Before making an actual call for search , if a user wants to modify the criteria , the system should provide the flexibility to update the search criteria, ex- search is to be modified for category,payment type etc.
-
-6.1.7 Once a call is made and the user wants to make a next search call which can not be fulfilled with the existing data from the previous search call, the system should be able to use the selected fields and the modified fields for the next search call.
-
-6.1.8 It must be able to transmit the search request along with all the search parameters to the provider platform.
-
-6.1.9 Once the response is received the marketplace should be able to filter the received data based on the filters modification by the user.Ex- all the products from retail domain are received now a filter based on the product type is applied.
-
-\
+1. The e-marketplace must allow creation of a search request with a context and a message. The context MUST contain the action performed (“search”), the location where the search is limited to (ex: country, city, area code etc), the domain / category of search (ex: healthcare, services, etc), the identity of the platform generating the search (ex: domain name), the callback url of the platform generating the search.
+2. The context MUST also contain a unique transaction ID to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. The search context must contain a timestamp denoting the time of the search.
+3. It should allow addition of an intent to the message. Intent should contain fulfillment details in case the customer wants their order fulfilled in a specific way. If there is a preferred method of payment the intent should contain the payment details. The intent should define the category of the search. If search criteria is specific to an offer, intent must contain the offer detail.
+4. It should allow multiple search parameters and  should allow updates of search parameters , the system should provide the flexibility to update the search criteria, ex- search is to be modified for category, payment type etc.
+5. Once a call is made and the user wants to make a next search call which can not be fulfilled with the existing data from the previous search call, the system should be able to use the selected fields and the modified search fields for the next search call.
+6. It must be able to transmit the search request along with all the search parameters to the provider platform.
+7. This building block should allow fetching of catalogs that matches the maximum number of search parameters.
 
 
-### 6.2 Catalog Management
 
-6.2.1 The e-marketplace must allow creation of a catalog request for which  context is required and should have a message.
+## **6.2 Catalog Management**&#x20;
 
-6.2.2 The context is used to describe the metadata of the details provided in the message part. The context must contain an action.It also must contain a unique transaction ID received by the search request to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. It must contain a timestamp denoting the time of the search requested for the catalog.
-
-6.2.3 The  message must contain catalog.Catalog is used to describe the products or services provided by the platform. The catalog is formed on the basis of the search request made by the user and the data is filtered accordingly and added to the catalog.
-
-6.2.4 Catalog should contain description, it will have description of the product or service. it can have short description, long description, describing images.
-
-6.2.5 Catalog should contain fulfilments, it will provide the details about the fulfillment mode, if the e-marketplace takes the responsibility of the fulfillment.
-
-6.2.6 Catalog should contain payments, it provides details about the payment terms offered by the e-marketplace. The terms can be overridden by the providers section, in case e-marketplace does not take responsibility for the payments.
-
-6.2.7 Catalog should provide exp, it will provide details about the time (timestamp) after which the catalog will not be valid. Ex- A limited time offer on a service/product.
-
-6.2.8 Catalog should contain ttl, ttl describes the time to live for the catalog after which catalog expires.
-
-6.2.9 Once the e-marketplace should provide a mechanism to handle the response(catalog) for a search , it should display the products/services in the catalog properly and should be able to filter the products at the UI layer also.
-
-6.2.10 Upon receiving a search request, it must return a linked catalog with matched items, categories, providers, fulfillments, and payments
+1. The e-marketplace must allow creation of a catalog request for which context is required and should have a message.
+2. The context is used to describe the metadata of the details provided in the message part. The context must contain an action. It also must contain a unique transaction ID received by the search request to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. It must contain a timestamp denoting the time of the search requested for the catalog.
+3. The  message must contain catalog. Catalog is used to describe the products or services provided by the platform. The catalog should be formed on the basis of the search request made by the user and the data is filtered accordingly and added to the catalog.
+4. Catalog should be able to provide description, it will have description of the product or service. it can have short description, long description, describing images.
+5. Catalog should provide fulfillment details , it will provide the details about the fulfillment mode, if the e-marketplace takes the responsibility of the fulfillment.
+6. Catalog should provide payment detail, it provides details about the payment terms offered by the e-marketplace. The terms can be overridden by the providers section, in case e-marketplace does not take responsibility for the payments.
+7. Catalog should provide expiry details, it will provide details about the time (timestamp) after which the catalog will not be valid. Consumer platform must be able to process the expiry and invalidate the catalog.Ex- A limited time offer on a service/product.
+8. Catalog should provide details of the time to live, ttl describes the time to live for the catalog after which catalog expires.Consumer platform must be able to process the ttl and invalidate the catalog
+9. Seller platform must be able to call the on\_search API provided by the buyer platform to provide the catalog of the products.
+10. The buyer platform should provide a mechanism to handle the response(catalog) for a search , it should display the products/services in the catalog properly and should be able to filter the products at the UI layer also.
+11. Consumer platform should be able to handle multiple responses against a search tied with a message ID made as the response can be from multiple providers
 
 ### 6.3 Inventory Management
 
-6.3.1 The E-Marketplace must allow updating the quantity and location of Items across multiple Providers&#x20;
+1. The E-Marketplace must allow the sellers to add new products in their inventory.
+2. It should be able to provide the current status of the inventory products , the reporting should provide various filters based on which report can be generated.
+3. It should allow updating the quantity and location of Items across multiple Providers and must restrict the access to sellers own inventory.
+4. Inventory must get adjusted based on the order placed (confirm/cancel/return)
+5. It must allow checking of availability of an Item in a catalog to avoid out-of-stock and over-stocking of the product.
+6. It should provide a configurable system for notification which notifies based on the defined criteria. Ex- If product quantity is less than 50 , it must notify the seller with email or SMS.
 
-6.3.2 It must allow checking of availability of an Item in a catalog
+### 6.4 Quote Agreement&#x20;
 
-### 6.4 Quote Agreement
+1. The E-Marketplace must enable the construction of a cart (or a cart-like experience)  on the consumer platform, it must consist of context and message
+2. It must allow addition / removal / update of multiple items and their respective quantities in the cart
+3. It must allow the consumer to choose from different offers available, and users should be able to modify or remove the offer before an order is placed.
+4. It must allow users to modify the addons in the cart, the cart should not be freeze before an order is placed. The consumer should be able to modify the products i.e. add ,remove products also should be able to modify the quantity of the product.
+5. It must allow transmission of the cart from the consumer platform to the provider platform
+6. Upon receiving the cart from the consumer platform, it must allow the provider platform to check for the availability of items in the cart
+7. It should check the validity of offers against the items in the cart
+8. it should dynamically calculate the quote based on the available items, offers, and add-ons
+9. It should transmit the cart with the updated quote from the provider platform to the consumer platform
+10. Provider platform should response with context and either order or with error
+11. Consumer platform must process the quote properly and show the details along with the offers/delivery/payments details and break up of the quote.
 
-6.4.1 The E-Marketplace must enable the construction of a cart (or a cart-like experience)  on the consumer platform
+### 6.5 Terms Agreement&#x20;
 
-6.4.2 It must allow addition / removal / update of multiple items and their respective quantities in the cart
-
-6.4.3 It must allow addition / removal / update of offers in the cart
-
-6.4.4 It must allow addition / removal / update of add-ons in the cart
-
-6.4.5 It must allow transmission of the cart from the consumer platform to the provider platform
-
-6.4.6 Upon receiving the cart from the consumer platform, it must allow the provider platform to check for the availability of items or add-ons in the cart
-
-6.4.7 It should check the validity of offers against the items in the cart
-
-6.4.8 it should dynamically calculate the quote based on the available items, offers, and add-ons
-
-6.4.9 It should allow addition / removal / update of the cart with the quote and its breakup
-
-6.4.10 It should transmit the cart with the updated quote from the provider platform to the consumer platform
-
-### 6.5 Terms Agreement
-
-6.5.1 The E-Marketplace must enable the construction of a draft order (or a pre-checkout like experience) on the consumer platform
-
-6.5.2 It must allow the addition / update / removal of billing details to the order
-
-6.5.3 It must allow the addition / update / deletion of fulfillment details to the order
-
-6.5.4 It must allow the transmission of the draft-order from the consumer platform to the provider platform
-
-6.5.5 It must re-calculate the quote based on fulfillment details
-
-6.5.6 It must check the serviceability of the order on the basis of agent availability
-
-6.5.7 It must re-check the availability of items, validity of offers and re-calculate the quote
-
-6.5.8 It must allow creation / addition / update of payment terms containing the payment stage, final payable amount, payment endpoint and payment schedule to the draft order
-
-6.5.9 It must allow addition of terms of service, cancellation, returns, replacements and refunds wherever applicable
-
-6.5.10 It must allow the transmission of the final draft order containing all the details of the order
+1. The E-Marketplace must enable the construction of a draft order (or a pre-checkout like experience) on the consumer platform, the draft order must contain context and message with order details.
+2. Consumer applications  must allow the modification of the billing details of the order before a request is sent to the provider.
+3. It must allow the consumers to modify the fulfillment details. Ex- Consumer has multiple addresses stored in the application, he should be able to select the address or add a new address for fulfillment. Consumers should also be able to choose from the available fulfillment options.
+4. It must allow the transmission of the draft-order from the consumer platform to the provider platform
+5. Consumer app must  recalculate the quote based on the modifications made in the fulfillment details
+6. Consumer app must check the serviceability of the order on the basis of agent availability
+7. Provider platform must re-check the availability of items, validity of offers and re-calculate the quote based on the selection made by the consumer
+8. Provider platform must allow creation and modification of payment terms containing the payment stage, final payable amount, payment endpoint and payment schedule to the draft order
+9. Provider app  must allow addition of terms of service, cancellation, returns, replacements and refunds wherever applicable
+10. Provider platform must response with context and either order or an error
+11. It must allow the transmission of the final draft order containing all the details of the order to the consumer platform
+12. Consumer platform must be able to handle the final draft order received from the provider and display the final order draft.
 
 
 
-### 6.6 Contract Creation and Management
+### 6.6 Contract Creation and Management&#x20;
 
-6.6.1 The E-Marketplace must enable creation of a confirmed order with an Order ID
+1. The E-Marketplace must enable creation of a confirmed order with an unique Order ID, the confirm order must contain context and message
+2. Before confirming an order to provider platform consumer platform must allow modification of a fulfillment state in the order
+3. Consumer platform must allow the transmission of the final draft order to the provider platform
+4. Provider platform must again allow re-checking of inventory availability before creating the order
+5. It must allow the transmission of the confirmed order from the provider platform to the consumer platform
+6. Provider platform response to a confirmed order must contain context and either order or an error
+7. Consumer platform must be able to handle the order confirmation received from the provider platform and display the success message to the consumer along with the order id and the product's details in the order.
 
-6.6.2 It must allow update / deletion of a fulfillment state in the order
+### 6.7 Contract Fulfillment&#x20;
 
-6.6.3 It must allow the transmission of the final draft order from the consumer platform to the provider platform
+1. The E-Marketplace must enable discovering and allocation of an Agent (if applicable) to the fulfillment of a confirmed order.
+2. Consumer application must be able to fetch the status of the order from the provider platform.
+3. Provider platform must be able to find out the status of the order and provide the details back to the consumer application.
+4. Provider application must allow updates of the status of the order.
+5. When a new event occurs on the fulfillment, provider platform must pass on the information to the consumer platform.
 
-6.6.4 It must allow the transmission of the confirmed order from the provider platform to the consumer platform
+### 6.8 Tracking&#x20;
 
-6.6.5 It must again allow re-checking of inventory availability before creating the order
+1. The E-Marketplace must enable fetching of tracking information related to the order
+2. It must allow real-time data to be transmitted from the provider to the consumer
+3. It must allow the consumer platform to transmit a webhook endpoint to the provider platform which will handle the real time updates on the tracking
+4. It must allow the provider platform to transmit a tracking link to the consumer platform
+5. Consumer platform must allow display of the tracking details to the consumer along with the history
+6. Consumer applications must be able to segregate the tracking details based on the order ID.
 
-### 6.7 Contract Fulfillment
+### 6.9 Cancellation&#x20;
 
-6.7.1 The E-Marketplace must enable discovering and allocation of an Agent (if applicable) to the fulfillment of a confirmed order
+1. Consumer platform must allow creation of an order cancellation request for all the active orders which are yet not fulfilled.
+2. Consumer platform must provide order id and allow addition of cancellation reason to the cancellation request
+3. Provider platform must handle the cancel order request and respond back to the consumer platform
+4. Provider platform must allow modification of the order status and  de-allocation of fulfillment services and the agents associated with the fulfillment of the contract
+5. It must allow calculation of cancellation terms (if applicable) depending on the reason provided and time of the cancellation request
+6. It must be possible to add a link to the cancellation terms (including cancellation fee) document to the order
+7. It must allow transmission of the canceled order between the consumer and the provider
+8. On cancellation of an order the provider platform must adjust the inventory of the products canceled
+9. Consumer platform must handle the response from the provider platform for a cancellation request and update the order status and display the details of cancellation of order along with the cancellation terms (including cancellation fee).
 
-6.7.2 It must allow update of the fulfillment state of an order
+### 6.10 Rating and Feedback&#x20;
 
-6.7.3 It must allow transmission of fulfillment status updates from the provider platform and the consumer platform
+1. The E-Marketplace must allow ratings for various rateable entities to be captured by people involved in a transaction
+2. It must allow the transmission of ratings from the consumer platform to the provider platform
+3. It must allow creation of feedback by provider platform to get detailed additional information on the rating provided
+4. It must allow creation of a request to collect additional feedback related to a rating
+5. It must allow fetching of various rateable entities related to an order
 
-6.7.4 It must allow fetching the latest copy of the order from a provider
+### 6.11 Support&#x20;
 
-### 6.8 Tracking
+1. The E-Marketplace must allow support center information like email, phone number and chat URL in relation to an order to be transmitted between the consumer and the provider platforms&#x20;
+2. It must allow the creation/read/update/deletion of tickets in relation to an issue raised by a consumer, or an agent
 
-6.8.1 The E-Marketplace must enable fetching of tracking information related to the order
-
-6.8.2 It must allow real-time data to be transmitted from the provider to the consumer
-
-6.8.3 It must allow the consumer platform to transmit a webhook endpoint to the provider platform&#x20;
-
-6.8.4 It must allow the provider platform to transmit a tracking link to the consumer platform
-
-### 6.9 Cancellation
-
-6.9.1 It must allow creation of an order cancellation request
-
-6.9.2 It must allow creation of a canceled order
-
-6.9.3 roll back all liabilities that were created based on this order before cancellation
-
-6.9.3 It must allow addition of cancellation reason to the cancellation request
-
-6.9.4 It must allow de-allocation of fulfillment services and the agents associated with the fulfillment of the contract
-
-6.9.5 It must allow calculation of cancellation terms (if applicable) depending on the reason provided and time of the cancellation request
-
-6.9.6 It must be possible to add a link to the cancellation terms (including cancellation fee) document to the order
-
-6.9.7 It must allow transmission of the canceled order between the consumer and the provider
-
-### 6.10 Rating and Feedback
-
-6.10.1 The E-Marketplace must allow ratings for various rateable entities to be captured by people involved in a transaction
-
-6.10.2 It must allow the transmission of ratings from the consumer platform to the provider platform
-
-6.10.3 It must allow creation of a request to collect additional feedback related to a rating
-
-6.10.4 It must allow fetching of various rateable entities related to an order
-
-### 6.11 Support
-
-6.11.1 The E-Marketplace must allow support center information like email, phone number and chat URL in relation to an order to be transmitted between the consumer and the provider platforms&#x20;
-
-6.11.2 It must allow the creation/read/update/deletion of tickets in relation to an issue raised by a consumer, or an agent
-
-### 6.12 Information Mediator Interface
+### &#x20;6.12 Information Mediator Interface
 
 6.12.1 This sub-block runs protocols to communicate with the information mediator Building Block for exposing e-marketplace services to external Building Blocks and applications.
 
