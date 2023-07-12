@@ -104,15 +104,19 @@ This interface handles protocols to interact with the Registration Building Bloc
 
 <mark style="color:blue;">The building block should facilitate various out reach activities through social media, online, offline activities to create awareness and interest amongst the stakeholders about the eMarketplace. For example, a notification may be widespread for a fixed duration of time. Interested stakeholders may subscribe to the eMarketplace application/channel to receive notifications/messages of their interest.</mark>
 
-<mark style="color:blue;">(Arch 5.3)</mark>
+
 
 ## <mark style="color:blue;">**4.18 Content Management Interface**</mark>
 
 <mark style="color:blue;">This interface should be able to enable the adminstrators to moderate, curate, access and share the content creation. The interface can create details about eMarketplace, create knowledge banks, best practice repositories. It should also be able to connect the BB with social media, able to publish the digital advertisements.</mark>
 
+The building block must allow sellers to add name, images and description to products and services.&#x20;
+
 ## <mark style="color:blue;">**4.19 Workflow Interface**</mark>
 
 <mark style="color:blue;">This interface should be able to automate and orchestrate capabilities for specified business processes within and across Building Blocks. The initiation of a workflow, for example-submission of related documents for procurement/purchase request, shall be automated till the fulfilment of that order/request/cancellation.</mark>&#x20;
+
+The building block must allow administrators to configure various workflows that occur within a business or provider.&#x20;
 
 ## <mark style="color:blue;">**4.20 Dashboard & Business Analytics Interface**</mark>
 
