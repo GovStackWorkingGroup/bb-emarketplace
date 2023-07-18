@@ -30,8 +30,6 @@ The E-Marketplace can be visualized as a black box with all key digital function
 6. It must be able to transmit the search request along with all the search parameters to the provider platform.
 7. This building block should allow fetching of catalogs that matches the maximum number of search parameters.
 
-
-
 ## **6.2 Catalog Management**&#x20;
 
 1. The e-marketplace must allow creation of a catalog request for which context is required and should have a message.
@@ -138,7 +136,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 1. The E-Marketplace must allow support center information like email, phone number and chat URL in relation to an order to be transmitted between the consumer and the provider platforms&#x20;
 2. It must allow the creation/read/update/deletion of tickets in relation to an issue raised by a consumer, or an agent
 
-### &#x20;6.12 Information Mediator Interface
+### 6.12 Information Mediator Interface
 
 6.12.1 This sub-block runs protocols to communicate with the information mediator Building Block for exposing e-marketplace services to external Building Blocks and applications.
 
@@ -160,7 +158,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 6.14.1 These are dedicated API interfaces defined in the Signature Building Block and hence not defined here
 
-6.14.2 The E-Signature interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Signature Building Block for the digital signing and subsequent verification of each message that is transmitted between the consumer platform and the provider platform
+6.14.2 The E-Signature interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the e-Signature Building Block for the digital signing and subsequent verification of each message that is transmitted between the consumer platform and the provider platform
 
 ### 6.15 Registration Interface
 
@@ -168,13 +166,99 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 6.15.2 The Registration interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Registration Building Block to enable users on the Consumer Platform and the Provider Platform to sign up on their respective platforms with the required information necessary to perform transactions on the E-Marketplace
 
-### <mark style="color:red;">6.16  Digital Identity & Verification Interface</mark>
+### <mark style="color:blue;">6.16  Digital Identity & Verification Interface</mark>
 
+<mark style="color:blue;">6.16.1 These are dedicated API interfaces defined in the Digital Identity & Verification building block and hence not defined here</mark>
 
+<mark style="color:blue;">6.16.2 The Digital Identity & Verification interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block for sending user registration data (name, unique identity number, tax number, phone/mobile, email etc.) and verify the same with relevant registries through OTP, SMS, biometrics, physical appearance, during a transaction in the E-Marketplace. In case of any error/mismatch, it should be able to suggest alternatives.</mark>
 
-### <mark style="color:red;">6.17 Communication and Outreach</mark>
+### <mark style="color:blue;">6.17 Promotional Communications</mark>
 
+<mark style="color:blue;">6.17.1 The buyer MUST be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for next 6 months etc.</mark>
 
+<mark style="color:blue;">6.17.2 The platform should be able to connect with social media networks and reach the target audience.</mark>
+
+<mark style="color:blue;">6.17.3 The suppliers, citizens, entities should be able to subscribe to social media channels and to the website so as to receive updates from the buyer.</mark>
+
+<mark style="color:blue;">6.17.4 The buyer should be able to send alerts, messages, emails to subscribers about the new announcements.</mark>
+
+<mark style="color:blue;">6.17.5 The subscriber should be able to cancel their subscriptions as and when desired</mark>.
+
+### <mark style="color:blue;">6.18 Content Management Interface</mark>
+
+<mark style="color:blue;">6.18.1 The interface SHOULD be able to moderate, curate content creation</mark>
+
+<mark style="color:blue;">6.18.2 The interface SHOULD enable the user (citizen/supplier) to submit a document, best practices in a prescribed format</mark>
+
+<mark style="color:blue;">6.18.3 The interface SHOULD be able to store the documents in an organized manner</mark>
+
+<mark style="color:blue;">6.18.4 It should allow any user to access the organized content.</mark>
+
+<mark style="color:blue;">6.18.5 The interface allows the suppliers or users to add text, images, product description details etc. to a good/service</mark>
+
+### <mark style="color:blue;">6.19 Workflow Interface</mark>
+
+<mark style="color:blue;">6.19.1 The interface SHOULD automate the processes involved in a lifecycle of technical activities, as defined by the administrator.</mark>
+
+<mark style="color:blue;">6.19.2 The status of each process should be 'Live', accompanied with time stamp details.</mark>
+
+<mark style="color:blue;">6.19.3 Upon a status is technically fulfilled (whether completed/achieved, failed, cancelled), the next relevant process should get triggered automatically.</mark>
+
+### <mark style="color:blue;">6.20 Dashboard and Business Analytics Interface</mark>
+
+<mark style="color:blue;">6.20.1 This interface SHOULD visualize the 'LIVE' data on identified set of data fields such as number of items in stock, cancelled items etc.</mark>
+
+<mark style="color:blue;">6.20.2 This interface should analyze the data using basic mathematical operations (such as addition, average, percentage) and offer insights.</mark>
+
+<mark style="color:blue;">6.20.3 The interface MAY have advance mathematical operations such as analyzing historical data, prediction analyses using linear regression, machine learning algorithms.</mark>
+
+<mark style="color:blue;">6.20.4 This interface MAY be able to perform and fetch advance statistics, upon a request from the administrator, such as annual/half-yearly procurement/sales of goods and services, year on increments etc.</mark>
+
+### <mark style="color:blue;">6.21 GIS Interface</mark>
+
+<mark style="color:blue;">6.21.1 This interface SHOULD track the goods/services, with timestamps</mark>
+
+<mark style="color:blue;">6.21.2 The interface SHOULD tag the coordinates of entities, of persons as defined by the administrator</mark>
+
+<mark style="color:blue;">6.21.3 The interface SHOULD be live.</mark>
+
+### <mark style="color:blue;">6.22 Consent Management Interface</mark>
+
+<mark style="color:blue;">6.22.1 This interface SHOULD accept the data of different types and forms (biometrics, electronic messages, physical inputs)</mark>
+
+<mark style="color:blue;">6.22.2 The interface SHOULD let the user decide to accept/reject to share their consent to the applications</mark>
+
+<mark style="color:blue;">6.22.3 The interface MUST respect the Consent protocols/related policies as defined by the administrator.</mark>
+
+<mark style="color:blue;">6.22.4 The interface MUST validate the consent of the user, as required.</mark>
+
+### <mark style="color:blue;">6.23 Messaging Interface</mark>
+
+<mark style="color:blue;">6.23.1 This interface MUST act as a secured channel between sending and receiving users</mark>
+
+<mark style="color:blue;">6.23.2 This interface SHOULD facilitate to message both encrypted and non-encryoted</mark>
+
+<mark style="color:blue;">6.23.3 Logging, back-up, retrival of lost messages, storage features shall be enabled by this interface.</mark>
+
+### <mark style="color:blue;">6.24 Scheduling Interface</mark>
+
+<mark style="color:blue;">6.24.1 This interface SHOULD orchestrate processes with time stamps and when triggered</mark>
+
+<mark style="color:blue;">6.24.2 It SHOULD update the processes, current list of stock items</mark>
+
+<mark style="color:blue;">6.24.3 It SHOULD perform communication related activities such as sending alerts, reminders, automated messages, upon achieving a stage/state</mark>
+
+### <mark style="color:blue;">6.25 Bid Evaluation</mark>
+
+<mark style="color:blue;">6.25.1 The eMarketplace MUST allow the buyer to perform an evaluation (financial, technical, any other)</mark>
+
+<mark style="color:blue;">6.25.2 The E-Marketplace must allow the buyer to pre-define an evaluation criteria for a good or service.</mark>
+
+<mark style="color:blue;">6.25.3 It shall facilitate the buyer and supplier to seek clarification on any of the questions, they might have.</mark>&#x20;
+
+<mark style="color:blue;">6.25.4  It must allow the individual members to read the documents, other details and share their scores, remarks, ranking based on the pre-defined criteria</mark>
+
+<mark style="color:blue;">6.25.5 The evaluation report/remarks shall be fed to the administrator and the final acceptance (not the details) may be communicated to the suppliers.</mark>
 
 ### ## Everything below this line is Draft. Please Ignore
 

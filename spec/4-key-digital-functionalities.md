@@ -100,11 +100,9 @@ This interface handles protocols to interact with the Registration Building Bloc
 
 <mark style="color:blue;">This interface should be able to identify and verify the individuals (may be through citizen identification or other recognized identity), firms (tax number or licence) w.r.t their national data registries, while their registration. This will facilitate authentication, avoids duplication, monitoring and evaluation, fetch dashboard statistics etc.</mark>
 
-## <mark style="color:blue;">4.17 Communications and Out reach</mark>
+## <mark style="color:blue;">4.17 Promotional Communications</mark>
 
 <mark style="color:blue;">The building block should facilitate various out reach activities through social media, online, offline activities to create awareness and interest amongst the stakeholders about the eMarketplace. For example, a notification may be widespread for a fixed duration of time. Interested stakeholders may subscribe to the eMarketplace application/channel to receive notifications/messages of their interest.</mark>
-
-
 
 ## <mark style="color:blue;">**4.18 Content Management Interface**</mark>
 
@@ -132,11 +130,15 @@ The building block must allow administrators to configure various workflows that
 
 ## <mark style="color:blue;">**4.23 Messaging Interface**</mark>
 
-<mark style="color:blue;">This interface should act as a secured communication channel between users and service providers. Security features, logging, back-up, encrypted and non encrypted messages (such as notifications, reminders, alerts), chatbot services.</mark>
+<mark style="color:blue;">This interface should act as a secured communication channel between users and service providers. Security features, logging, back-up, encrypted and non encrypted messages (such as notifications, reminders, alerts), chatbot services shall be enabled by this interface.</mark>
 
 ## <mark style="color:blue;">**4.24 Scheduling Interface**</mark>
 
 <mark style="color:blue;">This interface shall be able to orchestrate processes automatically. For example, when a bidder submits documents, it shall trigget certain series of steps/processes, send an alert by email and SMS, update the stock of remaining items, number of goods and services in active phase etc. It shall also complete the lifecycleof processes involved in a process. For example, from initiation to closure of a series of activities involved in ordering an item/goods/services.</mark>
+
+## <mark style="color:blue;">4.25 Bid Evaluation</mark>
+
+<mark style="color:blue;">The building block should facilitate bid evaluation process (financial, technical or any other type) with a defined criteria. The evaluation shall be conducted by the buyer, only. At first, the buyer defines an evaluation criteria for a good or service. Then the buyer admin/a group of professionals will receive the documents/details submitted by the seller; and evaluate them based on the pre-defined criteria. In case the buyers/suppliers have any clarifications, the concerned party should be able to seek guidance through writing questions or addendum or corrigendum. Finally, the evaluation should select the best bidder/supplier.</mark>
 
 ## Everything below this line is DRAFT (Will be Removed Later)
 

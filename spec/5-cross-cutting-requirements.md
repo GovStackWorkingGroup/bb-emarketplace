@@ -34,7 +34,7 @@ All audit logs shall be integrity protected against tampering. The Consent BB sh
 
 <mark style="color:green;">5.4 Accessibility (Arch 4.5 is not clear about the below aspect)</mark>
 
-<mark style="color:green;">The BB shall be accessible on various delivery channels such as Mobile, Kiosk, Web, Application and should be digitally inclusive.</mark>
+<mark style="color:green;">The BB shall be accessible on various delivery channels such as Mobile, Kiosk, Web, Application and should be digitally inclusive for users with different capabilities.</mark>
 
 <mark style="color:green;">5.5 Robust (Arch 4.7)</mark>
 
@@ -45,6 +45,4 @@ All audit logs shall be integrity protected against tampering. The Consent BB sh
 <mark style="color:green;">5.7 Why is that Adaptors not mentioned in SEC 6 BB Modules? Are Connectors and Adaptors same?</mark>
 
 
-
-<mark style="color:blue;">5.4 Demonstration for Ayush</mark>&#x20;
 
