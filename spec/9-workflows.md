@@ -64,11 +64,14 @@ sequenceDiagram
     participant consumer interface
     box E-Marketplace BB
     participant Quotation Management
+    participant Inventory Management
     end
-    consumer-->>consumer interface: select items from catalog
-    consumer interface->>Quotation Management:request quote
-    Quotation Management->>consumer interface:return quote with breakup
-    consumer interface-->>consumer: view quote with breakup
+    consumer-->>consumer interface: select items <br/> from catalog
+    consumer interface->>Quotation Management:request <br/> quote
+    Quotation Management->>Inventory Management: check availability
+    Inventory Management->>Quotation Management: return availability
+    Quotation Management->>consumer interface:return quote <br/> with breakup
+    consumer interface-->>consumer: view quote <br/> with breakup
 ```
 
 
