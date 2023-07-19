@@ -132,18 +132,19 @@ sequenceDiagram
     participant consumer interface
     box E-Marketplace BB
     participant Order Management
+    participant Fulfillment Management
     participant Payment BB Interface
     participant E-Signature BB Interface
     end
     consumer-->>consumer interface: checkout
     consumer interface->>Payment BB Interface: pay for order
-    Payment BB Interface->>consumer interface: return transaction details
     consumer interface->>E-Signature BB Interface:sign order
     consumer interface->>Order Management:confirm order
     Order Management->>E-Signature BB Interface:verify signature
     Order Management->>Order Management: Create Order
+    Order Management->>Fulfillment Management: check serviceability
     Order Management->>E-Signature BB Interface:sign order
-    Order Management->>consumer interface: Send Confirmed Order
+    Order Management->>consumer interface: Return Confirmed Order
     consumer interface->>E-Signature BB Interface:verify signature
     consumer interface-->>consumer:view confirmed order
 
