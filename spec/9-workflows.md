@@ -128,17 +128,37 @@ The consumer can then utilize the order details received from the provider platf
 
 ```mermaid
 sequenceDiagram
-user->>consumer interface: payment request
-consumer interface-->>payment interface: payment
-consumer interface-->>E-sign:request signed
-consumer interface-->>Contract Creation and Management:create contract
-Contract Creation and Management-->>E-sign:verify request
-Contract Creation and Management-->>inventory:check inventory
-Contract Creation and Management-->>fulfillment:check fulfillment
-Contract Creation and Management-->>consumer interface:response with Order ID
-consumer interface-->>E-sign:verify request
-consumer interface->>user:response with Order ID
- 
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Terms Management
+    participant Inventory Management
+    participant Quotation Management
+    participant Fulfillment Management
+    participant Payment BB Interface
+    participant E-Signature BB Interface
+    end
+    consumer-->>consumer interface: checkout
+    consumer interface->>Payment BB Interface: pay for order
+    Payment BB Interface->>consumer interface: return transaction details
+    consumer interface->>E-Signature BB Interface:sign order
+    consumer interface->>Order Management:confirm order
+    Order Management->>E-Signature BB Interface:verify signature
+    Order Management->>Inventory Management: check availability
+    Inventory Management->>Order Management: return availability
+    Order Management->>Inventory Management: lock inventory
+    Inventory Management->>Order Management: inventory locked
+    Order Management->>Fulfillment Management: check serviceability
+    Fulfillment Management->>Order Management: return serviceability <br/> with fulfillment charges
+    Order Management->>Order Management: Create Order
+    Order Management->>E-Signature BB Interface:sign order
+    Order Management->>consumer interface: Send Confirmed Order
+    consumer interface->>E-Signature BB Interface:verify signature
+    consumer interface-->>consumer:view confirmed order
+
+
+     
 
 ```
 
