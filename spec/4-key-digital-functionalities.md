@@ -48,35 +48,35 @@ This key digital functionality should allow providers to quickly and efficiently
 
 Authorized users of provider platforms should be able to manage inventory of various resources available in a catalog. Providers should be able to manage the availability of products, agents, vehicles etc, <mark style="color:blue;">dynamically/on real time basis,</mark> in this building block.
 
-## 4.4 Quote Agreement (Quote Management)
+## 4.4 Quotation Management
 
 This key digital functionality of the e-marketplace building block should allow consumers to select items, offers, and add-ons from a catalog and build an order. It should be able to transmit them to the respective provider and request a quote. Using this functionality, consumers should be able to bid for items <mark style="color:blue;">(one or more)</mark> selected from <mark style="color:blue;">(one or more different sources/vendors)</mark> a catalog. It should also be able to render the quotation agreed between transacting entities. Providers should be able to calculate a quote basis the items, offers and add-ons selected. Providers should also be able to add dynamic offers without being specifically requested by the consumer. For example, a consumer should be able to add items from a provider's catalog, add offers, select add-ons into a common cart and view the total cart value. Similarly, a business should be able to create a bid for a tender and submit it to the provider for evaluation. This functionality should also allow providers to request additional information from the consumer that is required to proceed to the next stage. This functionality should also allow providers to transmit requests to the consumer to allow consented data sharing required to calculate a quote.
 
-## 4.5 Terms <mark style="color:blue;">and</mark> Agreement
+## 4.5 Order Terms Management
 
 This key digital functionality of the e-marketplace building block should allow the consumer to share billing details, fulfillment details, <mark style="color:blue;">legal jurisdiction of dispute and resolution mechanism</mark> and any additional information required for the provider to generate the final contract / order with the terms of fulfillment, payment, cancellation, refund, returns, and replacements. Administrators of the provider platforms should be able to configure various rules for final quote calculation, payment terms, and other terms of service depending upon the information received from the consumer. Providers should be able to evaluate the additional information that was requested when executing the quote agreement function, and re-calculate the quote. For example, a healthcare service might have a standard quote for general citizens, but provide a discounted rate when it discovers from the additional data that the consumer is a senior citizen. It should allow the consumer to view the final payment terms, and all details that will be included in the final contract. This functionality should allow for the final draft order/contract to be exchanged between the consumer and the provider.
 
-## 4.6 Contract Creation and Management
+## 4.6 Order Management
 
 This key digital functionality of the e-marketplace building block should allow the consumer to confirm an order. Bidders can confirm a bid in an auction <mark style="color:blue;">**(are we anticipating to perform auction too?)**</mark>. It should allow creation and confirmation of an order expressed as a dual-digitally signed contract, with the terms that were agreed upon. In case the terms require payment before the creation of the contract, it should also allow the transmission of the proof payment made from the payer to the payee. It should allow the provider to transmit a contract to the consumer. It should also allow the consumer to request the provider to update various elements of the contract. It should also allow updates to the terms of the contract and inform the consumer of the update. _<mark style="color:red;">It should allow browsing of contracts based on its various attributes.</mark>_
 
-## 4.7 Contract Fulfillment
+## 4.7 Order Fulfillment
 
 This key digital functionality of the e-marketplace building block should allow the consumer of a service to receive various status updates regarding the fulfillment of a contract. This should also allow providers to send various fulfillment updates to the consumer. It should also allow providers to allocate service agents manually or algorithmically if and when required (for example, ambulance allocation as a response to a nearby emergency). <mark style="color:blue;">The contract fulfilment could be having a long duration of workflow (for ex. 3 years), depending upon the nature of the contract signed. The building block should be able to facilitate all the processes and reflect dynamic status of a signed contract with updates/remarks/comments. For example, the sign-off agreement with feedback, lessons learnt report shall be submitted as and when the project finishes formally.</mark>
 
-## 4.8 Purchase Order fulfillment Tracking (Purchase Order Management)
+## 4.8 Order Tracking
 
 Consumers should be able to track the fulfillment of an order in real-time. Providers should be able to stream real-time data to the consumer related to the fulfillment of an order. This tracking is not necessarily geospatial, but can contain any information that provides the consumer with real-time information like tracking of physical variables like temperature, speed, countdown timers in bidding use cases. This functionality should render the real-time data to the consumer via a tracking page.&#x20;
 
-## 4.9 Purchase Order Cancellation
+## 4.9 Order Cancellation
 
 This key digital functionality of the e-marketplace building block should allow the consumer or the provider to cancel a contract. This functionality should allow a consumer to view the terms of cancellation sent by a provider in response to a cancellation request. It should also allow both the parties to see the canceled order. Providers should be able to request a cancellation reason along with additional information related to the reason for the cancellation. Consumers should be able to provide a cancellation reason and additional information related to the cancellation request. <mark style="color:blue;">Once a cancellation is agreed by both the parties, the current and historical data related to this activity/chain of activities shall be rolled back or archived, as per the policy.</mark>
 
-## 4.10 Rating and Feedback (Feedback Management)
+## 4.10 Rating and Feedback Management
 
 Users of this key digital functionality should be able to rate various entities involved in the fulfillment of a contract.  These users can be both consumers and providers. A consumer should be able to rate various aspects of the service like the agent, vehicle, quality of service, customer support etc. A provider’s agent should be able to rate the consumer as well. Upon receipt of a rating, a provider can ask for additional feedback related to the rating. <mark style="color:blue;">This means that the activity can occur throughoout the cycle of various activities, not just at the end of a single process.</mark>
 
-## 4.11 Support (Support Management)
+## 4.11 Support Management
 
 Users of this key digital functionality should be able contact the support center to enquire about any issues that they may be facing and create a ticket. Customer support executives should be able to view details of a contract, fetch related information, view open tickets, and resolve them. If needed, customer support executives can fetch the contact details of a provider, or their agents to gain more information related to the fulfillment of an order.&#x20;
 

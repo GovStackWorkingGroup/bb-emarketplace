@@ -34,13 +34,14 @@ The search flow allows consumers to search for available products or services . 
 ```mermaid
 sequenceDiagram
     user->>consumer interface: search 
-    consumer interface->>Catalog Management:fetch catalog
-    consumer interface->>user:return search
+    consumer interface->>Catalog Management:declare search intent
+   Catalog Management->>consumer interface:return catalog
+    consumer interface->>user:return search results
 ```
 
 
 
-### 9.2 Quote Agreement
+### 9.2 Quotation Management
 
 The consumer utilizes the internal workflow within the platform to explore and select from a range of available offers and attributes. These choices have an impact on the pricing, as different combinations can result in varying costs.
 
@@ -54,14 +55,15 @@ This internal workflow allows the consumer to have control and flexibility in se
 
 ```mermaid
 sequenceDiagram
-    consumer->>consumer interface: fetch quote
-    consumer interface->>quote agreement:fetch quote
-    consumer interface->>consumer: return quote
+    consumer->>consumer interface: select items from catalog
+    consumer interface->>quote agreement:request quote
+    quote agreement->>consumer interface:return quote with breakup
+    consumer interface->>consumer: return quote with breakup
 ```
 
 
 
-### 9.3 Terms and Agreements
+### 9.3 Order Terms Management
 
 The consumer carefully reviews the contents of their cart, ensuring that everything selected is accurate and satisfactory. Once satisfied, the consumer initiates a checkout call, indicating their intention to proceed with the payment. This action finalizes the cart, preventing any further modifications.
 
@@ -77,15 +79,16 @@ Alongside the payment link, the provider platform communicates any specific term
 sequenceDiagram
 consumer->>consumer interface: fetch T&C and payment link
     consumer interface->>Terms Agreement: fetch T&C
-consumer interface-->>Inventory Management: fetch inventory detail
-consumer interface-->>Contract Fulfillment: fetch fulfillment detail
+Terms Agreement-->>Inventory Management: fetch inventory detail
+Terms Agreement-->>Contract Fulfillment: fetch fulfillment detail
+Terms Agreement->>consumer interface: return T&C with payment link 
 consumer interface->>consumer:return T&C with payment link
 
             
 
 ```
 
-### 9.4 Order Confirmation
+### 9.4 Order Management
 
 Once the consumer receives the payment link and reviews the terms and conditions, they proceed to make a payment. Upon a successful transaction, the consumer platform initiates a confirmation call to the provider platform. This call serves as a notification that the payment has been completed and confirms the order placement.
 
@@ -100,16 +103,18 @@ sequenceDiagram
 user->>consumer interface: payment request
 consumer interface-->>payment interface: payment
 consumer interface-->>E-sign:request signed
-consumer interface-->>inventory:check inventory
-consumer interface-->>fulfillment:check fulfillment
-consumer interface-->>Contract Creation and Management:contract created
-consumer interface-->>E-sign:request verified
+consumer interface-->>Contract Creation and Management:create contract
+Contract Creation and Management-->>E-sign:verify request
+Contract Creation and Management-->>inventory:check inventory
+Contract Creation and Management-->>fulfillment:check fulfillment
+Contract Creation and Management-->>consumer interface:response with Order ID
+consumer interface-->>E-sign:verify request
 consumer interface->>user:response with Order ID
  
 
 ```
 
-### 9.5 Contract fulfillment
+### 9.5Order Fulfillment
 
 Once an order is confirmed, the user receives the details of the confirmed order, and they have the option to check the status of their order. The order status typically includes stages such as "placed," "packed," "dispatched," and so on. The "placed" status indicates that the order has been successfully received and recorded. The "packed" status signifies that the items in the order have been gathered and prepared for shipment. The "dispatched" status indicates that the package has been handed over to the delivery service for transportation.
 
@@ -119,7 +124,8 @@ Once an order is confirmed, the user receives the details of the confirmed order
 sequenceDiagram
 consumer->>consumer interface: order status
     consumer interface->>Contract Fulfillment:fetch order status
-    consumer interface->>consumer: return current status of order
+    Contract Fulfillment->>consumer interface: return current status of order
+consumer interface->>consumer: return current status of order
 ```
 
 #### 9.5.2 User can update the status of the order
@@ -131,10 +137,11 @@ sequenceDiagram
     
 Admin->>provider interface: requets update fulfillment status
 provider interface->>Contract Fulfillment:Update fulfillment status
+Contract Fulfillment->>provider interface:Update fulfillment status response
 provider interface->>Admin:Fulfillment details updated
 ```
 
-### 9.6 Status tracking
+### 9.6 Order Tracking
 
 When a consumer places an order and it is confirmed, they are provided with the option to track the status of their order. This tracking feature allows the consumer to stay informed about the progress of their purchase. The order status typically encompasses various updates related to the delivery process, giving the consumer insights into the whereabouts and estimated arrival time of their package.
 
@@ -148,7 +155,9 @@ User can make a request to get the tracking status of an order.
 sequenceDiagram
 consumer->>consumer interface: request order tracking
     consumer interface->>Tracking:fetch order tracking status
+Tracking->>consumer interface: return current tracking status of order
     consumer interface->>consumer: return current tracking status of order
+    
 ```
 
 #### 9.6.2 Update order track status
@@ -165,7 +174,7 @@ provider interface->>Tracking: Update tracking status
 provider interface->>Admin:Tracking details updated
 ```
 
-### 9.7 Cancellation
+### 9.7 Order Cancellation
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
 
@@ -173,33 +182,45 @@ When a consumer places an order and it is confirmed, they are provided with the 
 
 ```mermaid
 sequenceDiagram
-UI->>consumer platform interface: cancellation_Request
-    consumer platform interface->>provider platform interface: cancellation
-             provider platform interface->>Cancellation:requestCancellation
-    provider platform interface->>consumer platform interface: on_cancellation
-    consumer platform interface->>UI: cancellation details
+consumer->>consumer interface: request order cancellation
+    consumer interface->>order cancellation:order cancellation
+    order cancellation-->>Order Tracking:update order status
+    order cancellation-->>Order Fulfillment:update fulfillment status
+    order cancellation-->>consumer interface: cancellation response
+    consumer interface->>consumer:order cancellation response
 ```
 
 
 
-### 9.8 Rating and Feedback
+### 9.8 Rating and Feedback Management
 
 This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
 
-
+#### 9.8.1 Rating and feedback by user
 
 ```mermaid
 sequenceDiagram
-UI->>consumer platform interface: ratingFeedback
-    consumer platform interface->>provider platform interface: rating
-    provider platform interface->>Rating and Feedback:rating
-    provider platform interface->>consumer platform interface: on_rating
-    consumer platform interface->>UI: rating acceptance message
+consumer->>consumer interface: rating and feedback
+    consumer interface->>Rating and Feedback Management:rating
+Rating and Feedback Management->>consumer interface:rating response
+     consumer interface->>consumer: rating acceptance message
 ```
 
 
 
-### 9.9 Support
+#### 9.8.2 Rating and feedback by admin
+
+###
+
+```mermaid
+sequenceDiagram
+Admin->>provider interface: rating and feedback
+    provider interface->>Rating and Feedback Management:rating
+Rating and Feedback Management->>provider interface:rating response
+     provider interface->>Admin: rating acceptance message
+```
+
+### 9.9 Support Management
 
 User can make a request for the support, this can happen anytime during the lifecycle of an order.&#x20;
 
@@ -207,11 +228,11 @@ User can make a request for the support, this can happen anytime during the life
 
 ```mermaid
 sequenceDiagram
-UI->>consumer platform interface: support
-    consumer platform interface->>provider platform interface: support
-    provider platform interface->>Support:support
-    provider platform interface->>consumer platform interface: on_support
-    consumer platform interface->>UI: support Response
+consumer->>consumer interface: support request
+    consumer interface->>Support Management:Support request
+Support Management->>consumer interface:Support response
+consumer interface->>consumer:Support response
+    
 ```
 
 

@@ -30,7 +30,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 6. It must be able to transmit the search request along with all the search parameters to the provider platform.
 7. This building block should allow fetching of catalogs that matches the maximum number of search parameters.
 
-## **6.2 Catalog Management**&#x20;
+### **6.2 Catalog Management**&#x20;
 
 1. The e-marketplace must allow creation of a catalog request for which context is required and should have a message.
 2. The context is used to describe the metadata of the details provided in the message part. The context must contain an action. It also must contain a unique transaction ID received by the search request to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. It must contain a timestamp denoting the time of the search requested for the catalog.
@@ -53,7 +53,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 5. It must allow checking of availability of an Item in a catalog to avoid out-of-stock and over-stocking of the product.
 6. It should provide a configurable system for notification which notifies based on the defined criteria. Ex- If product quantity is less than 50 , it must notify the seller with email or SMS.
 
-### 6.4 Quote Agreement&#x20;
+### 6.4 Quotation Management
 
 1. The E-Marketplace must enable the construction of a cart (or a cart-like experience)  on the consumer platform, it must consist of context and message
 2. It must allow addition / removal / update of multiple items and their respective quantities in the cart
@@ -67,7 +67,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 10. Provider platform should response with context and either order or with error
 11. Consumer platform must process the quote properly and show the details along with the offers/delivery/payments details and break up of the quote.
 
-### 6.5 Terms Agreement&#x20;
+### 6.5 Order Terms Management&#x20;
 
 1. The E-Marketplace must enable the construction of a draft order (or a pre-checkout like experience) on the consumer platform, the draft order must contain context and message with order details.
 2. Consumer applications  must allow the modification of the billing details of the order before a request is sent to the provider.
@@ -84,7 +84,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 
 
-### 6.6 Contract Creation and Management&#x20;
+### 6.6 Order Management&#x20;
 
 1. The E-Marketplace must enable creation of a confirmed order with an unique Order ID, the confirm order must contain context and message
 2. Before confirming an order to provider platform consumer platform must allow modification of a fulfillment state in the order
@@ -94,7 +94,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 6. Provider platform response to a confirmed order must contain context and either order or an error
 7. Consumer platform must be able to handle the order confirmation received from the provider platform and display the success message to the consumer along with the order id and the product's details in the order.
 
-### 6.7 Contract Fulfillment&#x20;
+### 6.7 Order Fulfillment&#x20;
 
 1. The E-Marketplace must enable discovering and allocation of an Agent (if applicable) to the fulfillment of a confirmed order.
 2. Consumer application must be able to fetch the status of the order from the provider platform.
@@ -102,7 +102,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 4. Provider application must allow updates of the status of the order.
 5. When a new event occurs on the fulfillment, provider platform must pass on the information to the consumer platform.
 
-### 6.8 Tracking&#x20;
+### 6.8 Order Tracking&#x20;
 
 1. The E-Marketplace must enable fetching of tracking information related to the order
 2. It must allow real-time data to be transmitted from the provider to the consumer
@@ -111,7 +111,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 5. Consumer platform must allow display of the tracking details to the consumer along with the history
 6. Consumer applications must be able to segregate the tracking details based on the order ID.
 
-### 6.9 Cancellation&#x20;
+### 6.9 Order Cancellation&#x20;
 
 1. Consumer platform must allow creation of an order cancellation request for all the active orders which are yet not fulfilled.
 2. Consumer platform must provide order id and allow addition of cancellation reason to the cancellation request
@@ -123,7 +123,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 8. On cancellation of an order the provider platform must adjust the inventory of the products canceled
 9. Consumer platform must handle the response from the provider platform for a cancellation request and update the order status and display the details of cancellation of order along with the cancellation terms (including cancellation fee).
 
-### 6.10 Rating and Feedback&#x20;
+### 6.10 Rating and Feedback Management&#x20;
 
 1. The E-Marketplace must allow ratings for various rateable entities to be captured by people involved in a transaction
 2. It must allow the transmission of ratings from the consumer platform to the provider platform
@@ -131,7 +131,7 @@ The E-Marketplace can be visualized as a black box with all key digital function
 4. It must allow creation of a request to collect additional feedback related to a rating
 5. It must allow fetching of various rateable entities related to an order
 
-### 6.11 Support&#x20;
+### 6.11 Support Management&#x20;
 
 1. The E-Marketplace must allow support center information like email, phone number and chat URL in relation to an order to be transmitted between the consumer and the provider platforms&#x20;
 2. It must allow the creation/read/update/deletion of tickets in relation to an issue raised by a consumer, or an agent

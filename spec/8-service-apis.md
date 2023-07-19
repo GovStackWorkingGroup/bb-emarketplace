@@ -21,69 +21,79 @@ The e-marketplace consists of two categories of APIs namely
 
 Both types of APIs will be defined using the OpenAPI (Swagger) standard. The API definitions will be hosted outside of this document. This section may provide a brief description of required APIs.
 
-### 8.1.1 Platform Interoperability APIs : Search
+### 8.1Searching
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/search" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/on_search" method="post" %}
-[beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
-{% endswagger %}
-
 ###
 
-### 8.1.2 Platform Interoperability APIs : Quote Agreement
+### 8.1 Quotation Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/select" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.3 Platform Interoperability APIs : Terms Agreement
+### 8.3 Order Terms Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/init" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.4 Platform Interoperability APIs : Contract Creation
+### 8.4 Order Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/cancel" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.5 Platform Interoperability APIs : Cancellation
+### 8.5 Order Cancellation
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/confirm" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.6 Platform Interoperability APIs : Contract Update
+### 8.6 Platform Interoperability APIs : Contract Update
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/update" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.7 Platform Interoperability APIs : Fulfillment
+### 8.7 Order Fulfillment
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/status" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.8 Platform Interoperability APIs : Tracking
+### 8.8 Order Tracking
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/track" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.9 Platform Interoperability APIs : Rating
+### 8.9 Rating and Feedback Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/rating" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.0 Platform Interoperability APIs : Support
+### 8.10 Support Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/support" method="post" %}
+[beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
+{% endswagger %}
+
+
+
+### 8.11 Inventory Management
+
+
+
+### 8.12 API support
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/on_search" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
