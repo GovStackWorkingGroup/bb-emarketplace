@@ -25,7 +25,7 @@ This section captures the example workflows that may take place between internal
 
 
 
-### 9.1 Searching
+### 9.1 Searching for Items
 
 The search flow allows consumers to search for available products or services . When a consumer initiates a search request, the catalog providers relevant products or services available respond to the search request by sending back detailed information about their offerings. This includes product details such as descriptions, images, specifications, prices, and any applicable offers or promotions.
 
@@ -46,7 +46,7 @@ sequenceDiagram
 
 
 
-### 9.2 Quotation Management
+### 9.2 Fetching a quote for selected items
 
 The consumer utilizes the internal workflow within the platform to explore and select from a range of available offers and attributes. These choices have an impact on the pricing, as different combinations can result in varying costs.
 
@@ -76,7 +76,7 @@ sequenceDiagram
 
 
 
-### 9.3 Order Terms Management
+### 9.3 Initializing an order by providing billing and fulfillment details
 
 The consumer carefully reviews the contents of their cart, ensuring that everything selected is accurate and satisfactory. Once satisfied, the consumer initiates a checkout call, indicating their intention to proceed with the payment. This action finalizes the cart, preventing any further modifications.
 
@@ -116,7 +116,7 @@ sequenceDiagram
 
 ```
 
-### 9.4 Order Management
+### 9.4 Confirming an Order
 
 Once the consumer receives the payment link and reviews the terms and conditions, they proceed to make a payment. Upon a successful transaction, the consumer platform initiates a confirmation call to the provider platform. This call serves as a notification that the payment has been completed and confirms the order placement.
 
@@ -142,11 +142,11 @@ consumer interface->>user:response with Order ID
 
 ```
 
-### 9.5Order Fulfillment
+### 9.5 Checking the status of an order&#x20;
 
 Once an order is confirmed, the user receives the details of the confirmed order, and they have the option to check the status of their order. The order status typically includes stages such as "placed," "packed," "dispatched," and so on. The "placed" status indicates that the order has been successfully received and recorded. The "packed" status signifies that the items in the order have been gathered and prepared for shipment. The "dispatched" status indicates that the package has been handed over to the delivery service for transportation.
 
-#### 9.5.1 User request for the status of the order
+#### 9.5.1 User explicitly requests for the fulfillment status of the order
 
 ```mermaid
 sequenceDiagram
@@ -156,7 +156,7 @@ consumer->>consumer interface: order status
 consumer interface->>consumer: return current status of order
 ```
 
-#### 9.5.2 User can update the status of the order
+#### 9.5.2 Provider updates the fulfillment status of an order
 
 ####
 
@@ -169,7 +169,7 @@ Contract Fulfillment->>provider interface:Update fulfillment status response
 provider interface->>Admin:Fulfillment details updated
 ```
 
-### 9.6 Order Tracking
+### 9.6 Tracking the fulfillment of an order
 
 When a consumer places an order and it is confirmed, they are provided with the option to track the status of their order. This tracking feature allows the consumer to stay informed about the progress of their purchase. The order status typically encompasses various updates related to the delivery process, giving the consumer insights into the whereabouts and estimated arrival time of their package.
 
@@ -202,7 +202,7 @@ provider interface->>Tracking: Update tracking status
 provider interface->>Admin:Tracking details updated
 ```
 
-### 9.7 Order Cancellation
+### 9.7 Cancelling an Order
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
 
