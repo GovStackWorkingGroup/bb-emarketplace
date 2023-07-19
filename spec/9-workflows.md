@@ -242,7 +242,24 @@ When a consumer places an order and it is confirmed, they are provided with the 
 
 One of the primary aspects of the order status is the delivery status, which indicates whether the package has been dispatched from the seller's location or the warehouse. It confirms that the order is on its way to the consumer. This status assures the consumer that their purchase is in the process of being delivered.
 
-#### 9.8.1 Tracking request
+#### 9.8.1 Update Agent's tracking information
+
+User can update the tracking  status of an order.
+
+```mermaid
+sequenceDiagram
+    box E-Marketplace BB
+    participant Tracking Management
+    end
+    participant Agent interface
+    Actor Agent
+    loop periodically
+        Agent-->>Agent interface: generate tracking data
+        Agent interface->>Tracking Management: push tracking data
+    end
+```
+
+#### 9.8.2 Tracking an order
 
 User can make a request to get the tracking status of an order.
 
@@ -254,13 +271,9 @@ sequenceDiagram
     participant Order Management
     participant Tracking Management
     end
-    participant Agent interface
-    Actor Agent
     consumer-->>consumer interface: track order
     consumer interface->>Order Management: track order
     Order Management->>Tracking Management: track order
-    Agent-->>Agent interface: generate tracking data
-    Agent interface->>Tracking Management: push tracking data
     Order Management->> Tracking Management: fetch tracking link
     Order Management->> consumer interface: send tracking link
     consumer interface-->>consumer: render real-time <br/> tracking screen
@@ -270,19 +283,7 @@ sequenceDiagram
     
 ```
 
-#### 9.8.2 Update order track status
 
-User can update the tracking  status of an order.
-
-
-
-```mermaid
-sequenceDiagram
-    
-Admin->>provider interface: request order tracking status
-provider interface->>Tracking: Update tracking status
-provider interface->>Admin:Tracking details updated
-```
 
 ### 9.1.7 Cancelling an Order
 
