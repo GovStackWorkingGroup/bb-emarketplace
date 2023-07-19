@@ -159,7 +159,7 @@ sequenceDiagram
 
 Once an order is confirmed, the user receives the details of the confirmed order, and they have the option to check the status of their order. The order status typically includes stages such as "placed," "packed," "dispatched," and so on. The "placed" status indicates that the order has been successfully received and recorded. The "packed" status signifies that the items in the order have been gathered and prepared for shipment. The "dispatched" status indicates that the package has been handed over to the delivery service for transportation.
 
-#### 9.5.1 User explicitly requests for the fulfillment status of the order
+#### 9.1.5.1 User explicitly requests for the fulfillment status of the order
 
 ```mermaid
 sequenceDiagram
@@ -177,17 +177,25 @@ sequenceDiagram
     consumer interface-->>consumer: display latest status of order
 ```
 
-#### 9.5.2 Provider updates the fulfillment status of an order
+#### 9.1.5.2 Provider's Agent asynchronously updates the fulfillment status of an order at their end
 
-####
+
 
 ```mermaid
 sequenceDiagram
-    
-Admin->>provider interface: requets update fulfillment status
-provider interface->>Contract Fulfillment:Update fulfillment status
-Contract Fulfillment->>provider interface:Update fulfillment status response
-provider interface->>Admin:Fulfillment details updated
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Fulfillment Management
+    end
+    participant Agent Interface
+    Actor Agent
+    Agent -->> Agent Interface: update fulfillment status
+    Agent Interface-->>Fulfillment Management: Update fulfillment status
+    Fulfillment Management->>Order Management: update current status <br/> of fulfillment
+    Order Management->>consumer interface: return latest order state
+    consumer interface-->>consumer: display latest status of order
 ```
 
 ### 9.1.6 Tracking the fulfillment of an order
