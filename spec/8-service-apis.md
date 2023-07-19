@@ -7,8 +7,8 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 ## 8.1 API Standards
 
 * The microservice interfaces are defined as per [OPENAPI Ver3.0 standards](https://swagger.io/specification/).&#x20;
-* For implementation of Administration APIs, it is suggested to refer [TMF630\_REST\_API\_Design\_Guidelines](https://www.tmforum.org/resources/standard/tmf630-rest-api-design-guidelines-4-2-0/).
-* For implementation of Interoperability APIs, it is suggested to refer to [Beckn Protocol API Specification](https://github.com/beckn/protocol-specifications)
+* For implementation of Administration APIs, we have refered to [TMF630\_REST\_API\_Design\_Guidelines](https://www.tmforum.org/resources/standard/tmf630-rest-api-design-guidelines-4-2-0/).
+* For implementation of Interoperability APIs, we have refered various open protocol standards including  [Beckn Protocol API Specification](https://github.com/beckn/protocol-specifications).
 
 The e-marketplace consists of two categories of APIs namely
 
@@ -30,6 +30,8 @@ Both types of APIs will be defined using the OpenAPI (Swagger) standard. The API
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/on_search" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
+
+###
 
 ### 8.1.2 Platform Interoperability APIs : Quote Agreement
 

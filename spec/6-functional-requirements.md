@@ -18,7 +18,7 @@ _\<Example Functional Requirements>_
 
 The E-Marketplace can be visualized as a black box with all key digital functionalities discussed in section 4. It does not assume any particular standard like REST for all internal resource management. A brief description of the functional requirements required to orchestrate each key digital functionality is given below, <mark style="color:blue;">considering the development of a</mark> minimum viable product ~~perspective~~. Detailed design and more elaborate feature lists of these blocks can be customized by developers to optimally match respective implementation needs. It is also left to the application implementing this building block to receive the responses from the E-marketplace and present it appropriately and provision for associated user interface interactions.
 
-### 6.1 Searching
+
 
 ### 6.1 Searching&#x20;
 
@@ -166,13 +166,63 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 6.15.2 The Registration interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Registration Building Block to enable users on the Consumer Platform and the Provider Platform to sign up on their respective platforms with the required information necessary to perform transactions on the E-Marketplace
 
-### <mark style="color:blue;">6.16  Digital Identity & Verification Interface</mark>
+### 6.16  Digital Identity & Verification Interface
+
+6.16.1 These are dedicated API interfaces defined in the Digital Identity & Verification Building Block and hence not defined here.
+
+6.16.2 The Digital Identity & Verification Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block to enable users on the Consumer Platform and the Provider Platform interface to verify the digital identities in the E-Marketplace based on their national data registers.
 
 <mark style="color:blue;">6.16.1 These are dedicated API interfaces defined in the Digital Identity & Verification building block and hence not defined here</mark>
 
 <mark style="color:blue;">6.16.2 The Digital Identity & Verification interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block for sending user registration data (name, unique identity number, tax number, phone/mobile, email etc.) and verify the same with relevant registries through OTP, SMS, biometrics, physical appearance, during a transaction in the E-Marketplace. In case of any error/mismatch, it should be able to suggest alternatives.</mark>
 
 ### <mark style="color:blue;">6.17 Promotional Communications</mark>
+
+<mark style="color:red;">6.17.1</mark> These are dedicated API interfaces defined in the <mark style="color:red;">Communication and Outreach</mark> Building Block and hence not defined here.
+
+6.17.2 The <mark style="color:red;">Communication and Outreach</mark> Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the <mark style="color:red;">Communication and Outreach</mark> Building Block to enable users on the Consumer Platform and the Provider Platform interface to integrate with social media and messaging platform.
+
+### <mark style="color:red;">6.18</mark> <mark style="color:red;"></mark><mark style="color:red;">**Content Management Interface**</mark>
+
+<mark style="color:red;">6.18.1</mark> These are dedicated API interfaces defined in the content management interface Building Block and hence not defined here.
+
+6.18.2 The content management interface Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the content management interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to manage content creation.
+
+### <mark style="color:red;">6.19</mark> <mark style="color:red;"></mark><mark style="color:red;">**Workflow Interface**</mark>
+
+<mark style="color:red;">6.19.1</mark> These are dedicated API interfaces defined in the Workflow interface Building Block and hence not defined here.
+
+6.19.2 The workflow interface Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the workflow interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to define and orchestrate the workflow within the system.
+
+### <mark style="color:red;">6.20</mark> <mark style="color:red;"></mark><mark style="color:red;">**Dashboard & Business Analytics Interface**</mark>
+
+<mark style="color:red;">6.20.1</mark> These are dedicated API interfaces defined in the Dashboard & Business Analytics interface Building Block and hence not defined here.
+
+6.20.2 The dashboard & business analytics interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the dashboard & business analytics interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to visualize the data in the system.
+
+### <mark style="color:red;">6.21</mark> <mark style="color:red;"></mark><mark style="color:red;">**GIS BB Interface**</mark>
+
+<mark style="color:red;">6.21.1</mark> These are dedicated API interfaces defined in the GIS interface Building Block and hence not defined here.
+
+<mark style="color:red;">6.21.2</mark> The GIS interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the GIS interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to use GIS based services like GIS tagging, tracking etc.
+
+### <mark style="color:red;">6.22</mark> <mark style="color:blue;">**Consent Management Interface**</mark>
+
+<mark style="color:red;">6.22.1</mark> These are dedicated API interfaces defined in the consent management interface Building Block and hence not defined here.
+
+<mark style="color:red;">6.22.2</mark> The consent management interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the consent management interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to capture and validate the consent of the users.
+
+### 6.23 Messaging Interface
+
+6.22.1 These are dedicated API interfaces defined in the messaging interface Building Block and hence not defined here.
+
+6.22.2 The messaging interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the messaging interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to exchange messages over a secured channel and have logging features.
+
+### 6.23 Scheduling Interface
+
+6.22.1 These are dedicated API interfaces defined in the scheduling interface Building Block and hence not defined here.
+
+6.22.2 The scheduling interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the scheduling interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to automate the process based on the events in the system.
 
 <mark style="color:blue;">6.17.1 The buyer MUST be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for next 6 months etc.</mark>
 

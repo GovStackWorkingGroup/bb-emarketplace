@@ -1,105 +1,277 @@
 # 9 Internal Workflows
 
+In this section, we identify workflows to manifest some of the main services. These may be enhanced or customized as needed for specific implementation needs. The following common preconditions may be needed to be met before utilizing these services:
+
+Entities are registered and active in the  in the system.
+
+Currently acting entities will be logged in the system and has sufficient roles to perform the action.
+
+Initiator building block and the target block must be registered in the system as network participants with status as subscribed and should be active.
+
+This section captures the example workflows that may take place between internal functional blocks to orchestrate key functionalities for a minimum viable product as follows. The exact workflows may be decided depending on implementation time considerations.
+
+* User search for product/service from a provider platform.
+* Inventory management
+* Viewing an item from the provider catalog.
+* Selection of the product.
+* Initiation of the purchase request.
+* Confirmation of  the order.
+* Checking status of the order.
+* Cancellation of the order.
+* Tracking of an active order.
+* Feedback for an order.
+* support for an order.
+* Catalog management
 
 
-{% hint style="success" %}
-This section describes standard _internal_ workflows that a building block should support. Each internal workflow must be linked to one of the Functional Requirements defined in section 6.
 
-An internal workflow describes the internal processes that a Building Block needs to execute to complete a request from an external application or Building Block to fulfill the functional requirement
-{% endhint %}
+### 9.1 Searching
 
-### Consumer Workflows
+The search flow allows consumers to search for available products or services . When a consumer initiates a search request, the catalog providers relevant products or services available respond to the search request by sending back detailed information about their offerings. This includes product details such as descriptions, images, specifications, prices, and any applicable offers or promotions.
 
-It will contain all the sequence flows for the consumer platform
 
-Sign up
-
-login
-
-profile update
-
-change password
-
-order history
-
-### Provider Workflows
-
-Sign up
-
-login
-
-profile update
-
-change password
-
-manage inventory
-
-### 9.1 Searching&#x20;
-
-This is the search flow used by the consumer to make a search for the products /services available. The platform looks up the central registry to find out list of available products/services.
 
 ```mermaid
 sequenceDiagram
-    consumer->>eMarketplace(consumer platform): submit a search request
-    eMarketplace(consumer platform)->>eMarketplace(registry): submit search request
-    eMarketplace(registry)->>eMarketplace(consumer platform): return products catalogs
-    eMarketplace(consumer platform)->>consumer: return products catalogs
-    
-    
-    
+    user->>consumer interface: search 
+    consumer interface->>Catalog Management:fetch catalog
+    consumer interface->>user:return search
 ```
+
+
 
 ### 9.2 Quote Agreement
 
-This internal workflow is used by the consumer to select various available offers and attributes based on which pricing can vary. The consumer platform will request to the provider platform where the validation of the selected offers and attributes will be done and if there is any change will be reverted back to the consumer
+The consumer utilizes the internal workflow within the platform to explore and select from a range of available offers and attributes. These choices have an impact on the pricing, as different combinations can result in varying costs.
+
+Once the consumer has made their selections, the consumer platform sends a request to the provider platform. The purpose of this request is to validate the chosen offers and attributes against the provider's system.
+
+The provider platform conducts the necessary validation checks to ensure the selected offers and attributes are accurate and permissible. If any discrepancies or changes are identified, the provider platform communicates this information back to the consumer.
+
+Upon receiving the feedback from the provider platform, the consumer can review the changes and make any necessary adjustments or confirm the modified selections.
+
+This internal workflow allows the consumer to have control and flexibility in selecting offers and attributes, while also ensuring that the provider's systems validate the choices for accuracy and feasibility.
 
 ```mermaid
 sequenceDiagram
-    consumer->>eMarketplace(consumer platform): submit a select request
-    eMarketplace(consumer platform)->>eMarketplace(provider): submit select request
-    eMarketplace(provider)->>eMarketplace(consumer platform): response on select request
-    eMarketplace(consumer platform)->>consumer: return select response
+    consumer->>consumer interface: fetch quote
+    consumer interface->>quote agreement:fetch quote
+    consumer interface->>consumer: return quote
 ```
 
 
 
 ### 9.3 Terms and Agreements
 
-The consumer checks and verifies everything in the cart about the selected product/services and makes a checkout call which means there will be no more modification in the cart and he is ready to make the payment. Consumer platform makes the request to initialize a payment for the products/services in the cart and in response provider platform will revert back with the payment link and other terms and condition for payment.
+The consumer carefully reviews the contents of their cart, ensuring that everything selected is accurate and satisfactory. Once satisfied, the consumer initiates a checkout call, indicating their intention to proceed with the payment. This action finalizes the cart, preventing any further modifications.
+
+The consumer platform then sends a request to the provider platform to initialize the payment process for the products or services in the cart. In response, the provider platform generates a payment link and presents the consumer with additional terms and conditions related to the payment.
+
+The payment link serves as a gateway for the consumer to complete the transaction securely. It directs them to a designated payment page where they can input their payment information and finalize the purchase.
+
+Alongside the payment link, the provider platform communicates any specific terms and conditions associated with the payment, ensuring that the consumer is aware of any applicable fees, refund policies, or other relevant details.
 
 
 
 ```mermaid
 sequenceDiagram
-consumer->>eMarketplace(consumer platform): submit a checkout request
-    eMarketplace(consumer platform)->>eMarketplace(provider): submit initialization request
-    eMarketplace(provider)->>eMarketplace(consumer platform): respond with payment link,terms and conditions
-    eMarketplace(consumer platform)->>consumer: return payment link with T&C
+consumer->>consumer interface: fetch T&C and payment link
+    consumer interface->>Terms Agreement: fetch T&C
+consumer interface-->>Inventory Management: fetch inventory detail
+consumer interface-->>Contract Fulfillment: fetch fulfillment detail
+consumer interface->>consumer:return T&C with payment link
+
+            
 
 ```
 
 ### 9.4 Order Confirmation
 
-After receiving the payment link and terms and conditions, the consumer makes a payment. After a successful payment consumer platform makes a confirm call to the provider platform. Provider platform returns with a success message and the details about the order placed which can be used to further check status of the order.
+Once the consumer receives the payment link and reviews the terms and conditions, they proceed to make a payment. Upon a successful transaction, the consumer platform initiates a confirmation call to the provider platform. This call serves as a notification that the payment has been completed and confirms the order placement.
+
+The provider platform acknowledges the confirmation call and responds with a success message. Along with the success message, the provider platform shares the details of the order that has been placed. These order details typically include information such as the order ID, items purchased, quantity, price, and any additional relevant data.
+
+The consumer can then utilize the order details received from the provider platform to further check the status of their order. This information allows the consumer to track the progress of their order, anticipate the delivery, and stay informed about any updates or changes related to the order.
+
+
 
 ```mermaid
 sequenceDiagram
-consumer->>Payment gateway: Makes payment
-Payment gateway->>eMarketplace(consumer platform): Update payment status with order ID
-    eMarketplace(consumer platform)->>eMarketplace(provider): Order confirmed, payment done
-    eMarketplace(provider)->>eMarketplace(consumer platform): respond back with confirmed order detail
-    eMarketplace(consumer platform)->>consumer:    return order details
+user->>consumer interface: payment request
+consumer interface-->>payment interface: payment
+consumer interface-->>E-sign:request signed
+consumer interface-->>inventory:check inventory
+consumer interface-->>fulfillment:check fulfillment
+consumer interface-->>Contract Creation and Management:contract created
+consumer interface-->>E-sign:request verified
+consumer interface->>user:response with Order ID
+ 
+
 ```
 
 ### 9.5 Contract fulfillment
 
-Once the order is confirmed , user has the details of confirmed order, he can check for the status of the order. The order status can be place, packed, dispatched etc.
+Once an order is confirmed, the user receives the details of the confirmed order, and they have the option to check the status of their order. The order status typically includes stages such as "placed," "packed," "dispatched," and so on. The "placed" status indicates that the order has been successfully received and recorded. The "packed" status signifies that the items in the order have been gathered and prepared for shipment. The "dispatched" status indicates that the package has been handed over to the delivery service for transportation.
+
+#### 9.5.1 User request for the status of the order
 
 ```mermaid
 sequenceDiagram
-consumer->>eMarketplace(consumer platform): request status of order
-    eMarketplace(consumer platform)->>eMarketplace(provider): submit status request
-    eMarketplace(provider)->>eMarketplace(consumer platform): respond with order status
-    eMarketplace(consumer platform)->>consumer: return current status of order
+consumer->>consumer interface: order status
+    consumer interface->>Contract Fulfillment:fetch order status
+    consumer interface->>consumer: return current status of order
+```
+
+#### 9.5.2 User can update the status of the order
+
+####
+
+```mermaid
+sequenceDiagram
+    
+Admin->>provider interface: requets update fulfillment status
+provider interface->>Contract Fulfillment:Update fulfillment status
+provider interface->>Admin:Fulfillment details updated
+```
+
+### 9.6 Status tracking
+
+When a consumer places an order and it is confirmed, they are provided with the option to track the status of their order. This tracking feature allows the consumer to stay informed about the progress of their purchase. The order status typically encompasses various updates related to the delivery process, giving the consumer insights into the whereabouts and estimated arrival time of their package.
+
+One of the primary aspects of the order status is the delivery status, which indicates whether the package has been dispatched from the seller's location or the warehouse. It confirms that the order is on its way to the consumer. This status assures the consumer that their purchase is in the process of being delivered.
+
+#### 9.6.1 Tracking request
+
+User can make a request to get the tracking status of an order.
+
+```mermaid
+sequenceDiagram
+consumer->>consumer interface: request order tracking
+    consumer interface->>Tracking:fetch order tracking status
+    consumer interface->>consumer: return current tracking status of order
+```
+
+#### 9.6.2 Update order track status
+
+User can update the tracking  status of an order.
+
+
+
+```mermaid
+sequenceDiagram
+    
+Admin->>provider interface: request order tracking status
+provider interface->>Tracking: Update tracking status
+provider interface->>Admin:Tracking details updated
+```
+
+### 9.7 Cancellation
+
+When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
+
+
+
+```mermaid
+sequenceDiagram
+UI->>consumer platform interface: cancellation_Request
+    consumer platform interface->>provider platform interface: cancellation
+             provider platform interface->>Cancellation:requestCancellation
+    provider platform interface->>consumer platform interface: on_cancellation
+    consumer platform interface->>UI: cancellation details
+```
+
+
+
+### 9.8 Rating and Feedback
+
+This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
+
+
+
+```mermaid
+sequenceDiagram
+UI->>consumer platform interface: ratingFeedback
+    consumer platform interface->>provider platform interface: rating
+    provider platform interface->>Rating and Feedback:rating
+    provider platform interface->>consumer platform interface: on_rating
+    consumer platform interface->>UI: rating acceptance message
+```
+
+
+
+### 9.9 Support
+
+User can make a request for the support, this can happen anytime during the lifecycle of an order.&#x20;
+
+
+
+```mermaid
+sequenceDiagram
+UI->>consumer platform interface: support
+    consumer platform interface->>provider platform interface: support
+    provider platform interface->>Support:support
+    provider platform interface->>consumer platform interface: on_support
+    consumer platform interface->>UI: support Response
+```
+
+
+
+### 9.10 Inventory Management
+
+This enables user to manage inventory of the products also he can add or remove products from the inventory.
+
+
+
+```mermaid
+sequenceDiagram
+    
+UI->>provider interface: inventory
+provider interface->>Inventory: inventory
+Inventory->>provider interface: on_inventory
+provider interface->>UI:inventory list
+UI->>provider interface: select specific product
+provider interface-->>Inventory: inventory_detail
+Inventory-->>provider interface: on_inventory_detail
+provider interface->>UI:Product detailed information
+
+UI->>provider interface: product inventory modification request
+provider interface-->>Inventory: request product inventory modification
+Inventory-->>provider interface: response product inventory modification
+provider interface->>UI:Product inventory update message
+```
+
+### 9.11 Catalog Management
+
+This allow creation of a catalog for a product or a service based on the request made by the user. This allows user to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
+
+#### 9.11.1 User request for catalog
+
+User while searching for products can request for the catalog of the product or the services, the platform will fetch and serve back user with the required catalog.
+
+
+
+```mermaid
+sequenceDiagram
+UI->>consumer platform interface: catalog
+    consumer platform interface->>provider platform interface: catalog
+    provider platform interface->>Catalog:catalog
+    provider platform interface->>consumer platform interface: on_catalog
+    consumer platform interface->>UI: catalog Response
+```
+
+#### 9.11.2 User modifies catalog
+
+User can modify the catalog of a product or service.
+
+
+
+```mermaid
+sequenceDiagram
+    
+UI->>provider interface: catalog
+provider interface->>Catalog: catalog
+Catalog->>provider interface: on_catalog
+
+
 ```
 
