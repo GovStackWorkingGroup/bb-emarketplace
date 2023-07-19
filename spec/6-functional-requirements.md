@@ -10,8 +10,6 @@ These requirements should be defined by subject-matter experts and don’t have 
 If there are multiple functional components of a building block, the functional requirements for each component may have its own section
 {% endhint %}
 
-<figure><img src=".gitbook/assets/E-Marketplace BB Architecture V2.png" alt=""><figcaption><p>E Marketplace Building Block Functional Architecture</p></figcaption></figure>
-
 _\<Example Functional Requirements>_
 
 ### Internal functional components
