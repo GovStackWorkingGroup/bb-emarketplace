@@ -132,10 +132,6 @@ sequenceDiagram
     participant consumer interface
     box E-Marketplace BB
     participant Order Management
-    participant Terms Management
-    participant Inventory Management
-    participant Quotation Management
-    participant Fulfillment Management
     participant Payment BB Interface
     participant E-Signature BB Interface
     end
@@ -145,12 +141,6 @@ sequenceDiagram
     consumer interface->>E-Signature BB Interface:sign order
     consumer interface->>Order Management:confirm order
     Order Management->>E-Signature BB Interface:verify signature
-    Order Management->>Inventory Management: check availability
-    Inventory Management->>Order Management: return availability
-    Order Management->>Inventory Management: lock inventory
-    Inventory Management->>Order Management: inventory locked
-    Order Management->>Fulfillment Management: check serviceability
-    Fulfillment Management->>Order Management: return serviceability <br/> with fulfillment charges
     Order Management->>Order Management: Create Order
     Order Management->>E-Signature BB Interface:sign order
     Order Management->>consumer interface: Send Confirmed Order
