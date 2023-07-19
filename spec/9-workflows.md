@@ -253,16 +253,20 @@ sequenceDiagram
     box E-Marketplace BB
     participant Order Management
     participant Tracking Management
-    participant Fulfillment Management
     end
     participant Agent interface
     Actor Agent
     consumer-->>consumer interface: track order
     consumer interface->>Order Management: track order
-    Order Management->>Fulfillment Management: track order
-    Tracking Management->>Fulfillment Management: fetch fulfillment agent
-    
-    consumer interface-->>consumer: render real-time <br/> tracking info
+    Order Management->>Tracking Management: track order
+    Agent-->>Agent interface: generate tracking data
+    Agent interface->>Tracking Management: push tracking data
+    Order Management->> Tracking Management: fetch tracking link
+    Order Management->> consumer interface: send tracking link
+    consumer interface-->>consumer: render real-time <br/> tracking screen
+    consumer interface-->>Tracking Management: start tracking
+    Tracking Management-->>consumer interface: stream real-time tracking data
+    consumer interface-->>consumer: view real-time <br/> tracking data
     
 ```
 
