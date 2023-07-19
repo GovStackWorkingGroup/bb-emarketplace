@@ -25,7 +25,9 @@ This section captures the example workflows that may take place between internal
 
 
 
-### 9.1 Searching for Items
+## 9.1 Order Lifecycle Workflows
+
+### 9.1.1 Searching for Items
 
 The search flow allows consumers to search for available products or services . When a consumer initiates a search request, the catalog providers relevant products or services available respond to the search request by sending back detailed information about their offerings. This includes product details such as descriptions, images, specifications, prices, and any applicable offers or promotions.
 
@@ -46,7 +48,7 @@ sequenceDiagram
 
 
 
-### 9.2 Fetching a quote for selected items
+### 9.1.2 Fetching a quote for selected items
 
 The consumer utilizes the internal workflow within the platform to explore and select from a range of available offers and attributes. These choices have an impact on the pricing, as different combinations can result in varying costs.
 
@@ -76,7 +78,7 @@ sequenceDiagram
 
 
 
-### 9.3 Initializing an order by providing billing and fulfillment details
+### 9.1.3 Initializing an order by providing billing and fulfillment details
 
 The consumer carefully reviews the contents of their cart, ensuring that everything selected is accurate and satisfactory. Once satisfied, the consumer initiates a checkout call, indicating their intention to proceed with the payment. This action finalizes the cart, preventing any further modifications.
 
@@ -116,7 +118,7 @@ sequenceDiagram
 
 ```
 
-### 9.4 Confirming an Order
+### 9.1.4 Confirming an Order
 
 Once the consumer receives the payment link and reviews the terms and conditions, they proceed to make a payment. Upon a successful transaction, the consumer platform initiates a confirmation call to the provider platform. This call serves as a notification that the payment has been completed and confirms the order placement.
 
@@ -153,7 +155,7 @@ sequenceDiagram
 
 ```
 
-### 9.5 Checking the status of an order&#x20;
+### 9.1.5 Checking the status of an order&#x20;
 
 Once an order is confirmed, the user receives the details of the confirmed order, and they have the option to check the status of their order. The order status typically includes stages such as "placed," "packed," "dispatched," and so on. The "placed" status indicates that the order has been successfully received and recorded. The "packed" status signifies that the items in the order have been gathered and prepared for shipment. The "dispatched" status indicates that the package has been handed over to the delivery service for transportation.
 
@@ -180,7 +182,7 @@ Contract Fulfillment->>provider interface:Update fulfillment status response
 provider interface->>Admin:Fulfillment details updated
 ```
 
-### 9.6 Tracking the fulfillment of an order
+### 9.1.6 Tracking the fulfillment of an order
 
 When a consumer places an order and it is confirmed, they are provided with the option to track the status of their order. This tracking feature allows the consumer to stay informed about the progress of their purchase. The order status typically encompasses various updates related to the delivery process, giving the consumer insights into the whereabouts and estimated arrival time of their package.
 
@@ -213,7 +215,7 @@ provider interface->>Tracking: Update tracking status
 provider interface->>Admin:Tracking details updated
 ```
 
-### 9.7 Cancelling an Order
+### 9.1.7 Cancelling an Order
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
 
@@ -231,7 +233,7 @@ consumer->>consumer interface: request order cancellation
 
 
 
-### 9.8 Rating and Feedback Management
+### 9.1.8 Rating and Feedback Management
 
 This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
 
@@ -259,7 +261,7 @@ Rating and Feedback Management->>provider interface:rating response
      provider interface->>Admin: rating acceptance message
 ```
 
-### 9.9 Support Management
+### 9.1.9 Support Management
 
 User can make a request for the support, this can happen anytime during the lifecycle of an order.&#x20;
 
@@ -276,7 +278,9 @@ consumer interface->>consumer:Support response
 
 
 
-### 9.10 Inventory Management
+## 9.2 E-Marketplace Administration Workflows&#x20;
+
+### 9.2.1 Inventory Management
 
 This enables user to manage inventory of the products also he can add or remove products from the inventory.
 
@@ -300,7 +304,7 @@ Inventory-->>provider interface: response product inventory modification
 provider interface->>UI:Product inventory update message
 ```
 
-### 9.11 Catalog Management
+### 9.2.2 Catalog Management
 
 This allow creation of a catalog for a product or a service based on the request made by the user. This allows user to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
 
