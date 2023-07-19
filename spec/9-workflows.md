@@ -210,10 +210,21 @@ User can make a request to get the tracking status of an order.
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: request order tracking
-    consumer interface->>Tracking:fetch order tracking status
-Tracking->>consumer interface: return current tracking status of order
-    consumer interface->>consumer: return current tracking status of order
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Tracking Management
+    participant Fulfillment Management
+    end
+    participant Agent interface
+    Actor Agent
+    consumer-->>consumer interface: track order
+    consumer interface->>Order Management: track order
+    Order Management->>Fulfillment Management: track order
+    Tracking Management->>Fulfillment Management: fetch fulfillment agent
+    
+    consumer interface-->>consumer: render real-time <br/> tracking info
     
 ```
 
