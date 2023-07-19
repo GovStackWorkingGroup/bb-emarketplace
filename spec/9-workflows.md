@@ -46,9 +46,47 @@ sequenceDiagram
     consumer interface-->>consumer:view search results
 ```
 
-
-
 ### 9.1.2 Fetching a quote for selected items
+
+### 9.2 Catalog Management
+
+This allow creation of a catalog for a product or a service based on the request made by the user. This allows user to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
+
+#### 9.2.1 User request for catalog
+
+User while searching for products can request for the catalog of the product or the services, the platform will fetch and serve back user with the required catalog.
+
+
+
+```mermaid
+sequenceDiagram
+UI->>consumer platform interface: catalog
+    consumer platform interface->>provider platform interface: catalog
+    provider platform interface->>Catalog:catalog
+    provider platform interface->>consumer platform interface: on_catalog
+    consumer platform interface->>UI: catalog Response
+```
+
+### 9.3 Inventory Management
+
+This enables user to manage inventory of the products also they can add or remove products from the inventory.
+
+###
+
+```mermaid
+sequenceDiagram
+    
+Admin UI->>provider interface: fetch inventory list
+provider interface->>Inventory: fetch inventory list
+Inventory->>provider interface: return inventory list
+provider interface->>Admin UI:Return invetory list
+```
+
+###
+
+###
+
+### 9.4 Quotation Management
 
 The consumer utilizes the internal workflow within the platform to explore and select from a range of available offers and attributes. These choices have an impact on the pricing, as different combinations can result in varying costs.
 
@@ -204,7 +242,7 @@ When a consumer places an order and it is confirmed, they are provided with the 
 
 One of the primary aspects of the order status is the delivery status, which indicates whether the package has been dispatched from the seller's location or the warehouse. It confirms that the order is on its way to the consumer. This status assures the consumer that their purchase is in the process of being delivered.
 
-#### 9.6.1 Tracking request
+#### 9.8.1 Tracking request
 
 User can make a request to get the tracking status of an order.
 
@@ -228,7 +266,7 @@ sequenceDiagram
     
 ```
 
-#### 9.6.2 Update order track status
+#### 9.8.2 Update order track status
 
 User can update the tracking  status of an order.
 
@@ -264,7 +302,7 @@ consumer->>consumer interface: request order cancellation
 
 This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
 
-#### 9.8.1 Rating and feedback by user
+#### 9.10.1 Rating and feedback by user
 
 ```mermaid
 sequenceDiagram
@@ -276,7 +314,7 @@ Rating and Feedback Management->>consumer interface:rating response
 
 
 
-#### 9.8.2 Rating and feedback by admin
+#### 9.10.2 Rating and feedback by admin
 
 ###
 
@@ -309,60 +347,13 @@ consumer interface->>consumer:Support response
 
 ### 9.2.1 Inventory Management
 
-This enables user to manage inventory of the products also he can add or remove products from the inventory.
 
-
-
-```mermaid
-sequenceDiagram
-    
-UI->>provider interface: inventory
-provider interface->>Inventory: inventory
-Inventory->>provider interface: on_inventory
-provider interface->>UI:inventory list
-UI->>provider interface: select specific product
-provider interface-->>Inventory: inventory_detail
-Inventory-->>provider interface: on_inventory_detail
-provider interface->>UI:Product detailed information
-
-UI->>provider interface: product inventory modification request
-provider interface-->>Inventory: request product inventory modification
-Inventory-->>provider interface: response product inventory modification
-provider interface->>UI:Product inventory update message
-```
 
 ### 9.2.2 Catalog Management
 
-This allow creation of a catalog for a product or a service based on the request made by the user. This allows user to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
-
-#### 9.11.1 User request for catalog
-
-User while searching for products can request for the catalog of the product or the services, the platform will fetch and serve back user with the required catalog.
 
 
-
-```mermaid
-sequenceDiagram
-UI->>consumer platform interface: catalog
-    consumer platform interface->>provider platform interface: catalog
-    provider platform interface->>Catalog:catalog
-    provider platform interface->>consumer platform interface: on_catalog
-    consumer platform interface->>UI: catalog Response
-```
-
-#### 9.11.2 User modifies catalog
-
-User can modify the catalog of a product or service.
+####
 
 
-
-```mermaid
-sequenceDiagram
-    
-UI->>provider interface: catalog
-provider interface->>Catalog: catalog
-Catalog->>provider interface: on_catalog
-
-
-```
 
