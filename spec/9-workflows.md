@@ -90,12 +90,27 @@ Alongside the payment link, the provider platform communicates any specific term
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: finalize order
-    consumer interface->>Terms Agreement: fetch T&C
-Terms Agreement-->>Inventory Management: fetch inventory detail
-Terms Agreement-->>Contract Fulfillment: fetch fulfillment detail
-Terms Agreement->>consumer interface: return T&C with payment link 
-consumer interface->>consumer:return T&C with payment link
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Terms Management
+    participant Inventory Management
+    participant Quotation Management
+    participant Fulfillment Management
+    end
+    consumer-->>consumer interface: provide billing <br/> and fulfillment details
+    consumer interface->>Terms Management: initialize <br/> draft order
+    Terms Management->>Inventory Management: check availability
+    Inventory Management->>Terms Management: return availability
+    Terms Management->>Inventory Management: lock inventory
+    Inventory Management->>Terms Management: return inventory <br/> lock status
+    Terms Management->>Quotation Management: fetch quote
+    Quotation Management->>Terms Management: return quote
+    Terms Management->>Fulfillment Management: check serviceability
+    Fulfillment Management->>Terms Management: return serviceability <br/> with fulfillment charges
+    Terms Management->>Terms Management: Construct draft order <br/> with Payment Terms, <br/> Cancellation Terms, <br/> Fulfillment Terms
+    Terms Management->>consumer interface: return draft <br/> order with terms 
+    consumer interface-->>consumer:view final order <br/> with checkout link
 
             
 
