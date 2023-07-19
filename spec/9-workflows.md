@@ -33,10 +33,15 @@ The search flow allows consumers to search for available products or services . 
 
 ```mermaid
 sequenceDiagram
-    user->>consumer interface: search 
+    Actor user
+    participant consumer interface
+    box E-Marketplace BB
+    participant Catalog Management
+    end
+    user-->>consumer interface: search 
     consumer interface->>Catalog Management:declare search intent
-   Catalog Management->>consumer interface:return catalog
-    consumer interface->>user:return search results
+    Catalog Management->>consumer interface:return catalog
+    consumer interface-->>user:view search results
 ```
 
 
@@ -77,7 +82,7 @@ Alongside the payment link, the provider platform communicates any specific term
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: fetch T&C and payment link
+consumer->>consumer interface: finalize order
     consumer interface->>Terms Agreement: fetch T&C
 Terms Agreement-->>Inventory Management: fetch inventory detail
 Terms Agreement-->>Contract Fulfillment: fetch fulfillment detail
