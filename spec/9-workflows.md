@@ -163,10 +163,18 @@ Once an order is confirmed, the user receives the details of the confirmed order
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: order status
-    consumer interface->>Contract Fulfillment:fetch order status
-    Contract Fulfillment->>consumer interface: return current status of order
-consumer interface->>consumer: return current status of order
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Fulfillment Management
+    end
+    consumer-->>consumer interface: view order
+    consumer interface->>Order Management:get order status
+    Order Management->>Fulfillment Management:fetch fulfillment state
+    Fulfillment Management->>Order Management: return current status <br/> of fulfillment
+    Order Management->>consumer interface: return latest order state
+    consumer interface-->>consumer: display latest status of order
 ```
 
 #### 9.5.2 Provider updates the fulfillment status of an order
