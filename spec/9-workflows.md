@@ -33,15 +33,15 @@ The search flow allows consumers to search for available products or services . 
 
 ```mermaid
 sequenceDiagram
-    Actor user
+    Actor consumer
     participant consumer interface
     box E-Marketplace BB
     participant Catalog Management
     end
-    user-->>consumer interface: search 
+    consumer-->>consumer interface: search 
     consumer interface->>Catalog Management:declare search intent
     Catalog Management->>consumer interface:return catalog
-    consumer interface-->>user:view search results
+    consumer interface-->>consumer:view search results
 ```
 
 
@@ -60,10 +60,15 @@ This internal workflow allows the consumer to have control and flexibility in se
 
 ```mermaid
 sequenceDiagram
-    consumer->>consumer interface: select items from catalog
-    consumer interface->>quote agreement:request quote
-    quote agreement->>consumer interface:return quote with breakup
-    consumer interface->>consumer: return quote with breakup
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Quotation Management
+    end
+    consumer-->>consumer interface: select items from catalog
+    consumer interface->>Quotation Management:request quote
+    Quotation Management->>consumer interface:return quote with breakup
+    consumer interface-->>consumer: view quote with breakup
 ```
 
 
