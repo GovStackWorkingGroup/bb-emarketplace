@@ -242,7 +242,7 @@ When a consumer places an order and it is confirmed, they are provided with the 
 
 One of the primary aspects of the order status is the delivery status, which indicates whether the package has been dispatched from the seller's location or the warehouse. It confirms that the order is on its way to the consumer. This status assures the consumer that their purchase is in the process of being delivered.
 
-#### 9.8.1 Update Agent's tracking information
+#### 9.1.6.1 Update Agent's tracking information
 
 User can update the tracking  status of an order.
 
@@ -259,7 +259,7 @@ sequenceDiagram
     end
 ```
 
-#### 9.8.2 Tracking an order
+#### 9.1.6.2 Tracking an order
 
 User can make a request to get the tracking status of an order.
 
@@ -283,13 +283,13 @@ sequenceDiagram
     
 ```
 
+### 9.1.7 Updating an Order
 
-
-### 9.1.7 Cancelling an Order
+### 9.1.8 Cancelling an Order
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
 
-#### 9.1.7.1 Consumer initiated cancellation
+#### 9.1.8.1 Consumer initiated cancellation
 
 ```mermaid
 sequenceDiagram
@@ -311,7 +311,7 @@ sequenceDiagram
     Order Management->>Payment BB Interface: Initiate Refund
 ```
 
-#### 9.1.7.2 Provider Initiated Cancellation
+#### 9.1.8.2 Provider Initiated Cancellation
 
 
 
@@ -336,11 +336,11 @@ sequenceDiagram
 
 ```
 
-### 9.1.8 Rating and Feedback Management
+### 9.1.9 Rating and Feedback Management
 
 This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
 
-#### 9.10.1 Rating and feedback by user
+#### 9.1.9.1 Rating an Order
 
 ```mermaid
 sequenceDiagram
@@ -352,9 +352,9 @@ Rating and Feedback Management->>consumer interface:rating response
 
 
 
-#### 9.10.2 Rating and feedback by admin
+#### 9.1.9.2 Rating an order with feedback
 
-###
+
 
 ```mermaid
 sequenceDiagram
@@ -364,7 +364,7 @@ Rating and Feedback Management->>provider interface:rating response
      provider interface->>Admin: rating acceptance message
 ```
 
-### 9.1.9 Support Management
+### 9.1.10 Support Management
 
 User can make a request for the support, this can happen anytime during the lifecycle of an order.&#x20;
 
