@@ -365,10 +365,22 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-Admin->>provider interface: rating and feedback
-    provider interface->>Rating and Feedback Management:rating
-Rating and Feedback Management->>provider interface:rating response
-     provider interface->>Admin: rating acceptance message
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Rating Management
+    participant Feedback Management
+    end
+    consumer interface->>Rating Management: fetch rateable entities
+    Rating Management->>consumer interface: Return rateable entities
+    consumer-->>consumer interface: provide rating
+    consumer interface->>Rating Management: rate entity
+    Rating Management->>Feedback Management: fetch form link
+    Rating Management->>consumer interface: Acknowledge rating with <br/> link to feedback form
+    consumer interface-->>consumer: Display feedback form
+    consumer-->>consumer interface: provide feedback
+    consumer interface->>Feedback Management: Submit feedback
+    Feedback Management->>consumer interface: Acknowledge feedback
 ```
 
 ### 9.1.10 Support Management
