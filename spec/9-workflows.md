@@ -293,12 +293,22 @@ When a consumer places an order and it is confirmed, they are provided with the 
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: request order cancellation
-    consumer interface->>order cancellation:order cancellation
-    order cancellation-->>Order Tracking:update order status
-    order cancellation-->>Order Fulfillment:update fulfillment status
-    order cancellation-->>consumer interface: cancellation response
-    consumer interface->>consumer:order cancellation response
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Terms Management
+    participant Fulfillment Management
+    participant Payment BB Interface
+    end
+    consumer-->>consumer interface: cancel order
+    consumer interface->>Order Management:cancel order with reason
+    Order Management->>Terms Management:validate <br/> cancellation terms
+    Terms Management->>Order Management: return <br/> cancellation charges
+    Order Management->>Fulfillment Management:cancel fulfillment
+    Order Management->>consumer interface: return cancelled order
+    consumer interface-->>consumer: display cancelled <br/> order with <br/> cancellation fees
+    Order Management->>Payment BB Interface: Initiate Refund
 ```
 
 
