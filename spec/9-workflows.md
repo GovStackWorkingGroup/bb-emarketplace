@@ -436,10 +436,26 @@ User can make a request for the support, this can happen anytime during the life
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: support request
-    consumer interface->>Support Management:Support request
-Support Management->>consumer interface:Support response
-consumer interface->>consumer:Support response
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Support Management
+    participant Order Management
+    end
+    participant Customer Support Interface
+    Actor customer support executive
+    consumer-->>consumer interface: contact support
+    consumer interface->>Support Management: fetch support info
+    Support Management->>Order Management: fetch order
+    Order Management->>Support Management: order details
+    Support Management->> consumer interface: send support center info
+    consumer interface-->>consumer: render support <br/> center screen
+    consumer interface->>Support Management: start chat session
+    Support Management->>Support Management: Allocate executive
+    Support Management->>Customer Support Interface: Notify executive
+    Customer Support Interface-->>customer support executive: Open chat session
+    Customer Support Interface-->>consumer interface: stream real-time chat data
+    consumer interface-->>Customer Support Interface: stream real-time chat data
     
 ```
 
