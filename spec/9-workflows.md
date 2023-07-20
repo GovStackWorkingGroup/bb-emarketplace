@@ -285,6 +285,28 @@ sequenceDiagram
 
 ### 9.1.7 Updating an Order
 
+#### 9.1.7.1 Consumer initiated update
+
+```mermaid
+sequenceDiagram
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Terms Management
+    participant Fulfillment Management
+    participant Payment BB Interface
+    end
+    consumer-->>consumer interface: provide updated information
+    consumer interface->>Order Management:update order
+    Order Management->>Terms Management:validate <br/> update terms
+    Terms Management->>Order Management: return <br/> update charges
+    Order Management->>Fulfillment Management:update fulfillment
+    Order Management->>consumer interface: return updated order
+    consumer interface-->>consumer: display update <br/> order with <br/> update charges
+    Order Management->>Payment BB Interface: Initiate Payment / Refund
+```
+
 ### 9.1.8 Cancelling an Order
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
