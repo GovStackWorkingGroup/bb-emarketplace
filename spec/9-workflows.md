@@ -307,6 +307,29 @@ sequenceDiagram
     Order Management->>Payment BB Interface: Initiate Payment / Refund
 ```
 
+### 9.1.7.2 Provider Initiated Update
+
+####
+
+```mermaid
+sequenceDiagram
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Order Management
+    participant Fulfillment Management
+    participant Payment BB Interface
+    end
+    participant Agent interface
+    Actor Agent
+    Agent-->>Agent interface: update order information
+    Agent interface->>Fulfillment Management:update order state
+    Fulfillment Management->>Order Management:update fulfillment
+    Order Management->>consumer interface: send updated order
+    consumer interface-->>consumer: display updated <br/> order
+    Order Management->>Payment BB Interface: (Optionally) Initiate Refund <br/> to consumer
+```
+
 ### 9.1.8 Cancelling an Order
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
