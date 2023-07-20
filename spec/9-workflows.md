@@ -340,14 +340,21 @@ sequenceDiagram
 
 This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
 
-#### 9.1.9.1 Rating an Order
+#### 9.1.9.1 Rating an Order (without feedback)
 
 ```mermaid
 sequenceDiagram
-consumer->>consumer interface: rating and feedback
-    consumer interface->>Rating and Feedback Management:rating
-Rating and Feedback Management->>consumer interface:rating response
-     consumer interface->>consumer: rating acceptance message
+    Actor consumer
+    participant consumer interface
+    box E-Marketplace BB
+    participant Rating Management
+    end
+    consumer interface->>Rating Management: fetch rateable entities
+    Rating Management->>consumer interface: Return rateable entities
+    consumer-->>consumer interface: provide rating
+    consumer interface->>Rating Management: rate entity
+    Rating Management->>consumer interface: Acknowledge rating
+ 
 ```
 
 
