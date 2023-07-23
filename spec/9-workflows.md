@@ -133,23 +133,25 @@ sequenceDiagram
     Actor consumer
     participant consumer interface
     box E-Marketplace BB
+    participant Order Management
     participant Terms Management
     participant Inventory Management
     participant Quotation Management
     participant Fulfillment Management
     end
     consumer-->>consumer interface: provide billing <br/> and fulfillment details
-    consumer interface->>Terms Management: initialize <br/> draft order
-    Terms Management->>Inventory Management: check availability
-    Inventory Management->>Terms Management: return availability
-    Terms Management->>Inventory Management: lock inventory
-    Inventory Management->>Terms Management: return inventory <br/> lock status
-    Terms Management->>Quotation Management: fetch quote
-    Quotation Management->>Terms Management: return quote
-    Terms Management->>Fulfillment Management: check serviceability
-    Fulfillment Management->>Terms Management: return serviceability <br/> with fulfillment charges
-    Terms Management->>Terms Management: Construct draft order <br/> with Payment Terms, <br/> Cancellation Terms, <br/> Fulfillment Terms
-    Terms Management->>consumer interface: return draft <br/> order with terms 
+    consumer interface->>Order Management: initialize <br/> draft order
+    Order Management->>Inventory Management: check availability
+    Inventory Management->>Order Management: return availability
+    Order Management->>Inventory Management: lock inventory
+    Inventory Management->>Order Management: return inventory <br/> lock status
+    Order Management->>Quotation Management: fetch quote
+    Quotation Management->>Order Management: return quote
+    Order Management->>Fulfillment Management: check serviceability
+    Fulfillment Management->>Order Management: return serviceability <br/> with fulfillment charges
+    Order Management->>Terms Management: fetch Payment Terms, <br/> Cancellation Terms, <br/> Fulfillment Terms
+    
+Order Management->>consumer interface: return draft <br/> order with terms 
     consumer interface-->>consumer:view final order <br/> with checkout link
 
             

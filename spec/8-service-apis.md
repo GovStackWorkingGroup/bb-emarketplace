@@ -4,16 +4,16 @@ This section provides a reference for APIs that should be implemented by this Bu
 
 The [GovStack non-functional requirements document](https://govstack.gitbook.io/specification/architecture-and-nonfunctional-requirements/6-onboarding) provides additional information on how 'adaptors' may be used to translate an existing API to the patterns described here.
 
-## 8.1 API Standards
-
 * The microservice interfaces are defined as per [OPENAPI Ver3.0 standards](https://swagger.io/specification/).&#x20;
-* For implementation of Administration APIs, we have refered to [TMF630\_REST\_API\_Design\_Guidelines](https://www.tmforum.org/resources/standard/tmf630-rest-api-design-guidelines-4-2-0/).
-* For implementation of Interoperability APIs, we have refered various open protocol standards including  [Beckn Protocol API Specification](https://github.com/beckn/protocol-specifications).
+* For implementation of Administration APIs, we have referred to TMF630\_REST\_API\_Design\_Guidelines.
+* For implementation of Interoperability APIs, we have referred various open protocol standards including  Beckn Protocol API Specification.
 
 Each service in the E-Marketplace building block consists of two types of APIs namely,
 
 1. Order Lifecycle APIs
 2. Service Administration APIs
+
+
 
 **Order Lifecycle APIs** consist of a common set of endpoints that allow for decentralized / federated networks to be created that allow discovery, ordering, fulfillment, and post-fulfillment activities during the lifecycle of an order. These do NOT follow REST Standards. The interoperability APIs follow a specification known as beckn protocol. Due to its abstracted and generic design, beckn protocol is rapidly gaining extensive adoption in countries like India, Europe to create open interoperable commerce networks across multiple sectors like mobility, retail, healthcare, logistics, energy, financial services, government services, Industry 4.0 and many more.&#x20;
 
@@ -23,9 +23,11 @@ Both types of APIs will be defined using the OpenAPI (Swagger) standard. The API
 
 ## 8.1 Catalog Management
 
-### 8.1.1 Order Lifecycle APIs
+**Platform Administration APIs** consists of all the endpoints that are used to provide user experience and manage the business workflows like catalog management, cart management, checkout, terms management, content management etc. These follow REST Standards for the creation, read, update, and deletion of objects in the database.&#x20;
 
-These APIs allow searching and browsing of an existing catalog.&#x20;
+### 8.1.1 Order lifecycle APIs
+
+These APIs allow searching and browsing of an existing catalog.
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml" path="/search" method="post" %}
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
@@ -35,8 +37,6 @@ These APIs allow searching and browsing of an existing catalog.&#x20;
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.1.2 Service Administration APIs
-
 TODO
 
 ## 8.2 Inventory Management
@@ -45,7 +45,7 @@ Since inventory is a provider-centric feature, it does not interface with a cust
 
 ### 8.2.1 Service Administration APIs
 
-TODO
+
 
 ## 8.3 Quotation Management
 
@@ -59,7 +59,7 @@ TODO
 [beckn-e-marketplace-bb-0.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1-resolved.yaml)
 {% endswagger %}
 
-### 8.3.2 Service Administration APIs
+### 8.3.1 Service Administration APIs
 
 TODO
 
@@ -185,5 +185,130 @@ TODO
 
 TODO
 
+## 8.2 Administration APIs
+
+### 8.2.1 inventory Management
 
 
+
+
+
+### 8.2.2 Catalog Management
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/catalog" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/catalog" method="post" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/catalog" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/catalog" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+### 8.2.3 Terms Management
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/orderTerms" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/orderTerms" method="post" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/orderTerms" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/orderTerms" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+### 8.2.4  Order Management
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/order" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/order" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/order" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+### 8.2.5 Order Fulfillment
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/order" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/order" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/order" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+### 8.2.6 Order Tracking
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/track" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/track" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/track" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+### 8.2.7 Rating and Feedback Management
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/rating" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/rating" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/rating" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+### 8.2.8 Support Management
+
+
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/support" method="get" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/support" method="put" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml" path="/support" method="delete" %}
+[beckn-e-marketplace-bb-0.1.1-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.1.1-resolved.yaml)
+{% endswagger %}
