@@ -463,16 +463,6 @@ sequenceDiagram
 
 
 
-## 9.2 E-Marketplace Administration Workflows&#x20;
-
-### 9.2.1 Inventory Management
-
-
-
-### 9.2.2 Catalog Management
-
-
-
 ####
 
 
