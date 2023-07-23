@@ -39,9 +39,8 @@ While there may be many of such use cases, within the current scope The function
 
 **Government to People (G2P)**
 
-1. G2P-Use Case 1: Application for Pension Services by a citizen from the State Government
-2. [G2P-Use Case 2: Online Reservation System (ORS)](https://app.gitbook.com/o/pxmRWOPoaU8fUAbbcrus/s/PUIGDILlDRSOB6K47k6e/\~/changes/4/g2p-uc2-online-reservation-system-ors)
-3. [G2P-Use Case 3: Government Auctions Marketplace (GAM)](broken-reference)
+1. [G2P-Use Case 2: Online Reservation System (ORS)](https://app.gitbook.com/o/pxmRWOPoaU8fUAbbcrus/s/PUIGDILlDRSOB6K47k6e/\~/changes/4/g2p-uc2-online-reservation-system-ors)
+2. [G2P-Use Case 3: Government Auctions Marketplace (GAM)](broken-reference)
 
 These use cases have business process with several steps, wherein specific steps that involve the e-marketplace building block services were studies as example implementations (such as registration, identification and verification of individual entities and users in various roles; publishing a catalogue of goods and services provided by various entities; selection of goods and services and provider entities; scheduling the life cycle events in procurement such as creation of purchase requisition, bid management, vendor assessment, awarding contract, monitoring contractors' deliverables,  outreach communication and messaging notifications about status of procurement/payment, etc.&#x20;
 
@@ -50,7 +49,6 @@ Currently the following actors have been identified as "users" of the scheduler 
 * "Supplier" is who manages the building block's implementation settings. A building block admin is also responsible to enrolment of entitles and Organizers of those entities that use the eMarketplace building block. The Admins interacts with the list of goods and services, cycle of procurement activities, communication management.
 * "Buyers" are who participate in events to perform various activities. Buyers MUST be registered in the eMarketplace Building Block before they can be enrolled in events. Resources MAY apply/respond to multiple goods and services in a catalogue. Hence a registered buyer SHOULD be able to offer services in parallel, if they are short listed by the Supplier.
 * "Subscribers" who participate in events to consume various activities. Subscribers must be registered in the eMarketplace before they can be enrolled in activities. Subscribers MAY be enrolled in multiple events and MAY be passive to suppliers requests.
-* Building block admins???
 * <mark style="color:blue;">"Internal team member" who participates in the internal activities such as technical and financial evaluation of the bids received on the buyer side; preparation of documents and coordination across business development, technical, managerial teams on supplier side. The corresponsing "internal team member" communicates with the "supplier" or "buyer", respectively.</mark>
 * More actors ??? (property officer and Supply Property Management office in the case of GAM use case; internal teams does the bid evaluation and inform the buyer admin?)
 
@@ -100,8 +98,6 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 * log status/attendance updates related to activities they are enrolled into
 * view current status, details, list of activities dynamically
 
-### <mark style="color:red;">What about suppliers and other actors? (See actors list above )</mark>
-
 #### 2.1.3  The eMarketplace MUST enable adminstrator to catalogue of goods and services&#x20;
 
 * get displayed a list of goods and/or services when an appropriate filter is used (for ex. a ministry, a type of service etc.)
@@ -118,29 +114,7 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 The following aspects are out of scope of the current version of the eMarketplace building block specifications considered in this document:
 
 * Any type of payments between two parties.
-* _<mark style="color:red;">Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.</mark>_
-
-
-
-
-
-
-
-#### <mark style="color:red;">TODOs</mark>
-
-<mark style="color:red;">\<Need a little more content></mark>
-
-<mark style="color:red;">\<Introduce the concept of E-Marketplace from the government perspective></mark>
-
-<mark style="color:red;">\<Min requs that need to be addresses></mark>
-
-<mark style="color:red;">\<G2P, P2G etc></mark>
-
-<mark style="color:red;">\<Benefits of such an platform></mark>
-
-<mark style="color:red;">\<Generic enough that></mark>&#x20;
-
-<mark style="color:red;">\<Give some example use cases that has been considered in various sectors></mark>
+* <mark style="color:red;">Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.</mark>
 
 \
 \
