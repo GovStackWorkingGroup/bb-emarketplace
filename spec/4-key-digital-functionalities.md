@@ -12,7 +12,7 @@ The Key Digital Functionalities describe the core (required) functions that this
 Note, this section may be extended after the key functionalities have been listed to include any assumptions or context that is needed. Additionally, if the Building Block contains multiple components, the functionalities for each may be described.
 {% endhint %}
 
-To facilitate various activities and different actors as described in section 2, the E-Marketplace building block MUST have specific key digital functionalities. E-marketplace transactions <mark style="color:blue;">**(activities?**</mark><mark style="color:blue;">)</mark> by definition should have:
+To facilitate various activities and different actors as described in section 2, the E-Marketplace building block MUST have specific key digital functionalities. E-marketplace transactions by definition should have:
 
 1. Consumer Platforms (like Super-apps, Chat messengers, Storefronts etc) to provide a rich, demand-centric experience
 2. Provider Platforms (like a Hospital Management System, A Tendering Platform, or a Store Backend) that provides a rich, supply-centric experience
@@ -26,17 +26,9 @@ To facilitate various activities and different actors as described in section 2,
 10. Fulfillments (like appointments, tender approval, delivery of goods and services)
 11. <mark style="color:blue;">Procurement lifecycle activities (from bid invitation to ordering to feedback, milestone deliverables, monitoring, archiving)</mark>
 
-The key digital functionalities would include at minimum the following:
-
-1.
-
 The E-Marketplace building block must utilize the above objects to primarily support various consumer-provider interactions like discovery, ordering, fulfillment, and post-fulfillment. For example, A patient (Consumer) on WhatsApp (Consumer Platform) can search (Discovery) for a doctor (Agent) by his name (Intent). This request can be sent to ORS (Provider Platform) that returns a list of Hospitals (Providers), with the various services offered (Catalog). Once identified, the patient (Consumer) can book an appointment (Order) with the Doctor(Agent).
 
-
-
 The various actors and their activities described in section 2 must be supported by a set of non-redundant, Key Digital Functionalities listed below:
-
-
 
 ## 4.1 Catalog Management
 
