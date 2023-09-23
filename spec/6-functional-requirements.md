@@ -14,7 +14,7 @@ _\<Example Functional Requirements>_
 
 ### Internal functional components
 
-The E-Marketplace can be visualized as a black box with all key digital functionalities discussed in section 4. It does not assume any particular standard like REST for all internal resource management. A brief description of the functional requirements required to orchestrate each key digital functionality is given below, <mark style="color:blue;">considering the development of a</mark> minimum viable product ~~perspective~~. Detailed design and more elaborate feature lists of these blocks can be customized by developers to optimally match respective implementation needs. It is also left to the application implementing this building block to receive the responses from the E-marketplace and present it appropriately and provision for associated user interface interactions.
+The E-Marketplace can be visualized as a black box with all key digital functionalities discussed in section 4. It does not assume any particular standard like REST for all internal resource management. A brief description of the functional requirements required to orchestrate each key digital functionality is given below, considering the development of a minimum viable product ~~perspective~~. Detailed design and more elaborate feature lists of these blocks can be customized by developers to optimally match respective implementation needs. It is also left to the application implementing this building block to receive the responses from the E-marketplace and present it appropriately and provision for associated user interface interactions.
 
 
 
@@ -165,45 +165,45 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 6.16.2 The Digital Identity & Verification Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block to enable users on the Consumer Platform and the Provider Platform interface to verify the digital identities in the E-Marketplace based on their national data registers.
 
-<mark style="color:blue;">6.16.1 These are dedicated API interfaces defined in the Digital Identity & Verification building block and hence not defined here</mark>
+6.16.1 These are dedicated API interfaces defined in the Digital Identity & Verification building block and hence not defined here
 
-<mark style="color:blue;">6.16.2 The Digital Identity & Verification interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block for sending user registration data (name, unique identity number, tax number, phone/mobile, email etc.) and verify the same with relevant registries through OTP, SMS, biometrics, physical appearance, during a transaction in the E-Marketplace. In case of any error/mismatch, it should be able to suggest alternatives.</mark>
+6.16.2 The Digital Identity & Verification interface SHOULD provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block for sending user registration data (name, unique identity number, tax number, phone/mobile, email etc.) and verify the same with relevant registries through OTP, SMS, biometrics, physical appearance, during a transaction in the E-Marketplace. In case of any error/mismatch, it should be able to suggest alternatives.
 
-### <mark style="color:blue;">6.16 Promotional Communications</mark>
+### 6.16 Promotional Communications
 
-<mark style="color:red;">6.17.1</mark> These are dedicated API interfaces defined in the <mark style="color:red;">Communication and Outreach</mark> Building Block and hence not defined here.
+6.17.1 These are dedicated API interfaces defined in the  Communication and Outreach Building Block and hence not defined here.
 
-6.17.2 The <mark style="color:red;">Communication and Outreach</mark> Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the <mark style="color:red;">Communication and Outreach</mark> Building Block to enable users on the Consumer Platform and the Provider Platform interface to integrate with social media and messaging platform.
+6.17.2 The Communication and Outreach Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the Communication and Outreach Building Block to enable users on the Consumer Platform and the Provider Platform interface to integrate with social media and messaging platform.
 
-### <mark style="color:red;">6.17</mark> <mark style="color:red;"></mark><mark style="color:red;">**Content Management Interface**</mark>
+### 6.17 **Content Management Interface**
 
-<mark style="color:red;">6.18.1</mark> These are dedicated API interfaces defined in the content management interface Building Block and hence not defined here.
+6.18.1 These are dedicated API interfaces defined in the content management interface Building Block and hence not defined here.
 
 6.18.2 The content management interface Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the content management interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to manage content creation.
 
-### <mark style="color:red;">6.18</mark> <mark style="color:red;"></mark><mark style="color:red;">**Workflow Interface**</mark>
+### 6.18 **Workflow Interface**
 
-<mark style="color:red;">6.19.1</mark> These are dedicated API interfaces defined in the Workflow interface Building Block and hence not defined here.
+6.19.1 These are dedicated API interfaces defined in the Workflow interface Building Block and hence not defined here.
 
 6.19.2 The workflow interface Building Block  SHOULD provide the necessary protocol, data format, and information and interface to interact with the workflow interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to define and orchestrate the workflow within the system.
 
-### <mark style="color:red;">6.19</mark> <mark style="color:red;"></mark><mark style="color:red;">**Dashboard & Business Analytics Interface**</mark>
+### 6.19 **Dashboard & Business Analytics Interface**
 
-<mark style="color:red;">6.20.1</mark> These are dedicated API interfaces defined in the Dashboard & Business Analytics interface Building Block and hence not defined here.
+6.20.1 These are dedicated API interfaces defined in the Dashboard & Business Analytics interface Building Block and hence not defined here.
 
 6.20.2 The dashboard & business analytics interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the dashboard & business analytics interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to visualize the data in the system.
 
-### <mark style="color:red;">6.20</mark> <mark style="color:red;"></mark><mark style="color:red;">**GIS BB Interface**</mark>
+### 6.20 **GIS BB Interface**
 
-<mark style="color:red;">6.21.1</mark> These are dedicated API interfaces defined in the GIS interface Building Block and hence not defined here.
+6.21.1 These are dedicated API interfaces defined in the GIS interface Building Block and hence not defined here.
 
-<mark style="color:red;">6.21.2</mark> The GIS interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the GIS interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to use GIS based services like GIS tagging, tracking etc.
+6.21.2 The GIS interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the GIS interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to use GIS based services like GIS tagging, tracking etc.
 
-### <mark style="color:red;">6.21</mark> <mark style="color:blue;">**Consent Management Interface**</mark>
+### 6.21 Consent Management Interface
 
-<mark style="color:red;">6.22.1</mark> These are dedicated API interfaces defined in the consent management interface Building Block and hence not defined here.
+6.22.1 These are dedicated API interfaces defined in the consent management interface Building Block and hence not defined here.
 
-<mark style="color:red;">6.22.2</mark> The consent management interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the consent management interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to capture and validate the consent of the users.
+6.22.2 The consent management interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the consent management interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to capture and validate the consent of the users.
 
 ### 6.22 Messaging Interface
 
@@ -217,88 +217,88 @@ The E-Marketplace can be visualized as a black box with all key digital function
 
 6.22.2 The scheduling interface Building Block SHOULD provide the necessary protocol, data format, and information and interface to interact with the scheduling interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to automate the process based on the events in the system.
 
-<mark style="color:blue;">6.17.1 The buyer MUST be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for next 6 months etc.</mark>
+6.17.1 The buyer MUST be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for next 6 months etc.
 
-<mark style="color:blue;">6.17.2 The platform should be able to connect with social media networks and reach the target audience.</mark>
+6.17.2 The platform should be able to connect with social media networks and reach the target audience.
 
-<mark style="color:blue;">6.17.3 The suppliers, citizens, entities should be able to subscribe to social media channels and to the website so as to receive updates from the buyer.</mark>
+6.17.3 The suppliers, citizens, entities should be able to subscribe to social media channels and to the website so as to receive updates from the buyer.
 
-<mark style="color:blue;">6.17.4 The buyer should be able to send alerts, messages, emails to subscribers about the new announcements.</mark>
+6.17.4 The buyer should be able to send alerts, messages, emails to subscribers about the new announcements.
 
-<mark style="color:blue;">6.17.5 The subscriber should be able to cancel their subscriptions as and when desired</mark>.
+6.17.5 The subscriber should be able to cancel their subscriptions as and when desired.
 
-### <mark style="color:blue;">6.24 Content Management Interface</mark>
+### 6.24 Content Management Interface
 
-<mark style="color:blue;">6.18.1 The interface SHOULD be able to moderate, curate content creation</mark>
+6.18.1 The interface SHOULD be able to moderate, curate content creation
 
-<mark style="color:blue;">6.18.2 The interface SHOULD enable the user (citizen/supplier) to submit a document, best practices in a prescribed format</mark>
+6.18.2 The interface SHOULD enable the user (citizen/supplier) to submit a document, best practices in a prescribed format
 
-<mark style="color:blue;">6.18.3 The interface SHOULD be able to store the documents in an organized manner</mark>
+6.18.3 The interface SHOULD be able to store the documents in an organized manner
 
-<mark style="color:blue;">6.18.4 It should allow any user to access the organized content.</mark>
+6.18.4 It should allow any user to access the organized content.
 
-<mark style="color:blue;">6.18.5 The interface allows the suppliers or users to add text, images, product description details etc. to a good/service</mark>
+6.18.5 The interface allows the suppliers or users to add text, images, product description details etc. to a good/service
 
-### <mark style="color:blue;">6.25 Workflow Interface</mark>
+### 6.25 Workflow Interface
 
-<mark style="color:blue;">6.19.1 The interface SHOULD automate the processes involved in a lifecycle of technical activities, as defined by the administrator.</mark>
+6.19.1 The interface SHOULD automate the processes involved in a lifecycle of technical activities, as defined by the administrator.
 
-<mark style="color:blue;">6.19.2 The status of each process should be 'Live', accompanied with time stamp details.</mark>
+6.19.2 The status of each process should be 'Live', accompanied with time stamp details.
 
-<mark style="color:blue;">6.19.3 Upon a status is technically fulfilled (whether completed/achieved, failed, cancelled), the next relevant process should get triggered automatically.</mark>
+6.19.3 Upon a status is technically fulfilled (whether completed/achieved, failed, cancelled), the next relevant process should get triggered automatically.
 
-### <mark style="color:blue;">6.26 Dashboard and Business Analytics Interface</mark>
+### 6.26 Dashboard and Business Analytics Interface
 
-<mark style="color:blue;">6.20.1 This interface SHOULD visualize the 'LIVE' data on identified set of data fields such as number of items in stock, cancelled items etc.</mark>
+6.20.1 This interface SHOULD visualize the 'LIVE' data on identified set of data fields such as number of items in stock, cancelled items etc.
 
-<mark style="color:blue;">6.20.2 This interface should analyze the data using basic mathematical operations (such as addition, average, percentage) and offer insights.</mark>
+6.20.2 This interface should analyze the data using basic mathematical operations (such as addition, average, percentage) and offer insights.
 
-<mark style="color:blue;">6.20.3 The interface MAY have advance mathematical operations such as analyzing historical data, prediction analyses using linear regression, machine learning algorithms.</mark>
+6.20.3 The interface MAY have advance mathematical operations such as analyzing historical data, prediction analyses using linear regression, machine learning algorithms.
 
-<mark style="color:blue;">6.20.4 This interface MAY be able to perform and fetch advance statistics, upon a request from the administrator, such as annual/half-yearly procurement/sales of goods and services, year on increments etc.</mark>
+6.20.4 This interface MAY be able to perform and fetch advance statistics, upon a request from the administrator, such as annual/half-yearly procurement/sales of goods and services, year on increments etc.
 
-### <mark style="color:blue;">6.27 GIS Interface</mark>
+### 6.27 GIS Interface
 
-<mark style="color:blue;">6.21.1 This interface SHOULD track the goods/services, with timestamps</mark>
+6.21.1 This interface SHOULD track the goods/services, with timestamps
 
-<mark style="color:blue;">6.21.2 The interface SHOULD tag the coordinates of entities, of persons as defined by the administrator</mark>
+6.21.2 The interface SHOULD tag the coordinates of entities, of persons as defined by the administrator
 
-<mark style="color:blue;">6.21.3 The interface SHOULD be live.</mark>
+6.21.3 The interface SHOULD be live.
 
-### <mark style="color:blue;">6.28 Consent Management Interface</mark>
+### 6.28 Consent Management Interface
 
-<mark style="color:blue;">6.22.1 This interface SHOULD accept the data of different types and forms (biometrics, electronic messages, physical inputs)</mark>
+6.22.1 This interface SHOULD accept the data of different types and forms (biometrics, electronic messages, physical inputs)
 
-<mark style="color:blue;">6.22.2 The interface SHOULD let the user decide to accept/reject to share their consent to the applications</mark>
+6.22.2 The interface SHOULD let the user decide to accept/reject to share their consent to the applications
 
-<mark style="color:blue;">6.22.3 The interface MUST respect the Consent protocols/related policies as defined by the administrator.</mark>
+6.22.3 The interface MUST respect the Consent protocols/related policies as defined by the administrator.
 
-<mark style="color:blue;">6.22.4 The interface MUST validate the consent of the user, as required.</mark>
+6.22.4 The interface MUST validate the consent of the user, as required.
 
-### <mark style="color:blue;">6.29 Messaging Interface</mark>
+### 6.29 Messaging Interface
 
-<mark style="color:blue;">6.23.1 This interface MUST act as a secured channel between sending and receiving users</mark>
+6.23.1 This interface MUST act as a secured channel between sending and receiving users
 
-<mark style="color:blue;">6.23.2 This interface SHOULD facilitate to message both encrypted and non-encryoted</mark>
+6.23.2 This interface SHOULD facilitate to message both encrypted and non-encryoted
 
-<mark style="color:blue;">6.23.3 Logging, back-up, retrival of lost messages, storage features shall be enabled by this interface.</mark>
+6.23.3 Logging, back-up, retrival of lost messages, storage features shall be enabled by this interface.
 
-### <mark style="color:blue;">6.30 Scheduling Interface</mark>
+### 6.30 Scheduling Interface
 
-<mark style="color:blue;">6.24.1 This interface SHOULD orchestrate processes with time stamps and when triggered</mark>
+6.24.1 This interface SHOULD orchestrate processes with time stamps and when triggered
 
-<mark style="color:blue;">6.24.2 It SHOULD update the processes, current list of stock items</mark>
+6.24.2 It SHOULD update the processes, current list of stock items
 
-<mark style="color:blue;">6.24.3 It SHOULD perform communication related activities such as sending alerts, reminders, automated messages, upon achieving a stage/state</mark>
+6.24.3 It SHOULD perform communication related activities such as sending alerts, reminders, automated messages, upon achieving a stage/state
 
-### <mark style="color:blue;">6.31 Bid Evaluation</mark>
+### 6.31 Bid Evaluation
 
-<mark style="color:blue;">6.25.1 The eMarketplace MUST allow the buyer to perform an evaluation (financial, technical, any other)</mark>
+6.25.1 The eMarketplace MUST allow the buyer to perform an evaluation (financial, technical, any other)
 
-<mark style="color:blue;">6.25.2 The E-Marketplace must allow the buyer to pre-define an evaluation criteria for a good or service.</mark>
+6.25.2 The E-Marketplace must allow the buyer to pre-define an evaluation criteria for a good or service.
 
-<mark style="color:blue;">6.25.3 It shall facilitate the buyer and supplier to seek clarification on any of the questions, they might have.</mark>&#x20;
+6.25.3 It shall facilitate the buyer and supplier to seek clarification on any of the questions, they might have.&#x20;
 
-<mark style="color:blue;">6.25.4  It must allow the individual members to read the documents, other details and share their scores, remarks, ranking based on the pre-defined criteria</mark>
+6.25.4  It must allow the individual members to read the documents, other details and share their scores, remarks, ranking based on the pre-defined criteria
 
-<mark style="color:blue;">6.25.5 The evaluation report/remarks shall be fed to the administrator and the final acceptance (not the details) may be communicated to the suppliers.</mark>
+6.25.5 The evaluation report/remarks shall be fed to the administrator and the final acceptance (not the details) may be communicated to the suppliers.
