@@ -4,10 +4,6 @@ description: This section provides the context of the building block.
 
 # 2 Description
 
-{% hint style="success" %}
-Set the context of the Building Block for the reader. The description should not assume that the reader has any experience of the GovStack system other than that found on the GovStack website.
-{% endhint %}
-
 Governments involve, directly or indirectly, in the procurement of various goods and services (e.g.  computers (goods) for its employees, and technical services for various projects to be implemented for the public welfare. E-marketplaces building block enables trade of products and/or services via electronic media where at least one of the transacting parties taking part in the transaction is the government (either as the procurer or the provider) and the other party(s) can be either providers or consumers of such goods and services (respectively).&#x20;
 
 The government eMarketplace facilitates transparency by creating equal opportunities for all the stakeholders (suppliers and consumers); and thus creates efficient market for goods and services. It helps building new relationships thus builds trust. The buyer gains more insights on price information from different suppliers and is empowered to make rational decision making. The sellers can optimize the sales/marketing costs and can also improve their product range/portfolio by observing the demand in their domains thus multiply their market options even in international markets. The digital facility reduces time constraints for both the parties.

@@ -1,3 +1,9 @@
+---
+description: >-
+  This section provides a detailed view of how this Building Block will interact
+  with other Building Blocks to support common use cases.
+---
+
 # 9 Internal Workflows
 
 In this section, we identify workflows to manifest some of the main services. These may be enhanced or customized as needed for specific implementation needs. The following common preconditions may be needed to be met before utilizing these services:

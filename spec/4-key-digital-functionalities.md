@@ -6,12 +6,6 @@ description: >-
 
 # 4 Key Digital Functionalities
 
-{% hint style="success" %}
-The Key Digital Functionalities describe the core (required) functions that this building block must be able to perform. These functionalities should be described as business processes as opposed to technical specifications or API definitions.
-
-Note, this section may be extended after the key functionalities have been listed to include any assumptions or context that is needed. Additionally, if the Building Block contains multiple components, the functionalities for each may be described.
-{% endhint %}
-
 To facilitate various activities and different actors as described in section 2, the E-Marketplace building block MUST have specific key digital functionalities. E-marketplace transactions by definition should have:
 
 1. Consumer Platforms (like Super-apps, Chat messengers, Storefronts etc) to provide a rich, demand-centric experience
