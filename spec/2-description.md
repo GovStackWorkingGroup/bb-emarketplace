@@ -12,7 +12,7 @@ Governments involve, directly or indirectly, in the procurement of various goods
 
 The government eMarketplace facilitates transparency by creating equal opportunities for all the stakeholders (suppliers and consumers); and thus creates efficient market for goods and services. It helps building new relationships thus builds trust. The buyer gains more insights on price information from different suppliers and is empowered to make rational decision making. The sellers can optimize the sales/marketing costs and can also improve their product range/portfolio by observing the demand in their domains thus multiply their market options even in international markets. The digital facility reduces time constraints for both the parties.
 
-This document allows (provides guidance on creating) an e-marketplace digital public infrastructure to be created by connecting a set of interacting (services) microservices. In the context of government, the government can itself act as a supplier (in case of transferring moey to citizens i.e. G2P) and also can demand goods and services from other public entities (departmental transfers i.e. G2G) and private entities (puchasing computers/technical/advisory services i.e. business to government (B2G)). This infrastructure is fundamentally decentralized or federated, although all the services can exist on a single cloud. This specification does NOT assume any specific implementation architecture or technology. Rather, it defines the actors and the interfaces that need to be implemented by the transacting entities. The current document focuses on enabling basic functionalities such as supplier/buyer registration, listing a catalogue of goods and services, initiating a cycle of activities once a user selects a service. The document has not focused on payments/financial transactions between any two entities.
+This document allows (provides guidance on creating) an e-marketplace digital public infrastructure to be created by connecting a set of interacting (services) microservices. In the context of government, the government can itself act as a supplier (in case of transferring money to citizens i.e. G2P) and also can demand goods and services from other public entities (departmental transfers i.e. G2G) and private entities (puchasing computers/technical/advisory services i.e. business to government (B2G)). This infrastructure is fundamentally decentralized or federated, although all the services can exist on a single cloud. This specification does NOT assume any specific implementation architecture or technology. Rather, it defines the actors and the interfaces that need to be implemented by the transacting entities. The current document focuses on enabling basic functionalities such as supplier/buyer registration, listing a catalogue of goods and services, initiating a cycle of activities once a user selects a service. The document has not focused on payments/financial transactions between any two entities.
 
 The eMarketplace building block could be useful in variety applications in different sectors for example,
 
@@ -49,7 +49,7 @@ Currently the following actors have been identified as "users" of the scheduler 
 * "Supplier" is who manages the building block's implementation settings. A building block admin is also responsible to enrolment of entitles and Organizers of those entities that use the eMarketplace building block. The Admins interacts with the list of goods and services, cycle of procurement activities, communication management.
 * "Buyers" are who participate in events to perform various activities. Buyers MUST be registered in the eMarketplace Building Block before they can be enrolled in events. Resources MAY apply/respond to multiple goods and services in a catalogue. Hence a registered buyer SHOULD be able to offer services in parallel, if they are short listed by the Supplier.
 * "Subscribers" who participate in events to consume various activities. Subscribers must be registered in the eMarketplace before they can be enrolled in activities. Subscribers MAY be enrolled in multiple events and MAY be passive to suppliers requests.
-* <mark style="color:blue;">"Internal team member" who participates in the internal activities such as technical and financial evaluation of the bids received on the buyer side; preparation of documents and coordination across business development, technical, managerial teams on supplier side. The corresponsing "internal team member" communicates with the "supplier" or "buyer", respectively.</mark>
+* "Internal team member" who participates in the internal activities such as technical and financial evaluation of the bids received on the buyer side; preparation of documents and coordination across business development, technical, managerial teams on supplier side. The corresponsing "internal team member" communicates with the "supplier" or "buyer", respectively.
 * More actors ??? (property officer and Supply Property Management office in the case of GAM use case; internal teams does the bid evaluation and inform the buyer admin?)
 
 The eMarketplace MUST be able to enable enable these actors to perform in their roles associated with one or more events.  More specifically, the eMarketplace should facilitate following activities of the actors:
@@ -66,8 +66,8 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 
 **2.1.1. The eMarketplace MUST enable Building Block Admins (Supplier and Buyer) to**
 
-* <mark style="color:green;">seek consent from the entities, peoples while registration</mark>
-* <mark style="color:green;">dynamically identify, verify and validate the registration details against that of public registries.</mark>
+* seek consent from the entities, peoples while registration
+* dynamically identify, verify and validate the registration details against that of public registries.
 * register without duplication an entity, into its Entity List with details (e.g. name, phone, email, website, etc.) The entities host various "activities" involving their affiliated resources (client case management).
 * categorize entities for easy searching and sorting. In current scope, "department",  "ministry" may be example entities.&#x20;
 * configure rules for performance, security and communication management between the eMarketplace and other building blocks (Registries, Identity and Verification, Information Mediation), applications (across different departments/ministries) and event participants. The exact parameters may be decided at implementation time&#x20;
@@ -114,7 +114,7 @@ The eMarketplace MUST be able to enable enable these actors to perform in their 
 The following aspects are out of scope of the current version of the eMarketplace building block specifications considered in this document:
 
 * Any type of payments between two parties.
-* <mark style="color:red;">Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.</mark>
+* Internal coordination on  both supplier side (for example: preparation of business case ) and buyer side (technical evaluation of bids) are outside of the current scope.
 
 \
 \
