@@ -36,5 +36,9 @@ All audit logs shall be integrity protected against tampering. The Consent BB sh
 
 <mark style="color:green;">5.7 Why is that Adaptors not mentioned in SEC 6 BB Modules? Are Connectors and Adaptors same?</mark>
 
+## 5.X Standards
+
+
+
 
 

@@ -1,12 +1,14 @@
+---
+description: >-
+  This section provides information on the core data structures/data models that
+  are used by this Building Block.
+---
+
 # 7 Data Structures
 
-**The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.**
+The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.
 
-## 7.1 Standards
-
-* Ignore this section
-
-## 7.2 E-Marketplace Building Block Data Model
+## 7.1 E-Marketplace Building Block Data Model
 
 * **TODO**: Create a Class Diagram based on the JSON
 

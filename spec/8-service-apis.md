@@ -14,18 +14,15 @@ The [GovStack non-functional requirements document](https://govstack.gitbook.io/
 * For implementation of Administration APIs, we have referred to TMF630\_REST\_API\_Design\_Guidelines.
 * For implementation of Interoperability APIs, we have referred various open protocol standards including  Beckn Protocol API Specification.
 
-Each service in the E-Marketplace building block consists of two types of APIs namely,
+Each service in the e-Marketplace Building Block consists of two types of APIs namely,
 
-1. Order Lifecycle APIs
-2. Service Administration APIs
+* Order Lifecycle APIs:
 
+Consists of a common set of endpoints that allow for decentralized/federated networks to be created that allow discovery, ordering, fulfillment, and post-fulfillment activities during the lifecycle of an order. These do NOT follow REST Standards. The Order Lifecycle APIs follow a specification known as [beckn protocol](https://github.com/beckn/protocol-specifications/tree/master). Due to its abstract and generic design, beckn protocol is rapidly gaining extensive adoption in countries like India, and the region of Europe to create open interoperable commerce networks across multiple sectors like mobility, retail, healthcare, logistics, energy, financial services, government services, Industry 4.0 and many more.&#x20;
 
+* Service Administration APIs:
 
-**Order Lifecycle APIs** consist of a common set of endpoints that allow for decentralized / federated networks to be created that allow discovery, ordering, fulfillment, and post-fulfillment activities during the lifecycle of an order. These do NOT follow REST Standards. The Order Lifecycle APIs follow a specification known as [beckn protocol](https://github.com/beckn/protocol-specifications/tree/master). Due to its abstracted and generic design, beckn protocol is rapidly gaining extensive adoption in countries like India, Europe to create open interoperable commerce networks across multiple sectors like mobility, retail, healthcare, logistics, energy, financial services, government services, Industry 4.0 and many more.&#x20;
-
-**Service Administration APIs** consists of all the endpoints that are used to configure and manage the business workflows like catalog management, cart management, checkout, terms management, content management etc. These follow REST Standards for the creation, read, update, and deletion of objects in the database.&#x20;
-
-Both types of APIs will be defined using the OpenAPI (Swagger) standard. The API definitions will be hosted outside of this document. This section may provide a brief description of required APIs.
+Consists of all the endpoints that are used to configure and manage the business workflows like catalog management, cart management, checkout, terms management, content management, etc. These follow REST Standards for the creation, read, update, and deletion of objects in the database. Both types of APIs will be defined using the OpenAPI (Swagger) standard. The API definitions will be hosted outside of this document. This section may provide a brief description of required APIs.
 
 ## 8.1 Catalog Management
 
@@ -119,7 +116,7 @@ Since inventory is a provider-centric feature, it does not interface with a cust
 [beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
 {% endswagger %}
 
-## 8.4 Terms Management
+## 8.4 Order Terms Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/terms/payment" method="post" %}
 [beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
@@ -171,7 +168,7 @@ Since inventory is a provider-centric feature, it does not interface with a cust
 [beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
 {% endswagger %}
 
-## 8.6  Fulfillment Management
+## 8.6  Order Fulfillment
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment" method="post" %}
 [beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
@@ -211,15 +208,15 @@ Since inventory is a provider-centric feature, it does not interface with a cust
 [beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
 {% endswagger %}
 
-## 8.9 Cancellation Management
+## 8.8 Order Cancellation
 
-### 8.9.1 Order Lifecycle APIs
+### 8.8.1 Order Lifecycle APIs
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/get_cancellation_reasons" method="post" %}
 [beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
 {% endswagger %}
 
-## 8.10 Rating and Reputation Management
+## 8.9 Rating and Feedback Management
 
 ### 8.10.1 Order Lifecycle APIs
 
