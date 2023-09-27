@@ -17,8 +17,8 @@ Initiator building block and the target block must be registered in the system a
 This section captures the example workflows that may take place between internal functional blocks to orchestrate key functionalities for a minimum viable product as follows. The exact workflows may be decided depending on implementation time considerations.
 
 * User search for product/service from a provider platform.
-* Inventory management
 * Viewing an item from the provider catalog.
+* Inventory management
 * Selection of the product.
 * Initiation of the purchase request.
 * Confirmation of  the order.
@@ -31,9 +31,9 @@ This section captures the example workflows that may take place between internal
 
 
 
-## 9.1 Order Lifecycle Workflows
+## 9 Order Lifecycle Workflows
 
-### 9.1.1 Searching for Items
+### 9.1 Searching for Items
 
 The search flow allows consumers to search for available products or services . When a consumer initiates a search request, the catalog providers relevant products or services available respond to the search request by sending back detailed information about their offerings. This includes product details such as descriptions, images, specifications, prices, and any applicable offers or promotions.
 
@@ -52,13 +52,9 @@ sequenceDiagram
     consumer interface-->>consumer:view search results
 ```
 
-### 9.1.2 Fetching a quote for selected items
-
 ### 9.2 Catalog Management
 
 This allow creation of a catalog for a product or a service based on the request made by the user. This allows user to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
-
-#### 9.2.1 User request for catalog
 
 User while searching for products can request for the catalog of the product or the services, the platform will fetch and serve back user with the required catalog.
 
@@ -122,7 +118,7 @@ sequenceDiagram
 
 
 
-### 9.1.3 Initializing an order by providing billing and fulfillment details
+### 9.5 Initializing an order by providing billing and fulfillment details
 
 The consumer carefully reviews the contents of their cart, ensuring that everything selected is accurate and satisfactory. Once satisfied, the consumer initiates a checkout call, indicating their intention to proceed with the payment. This action finalizes the cart, preventing any further modifications.
 
@@ -164,7 +160,7 @@ Order Management->>consumer interface: return draft <br/> order with terms
 
 ```
 
-### 9.1.4 Confirming an Order
+### 9.6 Confirming an Order
 
 Once the consumer receives the payment link and reviews the terms and conditions, they proceed to make a payment. Upon a successful transaction, the consumer platform initiates a confirmation call to the provider platform. This call serves as a notification that the payment has been completed and confirms the order placement.
 
@@ -201,11 +197,11 @@ sequenceDiagram
 
 ```
 
-### 9.1.5 Checking the status of an order&#x20;
+### 9.7 Checking the status of an order&#x20;
 
 Once an order is confirmed, the user receives the details of the confirmed order, and they have the option to check the status of their order. The order status typically includes stages such as "placed," "packed," "dispatched," and so on. The "placed" status indicates that the order has been successfully received and recorded. The "packed" status signifies that the items in the order have been gathered and prepared for shipment. The "dispatched" status indicates that the package has been handed over to the delivery service for transportation.
 
-#### 9.1.5.1 User explicitly requests for the fulfillment status of the order
+#### 9.7.1 User explicitly requests for the fulfillment status of the order
 
 ```mermaid
 sequenceDiagram
@@ -223,7 +219,7 @@ sequenceDiagram
     consumer interface-->>consumer: display latest status of order
 ```
 
-#### 9.1.5.2 Provider's Agent asynchronously updates the fulfillment status of an order at their end
+#### 9.7.2 Provider's Agent asynchronously updates the fulfillment status of an order at their end
 
 
 
@@ -244,13 +240,13 @@ sequenceDiagram
     consumer interface-->>consumer: display latest status of order
 ```
 
-### 9.1.6 Tracking the fulfillment of an order
+### 9.8 Tracking the fulfillment of an order
 
 When a consumer places an order and it is confirmed, they are provided with the option to track the status of their order. This tracking feature allows the consumer to stay informed about the progress of their purchase. The order status typically encompasses various updates related to the delivery process, giving the consumer insights into the whereabouts and estimated arrival time of their package.
 
 One of the primary aspects of the order status is the delivery status, which indicates whether the package has been dispatched from the seller's location or the warehouse. It confirms that the order is on its way to the consumer. This status assures the consumer that their purchase is in the process of being delivered.
 
-#### 9.1.6.1 Update Agent's tracking information
+#### 9.8.1 Update Agent's tracking information
 
 User can update the tracking  status of an order.
 
@@ -267,7 +263,7 @@ sequenceDiagram
     end
 ```
 
-#### 9.1.6.2 Tracking an order
+#### 9.8.2 Tracking an order
 
 User can make a request to get the tracking status of an order.
 
@@ -291,9 +287,9 @@ sequenceDiagram
     
 ```
 
-### 9.1.7 Updating an Order
+### 9.9 Updating an Order
 
-#### 9.1.7.1 Consumer initiated update
+#### 9.9.1 Consumer initiated update
 
 ```mermaid
 sequenceDiagram
@@ -315,9 +311,7 @@ sequenceDiagram
     Order Management->>Payment BB Interface: Initiate Payment / Refund
 ```
 
-### 9.1.7.2 Provider Initiated Update
-
-####
+#### 9.9.2 Provider Initiated Update
 
 ```mermaid
 sequenceDiagram
@@ -338,11 +332,11 @@ sequenceDiagram
     Order Management->>Payment BB Interface: (Optionally) Initiate Refund <br/> to consumer
 ```
 
-### 9.1.8 Cancelling an Order
+### 9.10 Cancelling an Order
 
 When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
 
-#### 9.1.8.1 Consumer initiated cancellation
+#### 9.10.1 Consumer initiated cancellation
 
 ```mermaid
 sequenceDiagram
@@ -364,7 +358,7 @@ sequenceDiagram
     Order Management->>Payment BB Interface: Initiate Refund
 ```
 
-#### 9.1.8.2 Provider Initiated Cancellation
+#### 9.10.2 Provider Initiated Cancellation
 
 
 
@@ -389,11 +383,11 @@ sequenceDiagram
 
 ```
 
-### 9.1.9 Rating and Feedback Management
+### 9.11 Rating and Feedback Management
 
 This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
 
-#### 9.1.9.1 Rating an Order (without feedback)
+#### 9.11.1 Rating an Order (without feedback)
 
 ```mermaid
 sequenceDiagram
@@ -412,7 +406,7 @@ sequenceDiagram
 
 
 
-#### 9.1.9.2 Rating an order with feedback
+#### 9.11.2 Rating an order with feedback
 
 
 
@@ -436,7 +430,7 @@ sequenceDiagram
     Feedback Management->>consumer interface: Acknowledge feedback
 ```
 
-### 9.1.10 Support Management
+### 9.12 Support Management
 
 User can make a request for the support, this can happen anytime during the lifecycle of an order.&#x20;
 
