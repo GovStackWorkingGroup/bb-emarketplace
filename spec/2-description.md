@@ -104,6 +104,8 @@ The eMarketplace MUST be able to enable these actors to perform in their roles a
 * track all procurement lifecycle stages/events and send corresponding alert messages with unique **tokens/IDs** to relevant participants at appropriate times
 * detect communication failure with other Building Blocks and applications and perform retries according to configured rules before logging a communication failure. Associated implementation-specific details that are not specified here.&#x20;
 
+&#x20;In General, the BB shall be accessible on various delivery channels such as Mobile, Kiosk, Web, and applications and should be digitally inclusive for users with different capabilities. The BB's minor features such as physical delivery of goods and services, client feedback etc. should be able to work on feature phones (without internet) as well.
+
 \
 \
 
