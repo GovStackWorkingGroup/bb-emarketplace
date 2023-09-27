@@ -1,9 +1,3 @@
----
-description: >-
-  This section provides information on the core data structures/data models that
-  are used by this Building Block.
----
-
 # 7 Data Structures
 
 The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.
@@ -43,7 +37,7 @@ Describes the direct performer, driver or executor that fulfills an order. It is
 
 | Property     | Type   | Description                                            |
 | ------------ | ------ | ------------------------------------------------------ |
-| person       | object | \[Person]\(#7339-person                                |
+| person       | object | [Person](7-data-structures.md#7.3.39-person)           |
 | contact      | object | [Contact](7-data-structures.md#7313-contact)           |
 | organization | object | [Organization](7-data-structures.md#7337-organization) |
 | rating       | object | [Rating](7-data-structures.md#7343-rating)             |
