@@ -1,9 +1,3 @@
----
-description: >-
-  This section provides information on the core data structures/data models that
-  are used by this Building Block.
----
-
 # 7 Data Structures
 
 **The proposed resource model showing the relationship between data objects that are used by this Building Block is illustrated in the diagram below.**
