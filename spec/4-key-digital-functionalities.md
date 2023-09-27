@@ -16,9 +16,9 @@ To facilitate various activities and different actors as described in section 2,
 6. Intent (like a search by product, search by category, search by provider, etc),
 7. Catalogs (like products, offers, add-ons, services).
 8. Payments and Settlements (like Cash on Delivery, Prepayment, T+x settlement, etc)
-9. Order management (like a procurements, appointments, bids, service request)
+9. Order management (like procurements, appointments, bids, service request)
 10. Fulfillments (like appointments, tender approval, delivery of goods and services)
-11. Procurement lifecycle activities (from bid invitation to ordering to feedback, milestone deliverables, monitoring, archiving)
+11. Management of procurement lifecycle activities (from tendering to bidding, evaluation ordering, delivery tracking to feedback, etc. )
 
 The E-Marketplace building block must utilize the above objects to primarily support various consumer-provider interactions like discovery, ordering, fulfillment, and post-fulfillment. For example, A patient (Consumer) on WhatsApp (Consumer Platform) can search (Discovery) for a doctor (Agent) by his name (Intent). This request can be sent to ORS (Provider Platform) that returns a list of Hospitals (Providers), with the various services offered (Catalog). Once identified, the patient (Consumer) can book an appointment (Order) with the Doctor(Agent).
 
@@ -26,7 +26,9 @@ The various actors and their activities described in section 2 must be supported
 
 ## 4.1 Catalog Management
 
-This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products and services that can operate across multiple locations and timings. It is to be noted that this functionality does not only apply to catalogs of products and services. It can be used to publish any economic resource that has a fulfillment cycle (for example, it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update or delete catalogs, and any sub-component of this catalog like Items, Categories, Providers, Locations, Agents, Fulfillments, Payments and others. In summary, the building block enables cataloging of various elements such as providers, products, services, consumers, tenders, agents, etc., such that they can be searched, retrieved, shared in appropriate workflows.&#x20;
+This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products and services that can operate across multiple locations and timings. It is to be noted that this functionality does not only apply to catalogs of products and services. It can be used to publish any economic resource that has a fulfillment cycle (for example, it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update or delete catalogs, and any sub-component of this catalog like Items, Categories, Providers, Locations, Agents, Fulfillments, Payments and others. For tendered procurement, the government can publish tenders along with associated documents(RFP etc ) in the tender's catalog. Providers can search the catalog and bid accordingly through quotation management services.
+
+&#x20;In summary, the building block enables cataloging of various elements such as providers, products, services, consumers, tenders, agents, etc., such that they can be searched, retrieved, shared in appropriate workflows.&#x20;
 
 ## 4.2 Inventory Management
 
