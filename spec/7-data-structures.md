@@ -15,17 +15,17 @@ Describes the acknowledgement sent in response to an API call. If the implementa
 | Property | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Format | Enum      |
 | -------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------- |
 | status   | string | The status of the acknowledgement. If the request passes the validation criteria of the Provider Platform, then this is set to ACK. If a Provider Platform responds with status = `ACK` to a request, it is required to respond with a callback. If the request fails the validation criteria, then this is set to NACK. Additionally, if a Provider Platform does not intend to respond with a callback even after the request meets the validation criteria, it should set this value to `NACK`. |        | ACK, NACK |
-| tags     | array  | A list of [tags](7-data-structures.md#7353-taggroup) containing any additional information sent along with the Acknowledgement.                                                                                                                                                                                                                                                                                                                                                                    |        |           |
+| tags     | array  | A list of [tags](7-data-structures.md#7.3.52-tag) containing any additional information sent along with the Acknowledgement.                                                                                                                                                                                                                                                                                                                                                                       |        |           |
 
 ### 7.3.2 AddOn
 
 Describes an additional item offered as a value-addition to a product or service. This does not exist independently in a catalog and is always associated with an item.
 
-| Property   | Type   | Description                                        |
-| ---------- | ------ | -------------------------------------------------- |
-| id         | string | Provider-defined ID of the add-on                  |
-| descriptor | object | [Descriptor](7-data-structures.md#7319-descriptor) |
-| price      | object | [Price](7-data-structures.md#7340-price)           |
+| Property   | Type   | Description                                          |
+| ---------- | ------ | ---------------------------------------------------- |
+| id         | string | Provider-defined ID of the add-on                    |
+| descriptor | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
+| price      | object | [Price](7-data-structures.md#7.3.40-price)           |
 
 ### 7.3.3 Address
 
@@ -38,9 +38,9 @@ Describes the direct performer, driver or executor that fulfills an order. It is
 | Property     | Type   | Description                                            |
 | ------------ | ------ | ------------------------------------------------------ |
 | person       | object | [Person](7-data-structures.md#7.3.39-person)           |
-| contact      | object | [Contact](7-data-structures.md#7313-contact)           |
+| contact      | object | [Contact](7-data-structures.md#7.3.13-contact)         |
 | organization | object | [Organization](7-data-structures.md#7337-organization) |
-| rating       | object | [Rating](7-data-structures.md#7343-rating)             |
+| rating       | object | [Rating](7-data-structures.md#7.3.43-rating)           |
 
 ### 7.3.5 Authorization
 
@@ -58,77 +58,77 @@ Describes an authorization mechanism used to start or end the fulfillment of an 
 
 Describes the billing details of an entity.\<br>This has properties like name,organization,address,email,phone,time,tax\_number, created\_at,updated\_at
 
-| Property     | Type   | Description                                                                                                                       | Format | Enum |
-| ------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------- | ------ | ---- |
-| name         | string | Name of the billable entity                                                                                                       |        |      |
-| organization | array  | Details of the [organization](7-data-structures.md#7337-organization) being billed.                                               |        |      |
-| address      | array  | The [address](7-data-structures.md#733-address) of the billable entity                                                            |        |      |
-| state        | array  | The [state](7-data-structures.md#7349-state) where the billable entity resides. This is important for state-level tax calculation |        |      |
-| city         | array  | The [city](7-data-structures.md#7312-city) where the billable entity resides.                                                     |        |      |
-| email        | string | Email address where the bill is sent to                                                                                           | email  |      |
-| phone        | string | Phone number of the billable entity                                                                                               |        |      |
-| time         | array  | Details regarding the billing period. ([Time](7-data-structures.md#7354-time))                                                    |        |      |
-| tax\_id      | string | ID of the billable entity as recognized by the taxation authority                                                                 |        |      |
+| Property     | Type   | Description                                                                                                                         | Format | Enum |
+| ------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------------- | ------ | ---- |
+| name         | string | Name of the billable entity                                                                                                         |        |      |
+| organization | array  | Details of the [organization](7-data-structures.md#7.3.37-organization) being billed.                                               |        |      |
+| address      | array  | The [address](7-data-structures.md#7.3.3-address) of the billable entity                                                            |        |      |
+| state        | array  | The [state](7-data-structures.md#7.3.49-state) where the billable entity resides. This is important for state-level tax calculation |        |      |
+| city         | array  | The [city](7-data-structures.md#7.3.12-city) where the billable entity resides.                                                     |        |      |
+| email        | string | Email address where the bill is sent to                                                                                             | email  |      |
+| phone        | string | Phone number of the billable entity                                                                                                 |        |      |
+| time         | array  | Details regarding the billing period. ([Time](7-data-structures.md#7.3.54-time))                                                    |        |      |
+| tax\_id      | string | ID of the billable entity as recognized by the taxation authority                                                                   |        |      |
 
 ### 7.3.7 Cancellation
 
 Describes a cancellation event
 
-| Property                | Type   | Description                                                                                                           | Format    | Enum               |
-| ----------------------- | ------ | --------------------------------------------------------------------------------------------------------------------- | --------- | ------------------ |
-| time                    | string | Date-time when the order was cancelled by the buyer                                                                   | date-time |                    |
-| cancelled\_by           | string |                                                                                                                       |           | CONSUMER, PROVIDER |
-| reason                  | array  | The reason for cancellation. ([Option](7-data-structures.md#7335-option))                                             |           |                    |
-| additional\_description | array  | Any additional information regarding the nature of cancellation. ([Descriptor](7-data-structures.md#7319-descriptor)) |           |                    |
+| Property                | Type   | Description                                                                                                             | Format    | Enum               |
+| ----------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------- | --------- | ------------------ |
+| time                    | string | Date-time when the order was cancelled by the buyer                                                                     | date-time |                    |
+| cancelled\_by           | string |                                                                                                                         |           | CONSUMER, PROVIDER |
+| reason                  | array  | The reason for cancellation. ([Option](7-data-structures.md#7.3.35-option))                                             |           |                    |
+| additional\_description | array  | Any additional information regarding the nature of cancellation. ([Descriptor](7-data-structures.md#7.3.19-descriptor)) |           |                    |
 
 ### 7.3.8 CancellationTerm
 
 Describes the cancellation terms of an item or an order. This can be referenced at an item or order level. Item-level cancellation terms can override the terms at the order level.
 
-| Property           | Type    | Description                                                                                                                      |
-| ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| fulfillment\_state | array   | The state of fulfillment during which this term is applicable. ([Fulfillment State](7-data-structures.md#7326-fulfillmentstate)) |
-| reason\_required   | boolean | Indicates whether a reason is required to cancel the order                                                                       |
-| cancel\_by         | array   | Information related to the [time](7-data-structures.md#7354-time) of cancellation.                                               |
-| cancellation\_fee  | object  | [Fee](7-data-structures.md#7323-fee)                                                                                             |
-| xinput             | object  | [XInput](7-data-structures.md#7357-xinput)                                                                                       |
-| external\_ref      | object  | [MediaFile](7-data-structures.md#7333-mediafile)                                                                                 |
+| Property           | Type    | Description                                                                                                                        |
+| ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| fulfillment\_state | array   | The state of fulfillment during which this term is applicable. ([Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate)) |
+| reason\_required   | boolean | Indicates whether a reason is required to cancel the order                                                                         |
+| cancel\_by         | array   | Information related to the [time](7-data-structures.md#7.3.54-time) of cancellation.                                               |
+| cancellation\_fee  | object  | [Fee](7-data-structures.md#7.3.23-fee)                                                                                             |
+| xinput             | object  | [XInput](7-data-structures.md#7.3.57-xinput)                                                                                       |
+| external\_ref      | object  | [MediaFile](7-data-structures.md#7.3.33-mediafile)                                                                                 |
 
 ### 7.3.9 Catalog
 
 Describes the products or services offered by a Provider Platform. This is typically sent as the response to a search intent from a Application Platform. The payment terms, offers and terms of fulfillment supported by the Provider Platform can also be included here. The Provider Platform can show hierarchical nature of products/services in its catalog using the parent\_category\_id in categories. The Provider Platform can also send a ttl (time to live) in the context which is the duration for which a Application Platform can cache the catalog and use the cached catalog. \<br>This has properties like bbp/descriptor,bbp/categories,bbp/fulfillments,bbp/payments,bbp/offers,bbp/providers and exp\<br>This is used in the following situations.\<br>\<ul>\<li>This is typically used in the discovery stage when the Provider Platform sends the details of the products and services it offers as response to a search intent from the Application Platform. \</li>\</ul>
 
-| Property     | Type   | Description                                                                                                                                                                                                      | Format    | Enum |
-| ------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---- |
-| descriptor   | object | [Descriptor](7-data-structures.md#7319-descriptor)                                                                                                                                                               |           |      |
-| fulfillments | array  | [Fulfillment](7-data-structures.md#7325-fulfillment) modes offered at the Provider Platform level. This is used when a Provider Platform itself offers fulfillments on behalf of the providers it has onboarded. |           |      |
-| payments     | array  | [Payment](7-data-structures.md#7338-payment) terms offered by the Provider Platform for all transactions. This can be overriden at the provider level.                                                           |           |      |
-| offers       | array  | [Offers](7-data-structures.md#7334-offer) at the Provider Platform-level. This is common across all providers onboarded by the Provider Platform.                                                                |           |      |
-| providers    | array  | [Provider](7-data-structures.md#7341-provider)                                                                                                                                                                   |           |      |
-| exp          | string | Timestamp after which catalog will expire                                                                                                                                                                        | date-time |      |
-| ttl          | string | Duration in seconds after which this catalog will expire                                                                                                                                                         |           |      |
+| Property     | Type   | Description                                                                                                                                                                                                        | Format    | Enum |
+| ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---- |
+| descriptor   | object | [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                                                                                                               |           |      |
+| fulfillments | array  | [Fulfillment](7-data-structures.md#7.3.25-fulfillment) modes offered at the Provider Platform level. This is used when a Provider Platform itself offers fulfillments on behalf of the providers it has onboarded. |           |      |
+| payments     | array  | [Payment](7-data-structures.md#7.3.38-payment) terms offered by the Provider Platform for all transactions. This can be overriden at the provider level.                                                           |           |      |
+| offers       | array  | [Offers](7-data-structures.md#7.3.34-offer) at the Provider Platform-level. This is common across all providers onboarded by the Provider Platform.                                                                |           |      |
+| providers    | array  | [Provider](7-data-structures.md#7.3.41-provider)                                                                                                                                                                   |           |      |
+| exp          | string | Timestamp after which catalog will expire                                                                                                                                                                          | date-time |      |
+| ttl          | string | Duration in seconds after which this catalog will expire                                                                                                                                                           |           |      |
 
 ### 7.3.10 Category
 
 A label under which a collection of items can be grouped.
 
-| Property             | Type   | Description                                        |
-| -------------------- | ------ | -------------------------------------------------- |
-| id                   | string | ID of the category                                 |
-| parent\_category\_id | object | [Category](7-data-structures.md#7310-category)     |
-| descriptor           | object | [Descriptor](7-data-structures.md#7319-descriptor) |
-| time                 | object | [Time](7-data-structures.md#7354-time)             |
-| ttl                  | object | Time to live for an instance of this schema        |
-| tags                 | array  | [tags](7-data-structures.md#7353-taggroup)         |
+| Property             | Type   | Description                                          |
+| -------------------- | ------ | ---------------------------------------------------- |
+| id                   | string | ID of the category                                   |
+| parent\_category\_id | object | [Category](7-data-structures.md#7.3.10-category)     |
+| descriptor           | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
+| time                 | object | [Time](7-data-structures.md#7.3.54-time)             |
+| ttl                  | object | Time to live for an instance of this schema          |
+| tags                 | array  | [tags](7-data-structures.md#7.3.52-tag)              |
 
 ### 7.3.11 Circle
 
 Describes a circular region of a specified radius centered at a specified GPS coordinate.
 
-| Property | Type   | Description                                |
-| -------- | ------ | ------------------------------------------ |
-| gps      | object | [GPS](7-data-structures.md#7327-gps)       |
-| radius   | object | [Scalar](7-data-structures.md#7347-scalar) |
+| Property | Type   | Description                                  |
+| -------- | ------ | -------------------------------------------- |
+| gps      | object | [GPS](7-data-structures.md#7.3.27-gps)       |
+| radius   | object | [Scalar](7-data-structures.md#7.3.47-scalar) |
 
 ### 7.3.12 City
 
@@ -155,8 +155,8 @@ Every API call in beckn protocol has a context. It provides a high-level overvie
 
 | Property        | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Format    | Enum |
 | --------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---- |
-| domain          | array  | [Domain](7-data-structures.md#7320-domain) code that is relevant to this transaction context                                                                                                                                                                                                                                                                                                                                                                                                               |           |      |
-| location        | array  | The [location](7-data-structures.md#7332-location) where the transaction is intended to be fulfilled.                                                                                                                                                                                                                                                                                                                                                                                                      |           |      |
+| domain          | array  | [Domain](7-data-structures.md#7.3.20-domain) code that is relevant to this transaction context                                                                                                                                                                                                                                                                                                                                                                                                             |           |      |
+| location        | array  | The [location](7-data-structures.md#7.3.32-location) where the transaction is intended to be fulfilled.                                                                                                                                                                                                                                                                                                                                                                                                    |           |      |
 | action          | string | The Beckn protocol method being called by the sender and executed at the receiver.                                                                                                                                                                                                                                                                                                                                                                                                                         |           |      |
 | version         | string | Version of transaction protocol being used by the sender.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |           |      |
 | bap\_id         |        | Subscriber ID of the Application Platform                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |           |      |
@@ -192,10 +192,10 @@ Describes a credential of an entity - Person or Organization
 
 Describes a customer buying/availing a product or a service
 
-| Property | Type   | Description                                  |
-| -------- | ------ | -------------------------------------------- |
-| person   | object | [Person](7-data-structures.md#7339-person)   |
-| contact  | object | [Contact](7-data-structures.md#7313-contact) |
+| Property | Type   | Description                                    |
+| -------- | ------ | ---------------------------------------------- |
+| person   | object | [Person](7-data-structures.md#7.3.39-person)   |
+| contact  | object | [Contact](7-data-structures.md#7.3.13-contact) |
 
 ### 7.3.18 DecimalValue
 
@@ -205,15 +205,15 @@ Describes a numerical value in decimal form. The string value should match the p
 
 Physical description of something.
 
-| Property         | Type   | Description                                      |
-| ---------------- | ------ | ------------------------------------------------ |
-| name             | string |                                                  |
-| code             | string |                                                  |
-| short\_desc      | string |                                                  |
-| long\_desc       | string |                                                  |
-| additional\_desc | object |                                                  |
-| media            | array  | [MediaFile](7-data-structures.md#7333-mediafile) |
-| images           | array  | [Image](7-data-structures.md#7328-image)         |
+| Property         | Type   | Description                                        |
+| ---------------- | ------ | -------------------------------------------------- |
+| name             | string |                                                    |
+| code             | string |                                                    |
+| short\_desc      | string |                                                    |
+| long\_desc       | string |                                                    |
+| additional\_desc | object |                                                    |
+| media            | array  | [MediaFile](7-data-structures.md#7.3.33-mediafile) |
+| images           | array  | [Image](7-data-structures.md#7.3.28-image)         |
 
 ### 7.3.20 Domain
 
@@ -223,7 +223,7 @@ Described the industry sector or sub-sector. The network policy should contain c
 | ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name             | string | Name of the domain                                                                                                                                                                                                          |
 | code             |        | Standard code representing the domain. The standard is usually published as part of the network policy. Furthermore, the network facilitator should also provide a mechanism to provide the supported domains of a network. |
-| additional\_info | array  | A url that contains [addtional information](7-data-structures.md#7333-mediafile) about that domain.                                                                                                                         |
+| additional\_info | array  | A url that contains addtional information about that domain.                                                                                                                                                                |
 
 ### 7.3.21 Duration
 
@@ -243,10 +243,10 @@ Describes an error object that is returned by a Application Platform, Provider P
 
 A fee applied on a particular entity
 
-| Property   | Type  | Description                                                                      |
-| ---------- | ----- | -------------------------------------------------------------------------------- |
-| percentage | array | Percentage of a value. ([Decimal Value](7-data-structures.md#7318-decimalvalue)) |
-| amount     | array | A fixed value ([Price](7-data-structures.md#7340-price))                         |
+| Property   | Type  | Description                                                                        |
+| ---------- | ----- | ---------------------------------------------------------------------------------- |
+| percentage | array | Percentage of a value. ([Decimal Value](7-data-structures.md#7.3.18-decimalvalue)) |
+| amount     | array | A fixed value ([Price](7-data-structures.md#7.3.40-price))                         |
 
 ### 7.3.24 Form
 
@@ -268,26 +268,26 @@ Describes how a an order will be rendered/fulfilled to the end-customer
 | id       | string  | Unique reference ID to the fulfillment of an order                                                                                                                                                                                                                                                                                                                                                                         |
 | type     | string  | A code that describes the mode of fulfillment. This is typically set when there are multiple ways an order can be fulfilled. For example, a retail order can be fulfilled either via store pickup or a home delivery. Similarly, a medical consultation can be provided either in-person or via tele-consultation. The network policy must publish standard fulfillment type codes for the different modes of fulfillment. |
 | rateable | boolean | Whether the fulfillment can be rated or not                                                                                                                                                                                                                                                                                                                                                                                |
-| rating   | array   | The [rating](7-data-structures.md#7343-rating) value of the fulfullment service.                                                                                                                                                                                                                                                                                                                                           |
-| state    | arrat   | The current state of fulfillment. The Provider Platform must set this value whenever the state of the order fulfillment changes and fire an unsolicited `on_status` call. ([Fulfillment State](7-data-structures.md#7326-fulfillmentstate))                                                                                                                                                                                |
+| rating   | array   | The [rating](7-data-structures.md#7.3.43-rating) value of the fulfullment service.                                                                                                                                                                                                                                                                                                                                         |
+| state    | arrat   | The current state of fulfillment. The Provider Platform must set this value whenever the state of the order fulfillment changes and fire an unsolicited `on_status` call. ([Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate))                                                                                                                                                                              |
 | tracking | boolean | Indicates whether the fulfillment allows tracking. Has a default value of false.                                                                                                                                                                                                                                                                                                                                           |
-| customer | array   | The person that will ultimately receive the order. ([Customer](7-data-structures.md#7317-customer))                                                                                                                                                                                                                                                                                                                        |
-| agent    | array   | The [agent](7-data-structures.md#734-agent) that is currently handling the fulfillment of the order                                                                                                                                                                                                                                                                                                                        |
-| contact  | object  | [Contact](7-data-structures.md#7313-contact)                                                                                                                                                                                                                                                                                                                                                                               |
-| vehicle  | object  | [Vehicle](7-data-structures.md#7356-vehicle)                                                                                                                                                                                                                                                                                                                                                                               |
-| stops    | array   | The list of logical [stops](7-data-structures.md#7350-stop) encountered during the fulfillment of an order.                                                                                                                                                                                                                                                                                                                |
+| customer | array   | The person that will ultimately receive the order. ([Customer](7-data-structures.md#7.3.17-customer))                                                                                                                                                                                                                                                                                                                      |
+| agent    | array   | The [agent](7-data-structures.md#7.3.4-agent) that is currently handling the fulfillment of the order                                                                                                                                                                                                                                                                                                                      |
+| contact  | object  | [Contact](7-data-structures.md#7.3.13-contact)                                                                                                                                                                                                                                                                                                                                                                             |
+| vehicle  | object  | [Vehicle](7-data-structures.md#7.3.56-vehicle)                                                                                                                                                                                                                                                                                                                                                                             |
+| stops    | array   | The list of logical [stops](7-data-structures.md#7.3.50-stop) encountered during the fulfillment of an order.                                                                                                                                                                                                                                                                                                              |
 | path     | string  | The physical path taken by the agent that can be rendered on a map. The allowed format of this property can be set by the network.                                                                                                                                                                                                                                                                                         |
-| tags     | array   | [Tags](7-data-structures.md#7353-taggroup)                                                                                                                                                                                                                                                                                                                                                                                 |
+| tags     | array   | [Tags](7-data-structures.md#7.3.52-tag)                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ### 7.3.26 FulfillmentState
 
 Describes the state of fulfillment
 
-| Property    | Type   | Description                                        | Format    | Enum |
-| ----------- | ------ | -------------------------------------------------- | --------- | ---- |
-| descriptor  | object | [Descriptor](7-data-structures.md#7319-descriptor) |           |      |
-| updated\_at | string |                                                    | date-time |      |
-| updated\_by | string | ID of entity which changed the state               |           |      |
+| Property    | Type   | Description                                          | Format    | Enum |
+| ----------- | ------ | ---------------------------------------------------- | --------- | ---- |
+| descriptor  | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |           |      |
+| updated\_at | string |                                                      | date-time |      |
+| updated\_by | string | ID of entity which changed the state                 |           |      |
 
 ### 7.3.27 Gps
 
@@ -308,16 +308,16 @@ Describes an image
 
 The intent to buy or avail a product or a service. The Application Platform can declare the intent of the consumer containing \<ul>\<li>What they want (A product, service, offer)\</li>\<li>Who they want (A seller, service provider, agent etc)\</li>\<li>Where they want it and where they want it from\</li>\<li>When they want it (start and end time of fulfillment\</li>\<li>How they want to pay for it\</li>\</ul>\<br>This has properties like descriptor,provider,fulfillment,payment,category,offer,item,tags\<br>This is typically used by the Application Platform to send the purpose of the user's search to the Provider Platform. This will be used by the Provider Platform to find products or services it offers that may match the user's intent.\<br>For example, in Mobility, the mobility consumer declares a mobility intent. In this case, the mobility consumer declares information that describes various aspects of their journey like,\<ul>\<li>Where would they like to begin their journey (intent.fulfillment.start.location)\</li>\<li>Where would they like to end their journey (intent.fulfillment.end.location)\</li>\<li>When would they like to begin their journey (intent.fulfillment.start.time)\</li>\<li>When would they like to end their journey (intent.fulfillment.end.time)\</li>\<li>Who is the transport service provider they would like to avail services from (intent.provider)\</li>\<li>Who is traveling (This is not recommended in public networks) (intent.fulfillment.customer)\</li>\<li>What kind of fare product would they like to purchase (intent.item)\</li>\<li>What add-on services would they like to avail\</li>\<li>What offers would they like to apply on their booking (intent.offer)\</li>\<li>What category of services would they like to avail (intent.category)\</li>\<li>What additional luggage are they carrying\</li>\<li>How would they like to pay for their journey (intent.payment)\</li>\</ul>\<br>For example, in health domain, a consumer declares the intent for a lab booking the describes various aspects of their booking like,\<ul>\<li>Where would they like to get their scan/test done (intent.fulfillment.start.location)\</li>\<li>When would they like to get their scan/test done (intent.fulfillment.start.time)\</li>\<li>When would they like to get the results of their test/scan (intent.fulfillment.end.time)\</li>\<li>Who is the service provider they would like to avail services from (intent.provider)\</li>\<li>Who is getting the test/scan (intent.fulfillment.customer)\</li>\<li>What kind of test/scan would they like to purchase (intent.item)\</li>\<li>What category of services would they like to avail (intent.category)\</li>\<li>How would they like to pay for their journey (intent.payment)\</li>\</ul>
 
-| Property    | Type  | Description                                                                                                  |
-| ----------- | ----- | ------------------------------------------------------------------------------------------------------------ |
-| descriptor  | array | A raw description of the search intent. Free text search strings, raw audio, etc can be sent in this object. |
-| provider    | array | The [provider](7-data-structures.md#7341-provider) from which the customer wants to place to the order from  |
-| fulfillment | array | Details on how the customer wants their order fulfilled [Fulfillment](7-data-structures.md#7325-fulfillment) |
-| payment     | array | Details on how the customer wants to pay for the order. [Payment](7-data-structures.md#7338-payment)         |
-| category    | array | Details on the item [category](7-data-structures.md#7310-category)                                           |
-| offer       | array | details on the [offer](7-data-structures.md#7334-offer) the customer wants to avail                          |
-| item        | array | Details of the [item](7-data-structures.md#7331-item) that the consumer wants to order                       |
-| tags        | array | [Tags](7-data-structures.md#7353-taggroup)                                                                   |
+| Property    | Type  | Description                                                                                                    |
+| ----------- | ----- | -------------------------------------------------------------------------------------------------------------- |
+| descriptor  | array | A raw description of the search intent. Free text search strings, raw audio, etc can be sent in this object.   |
+| provider    | array | The [provider](7-data-structures.md#7.3.41-provider) from which the customer wants to place to the order from  |
+| fulfillment | array | Details on how the customer wants their order fulfilled [Fulfillment](7-data-structures.md#7.3.25-fulfillment) |
+| payment     | array | Details on how the customer wants to pay for the order. [Payment](7-data-structures.md#7.3.38-payment)         |
+| category    | array | Details on the item [category](7-data-structures.md#7.3.10-category)                                           |
+| offer       | array | details on the [offer](7-data-structures.md#7.3.34-offer) the customer wants to avail                          |
+| item        | array | Details of the [item](7-data-structures.md#7.3.31-item) that the consumer wants to order                       |
+| tags        | array | [Tags](7-data-structures.md#7.3.52-tag)                                                                        |
 
 ### 7.3.30 ItemQuantity
 
@@ -336,33 +336,33 @@ Describes the count or amount of an item
 
 Describes a product or a service offered to the end consumer by the provider. In the mobility sector, it can represent a fare product like one way journey. In the logistics sector, it can represent the delivery service offering. In the retail domain it can represent a product like a grocery item.
 
-| Property               | Type    | Description                                                                                                                                                      |
-| ---------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                     | string  | ID of the item.                                                                                                                                                  |
-| parent\_item\_id       | array   | ID of the [item](7-data-structures.md#7331-item), this item is a variant of                                                                                      |
-| parent\_item\_quantity | array   | The number of units of the parent item this item is a multiple of [Item Quantity](7-data-structures.md#7330-itemquantity)                                        |
-| descriptor             | array   | Physical description of the item [Descriptor](7-data-structures.md#7319-descriptor)                                                                              |
-| creator                | array   | The creator of this item [Organization](7-data-structures.md#7337-organization)                                                                                  |
-| price                  | array   | The [price](7-data-structures.md#7340-price) of this item, if it has intrinsic value                                                                             |
-| quantity               | array   | The selling quantity of the item [Item Quantity](7-data-structures.md#7330-itemquantity)                                                                         |
-| category\_ids          | array   | Categories this item can be listed under [Category](7-data-structures.md#7310-category)                                                                          |
-| fulfillment\_ids       | array   | Modes through which this item can be fulfilled [Fulfillment](7-data-structures.md#7325-fulfillment)                                                              |
-| location\_ids          | array   | Provider [Locations](7-data-structures.md#7332-location) this item is available in                                                                               |
-| payment\_ids           | array   | [Payment](7-data-structures.md#7338-payment) modalities through which this item can be ordered                                                                   |
-| add\_ons               | array   | [AddOn](7-data-structures.md#732-addon)                                                                                                                          |
-| cancellation\_terms    | array   | [Cancellation terms](7-data-structures.md#738-cancellationterm) of this item                                                                                     |
-| refund\_terms          | array   | Refund terms of this item                                                                                                                                        |
-| replacement\_terms     | array   | Terms that are applicable be met when this item is replaced [Replacement Terms](7-data-structures.md#7345-replacementterm)                                       |
-| return\_terms          | array   | Terms that are applicable when this item is returned [Return Terms](7-data-structures.md#7346-returnterm)                                                        |
-| xinput                 | array   | Additional input required from the customer to purchase / avail this item [XInput](7-data-structures.md#7357-xinput)                                             |
-| time                   | array   | Temporal attributes of this item. This property is used when the item exists on the catalog only for a limited period of [time](7-data-structures.md#7354-time). |
-| rateable               | boolean | Whether this item can be rated                                                                                                                                   |
-| rating                 |         | The [rating](7-data-structures.md#7343-rating) of the item                                                                                                       |
-| matched                | boolean | Whether this item is an exact match of the request                                                                                                               |
-| related                | boolean | Whether this item is a related item to the exactly matched item                                                                                                  |
-| recommended            | boolean | Whether this item is a recommended item to a response                                                                                                            |
-| ttl                    | string  | Time to live in seconds for an instance of this schema                                                                                                           |
-| tags                   | array   | [Tags](7-data-structures.md#7353-taggroup)                                                                                                                       |
+| Property               | Type    | Description                                                                                                                                                        |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| id                     | string  | ID of the item.                                                                                                                                                    |
+| parent\_item\_id       | array   | ID of the [item](7-data-structures.md#7.3.31-item), this item is a variant of                                                                                      |
+| parent\_item\_quantity | array   | The number of units of the parent item this item is a multiple of [Item Quantity](7-data-structures.md#7.3.30-itemquantity)                                        |
+| descriptor             | array   | Physical description of the item [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                              |
+| creator                | array   | The creator of this item [Organization](7-data-structures.md#7.3.37-organization)                                                                                  |
+| price                  | array   | The [price](7-data-structures.md#7.3.40-price) of this item, if it has intrinsic value                                                                             |
+| quantity               | array   | The selling quantity of the item [Item Quantity](7-data-structures.md#7.3.30-itemquantity)                                                                         |
+| category\_ids          | array   | Categories this item can be listed under [Category](7-data-structures.md#7.3.10-category)                                                                          |
+| fulfillment\_ids       | array   | Modes through which this item can be fulfilled [Fulfillment](7-data-structures.md#7.3.25-fulfillment)                                                              |
+| location\_ids          | array   | Provider [Locations](7-data-structures.md#7.3.32-location) this item is available in                                                                               |
+| payment\_ids           | array   | [Payment](7-data-structures.md#7.3.38-payment) modalities through which this item can be ordered                                                                   |
+| add\_ons               | array   | [AddOn](7-data-structures.md#7.3.2-addon)                                                                                                                          |
+| cancellation\_terms    | array   | [Cancellation terms](7-data-structures.md#7.3.7-cancellation) of this item                                                                                         |
+| refund\_terms          | array   | Refund terms of this item                                                                                                                                          |
+| replacement\_terms     | array   | Terms that are applicable be met when this item is replaced [Replacement Terms](7-data-structures.md#7.3.45-replacementterm)                                       |
+| return\_terms          | array   | Terms that are applicable when this item is returned [Return Terms](7-data-structures.md#7.3.46-returnterm)                                                        |
+| xinput                 | array   | Additional input required from the customer to purchase / avail this item [XInput](7-data-structures.md#7.3.57-xinput)                                             |
+| time                   | array   | Temporal attributes of this item. This property is used when the item exists on the catalog only for a limited period of [time](7-data-structures.md#7.3.54-time). |
+| rateable               | boolean | Whether this item can be rated                                                                                                                                     |
+| rating                 |         | The [rating](7-data-structures.md#7.3.43-rating) of the item                                                                                                       |
+| matched                | boolean | Whether this item is an exact match of the request                                                                                                                 |
+| related                | boolean | Whether this item is a related item to the exactly matched item                                                                                                    |
+| recommended            | boolean | Whether this item is a recommended item to a response                                                                                                              |
+| ttl                    | string  | Time to live in seconds for an instance of this schema                                                                                                             |
+| tags                   | array   | [Tags](7-data-structures.md#7.3.53-taggroup)                                                                                                                       |
 
 ### 7.3.32 Location
 
@@ -371,19 +371,19 @@ The physical location of something
 | Property   | Type   | Description                                                                                                               | Format | Enum |
 | ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------- | ------ | ---- |
 | id         | string |                                                                                                                           |        |      |
-| descriptor |        | [Descriptor](7-data-structures.md#7319-descriptor)                                                                        |        |      |
+| descriptor |        | [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                      |        |      |
 | map\_url   | string | The url to the map of the location. This can be a globally recognized map url or the one specified by the network policy. | uri    |      |
-| gps        |        | The [GPS](7-data-structures.md#7327-gps) co-ordinates of this location.                                                   |        |      |
-| address    |        | The [address](7-data-structures.md#733-address) of this location.                                                         |        |      |
-| city       |        | The [city](7-data-structures.md#7312-city) this location is, or is located within                                         |        |      |
+| gps        |        | The [GPS](7-data-structures.md#7.3.27-gps) co-ordinates of this location.                                                 |        |      |
+| address    |        | The [address](7-data-structures.md#7.3.3-address) of this location.                                                       |        |      |
+| city       |        | The [city](7-data-structures.md#7.3.12-city) this location is, or is located within                                       |        |      |
 | district   | string | The state this location is, or is located within                                                                          |        |      |
-| state      |        | The [state](7-data-structures.md#7349-state) this location is, or is located within                                       |        |      |
-| country    |        | The [country](7-data-structures.md#7315-country) this location is, or is located within                                   |        |      |
+| state      |        | The [state](7-data-structures.md#7.3.49-state) this location is, or is located within                                     |        |      |
+| country    |        | The [country](7-data-structures.md#7.3.15-country) this location is, or is located within                                 |        |      |
 | area\_code | string |                                                                                                                           |        |      |
-| circle     |        | [Circle](7-data-structures.md#7311-circle)                                                                                |        |      |
+| circle     |        | [Circle](7-data-structures.md#7.3.11-circle)                                                                              |        |      |
 | polygon    | string | The boundary polygon of this location                                                                                     |        |      |
 | 3dspace    | string | The three dimensional region describing this location                                                                     |        |      |
-| rating     |        | The [rating](7-data-structures.md#7343-rating) of this location                                                           |        |      |
+| rating     |        | The [rating](7-data-structures.md#7.3.43-rating) of this location                                                         |        |      |
 
 ### 7.3.33 MediaFile
 
@@ -400,24 +400,24 @@ This object contains a url to a media file.
 
 An offer associated with a catalog. This is typically used to promote a particular product and enable more purchases.
 
-| Property      | Type   | Description                                        |
-| ------------- | ------ | -------------------------------------------------- |
-| id            | string |                                                    |
-| descriptor    | object | [Descriptor](7-data-structures.md#7319-descriptor) |
-| location\_ids | array  | [Location](7-data-structures.md#7332-location)     |
-| category\_ids | array  | [Category](7-data-structures.md#7310-category)     |
-| item\_ids     | array  | [Item](7-data-structures.md#7331-item)             |
-| time          | object | [Time](7-data-structures.md#7354-time)             |
-| tags          | array  | [Tags](7-data-structures.md#7353-taggroup)         |
+| Property      | Type   | Description                                          |
+| ------------- | ------ | ---------------------------------------------------- |
+| id            | string |                                                      |
+| descriptor    | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
+| location\_ids | array  | [Location](7-data-structures.md#7.3.32-location)     |
+| category\_ids | array  | [Category](7-data-structures.md#7.3.10-category)     |
+| item\_ids     | array  | [Item](7-data-structures.md#7.3.31-item)             |
+| time          | object | [Time](7-data-structures.md#7.3.54-time)             |
+| tags          | array  | [Tags](7-data-structures.md#7.3.53-taggroup)         |
 
 ### 7.3.35 Option
 
 Describes a selectable option
 
-| Property   | Type   | Description                                        |
-| ---------- | ------ | -------------------------------------------------- |
-| id         | string |                                                    |
-| descriptor | object | [Descriptor](7-data-structures.md#7319-descriptor) |
+| Property   | Type   | Description                                          |
+| ---------- | ------ | ---------------------------------------------------- |
+| id         | string |                                                      |
+| descriptor | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
 
 ### 7.3.36 Order
 
@@ -429,35 +429,35 @@ Describes a legal purchase order. It contains the complete details of the legal 
 | ref\_order\_ids     | array  | A list of order IDs to link this order to previous orders.                                                                                                                                                                                                                                                                                                                     |           |                             |
 | status              | string | Status of the order. Allowed values can be defined by the network policy                                                                                                                                                                                                                                                                                                       |           | ACTIVE, COMPLETE, CANCELLED |
 | type                | string | This is used to indicate the type of order being created to Provider Platforms. Sometimes orders can be linked to previous orders, like a replacement order in a retail domain. A follow-up consultation in healthcare domain. A single order part of a subscription order. The list of order types can be standardized at the network level. Has a default value of "DEFAULT" |           | DRAFT, DEFAULT              |
-| provider            | array  | Details of the [provider](7-data-structures.md#7341-provider) whose catalog items have been selected.                                                                                                                                                                                                                                                                          |           |                             |
-| items               | array  | The [items](7-data-structures.md#7331-item) purchased / availed in this order                                                                                                                                                                                                                                                                                                  |           |                             |
-| add\_ons            | array  | The [add-ons](7-data-structures.md#732-addon) purchased / availed in this order                                                                                                                                                                                                                                                                                                |           |                             |
-| offers              | array  | The [offers](7-data-structures.md#7334-offer) applied in this order                                                                                                                                                                                                                                                                                                            |           |                             |
-| billing             | array  | The [billing](7-data-structures.md#736-billing) details of this order                                                                                                                                                                                                                                                                                                          |           |                             |
-| fulfillments        | array  | The [fulfillments](7-data-structures.md#7325-fulfillment) involved in completing this order                                                                                                                                                                                                                                                                                    |           |                             |
-| cancellation        | array  | The [cancellation](7-data-structures.md#737-cancellation) details of this order                                                                                                                                                                                                                                                                                                |           |                             |
-| cancellation\_terms | array  | [Cancellation terms](7-data-structures.md#738-cancellationterm) of this item                                                                                                                                                                                                                                                                                                   |           |                             |
+| provider            | array  | Details of the [provider](7-data-structures.md#7.3.41-provider) whose catalog items have been selected.                                                                                                                                                                                                                                                                        |           |                             |
+| items               | array  | The [items](7-data-structures.md#7.3.31-item) purchased / availed in this order                                                                                                                                                                                                                                                                                                |           |                             |
+| add\_ons            | array  | The [add-ons](7-data-structures.md#7.3.2-addon) purchased / availed in this order                                                                                                                                                                                                                                                                                              |           |                             |
+| offers              | array  | The [offers](7-data-structures.md#7.3.34-offer) applied in this order                                                                                                                                                                                                                                                                                                          |           |                             |
+| billing             | array  | The [billing](7-data-structures.md#7.3.6-billing) details of this order                                                                                                                                                                                                                                                                                                        |           |                             |
+| fulfillments        | array  | The [fulfillments](7-data-structures.md#7.3.25-fulfillment) involved in completing this order                                                                                                                                                                                                                                                                                  |           |                             |
+| cancellation        | array  | The [cancellation](7-data-structures.md#7.3.7-cancellation) details of this order                                                                                                                                                                                                                                                                                              |           |                             |
+| cancellation\_terms | array  | [Cancellation terms](7-data-structures.md#7.3.8-cancellationterm) of this item                                                                                                                                                                                                                                                                                                 |           |                             |
 | refund\_terms       | array  | Refund terms of this item                                                                                                                                                                                                                                                                                                                                                      |           |                             |
-| replacement\_terms  | array  | [Replacement terms](7-data-structures.md#7345-replacementterm) of this item                                                                                                                                                                                                                                                                                                    |           |                             |
-| return\_terms       | array  | [Return terms](7-data-structures.md#7346-returnterm) of this item                                                                                                                                                                                                                                                                                                              |           |                             |
-| quote               | array  | The mutually agreed upon [quotation](7-data-structures.md#7342-quotation) for this order.                                                                                                                                                                                                                                                                                      |           |                             |
-| payments            | array  | The terms of settlement for this order [Payment](7-data-structures.md#7338-payment)                                                                                                                                                                                                                                                                                            |           |                             |
+| replacement\_terms  | array  | [Replacement terms](7-data-structures.md#7.3.45-replacementterm) of this item                                                                                                                                                                                                                                                                                                  |           |                             |
+| return\_terms       | array  | [Return terms](7-data-structures.md#7.3.46-returnterm) of this item                                                                                                                                                                                                                                                                                                            |           |                             |
+| quote               | array  | The mutually agreed upon [quotation](7-data-structures.md#7.3.42-quotation) for this order.                                                                                                                                                                                                                                                                                    |           |                             |
+| payments            | array  | The terms of settlement for this order [Payment](7-data-structures.md#7.3.38-payment)                                                                                                                                                                                                                                                                                          |           |                             |
 | created\_at         | string | The date-time of creation of this order                                                                                                                                                                                                                                                                                                                                        | date-time |                             |
 | updated\_at         | string | The date-time of updated of this order                                                                                                                                                                                                                                                                                                                                         | date-time |                             |
-| xinput              | array  | Additional input required from the customer to confirm this order [XInput](7-data-structures.md#7357-xinput)                                                                                                                                                                                                                                                                   |           |                             |
-| tags                | array  | [Tags](7-data-structures.md#7353-taggroup)                                                                                                                                                                                                                                                                                                                                     |           |                             |
+| xinput              | array  | Additional input required from the customer to confirm this order [XInput](7-data-structures.md#7.3.57-xinput)                                                                                                                                                                                                                                                                 |           |                             |
+| tags                | array  | [Tags](7-data-structures.md#7.3.53-taggroup)                                                                                                                                                                                                                                                                                                                                   |           |                             |
 
 ### 7.3.37 Organization
 
 An organization. Usually a recognized business entity.
 
-| Property   | Type   | Description                                                                                     |
-| ---------- | ------ | ----------------------------------------------------------------------------------------------- |
-| descriptor | object | [Descriptor](7-data-structures.md#7319-descriptor)                                              |
-| address    | array  | The postal [address](7-data-structures.md#733-address) of the organization                      |
-| state      | array  | The [state](7-data-structures.md#7349-state) where the the organization's address is registered |
-| city       | array  | The [city](7-data-structures.md#7312-city) where the the organization's address is registered   |
-| contact    | object | [Contact](7-data-structures.md#7313-contact)                                                    |
+| Property   | Type   | Description                                                                                       |
+| ---------- | ------ | ------------------------------------------------------------------------------------------------- |
+| descriptor | object | [Descriptor](7-data-structures.md#7.3.19-descriptor)                                              |
+| address    | array  | The postal [address](7-data-structures.md#7.3.3-address) of the organization                      |
+| state      | array  | The [state](7-data-structures.md#7.3.49-state) where the the organization's address is registered |
+| city       | array  | The [city](7-data-structures.md#7.3.12-city) where the the organization's address is registered   |
+| contact    | object | [Contact](7-data-structures.md#7.3.13-contact)                                                    |
 
 ### 7.3.38 Payment
 
@@ -471,8 +471,8 @@ Describes the terms of settlement between the Application Platform and the Provi
 | params        | object |                                                                                                                                                                                                                                                                                                                                                                                                                                                             |        |                                                              |
 | type          | string |                                                                                                                                                                                                                                                                                                                                                                                                                                                             |        | PRE-ORDER, PRE-FULFILLMENT, ON-FULFILLMENT, POST-FULFILLMENT |
 | status        | string |                                                                                                                                                                                                                                                                                                                                                                                                                                                             |        | PAID, NOT-PAID                                               |
-| time          | object | [Time](7-data-structures.md#7354-time)                                                                                                                                                                                                                                                                                                                                                                                                                      |        |                                                              |
-| tags          | array  | [Tags](7-data-structures.md#7353-taggroup)                                                                                                                                                                                                                                                                                                                                                                                                                  |        |                                                              |
+| time          | object | [Time](7-data-structures.md#7.3.54-time)                                                                                                                                                                                                                                                                                                                                                                                                                    |        |                                                              |
+| tags          | array  | [Tags](7-data-structures.md#7.3.53-taggroup)                                                                                                                                                                                                                                                                                                                                                                                                                |        |                                                              |
 
 ### 7.3.39 Person
 
@@ -483,29 +483,29 @@ Describes a person as any individual
 | id        | string | Describes the identity of the person                                                                                                                                                                                                                                                      |        |      |
 | url       | string | Profile url of the person                                                                                                                                                                                                                                                                 | uri    |      |
 | name      | string | the name of the person                                                                                                                                                                                                                                                                    |        |      |
-| image     | object | [Image](7-data-structures.md#7328-image)                                                                                                                                                                                                                                                  |        |      |
-| age       | array  | Age of the person [Duration](7-data-structures.md#7321-duration)                                                                                                                                                                                                                          |        |      |
+| image     | object | [Image](7-data-structures.md#7.3.28-image)                                                                                                                                                                                                                                                |        |      |
+| age       | array  | Age of the person [Duration](7-data-structures.md#7.3.21-duration)                                                                                                                                                                                                                        |        |      |
 | dob       | string | Date of birth of the person                                                                                                                                                                                                                                                               | date   |      |
 | gender    | string | Gender of something, typically a Person, but possibly also fictional characters, animals, etc. While Male and Female may be used, text strings are also acceptable for people who do not identify as a binary gender.Allowed values for this field can be published in the network policy |        |      |
-| creds     | array  | [Credential](7-data-structures.md#7316-credential)                                                                                                                                                                                                                                        |        |      |
+| creds     | array  | [Credential](7-data-structures.md#7.3.16-credential)                                                                                                                                                                                                                                      |        |      |
 | languages | array  |                                                                                                                                                                                                                                                                                           |        |      |
 | skills    | array  |                                                                                                                                                                                                                                                                                           |        |      |
-| tags      | array  | [Tags](7-data-structures.md#7353-taggroup)                                                                                                                                                                                                                                                |        |      |
+| tags      | array  | [Tags](7-data-structures.md#7.3.53-taggroup)                                                                                                                                                                                                                                              |        |      |
 
 ### 7.3.40 Price
 
 Describes the price of a product or service
 
-| Property         | Type   | Description                                             |
-| ---------------- | ------ | ------------------------------------------------------- |
-| currency         | string |                                                         |
-| value            | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
-| estimated\_value | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
-| computed\_value  | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
-| listed\_value    | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
-| offered\_value   | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
-| minimum\_value   | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
-| maximum\_value   | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |
+| Property         | Type   | Description                                               |
+| ---------------- | ------ | --------------------------------------------------------- |
+| currency         | string |                                                           |
+| value            | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| estimated\_value | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| computed\_value  | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| listed\_value    | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| offered\_value   | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| minimum\_value   | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| maximum\_value   | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
 
 ### 7.3.41 Provider
 
@@ -514,31 +514,31 @@ Describes the catalog of a business.
 | Property     | Type    | Description                                                                                                                                      | Format    | Enum |
 | ------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- | ---- |
 | id           | string  | Id of the provider                                                                                                                               |           |      |
-| descriptor   | object  | [Descriptor](7-data-structures.md#7319-descriptor)                                                                                               |           |      |
+| descriptor   | object  | [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                                             |           |      |
 | category\_id | string  | Category Id of the provider at the Provider Platform-level catalog                                                                               |           |      |
-| rating       | object  | [Rating](7-data-structures.md#7343-rating)                                                                                                       |           |      |
-| time         | object  | [Time](7-data-structures.md#7354-time)                                                                                                           |           |      |
-| categories   | array   | [Category](7-data-structures.md#7310-category)                                                                                                   |           |      |
-| fulfillments | array   | [Fulfillments](7-data-structures.md#7325-fulfillment)                                                                                            |           |      |
-| payments     | array   | [Payment](7-data-structures.md#7338-payment)                                                                                                     |           |      |
-| locations    | array   | [Location](7-data-structures.md#7332-location)                                                                                                   |           |      |
-| offers       | array   | [Offer](7-data-structures.md#7334-offer)                                                                                                         |           |      |
-| items        | array   | [Item](7-data-structures.md#7331-item)                                                                                                           |           |      |
+| rating       | object  | [Rating](7-data-structures.md#7.3.43-rating)                                                                                                     |           |      |
+| time         | object  | [Time](7-data-structures.md#7.3.54-time)                                                                                                         |           |      |
+| categories   | array   | [Category](7-data-structures.md#7.3.10-category)                                                                                                 |           |      |
+| fulfillments | array   | [Fulfillments](7-data-structures.md#7.3.25-fulfillment)                                                                                          |           |      |
+| payments     | array   | [Payment](7-data-structures.md#7.3.38-payment)                                                                                                   |           |      |
+| locations    | array   | [Location](7-data-structures.md#7.3.32-location)                                                                                                 |           |      |
+| offers       | array   | [Offer](7-data-structures.md#7.3.34-offer)                                                                                                       |           |      |
+| items        | array   | [Item](7-data-structures.md#7.3.31-item)                                                                                                         |           |      |
 | exp          | string  | Time after which catalog has to be refreshed                                                                                                     | date-time |      |
 | rateable     | boolean | Whether this provider can be rated or not                                                                                                        |           |      |
 | ttl          | integer | The time-to-live in seconds, for this object. This can be overriden at deeper levels. A value of -1 indicates that this object is not cacheable. |           |      |
-| tags         | array   | [Tags](7-data-structures.md#7353-taggroup)]                                                                                                      |           |      |
+| tags         | array   | [Tags](7-data-structures.md#7.3.53-taggroup)                                                                                                     |           |      |
 
 ### 7.3.42 Quotation
 
 Describes a quote. It is the estimated price of products or services from the Provider Platform.\<br>This has properties like price, breakup, ttl
 
-| Property | Type   | Description                                          | Format | Enum |
-| -------- | ------ | ---------------------------------------------------- | ------ | ---- |
-| id       | string | ID of the quote.                                     | uuid   |      |
-| price    | array  | The total quoted [price](7-data-structures.md#price) |        |      |
-| breakup  | array  | the breakup of the total quoted price                |        |      |
-| ttl      | object | [Duration](7-data-structures.md#7321-duration)       |        |      |
+| Property | Type   | Description                                                 | Format | Enum |
+| -------- | ------ | ----------------------------------------------------------- | ------ | ---- |
+| id       | string | ID of the quote.                                            | uuid   |      |
+| price    | array  | The total quoted [price](7-data-structures.md#7.3.40-price) |        |      |
+| breakup  | array  | the breakup of the total quoted price                       |        |      |
+| ttl      | object | [Duration](7-data-structures.md#7.3.21-duration)            |        |      |
 
 ### 7.3.43 Rating
 
@@ -567,46 +567,46 @@ Describes an arbitrary region of space. The network policy should contain a publ
 
 The replacement policy of an item or an order
 
-| Property           | Type   | Description                                                                                                                                                                                                   |
-| ------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| fulfillment\_state | array  | The state of fulfillment during which this term is applicable. [Fulfillment State](7-data-structures.md#7326-fulfillmentstate)                                                                                |
-| replace\_within    | array  | Applicable only for buyer managed returns where the buyer has to replace the item before a certain date-time, failing which they will not be eligible for replacement. [Time](7-data-structures.md#7354-time) |
-| external\_ref      | object | [Media File](7-data-structures.md#7333-mediafile)                                                                                                                                                             |
+| Property           | Type   | Description                                                                                                                                                                                                     |
+| ------------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fulfillment\_state | array  | The state of fulfillment during which this term is applicable. [Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate)                                                                                |
+| replace\_within    | array  | Applicable only for buyer managed returns where the buyer has to replace the item before a certain date-time, failing which they will not be eligible for replacement. [Time](7-data-structures.md#7.3.54-time) |
+| external\_ref      | object | [Media File](7-data-structures.md#7.3.33-mediafile)                                                                                                                                                             |
 
 ### 7.3.46 ReturnTerm
 
 Describes the return policy of an item or an order
 
-| Property                 | Type    | Description                                                                                                                                                                                                          | Format | Enum               |
-| ------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------ |
-| fulfillment\_state       | array   | The state of fulfillment during which this term IETF''s applicable. [Fulfillment State](7-data-structures.md#7326-fulfillmentstate)                                                                                  |        |                    |
-| return\_eligible         | boolean | Indicates whether the item is eligible for return                                                                                                                                                                    |        |                    |
-| return\_time             | array   | Applicable only for buyer managed returns where the buyer has to return the item to the origin before a certain date-time, failing which they will not be eligible for refund.[Time](7-data-structures.md#7354-time) |        |                    |
-| return\_location         | array   | The [location](7-data-structures.md#7332-location) where the item or order must / will be returned to                                                                                                                |        |                    |
-| fulfillment\_managed\_by | string  | The entity that will perform the return                                                                                                                                                                              |        | CONSUMER, PROVIDER |
+| Property                 | Type    | Description                                                                                                                                                                                                            | Format | Enum               |
+| ------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------ |
+| fulfillment\_state       | array   | The state of fulfillment during which this term IETF''s applicable. [Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate)                                                                                  |        |                    |
+| return\_eligible         | boolean | Indicates whether the item is eligible for return                                                                                                                                                                      |        |                    |
+| return\_time             | array   | Applicable only for buyer managed returns where the buyer has to return the item to the origin before a certain date-time, failing which they will not be eligible for refund.[Time](7-data-structures.md#7.3.54-time) |        |                    |
+| return\_location         | array   | The [location](7-data-structures.md#7.3.32-location) where the item or order must / will be returned to                                                                                                                |        |                    |
+| fulfillment\_managed\_by | string  | The entity that will perform the return                                                                                                                                                                                |        | CONSUMER, PROVIDER |
 
 ### 7.3.47 Scalar
 
 Describes a scalar
 
-| Property         | Type   | Description                                             | Format | Enum               |
-| ---------------- | ------ | ------------------------------------------------------- | ------ | ------------------ |
-| type             | string |                                                         |        | CONSTANT, VARIABLE |
-| value            | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |        |                    |
-| estimated\_value | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |        |                    |
-| computed\_value  | object | [Decimal Value](7-data-structures.md#7318-decimalvalue) |        |                    |
-| range            | object |                                                         |        |                    |
-| unit             | string |                                                         |        |                    |
+| Property         | Type   | Description                                               | Format | Enum               |
+| ---------------- | ------ | --------------------------------------------------------- | ------ | ------------------ |
+| type             | string |                                                           |        | CONSTANT, VARIABLE |
+| value            | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |        |                    |
+| estimated\_value | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |        |                    |
+| computed\_value  | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |        |                    |
+| range            | object |                                                           |        |                    |
+| unit             | string |                                                           |        |                    |
 
 ### 7.3.48 Schedule
 
 Describes schedule as a repeating time period used to describe a regularly recurring event. At a minimum a schedule will specify frequency which describes the interval between occurrences of the event. Additional information can be provided to specify the schedule more precisely. This includes identifying the timestamps(s) of when the event will take place. Schedules may also have holidays to exclude a specific day from the schedule.\<br>This has properties like frequency, holidays, times
 
-| Property  | Type   | Description                                    |
-| --------- | ------ | ---------------------------------------------- |
-| frequency | object | [Duration](7-data-structures.md#7321-duration) |
-| holidays  | array  |                                                |
-| times     | array  |                                                |
+| Property  | Type   | Description                                      |
+| --------- | ------ | ------------------------------------------------ |
+| frequency | object | [Duration](7-data-structures.md#7.3.21-duration) |
+| holidays  | array  |                                                  |
+| times     | array  |                                                  |
 
 ### 7.3.49 State
 
@@ -621,17 +621,17 @@ A bounded geopolitical region of governance inside a country.
 
 A logical point in space and time during the fulfillment of an order.
 
-| Property         | Type   | Description                                                                                          |
-| ---------------- | ------ | ---------------------------------------------------------------------------------------------------- |
-| id               | string |                                                                                                      |
-| parent\_stop\_id | string |                                                                                                      |
-| location         | array  | [Location](7-data-structures.md#7332-location) of the stop                                           |
-| type             | string | The type of stop. Allowed values of this property can be defined by the network policy.              |
-| time             | array  | Timings applicable at the stop. [Time](7-data-structures.md#7354-time)                               |
-| instructions     | array  | Instructions that need to be followed at the stop [Descriptor](7-data-structures.md#7319-descriptor) |
-| contact          | array  | Contact details of the stop [Contact](7-data-structures.md#7313-contact)                             |
-| person           | array  | The details of the person present at the stop [Person](7-data-structures.md#7339-person)             |
-| authorization    | object | [Authorization](7-data-structures.md#735-authorization)                                              |
+| Property         | Type   | Description                                                                                            |
+| ---------------- | ------ | ------------------------------------------------------------------------------------------------------ |
+| id               | string |                                                                                                        |
+| parent\_stop\_id | string |                                                                                                        |
+| location         | array  | [Location](7-data-structures.md#7.3.32-location) of the stop                                           |
+| type             | string | The type of stop. Allowed values of this property can be defined by the network policy.                |
+| time             | array  | Timings applicable at the stop. [Time](7-data-structures.md#7.3.54-time)                               |
+| instructions     | array  | Instructions that need to be followed at the stop [Descriptor](7-data-structures.md#7.3.19-descriptor) |
+| contact          | array  | Contact details of the stop [Contact](7-data-structures.md#7.3.13-contact)                             |
+| person           | array  | The details of the person present at the stop [Person](7-data-structures.md#7.3.39-person)             |
+| authorization    | object | [Authorization](7-data-structures.md#7.3.5-authorization)                                              |
 
 ### 7.3.51 Support
 
@@ -651,7 +651,7 @@ Describes a tag. This is used to contain extended metadata. This object can be a
 
 | Property   | Type    | Description                                                                                                                                                                                                                |
 | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| descriptor | array   | Description of the Tag, can be used to store detailed information. [Descriptor](7-data-structures.md#7319-descriptor)                                                                                                      |
+| descriptor | array   | Description of the Tag, can be used to store detailed information. [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                                                    |
 | value      | string  | The value of the tag. This set by the Provider Platform and rendered as-is by the Application Platform.                                                                                                                    |
 | display    | boolean | This value indicates if the tag is intended for display purposes. If set to `true`, then this tag must be displayed. If it is set to `false`, it should not be displayed. This value can override the group display value. |
 
@@ -662,7 +662,7 @@ A collection of tag objects with group level attributes. For detailed documentat
 | Property   | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | display    | boolean | Indicates the display properties of the tag group. If display is set to false, then the group will not be displayed. If it is set to true, it should be displayed. However, group-level display properties can be overriden by individual tag-level display property. As this schema is purely for catalog display purposes, it is not recommended to send this value during search. Has a default value of true. |
-| descriptor | array   | Description of the TagGroup, can be used to store detailed information. [Descriptor](7-data-structures.md#7319-descriptor)                                                                                                                                                                                                                                                                                        |
+| descriptor | array   | Description of the TagGroup, can be used to store detailed information. [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                                                                                                                                                                                                                                      |
 | list       | array   | An array of Tag objects listed under this group. This property can be set by Application Platforms during search to narrow the `search` and achieve more relevant results. When received during `on_search`, Application Platforms must render this list under the heading described by the `name` property of this schema.                                                                                       |
 
 ### 7.3.54 Time
@@ -673,10 +673,10 @@ Describes time in its various forms. It can be a single point in time; duration;
 | --------- | ------ | ---------------------------------------------------- | --------- | ---- |
 | label     | string |                                                      |           |      |
 | timestamp | string |                                                      | date-time |      |
-| duration  | object | [Duration](7-data-structures.md#7321-duration)       |           |      |
+| duration  | object | [Duration](7-data-structures.md#7.3.21-duration)     |           |      |
 | range     | object |                                                      |           |      |
 | days      | string | comma separated values representing days of the week |           |      |
-| schedule  | object | [Schedule](7-data-structures.md#7348-schedule)       |           |      |
+| schedule  | object | [Schedule](7-data-structures.md#7.3.48-schedule)     |           |      |
 
 ### 7.3.55 Tracking
 
@@ -686,7 +686,7 @@ Contains tracking information that can be used by the Application Platform to tr
 | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------- |
 | id       | string | A unique tracking reference number                                                                                                                                                                                                                                                                                                                                                          |        |                  |
 | url      | string | A URL to the tracking endpoint. This can be a link to a tracking webpage, a webhook URL created by the Application Platform where Provider Platform can push the tracking data, or a GET url creaed by the Provider Platform which the Application Platform can poll to get the tracking data. It can also be a websocket URL where the Provider Platform can push real-time tracking data. | uri    |                  |
-| location | array  | In case there is no real-time tracking endpoint available, this field will contain the latest [location](7-data-structures.md#7332-location) of the entity being tracked. The Provider Platform will update this value everytime the Application Platform calls the track API.                                                                                                              |        |                  |
+| location | array  | In case there is no real-time tracking endpoint available, this field will contain the latest [location](7-data-structures.md#7.3.32-location) of the entity being tracked. The Provider Platform will update this value everytime the Application Platform calls the track API.                                                                                                            |        |                  |
 | status   | string | This value indicates if the tracking is currently active or not. If this value is `active`, then the Application Platform can begin tracking the order. If this value is `inactive`, the tracking URL is considered to be expired and the Application Platform should stop tracking the order.                                                                                              |        | active, inactive |
 
 ### 7.3.56 Vehicle
@@ -716,5 +716,5 @@ Contains any additional or extended inputs required to confirm an order. This is
 
 | Property | Type    | Description                                                                                            |
 | -------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| form     | object  | [Form](7-data-structures.md#7324-form)                                                                 |
+| form     | object  | [Form](7-data-structures.md#7.3.24-form)                                                               |
 | required | boolean | Indicates whether the form data is mandatorily required by the Provider Platform to confirm the order. |

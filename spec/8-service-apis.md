@@ -18,7 +18,7 @@ Each service in the e-Marketplace Building Block consists of two types of APIs n
 
 * Order Lifecycle APIs:
 
-Consists of a common set of endpoints that allow for decentralized/federated networks to be created that allow discovery, ordering, fulfillment, and post-fulfillment activities during the lifecycle of an order. These do NOT follow REST Standards. The Order Lifecycle APIs follow a specification known as [beckn protocol](https://github.com/beckn/protocol-specifications/tree/master). Due to its abstract and generic design, beckn protocol is rapidly gaining extensive adoption in countries like India, and the region of Europe to create open interoperable commerce networks across multiple sectors like mobility, retail, healthcare, logistics, energy, financial services, government services, Industry 4.0 and many more.&#x20;
+Consists of a common set of endpoints that allow for decentralized/federated networks to be created that allow discovery, ordering, fulfillment, and post-fulfillment activities during the lifecycle of an order.&#x20;
 
 * Service Administration APIs:
 
