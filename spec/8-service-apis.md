@@ -11,8 +11,8 @@ This section provides a reference for APIs that should be implemented by this Bu
 The [GovStack non-functional requirements document](https://govstack.gitbook.io/specification/architecture-and-nonfunctional-requirements/6-onboarding) provides additional information on how 'adaptors' may be used to translate an existing API to the patterns described here.
 
 * The microservice interfaces are defined as per [OPENAPI Ver3.0 standards](https://swagger.io/specification/).&#x20;
-* For implementation of Administration APIs, we have referred to TMF630\_REST\_API\_Design\_Guidelines.
-* For implementation of Interoperability APIs, we have referred various open protocol standards including  Beckn Protocol API Specification.
+* For implementation of Administration APIs, we have referred to [TMF630\_REST\_API\_Design\_Guidelines](https://www.tmforum.org/resources/specification/tmf630-rest-api-design-guidelines-4-2-0/).
+* For implementation of Interoperability APIs, we have referred various open-source communication protocols and data standards like [Schema.org](https://schema.org/docs/schemas.html), [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113), and [DNS](https://datatracker.ietf.org/doc/html/rfc1035). The objective is to use a generic transaction protocol that is agnostic of domain, region, or use case.  [Beckn Protocol API Specification](https://becknprotocol.io/) uses the design principles of such standards and creates a generic protocol that allows the E-Marketplace BB to be accessed by any consumer platform through a standard set of API endpoints.&#x20;
 
 Each service in the e-Marketplace Building Block consists of two types of APIs namely,
 
