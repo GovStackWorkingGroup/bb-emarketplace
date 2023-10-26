@@ -66,63 +66,7 @@ Users of this key digital functionality should be able to rate various entities 
 
 Users of this key digital functionality should be able to contact the support center to enquire about any issues that they may be facing and create a ticket. Customer support executives should be able to view details of a contract, fetch related information, view open tickets, and resolve them. If needed, customer support executives can fetch the contact details of a provider, or their agents to gain more information related to the fulfillment of an order.&#x20;
 
-## 4.11 Information Mediator Interface
-
-This interface handles protocols to interact with the Information Mediator Building Block in order to securely expose e-Marketplace services to other Building Blocks. It also enables the e-Marketplace to access services of other Building Blocks and applications through the Information Mediator Building Block.
-
-## 4.12 Payment Interface
-
-This interface handles protocols to interact with the Payment Building Block via the Information Mediator Building Block in order to initiate payment transactions as per the terms agreed between the consumer and the provider. Consumers should be able to check out an order through this interface.&#x20;
-
-## 4.13 E-Signature Interface
-
-This interface handles protocols to interact with the e-Signature Building Block via the Information Mediator Building Block in order to digitally sign messages exchanged between the consumer and the provider. Sending platforms should be able to digitally sign requests and Receiving Platforms should be able to digitally verify the signature of the message. The consumer and provider should be able to execute digitally signed micro-contracts on each message exchange using this interface.
-
-## 4.14 Registration Interface
-
-This interface handles protocols to interact with the Registration Building Block via the Information Mediator Building Block for signing up users on their respective platforms. Consumers should be able to sign up to Consumer Platforms through this interface. The Building Block would enable users to register consumers, providers, products, services, and agents, into respective catalogs. A registered element of a catalog may be enabled or disabled from being used in the system.
-
-## 4.15 Digital Identity and Verification Interface
-
-This interface should be able to identify and verify the individuals (through citizen identification or other recognized identity), and firms (tax number or license) with respect to their national data registries. This will facilitate authentication, avoid duplication, monitoring and evaluation, fetch dashboard statistics, etc.
-
-## 4.16 Promotional Communications
-
-The Building Block should facilitate various outreach activities through social media, online, and offline activities to create awareness and interest amongst the stakeholders about the eMarketplace. For example, a notification may be widespread for a fixed duration of time. Interested stakeholders may subscribe to the eMarketplace application/channel to receive notifications/messages of their interest.
-
-## **4.17 Content Management Interface**
-
-This interface should be able to enable the administrators to moderate, curate, access, and share the content creation. The interface can create details about eMarketplace, create knowledge banks, and best practice repositories. It should also be able to connect the Building Block with social media, able to publish digital advertisements.
-
-The Building Block must allow sellers to add names, images, and descriptions to products and services.&#x20;
-
-## **4.18 Workflow Interface**
-
-This interface should be able to automate and orchestrate capabilities for specified business processes within and across Building Blocks. The initiation of a workflow, for example, submission of related documents for procurement/purchase request, shall be automated till the fulfillment of that order/request/cancellation.&#x20;
-
-The Building Block must allow administrators to configure various workflows that occur within a business or provider.&#x20;
-
-## **4.19 Dashboard & Business Analytics Interface**
-
-This interface should be able to data visualize key statistics such number of procurements/items with different statuses (active/fulfilled/cancelled). It should be able to indicate archived/historical data as well. The interface should offer data-driven insights (risk analysis/predictive analytics) on most and least consumed goods and services, volume, and financial details on a monthly and yearly basis.
-
-## **4.20 GIS Building Block Interface**
-
-The Geographic Information System (GIS) interface should be able to identify, tag, and analyze locations of goods and services, persons, entities, pieces of equipment, and locations with timestamps. This will enable tracking of the goods and services when they are under the active lifecycle of the eMarketplace Building Block.
-
-## **4.21 Consent Management Interface**
-
-This interface should allow an application or system to acquire and validate consent from an authorized user in order to grant access or permissions for carrying out a task. Biometric identities, digital signatures, or simply SMS messages may be used to provide consent.
-
-## **4.22 Messaging Interface**
-
-This interface should act as a secured communication channel between users and service providers. Security features, logging, back-up, encrypted and non-encrypted messages (notifications/reminders/alerts), and chatbot services shall be enabled by this interface.
-
-## **4.23 Scheduling Interface**
-
-This interface shall be able to orchestrate processes automatically. For example, when a bidder submits documents, it shall trigger a certain series of steps/processes, send an alert by email and SMS, update the stock of remaining items, number of goods and services in the active phase, etc. It shall also complete the lifecycle of processes involved in a process. For example, from initiation to closure of a series of activities involved in ordering an item/goods/services.
-
-## 4.24 Bid Evaluation
+## 4.11 Bid Evaluation
 
 The Building Block should facilitate the bid evaluation process (financial/technical/etc.) with defined criteria. The evaluation shall be conducted by the buyer, only. At first, the buyer defines an evaluation criteria for a good or service. Then the buyer admin/a group of professionals will receive the documents/details submitted by the seller; and evaluate them based on the pre-defined criteria. In case the buyers/suppliers have any clarifications, the concerned party should be able to seek guidance through writing questions/addendum/corrigendum. Finally, the evaluation should select the best bidder/supplier.
 
