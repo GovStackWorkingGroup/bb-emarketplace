@@ -44,12 +44,12 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-| Name         | Type   | Description                                            |
-| ------------ | ------ | ------------------------------------------------------ |
-| person       | object | [Person](7-data-structures.md#7.3.39-person)           |
-| contact      | object | [Contact](7-data-structures.md#7.3.13-contact)         |
-| organization | object | [Organization](7-data-structures.md#7337-organization) |
-| rating       | object | [Rating](7-data-structures.md#7.3.43-rating)           |
+| Name         | Type                                                     | Description                                         |
+| ------------ | -------------------------------------------------------- | --------------------------------------------------- |
+| person       | [Person](7-data-structures.md#7.2.39-person)             | Personal details of the agent                       |
+| contact      | [Contact](7-data-structures.md#7.2.13-contact)           | Contact details of the agent                        |
+| organization | [Organization](7-data-structures.md#7.2.37-organization) | The organization details which the agent belongs to |
+| rating       | [Rating](7-data-structures.md#7.2.43-rating)             | The average user rating of the agent                |
 
 ### 7.2.5 Authorization
 
@@ -65,7 +65,7 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>name</td><td>string</td><td>Name of the billable entity</td><td></td><td></td></tr><tr><td>organization</td><td>array</td><td>Details of the <a href="7-data-structures.md#7.3.37-organization">organization</a> being billed.</td><td></td><td></td></tr><tr><td>address</td><td>array</td><td>The <a href="7-data-structures.md#7.3.3-address">address</a> of the billable entity</td><td></td><td></td></tr><tr><td>state</td><td>array</td><td>The <a href="7-data-structures.md#7.3.49-state">state</a> where the billable entity resides. This is important for state-level tax calculation</td><td></td><td></td></tr><tr><td>city</td><td>array</td><td>The <a href="7-data-structures.md#7.3.12-city">city</a> where the billable entity resides.</td><td></td><td></td></tr><tr><td>email</td><td>string</td><td>Email address where the bill is sent to</td><td>Format: email</td><td></td></tr><tr><td>phone</td><td>string</td><td>Phone number of the billable entity</td><td></td><td></td></tr><tr><td>time</td><td>array</td><td>Details regarding the billing period. (<a href="7-data-structures.md#7.3.54-time">Time</a>)</td><td></td><td></td></tr><tr><td>tax_id</td><td>string</td><td>ID of the billable entity as recognized by the taxation authority</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>name</td><td>string</td><td>Name of the billable entity</td><td></td><td></td></tr><tr><td>organization</td><td><a href="7-data-structures.md#7.2.37-organization">Organization</a></td><td>Details of the organization being billed.</td><td></td><td></td></tr><tr><td>address</td><td><a href="7-data-structures.md#7.2.3-address">Address</a></td><td>The address of the billable entity</td><td></td><td></td></tr><tr><td>state</td><td><a href="7-data-structures.md#7.3.49-state">State</a></td><td>The state where the billable entity resides. This is important for state-level tax calculation</td><td></td><td></td></tr><tr><td>city</td><td><a href="7-data-structures.md#7.2.12-city">City</a></td><td>The city where the billable entity resides.</td><td></td><td></td></tr><tr><td>email</td><td>string</td><td>Email address where the bill is sent to</td><td>Format: email</td><td></td></tr><tr><td>phone</td><td>string</td><td>Phone number of the billable entity</td><td></td><td></td></tr><tr><td>time</td><td><a href="7-data-structures.md#7.2.54-time">Time</a></td><td>Details regarding the billing period.</td><td></td><td></td></tr><tr><td>tax_id</td><td>string</td><td>ID of the billable entity as recognized by the taxation authority</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.7 Cancellation
 
@@ -73,7 +73,7 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Format</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>time</td><td>string</td><td>Date-time when the order was cancelled by the buyer</td><td>Format: date-time</td><td></td></tr><tr><td>cancelled_by</td><td>string</td><td></td><td>Enum Data Type in C: CONSUMER, PROVIDER</td><td>CONSUMER, PROVIDER</td></tr><tr><td>reason</td><td>array</td><td>The reason for cancellation. (<a href="7-data-structures.md#7.3.35-option">Option</a>)</td><td></td><td></td></tr><tr><td>additional_description</td><td>array</td><td>Any additional information regarding the nature of cancellation. (<a href="7-data-structures.md#7.3.19-descriptor">Descriptor</a>)</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Format</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>time</td><td>string</td><td>Date-time when the order was cancelled by the buyer</td><td>Format: date-time</td><td></td></tr><tr><td>cancelled_by</td><td>string</td><td></td><td>Enum Data Type in C: CONSUMER, PROVIDER</td><td>CONSUMER, PROVIDER</td></tr><tr><td>reason</td><td><a href="7-data-structures.md#7.2.35-option">Option</a> array</td><td>The reason for cancellation.</td><td></td><td></td></tr><tr><td>additional_description</td><td><a href="7-data-structures.md#7.2.19-descriptor">Descriptor</a></td><td>Any additional information regarding the nature of cancellation.</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.8 CancellationTerm
 
@@ -81,14 +81,14 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-| Name               | Type    | Description                                                                                                                        |
-| ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| fulfillment\_state | array   | The state of fulfillment during which this term is applicable. ([Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate)) |
-| reason\_required   | boolean | Indicates whether a reason is required to cancel the order                                                                         |
-| cancel\_by         | array   | Information related to the [time](7-data-structures.md#7.3.54-time) of cancellation.                                               |
-| cancellation\_fee  | object  | [Fee](7-data-structures.md#7.3.23-fee)                                                                                             |
-| xinput             | object  | [XInput](7-data-structures.md#7.3.57-xinput)                                                                                       |
-| external\_ref      | object  | [MediaFile](7-data-structures.md#7.3.33-mediafile)                                                                                 |
+| Name               | Type                                                             | Description                                                                                                                        |
+| ------------------ | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| fulfillment\_state | [FulfillmentState](7-data-structures.md#7.2.26-fulfillmentstate) | The state of fulfillment during which this term is applicable. ([Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate)) |
+| reason\_required   | boolean                                                          | Indicates whether a reason is required to cancel the order                                                                         |
+| cancel\_by         | [Time](7-data-structures.md#7.2.54-time)                         | Information related to the [time](7-data-structures.md#7.3.54-time) of cancellation.                                               |
+| cancellation\_fee  | [Fee](7-data-structures.md#7.2.23-fee)                           | The cancellation fees levied on the customer                                                                                       |
+| xinput             | [XInput](7-data-structures.md#7.2.57-xinput)                     | Form to capture information related to the cancellation                                                                            |
+| external\_ref      | [MediaFile](7-data-structures.md#7.2.33-mediafile)               | Any attachements related to the cancellation                                                                                       |
 
 ### 7.2.9 Catalog
 
@@ -96,7 +96,7 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>descriptor</td><td>object</td><td><a href="7-data-structures.md#7.3.19-descriptor">Descriptor</a></td><td></td><td></td></tr><tr><td>fulfillments</td><td>array</td><td><a href="7-data-structures.md#7.3.25-fulfillment">Fulfillment</a> modes offered at the Provider Platform level. This is used when a Provider Platform itself offers fulfillments on behalf of the providers it has onboarded.</td><td></td><td></td></tr><tr><td>payments</td><td>array</td><td><a href="7-data-structures.md#7.3.38-payment">Payment</a> terms offered by the Provider Platform for all transactions. This can be overriden at the provider level.</td><td></td><td></td></tr><tr><td>offers</td><td>array</td><td><a href="7-data-structures.md#7.3.34-offer">Offers</a> at the Provider Platform-level. This is common across all providers onboarded by the Provider Platform.</td><td></td><td></td></tr><tr><td>providers</td><td>array</td><td><a href="7-data-structures.md#7.3.41-provider">Provider</a></td><td></td><td></td></tr><tr><td>exp</td><td>string</td><td>Timestamp after which catalog will expire</td><td>Format: date-time</td><td></td></tr><tr><td>ttl</td><td>string</td><td>Duration in seconds after which this catalog will expire</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>descriptor</td><td><a href="7-data-structures.md#7.2.19-descriptor">Descriptor</a></td><td>Description of the catalog</td><td></td><td></td></tr><tr><td>fulfillments</td><td><a href="7-data-structures.md#7.2.25-fulfillment">Fulfillment</a> array</td><td>Fulfillment modes offered at the Provider Platform level. This is used when a Provider Platform itself offers fulfillments on behalf of the providers it has aggregated.</td><td></td><td></td></tr><tr><td>payments</td><td><a href="7-data-structures.md#7.2.38-payment">Payment</a> array</td><td>Payment terms offered by the Provider Platform for all transactions. This can be overriden at the provider level.</td><td></td><td></td></tr><tr><td>offers</td><td><a href="7-data-structures.md#7.2.34-offer">Offer</a> array</td><td>Offers at the Provider Platform-level. This is usually used when the platform aggregates catalogs of multiple providers</td><td></td><td></td></tr><tr><td>providers</td><td><a href="7-data-structures.md#7.2.41-provider">Provider</a> array</td><td>Provider of service or product. </td><td></td><td></td></tr><tr><td>exp</td><td>string</td><td>Timestamp after which catalog will expire</td><td>Format: date-time</td><td></td></tr><tr><td>ttl</td><td>string</td><td>Duration in seconds after which this catalog will expire</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.10 Category
 
@@ -104,14 +104,14 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-| Name                 | Type   | Description                                          |
-| -------------------- | ------ | ---------------------------------------------------- |
-| id                   | string | ID of the category                                   |
-| parent\_category\_id | object | [Category](7-data-structures.md#7.3.10-category)     |
-| descriptor           | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
-| time                 | object | [Time](7-data-structures.md#7.3.54-time)             |
-| ttl                  | object | Time to live for an instance of this schema          |
-| tags                 | array  | [tags](7-data-structures.md#7.3.52-tag)              |
+| Name                 | Type                                                   | Description                                    |
+| -------------------- | ------------------------------------------------------ | ---------------------------------------------- |
+| id                   | string                                                 | ID of the category                             |
+| parent\_category\_id | [Category](7-data-structures.md#7.2.10-category)       | ID of the parent category                      |
+| descriptor           | [Descriptor](7-data-structures.md#7.2.19-descriptor)   | Description of the category                    |
+| time                 | [Time](7-data-structures.md#7.2.54-time)               | Time at or during which this category is valid |
+| ttl                  | string                                                 | Time to live for an instance of this schema    |
+| tags                 | [TagGroup](7-data-structures.md#7.2.53-taggroup) array | Array of grouped key value pairs               |
 
 ### 7.2.11 Circle
 
@@ -119,10 +119,10 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-| Name   | Type   | Description                                  |
-| ------ | ------ | -------------------------------------------- |
-| gps    | object | [GPS](7-data-structures.md#7.3.27-gps)       |
-| radius | object | [Scalar](7-data-structures.md#7.3.47-scalar) |
+| Name   | Type                                         | Description                    |
+| ------ | -------------------------------------------- | ------------------------------ |
+| gps    | [Gps](7-data-structures.md#7.2.27-gps)       | GPS Co-ordinates of the center |
+| radius | [Scalar](7-data-structures.md#7.2.47-scalar) | Radius of the circle           |
 
 ### 7.2.12 City
 
@@ -155,7 +155,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>domain</td><td>array</td><td><a href="7-data-structures.md#7.3.20-domain">Domain</a> code that is relevant to this transaction context</td><td></td><td></td></tr><tr><td>location</td><td>array</td><td>The <a href="7-data-structures.md#7.3.32-location">location</a> where the transaction is intended to be fulfilled.</td><td></td><td></td></tr><tr><td>action</td><td>string</td><td>The Beckn protocol method being called by the sender and executed at the receiver.</td><td></td><td></td></tr><tr><td>version</td><td>string</td><td>Version of transaction protocol being used by the sender.</td><td></td><td></td></tr><tr><td>bap_id</td><td></td><td>Subscriber ID of the Application Platform</td><td></td><td></td></tr><tr><td>bap_uri</td><td></td><td>Subscriber URL of the Application Platform for accepting callbacks from Provider Platforms.</td><td></td><td></td></tr><tr><td>bpp_id</td><td></td><td>Subscriber ID of the Provider Platform</td><td></td><td></td></tr><tr><td>bpp_uri</td><td></td><td>Subscriber URL of the Provider Platform for accepting calls from Application Platforms.</td><td></td><td></td></tr><tr><td>transaction_id</td><td>string</td><td>This is a unique value which persists across all API calls from <code>search</code> through <code>confirm</code>. This is done to indicate an active user session across multiple requests. The Provider Platforms can use this value to push personalized recommendations, and dynamic offerings related to an ongoing transaction despite being unaware of the user active on the Application Platform.</td><td>Format: uuid</td><td></td></tr><tr><td>message_id</td><td>string</td><td>This is a unique value which persists during a request / callback cycle. Since beckn protocol APIs are asynchronous, Application Platforms need a common value to match an incoming callback from a Provider Platform to an earlier call. This value can also be used to ignore duplicate messages coming from the Provider Platform. It is recommended to generate a fresh message_id for every new interaction. When sending unsolicited callbacks, Provider Platforms must generate a new message_id.</td><td>Format: uuid</td><td></td></tr><tr><td>timestamp</td><td>string</td><td>Time of request generation in RFC3339 format</td><td>Format: date-time</td><td></td></tr><tr><td>key</td><td>string</td><td>The encryption public key of the sender</td><td></td><td></td></tr><tr><td>ttl</td><td>string</td><td>The duration in ISO8601 format after timestamp for which this message holds valid</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>domain</td><td><a href="7-data-structures.md#7.2.20-domain">Domain</a></td><td>Industry sector code that is relevant to this transaction</td><td></td><td></td></tr><tr><td>location</td><td><a href="7-data-structures.md#7.2.32-location">Location</a></td><td>The location where the request is restricted to</td><td></td><td></td></tr><tr><td>action</td><td>string</td><td>The Beckn protocol method being called by the sender and executed at the receiver.</td><td></td><td></td></tr><tr><td>version</td><td>string</td><td>Version of transaction protocol being used by the sender.</td><td></td><td></td></tr><tr><td>bap_id</td><td>string</td><td>Subscriber ID of the Application Platform</td><td></td><td></td></tr><tr><td>bap_uri</td><td>string</td><td>Subscriber URL of the Application Platform for accepting callbacks from Provider Platforms.</td><td></td><td></td></tr><tr><td>bpp_id</td><td>string</td><td>Subscriber ID of the Provider Platform</td><td></td><td></td></tr><tr><td>bpp_uri</td><td>string</td><td>Subscriber URL of the Provider Platform for accepting calls from Application Platforms.</td><td></td><td></td></tr><tr><td>transaction_id</td><td>string</td><td>This is a unique value which persists across all API calls from <code>search</code> through <code>confirm</code>. This is done to indicate an active user session across multiple requests. The Provider Platforms can use this value to push personalized recommendations, and dynamic offerings related to an ongoing transaction despite being unaware of the user active on the Application Platform.</td><td>Format: uuid</td><td></td></tr><tr><td>message_id</td><td>string</td><td>This is a unique value which persists during a request / callback cycle. Since beckn protocol APIs are asynchronous, Application Platforms need a common value to match an incoming callback from a Provider Platform to an earlier call. This value can also be used to ignore duplicate messages coming from the Provider Platform. It is recommended to generate a fresh message_id for every new interaction. When sending unsolicited callbacks, Provider Platforms must generate a new message_id.</td><td>Format: uuid</td><td></td></tr><tr><td>timestamp</td><td>string</td><td>Time of request generation in RFC3339 format</td><td>Format: date-time</td><td></td></tr><tr><td>key</td><td>string</td><td>The encryption public key of the sender</td><td></td><td></td></tr><tr><td>ttl</td><td>string</td><td>The duration in ISO8601 format after timestamp for which this message holds valid</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.15 Country
 
@@ -182,10 +182,10 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name    | Type   | Description                                    |
-| ------- | ------ | ---------------------------------------------- |
-| person  | object | [Person](7-data-structures.md#7.3.39-person)   |
-| contact | object | [Contact](7-data-structures.md#7.3.13-contact) |
+| Name    | Type                                           | Description                      |
+| ------- | ---------------------------------------------- | -------------------------------- |
+| person  | [Person](7-data-structures.md#7.2.39-person)   | Personal details of the customer |
+| contact | [Contact](7-data-structures.md#7.2.13-contact) | Contact details of the customer  |
 
 ### 7.2.18 DecimalValue
 
@@ -197,15 +197,15 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name             | Type   | Description                                        |
-| ---------------- | ------ | -------------------------------------------------- |
-| name             | string |                                                    |
-| code             | string |                                                    |
-| short\_desc      | string |                                                    |
-| long\_desc       | string |                                                    |
-| additional\_desc | object |                                                    |
-| media            | array  | [MediaFile](7-data-structures.md#7.3.33-mediafile) |
-| images           | array  | [Image](7-data-structures.md#7.3.28-image)         |
+| Name             | Type                                                     | Description                                                              |
+| ---------------- | -------------------------------------------------------- | ------------------------------------------------------------------------ |
+| name             | string                                                   | Name of the entity being described using this object                     |
+| code             | string                                                   | Code of the entity being described using this object                     |
+| short\_desc      | string                                                   | Short description of the entity being described using this object        |
+| long\_desc       | string                                                   | Long description of the entity being described using this object         |
+| additional\_desc | object                                                   | Additional descriptions of the entity being described using this object  |
+| media            | [MediaFile](7-data-structures.md#7.2.33-mediafile) array | Multimedia files describing the entity being described using this object |
+| images           | [Image](7-data-structures.md#7.2.28-image) array         | Image describing the entity being described using this object            |
 
 ### 7.2.20 Domain
 
@@ -216,8 +216,8 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 | Name             | Type   | Description                                                                                                                                                                                                                 |
 | ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name             | string | Name of the domain                                                                                                                                                                                                          |
-| code             |        | Standard code representing the domain. The standard is usually published as part of the network policy. Furthermore, the network facilitator should also provide a mechanism to provide the supported domains of a network. |
-| additional\_info | array  | A url that contains addtional information about that domain.                                                                                                                                                                |
+| code             | string | Standard code representing the domain. The standard is usually published as part of the network policy. Furthermore, the network facilitator should also provide a mechanism to provide the supported domains of a network. |
+| additional\_info | string | A url that contains addtional information about that domain.                                                                                                                                                                |
 
 ### 7.2.21 Duration
 
@@ -241,10 +241,10 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name       | Type  | Description                                                                        |
-| ---------- | ----- | ---------------------------------------------------------------------------------- |
-| percentage | array | Percentage of a value. ([Decimal Value](7-data-structures.md#7.3.18-decimalvalue)) |
-| amount     | array | A fixed value ([Price](7-data-structures.md#7.3.40-price))                         |
+| Name       | Type                                                     | Description                             |
+| ---------- | -------------------------------------------------------- | --------------------------------------- |
+| percentage | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Percentage of order value levied as fee |
+| amount     | [Price](7-data-structures.md#7.2.40-price)               | Value of the fee levied                 |
 
 ### 7.2.24 Form
 
@@ -265,21 +265,21 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name     | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
-| -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id       | string  | Unique reference ID to the fulfillment of an order                                                                                                                                                                                                                                                                                                                                                                         |
-| type     | string  | A code that describes the mode of fulfillment. This is typically set when there are multiple ways an order can be fulfilled. For example, a retail order can be fulfilled either via store pickup or a home delivery. Similarly, a medical consultation can be provided either in-person or via tele-consultation. The network policy must publish standard fulfillment type codes for the different modes of fulfillment. |
-| rateable | boolean | Whether the fulfillment can be rated or not                                                                                                                                                                                                                                                                                                                                                                                |
-| rating   | array   | The [rating](7-data-structures.md#7.3.43-rating) value of the fulfullment service.                                                                                                                                                                                                                                                                                                                                         |
-| state    | arrat   | The current state of fulfillment. The Provider Platform must set this value whenever the state of the order fulfillment changes and fire an unsolicited `on_status` call. ([Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate))                                                                                                                                                                              |
-| tracking | boolean | Indicates whether the fulfillment allows tracking. Has a default value of false.                                                                                                                                                                                                                                                                                                                                           |
-| customer | array   | The person that will ultimately receive the order. ([Customer](7-data-structures.md#7.3.17-customer))                                                                                                                                                                                                                                                                                                                      |
-| agent    | array   | The [agent](7-data-structures.md#7.3.4-agent) that is currently handling the fulfillment of the order                                                                                                                                                                                                                                                                                                                      |
-| contact  | object  | [Contact](7-data-structures.md#7.3.13-contact)                                                                                                                                                                                                                                                                                                                                                                             |
-| vehicle  | object  | [Vehicle](7-data-structures.md#7.3.56-vehicle)                                                                                                                                                                                                                                                                                                                                                                             |
-| stops    | array   | The list of logical [stops](7-data-structures.md#7.3.50-stop) encountered during the fulfillment of an order.                                                                                                                                                                                                                                                                                                              |
-| path     | string  | The physical path taken by the agent that can be rendered on a map. The allowed format of this property can be set by the network.                                                                                                                                                                                                                                                                                         |
-| tags     | array   | [Tags](7-data-structures.md#7.3.52-tag)                                                                                                                                                                                                                                                                                                                                                                                    |
+| Name     | Type                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
+| -------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id       | string                                                           | Unique reference ID to the fulfillment of an order                                                                                                                                                                                                                                                                                                                                                                         |
+| type     | string                                                           | A code that describes the mode of fulfillment. This is typically set when there are multiple ways an order can be fulfilled. For example, a retail order can be fulfilled either via store pickup or a home delivery. Similarly, a medical consultation can be provided either in-person or via tele-consultation. The network policy must publish standard fulfillment type codes for the different modes of fulfillment. |
+| rateable | boolean                                                          | Whether the fulfillment can be rated or not                                                                                                                                                                                                                                                                                                                                                                                |
+| rating   | [Rating](7-data-structures.md#7.2.43-rating)                     | The rating value of the fulfullment service.                                                                                                                                                                                                                                                                                                                                                                               |
+| state    | [FulfillmentState](7-data-structures.md#7.2.26-fulfillmentstate) | The current state of fulfillment. The Provider Platform must set this value whenever the state of the order fulfillment changes and fire an unsolicited `on_status` call.                                                                                                                                                                                                                                                  |
+| tracking | boolean                                                          | Indicates whether the fulfillment allows tracking. Has a default value of false.                                                                                                                                                                                                                                                                                                                                           |
+| customer | [Customer](7-data-structures.md#7.2.17-customer)                 | the intended recipient of a fulfilled order                                                                                                                                                                                                                                                                                                                                                                                |
+| agent    | [Agent](7-data-structures.md#7.2.4-agent)                        | The agent that is currently handling the fulfillment of the order                                                                                                                                                                                                                                                                                                                                                          |
+| contact  | [Contact](7-data-structures.md#7.2.13-contact)                   | Contact details related to the fulfillment                                                                                                                                                                                                                                                                                                                                                                                 |
+| vehicle  | [Vehicle](7-data-structures.md#7.2.56-vehicle)                   | Vehicle used for fulfillment of the order                                                                                                                                                                                                                                                                                                                                                                                  |
+| stops    | [Stop](7-data-structures.md#7.2.50-stop) array                   | The list of logical stops encountered during the fulfillment of an order.                                                                                                                                                                                                                                                                                                                                                  |
+| path     | string                                                           | The physical path taken by the agent that can be rendered on a map. The allowed format of this property can be set by the network.                                                                                                                                                                                                                                                                                         |
+| tags     | [TagGroup](7-data-structures.md#7.2.53-taggroup) array           | List of grouped key-value pairs to transmit extended metadata related to the fulfillment                                                                                                                                                                                                                                                                                                                                   |
 
 ### 7.2.26 FulfillmentState
 
@@ -287,7 +287,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>descriptor</td><td>object</td><td><a href="7-data-structures.md#7.3.19-descriptor">Descriptor</a></td><td></td><td></td></tr><tr><td>updated_at</td><td>string</td><td></td><td>Format: date-time</td><td></td></tr><tr><td>updated_by</td><td>string</td><td>ID of entity which changed the state</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>descriptor</td><td><a href="7-data-structures.md#7.2.19-descriptor">Descriptor</a></td><td>The description of the current fulfillment state of a confirmed order</td><td></td><td></td></tr><tr><td>updated_at</td><td>string</td><td>Time at which the state of fulfillment was updated</td><td>Format: date-time</td><td></td></tr><tr><td>updated_by</td><td>string</td><td>ID of entity which changed the state</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.27 Gps
 
@@ -312,16 +312,16 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name        | Type  | Description                                                                                                    |
-| ----------- | ----- | -------------------------------------------------------------------------------------------------------------- |
-| descriptor  | array | A raw description of the search intent. Free text search strings, raw audio, etc can be sent in this object.   |
-| provider    | array | The [provider](7-data-structures.md#7.3.41-provider) from which the customer wants to place to the order from  |
-| fulfillment | array | Details on how the customer wants their order fulfilled [Fulfillment](7-data-structures.md#7.3.25-fulfillment) |
-| payment     | array | Details on how the customer wants to pay for the order. [Payment](7-data-structures.md#7.3.38-payment)         |
-| category    | array | Details on the item [category](7-data-structures.md#7.3.10-category)                                           |
-| offer       | array | details on the [offer](7-data-structures.md#7.3.34-offer) the customer wants to avail                          |
-| item        | array | Details of the [item](7-data-structures.md#7.3.31-item) that the consumer wants to order                       |
-| tags        | array | [Tags](7-data-structures.md#7.3.52-tag)                                                                        |
+| Name        | Type                                                   | Description                                                                                                  |
+| ----------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| descriptor  | [Descriptor](7-data-structures.md#7.2.19-descriptor)   | A raw description of the search intent. Free text search strings, raw audio, etc can be sent in this object. |
+| provider    | [Provider](7-data-structures.md#7.2.41-provider)       | The provider from which the customer wants to place to the order from                                        |
+| fulfillment | [Fulfillment](7-data-structures.md#7.2.25-fulfillment) | Details on how the customer wants their order fulfilled Fulfillment                                          |
+| payment     | [Payment](7-data-structures.md#7.2.38-payment)         | Details on how the customer wants to pay for the order. Payment                                              |
+| category    | [Category](7-data-structures.md#7.2.10-category)       | Details on the item category                                                                                 |
+| offer       | [Offer](7-data-structures.md#7.2.34-offer)             | details on the offer the customer wants to avail                                                             |
+| item        | [Item](7-data-structures.md#7.2.31-item)               | Details of the item that the consumer wants to order                                                         |
+| tags        | [TagGroup](7-data-structures.md#7.2.53-taggroup) array | [Tags](7-data-structures.md#7.3.52-tag)                                                                      |
 
 ### 7.2.30 ItemQuantity
 
@@ -344,33 +344,33 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name                   | Type    | Description                                                                                                                                                        |
-| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| id                     | string  | ID of the item.                                                                                                                                                    |
-| parent\_item\_id       | array   | ID of the [item](7-data-structures.md#7.3.31-item), this item is a variant of                                                                                      |
-| parent\_item\_quantity | array   | The number of units of the parent item this item is a multiple of [Item Quantity](7-data-structures.md#7.3.30-itemquantity)                                        |
-| descriptor             | array   | Physical description of the item [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                              |
-| creator                | array   | The creator of this item [Organization](7-data-structures.md#7.3.37-organization)                                                                                  |
-| price                  | array   | The [price](7-data-structures.md#7.3.40-price) of this item, if it has intrinsic value                                                                             |
-| quantity               | array   | The selling quantity of the item [Item Quantity](7-data-structures.md#7.3.30-itemquantity)                                                                         |
-| category\_ids          | array   | Categories this item can be listed under [Category](7-data-structures.md#7.3.10-category)                                                                          |
-| fulfillment\_ids       | array   | Modes through which this item can be fulfilled [Fulfillment](7-data-structures.md#7.3.25-fulfillment)                                                              |
-| location\_ids          | array   | Provider [Locations](7-data-structures.md#7.3.32-location) this item is available in                                                                               |
-| payment\_ids           | array   | [Payment](7-data-structures.md#7.3.38-payment) modalities through which this item can be ordered                                                                   |
-| add\_ons               | array   | [AddOn](7-data-structures.md#7.3.2-addon)                                                                                                                          |
-| cancellation\_terms    | array   | [Cancellation terms](7-data-structures.md#7.3.7-cancellation) of this item                                                                                         |
-| refund\_terms          | array   | Refund terms of this item                                                                                                                                          |
-| replacement\_terms     | array   | Terms that are applicable be met when this item is replaced [Replacement Terms](7-data-structures.md#7.3.45-replacementterm)                                       |
-| return\_terms          | array   | Terms that are applicable when this item is returned [Return Terms](7-data-structures.md#7.3.46-returnterm)                                                        |
-| xinput                 | array   | Additional input required from the customer to purchase / avail this item [XInput](7-data-structures.md#7.3.57-xinput)                                             |
-| time                   | array   | Temporal attributes of this item. This property is used when the item exists on the catalog only for a limited period of [time](7-data-structures.md#7.3.54-time). |
-| rateable               | boolean | Whether this item can be rated                                                                                                                                     |
-| rating                 |         | The [rating](7-data-structures.md#7.3.43-rating) of the item                                                                                                       |
-| matched                | boolean | Whether this item is an exact match of the request                                                                                                                 |
-| related                | boolean | Whether this item is a related item to the exactly matched item                                                                                                    |
-| recommended            | boolean | Whether this item is a recommended item to a response                                                                                                              |
-| ttl                    | string  | Time to live in seconds for an instance of this schema                                                                                                             |
-| tags                   | array   | [Tags](7-data-structures.md#7.3.53-taggroup)                                                                                                                       |
+| Name                   | Type                                                                  | Description                                                                                                                    |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| id                     | string                                                                | ID of the item.                                                                                                                |
+| parent\_item\_id       | string                                                                | ID of the item, this item is a variant of                                                                                      |
+| parent\_item\_quantity | [ItemQuantity](7-data-structures.md#7.2.30-itemquantity)              | The number of units of the parent item this item is a multiple of                                                              |
+| descriptor             | [Descriptor](7-data-structures.md#7.2.19-descriptor)                  | Physical description of the item                                                                                               |
+| creator                | [Organization](7-data-structures.md#7.2.37-organization)              | The creator of this item                                                                                                       |
+| price                  | [Price](7-data-structures.md#7.2.40-price)                            | The price of this item, if it has intrinsic value                                                                              |
+| quantity               | [ItemQuantity](7-data-structures.md#7.2.30-itemquantity)              | The quantity of the item                                                                                                       |
+| category\_ids          | array                                                                 | Categories this item can be listed under                                                                                       |
+| fulfillment\_ids       | array                                                                 | Modes through which this item can be fulfilled                                                                                 |
+| location\_ids          | array                                                                 | Provider Locations this item is available in                                                                                   |
+| payment\_ids           | array                                                                 | Payment modalities through which this item can be ordered                                                                      |
+| add\_ons               | [AddOn](7-data-structures.md#7.2.2-addon) array                       | Add-ons to be included with the item                                                                                           |
+| cancellation\_terms    | [CancellationTerm](7-data-structures.md#7.2.8-cancellationterm) array | Cancellation terms of this item                                                                                                |
+| refund\_terms          | RefundTerm array                                                      | Refund terms of this item                                                                                                      |
+| replacement\_terms     | [ReplacementTerm](7-data-structures.md#7.2.45-replacementterm) array  | Terms that are applicable be met when this item is replaced Replacement Terms                                                  |
+| return\_terms          | [ReturnTerm](7-data-structures.md#7.2.46-returnterm) array            | Terms that are applicable when this item is returned Return Terms                                                              |
+| xinput                 | [XInput](7-data-structures.md#7.2.57-xinput)                          | Additional input required from the customer to purchase / avail this item XInput                                               |
+| time                   | [Time](7-data-structures.md#7.2.54-time)                              | Temporal attributes of this item. This property is used when the item exists on the catalog only for a limited period of time. |
+| rateable               | boolean                                                               | Whether this item can be rated                                                                                                 |
+| rating                 | [Rating](7-data-structures.md#7.2.43-rating)                          | The rating of the item                                                                                                         |
+| matched                | boolean                                                               | Whether this item is an exact match of the request                                                                             |
+| related                | boolean                                                               | Whether this item is a related item to the exactly matched item                                                                |
+| recommended            | boolean                                                               | Whether this item is a recommended item to a response                                                                          |
+| ttl                    | string                                                                | Time to live in seconds for an instance of this schema                                                                         |
+| tags                   | [TagGroup](7-data-structures.md#7.2.53-taggroup) array                | Grouped list of extended data regarding the item                                                                               |
 
 ### 7.2.32 Location
 
@@ -378,22 +378,22 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name       | Type   | Description                                                                                                               | Notes       | Enum |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------------------------------- | ----------- | ---- |
-| id         | string |                                                                                                                           |             |      |
-| descriptor |        | [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                      |             |      |
-| map\_url   | string | The url to the map of the location. This can be a globally recognized map url or the one specified by the network policy. | Format: uri |      |
-| gps        |        | The [GPS](7-data-structures.md#7.3.27-gps) co-ordinates of this location.                                                 |             |      |
-| address    |        | The [address](7-data-structures.md#7.3.3-address) of this location.                                                       |             |      |
-| city       |        | The [city](7-data-structures.md#7.3.12-city) this location is, or is located within                                       |             |      |
-| district   | string | The state this location is, or is located within                                                                          |             |      |
-| state      |        | The [state](7-data-structures.md#7.3.49-state) this location is, or is located within                                     |             |      |
-| country    |        | The [country](7-data-structures.md#7.3.15-country) this location is, or is located within                                 |             |      |
-| area\_code | string |                                                                                                                           |             |      |
-| circle     |        | [Circle](7-data-structures.md#7.3.11-circle)                                                                              |             |      |
-| polygon    | string | The boundary polygon of this location                                                                                     |             |      |
-| 3dspace    | string | The three dimensional region describing this location                                                                     |             |      |
-| rating     |        | The [rating](7-data-structures.md#7.3.43-rating) of this location                                                         |             |      |
+| Name       | Type                                                 | Description                                                                                                               | Notes       | Enum |
+| ---------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------- | ---- |
+| id         | string                                               |                                                                                                                           |             |      |
+| descriptor | [Descriptor](7-data-structures.md#7.2.19-descriptor) | Description of the location                                                                                               |             |      |
+| map\_url   | string                                               | The url to the map of the location. This can be a globally recognized map url or the one specified by the network policy. | Format: uri |      |
+| gps        | [Gps](7-data-structures.md#7.2.27-gps)               | The GPS co-ordinates of this location.                                                                                    |             |      |
+| address    | [Address](7-data-structures.md#7.2.3-address)        | The address of this location.                                                                                             |             |      |
+| city       | [City](7-data-structures.md#7.2.12-city)             | The city this location is, or is located within                                                                           |             |      |
+| district   | District                                             | The district this location is, or is located within                                                                       |             |      |
+| state      | [State](7-data-structures.md#7.3.49-state)           | The state this location is, or is located within                                                                          |             |      |
+| country    | [Country](7-data-structures.md#7.2.15-country)       | The country this location is, or is located within                                                                        |             |      |
+| area\_code | string                                               | Area code of the location ex : ZIP code, Pincode etc                                                                      |             |      |
+| circle     | [Circle](7-data-structures.md#7.2.11-circle)         | Circle that forms the boundary of the location                                                                            |             |      |
+| polygon    | string                                               | The boundary polygon of this location                                                                                     |             |      |
+| 3dspace    | string                                               | The three dimensional region describing this location                                                                     |             |      |
+| rating     | [Rating](7-data-structures.md#7.2.43-rating)         | The rating of this location                                                                                               |             |      |
 
 ### 7.2.33 MediaFile
 
@@ -409,15 +409,15 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name          | Type   | Description                                          |
-| ------------- | ------ | ---------------------------------------------------- |
-| id            | string |                                                      |
-| descriptor    | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
-| location\_ids | array  | [Location](7-data-structures.md#7.3.32-location)     |
-| category\_ids | array  | [Category](7-data-structures.md#7.3.10-category)     |
-| item\_ids     | array  | [Item](7-data-structures.md#7.3.31-item)             |
-| time          | object | [Time](7-data-structures.md#7.3.54-time)             |
-| tags          | array  | [Tags](7-data-structures.md#7.3.53-taggroup)         |
+| Name          | Type                                                   | Description                                  |
+| ------------- | ------------------------------------------------------ | -------------------------------------------- |
+| id            | string                                                 |                                              |
+| descriptor    | [Descriptor](7-data-structures.md#7.2.19-descriptor)   | Description of the offer                     |
+| location\_ids | array                                                  | IDs of the Locations this offer is valid in  |
+| category\_ids | array                                                  | IDs of the Categories this offer is valid in |
+| item\_ids     | array                                                  | IDs of the items this offer is valid in      |
+| time          | [Time](7-data-structures.md#7.2.54-time)               | Time for which this offer is valid           |
+| tags          | [TagGroup](7-data-structures.md#7.2.53-taggroup) array | Additional metadata related to this offer    |
 
 ### 7.2.35 Option
 
@@ -425,10 +425,10 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name       | Type   | Description                                          |
-| ---------- | ------ | ---------------------------------------------------- |
-| id         | string |                                                      |
-| descriptor | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
+| Name       | Type                                                 | Description               |
+| ---------- | ---------------------------------------------------- | ------------------------- |
+| id         | string                                               |                           |
+| descriptor | [Descriptor](7-data-structures.md#7.2.19-descriptor) | Description of the option |
 
 ### 7.2.36 Order
 
@@ -436,7 +436,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Human-readable ID of the order. This is generated at the Provider Platform layer. The Provider Platform can either generate order id within its system or forward the order ID created at the provider level.</td><td></td><td></td></tr><tr><td>ref_order_ids</td><td>array</td><td>A list of order IDs to link this order to previous orders.</td><td></td><td></td></tr><tr><td>status</td><td>string</td><td>Status of the order. Allowed values can be defined by the network policy</td><td>Enum Data Type in C: ACTIVE, COMPLETE, CANCELLED</td><td>ACTIVE, COMPLETE, CANCELLED</td></tr><tr><td>type</td><td>string</td><td>This is used to indicate the type of order being created to Provider Platforms. Sometimes orders can be linked to previous orders, like a replacement order in a retail domain. A follow-up consultation in healthcare domain. A single order part of a subscription order. The list of order types can be standardized at the network level. Has a default value of "DEFAULT"</td><td>Enum Data Type in C: DRAFT, DEFAULT</td><td>DRAFT, DEFAULT</td></tr><tr><td>provider</td><td>array</td><td>Details of the <a href="7-data-structures.md#7.3.41-provider">provider</a> whose catalog items have been selected.</td><td></td><td></td></tr><tr><td>items</td><td>array</td><td>The <a href="7-data-structures.md#7.3.31-item">items</a> purchased / availed in this order</td><td></td><td></td></tr><tr><td>add_ons</td><td>array</td><td>The <a href="7-data-structures.md#7.3.2-addon">add-ons</a> purchased / availed in this order</td><td></td><td></td></tr><tr><td>offers</td><td>array</td><td>The <a href="7-data-structures.md#7.3.34-offer">offers</a> applied in this order</td><td></td><td></td></tr><tr><td>billing</td><td>array</td><td>The <a href="7-data-structures.md#7.3.6-billing">billing</a> details of this order</td><td></td><td></td></tr><tr><td>fulfillments</td><td>array</td><td>The <a href="7-data-structures.md#7.3.25-fulfillment">fulfillments</a> involved in completing this order</td><td></td><td></td></tr><tr><td>cancellation</td><td>array</td><td>The <a href="7-data-structures.md#7.3.7-cancellation">cancellation</a> details of this order</td><td></td><td></td></tr><tr><td>cancellation_terms</td><td>array</td><td><a href="7-data-structures.md#7.3.8-cancellationterm">Cancellation terms</a> of this item</td><td></td><td></td></tr><tr><td>refund_terms</td><td>array</td><td>Refund terms of this item</td><td></td><td></td></tr><tr><td>replacement_terms</td><td>array</td><td><a href="7-data-structures.md#7.3.45-replacementterm">Replacement terms</a> of this item</td><td></td><td></td></tr><tr><td>return_terms</td><td>array</td><td><a href="7-data-structures.md#7.3.46-returnterm">Return terms</a> of this item</td><td></td><td></td></tr><tr><td>quote</td><td>array</td><td>The mutually agreed upon <a href="7-data-structures.md#7.3.42-quotation">quotation</a> for this order.</td><td></td><td></td></tr><tr><td>payments</td><td>array</td><td>The terms of settlement for this order <a href="7-data-structures.md#7.3.38-payment">Payment</a></td><td></td><td></td></tr><tr><td>created_at</td><td>string</td><td>The date-time of creation of this order</td><td>Format: date-time</td><td></td></tr><tr><td>updated_at</td><td>string</td><td>The date-time of updated of this order</td><td>Format: date-time</td><td></td></tr><tr><td>xinput</td><td>array</td><td>Additional input required from the customer to confirm this order <a href="7-data-structures.md#7.3.57-xinput">XInput</a></td><td></td><td></td></tr><tr><td>tags</td><td>array</td><td><a href="7-data-structures.md#7.3.53-taggroup">Tags</a></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Human-readable ID of the order. This is generated at the Provider Platform layer. The Provider Platform can either generate order id within its system or forward the order ID created at the provider level.</td><td></td><td></td></tr><tr><td>ref_order_ids</td><td>array</td><td>A list of order IDs to link this order to previous orders.</td><td></td><td></td></tr><tr><td>status</td><td>string</td><td>Status of the order. Allowed values can be defined by the network policy</td><td>Enum Data Type in C: ACTIVE, COMPLETE, CANCELLED</td><td>ACTIVE, COMPLETE, CANCELLED</td></tr><tr><td>type</td><td>string</td><td>This is used to indicate the type of order being created to Provider Platforms. Sometimes orders can be linked to previous orders, like a replacement order in a retail domain. A follow-up consultation in healthcare domain. A single order part of a subscription order. The list of order types can be standardized at the network level. Has a default value of "DEFAULT"</td><td>Enum Data Type in C: DRAFT, DEFAULT</td><td>DRAFT, DEFAULT</td></tr><tr><td>provider</td><td><a href="7-data-structures.md#7.2.41-provider">Provider</a></td><td>Details of the provider whose catalog items have been selected.</td><td></td><td></td></tr><tr><td>items</td><td><a href="7-data-structures.md#7.2.31-item">Items</a> array</td><td>The items purchased / availed in this order</td><td></td><td></td></tr><tr><td>add_ons</td><td><a href="7-data-structures.md#7.2.2-addon">AddOn</a> array</td><td>The add-ons purchased / availed in this order</td><td></td><td></td></tr><tr><td>offers</td><td><a href="7-data-structures.md#7.2.34-offer">Offers</a> array</td><td>The offers applied in this order</td><td></td><td></td></tr><tr><td>billing</td><td><a href="7-data-structures.md#7.2.6-billing">Billing</a> array</td><td>The billing details of this order</td><td></td><td></td></tr><tr><td>fulfillments</td><td><a href="7-data-structures.md#7.2.25-fulfillment">Fulfillment</a> array</td><td>The fulfillments involved in completing this order</td><td></td><td></td></tr><tr><td>cancellation</td><td><a href="7-data-structures.md#7.2.7-cancellation">Cancellation</a></td><td>The cancellation details of this order</td><td></td><td></td></tr><tr><td>cancellation_terms</td><td><a href="7-data-structures.md#7.2.7-cancellation">CancellationTerm</a> array</td><td>Cancellation terms of this item</td><td></td><td></td></tr><tr><td>refund_terms</td><td>RefundTerm array</td><td>Refund terms of this item</td><td></td><td></td></tr><tr><td>replacement_terms</td><td><a href="7-data-structures.md#7.2.45-replacementterm">ReplacementTerm</a> array</td><td>Replacement terms of this item</td><td></td><td></td></tr><tr><td>return_terms</td><td><a href="7-data-structures.md#7.2.46-returnterm">ReturnTerm</a> array</td><td>Return terms of this item</td><td></td><td></td></tr><tr><td>quote</td><td><a href="7-data-structures.md#7.2.42-quotation">Quotation</a></td><td>The mutually agreed upon quotation for this order.</td><td></td><td></td></tr><tr><td>payments</td><td><a href="7-data-structures.md#7.2.38-payment">Payment</a> array</td><td>The terms of settlement for this order </td><td></td><td></td></tr><tr><td>created_at</td><td>string</td><td>The date-time of creation of this order</td><td>Format: date-time</td><td></td></tr><tr><td>updated_at</td><td>string</td><td>The date-time of updated of this order</td><td>Format: date-time</td><td></td></tr><tr><td>xinput</td><td><a href="7-data-structures.md#7.2.57-xinput">XInput</a></td><td>Additional input required from the customer to confirm this order </td><td></td><td></td></tr><tr><td>tags</td><td><a href="7-data-structures.md#7.2.53-taggroup">TagGroup</a> array</td><td>Grouped list of extended metadata related to the Order</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.37 Organization
 
@@ -444,13 +444,13 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name       | Type   | Description                                                                                       |
-| ---------- | ------ | ------------------------------------------------------------------------------------------------- |
-| descriptor | object | [Descriptor](7-data-structures.md#7.3.19-descriptor)                                              |
-| address    | array  | The postal [address](7-data-structures.md#7.3.3-address) of the organization                      |
-| state      | array  | The [state](7-data-structures.md#7.3.49-state) where the the organization's address is registered |
-| city       | array  | The [city](7-data-structures.md#7.3.12-city) where the the organization's address is registered   |
-| contact    | object | [Contact](7-data-structures.md#7.3.13-contact)                                                    |
+| Name       | Type                                                 | Description                                                  |
+| ---------- | ---------------------------------------------------- | ------------------------------------------------------------ |
+| descriptor | [Descriptor](7-data-structures.md#7.2.19-descriptor) | Description of the organization                              |
+| address    | [Address](7-data-structures.md#7.2.3-address)        | The postal address of the organization                       |
+| state      | [State](7-data-structures.md#7.3.49-state)           | The state where the the organization's address is registered |
+| city       | [City](7-data-structures.md#7.2.12-city)             | The city where the the organization's address is registered  |
+| contact    | [Contact](7-data-structures.md#7.2.13-contact)       | Contact details of the organization                          |
 
 ### 7.2.38 Payment
 
@@ -458,7 +458,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Enum</th><th>Format</th><th data-hidden>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td></td><td></td><td>ID of the payment term that can be referred at an item or an order level in a catalog</td></tr><tr><td>collected_by</td><td></td><td></td><td></td><td>This field indicates who is the collector of payment. The Application Platform can set this value to 'Application Platform' if it wants to collect the payment first and settle it to the Provider Platform. If the Provider Platform agrees to those terms, the Provider Platform should not send the payment url. Alternatively, the Provider Platform can set this field with the value 'Provider Platform' if it wants the payment to be made directly.</td></tr><tr><td>url</td><td>string</td><td>Format: uri</td><td>uri</td><td>A payment url to be called by the Application Platform. If empty, then the payment is to be done offline. The details of payment should be present in the params object. If tl_method = http/get, then the payment details will be sent as url params. Two url param values, <code>$transaction_id</code> and <code>$amount</code> are mandatory.</td></tr><tr><td>params</td><td>object</td><td></td><td></td><td></td></tr><tr><td>type</td><td>string</td><td>PRE-ORDER, PRE-FULFILLMENT, ON-FULFILLMENT, POST-FULFILLMENT</td><td></td><td></td></tr><tr><td>status</td><td>string</td><td>PAID, NOT-PAID</td><td></td><td></td></tr><tr><td>time</td><td>object</td><td></td><td></td><td><a href="7-data-structures.md#7.3.54-time">Time</a></td></tr><tr><td>tags</td><td>array</td><td></td><td></td><td><a href="7-data-structures.md#7.3.53-taggroup">Tags</a></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Enum</th><th>Format</th><th data-hidden>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td></td><td></td><td>ID of the payment term that can be referred at an item or an order level in a catalog</td></tr><tr><td>collected_by</td><td></td><td></td><td></td><td>This field indicates who is the collector of payment. The Application Platform can set this value to 'Application Platform' if it wants to collect the payment first and settle it to the Provider Platform. If the Provider Platform agrees to those terms, the Provider Platform should not send the payment url. Alternatively, the Provider Platform can set this field with the value 'Provider Platform' if it wants the payment to be made directly.</td></tr><tr><td>url</td><td>string</td><td>Format: uri</td><td>uri</td><td>A payment url to be called by the Application Platform. If empty, then the payment is to be done offline. The details of payment should be present in the params object. If tl_method = http/get, then the payment details will be sent as url params. Two url param values, <code>$transaction_id</code> and <code>$amount</code> are mandatory.</td></tr><tr><td>params</td><td>object</td><td></td><td></td><td></td></tr><tr><td>type</td><td>string</td><td>PRE-ORDER, PRE-FULFILLMENT, ON-FULFILLMENT, POST-FULFILLMENT</td><td></td><td></td></tr><tr><td>status</td><td>string</td><td>PAID, NOT-PAID</td><td></td><td></td></tr><tr><td>time</td><td><a href="7-data-structures.md#7.2.54-time">Time</a></td><td>Temporal details related to the settlement of the order</td><td></td><td><a href="7-data-structures.md#7.3.54-time">Time</a></td></tr><tr><td>tags</td><td><a href="7-data-structures.md#7.2.53-taggroup">TagGroup</a> array</td><td>Grouped list of metadata related to the settlement of the order</td><td></td><td><a href="7-data-structures.md#7.3.53-taggroup">Tags</a></td></tr></tbody></table>
 
 ### 7.2.39 Person
 
@@ -466,24 +466,24 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Describes the identity of the person</td><td></td><td></td></tr><tr><td>url</td><td>string</td><td>Profile url of the person</td><td>Format: uri</td><td></td></tr><tr><td>name</td><td>string</td><td>the name of the person</td><td></td><td></td></tr><tr><td>image</td><td>object</td><td><a href="7-data-structures.md#7.3.28-image">Image</a></td><td></td><td></td></tr><tr><td>age</td><td>array</td><td>Age of the person <a href="7-data-structures.md#7.3.21-duration">Duration</a></td><td></td><td></td></tr><tr><td>dob</td><td>string</td><td>Date of birth of the person</td><td>Format: date</td><td></td></tr><tr><td>gender</td><td>string</td><td>Gender of something, typically a Person, but possibly also fictional characters, animals, etc. While Male and Female may be used, text strings are also acceptable for people who do not identify as a binary gender.Allowed values for this field can be published in the network policy</td><td></td><td></td></tr><tr><td>creds</td><td>array</td><td><a href="7-data-structures.md#7.3.16-credential">Credential</a></td><td></td><td></td></tr><tr><td>languages</td><td>array</td><td></td><td></td><td></td></tr><tr><td>skills</td><td>array</td><td></td><td></td><td></td></tr><tr><td>tags</td><td>array</td><td><a href="7-data-structures.md#7.3.53-taggroup">Tags</a></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Describes the identity of the person</td><td></td><td></td></tr><tr><td>url</td><td>string</td><td>Profile url of the person</td><td>Format: uri</td><td></td></tr><tr><td>name</td><td>string</td><td>the name of the person</td><td></td><td></td></tr><tr><td>image</td><td><a href="7-data-structures.md#7.2.28-image">Image</a></td><td><a href="7-data-structures.md#7.3.28-image">Image</a></td><td></td><td></td></tr><tr><td>age</td><td><a href="7-data-structures.md#7.2.21-duration">Duration</a></td><td>Age of the person </td><td></td><td></td></tr><tr><td>dob</td><td>string</td><td>Date of birth of the person</td><td>Format: date</td><td></td></tr><tr><td>gender</td><td>string</td><td>Gender of something, typically a Person, but possibly also fictional characters, animals, etc. While Male and Female may be used, text strings are also acceptable for people who do not identify as a binary gender.Allowed values for this field can be published in the network policy</td><td></td><td></td></tr><tr><td>creds</td><td><a href="7-data-structures.md#7.2.16-credential">Credential</a> array</td><td>List of the person's credentials</td><td></td><td></td></tr><tr><td>languages</td><td>array</td><td></td><td></td><td></td></tr><tr><td>skills</td><td>array</td><td></td><td></td><td></td></tr><tr><td>tags</td><td><a href="7-data-structures.md#7.2.53-taggroup">TagGroup</a> array</td><td>Grouped list containing extended metadata about the person</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.40 Price
 
-**Description:** Outlines the price of a product or service.
+**Description:** Outlines the price of an Item
 
 **Fields:**
 
-| Name             | Type   | Description                                               |
-| ---------------- | ------ | --------------------------------------------------------- |
-| currency         | string |                                                           |
-| value            | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
-| estimated\_value | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
-| computed\_value  | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
-| listed\_value    | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
-| offered\_value   | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
-| minimum\_value   | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
-| maximum\_value   | object | [Decimal Value](7-data-structures.md#7.3.18-decimalvalue) |
+| Name             | Type                                                     | Description                      |
+| ---------------- | -------------------------------------------------------- | -------------------------------- |
+| currency         | string                                                   |                                  |
+| value            | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Default value of the Item price  |
+| estimated\_value | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Estimated value of an Item price |
+| computed\_value  | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Computed value of an Item price  |
+| listed\_value    | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Listed value of an Item price    |
+| offered\_value   | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Offered value of an Item price   |
+| minimum\_value   | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Minimum value of an Item price   |
+| maximum\_value   | [DecimalValue](7-data-structures.md#7.2.18-decimalvalue) | Maximum value of an Item price   |
 
 ### 7.2.41 Provider
 
@@ -491,7 +491,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Id of the provider</td><td></td><td></td></tr><tr><td>descriptor</td><td>object</td><td><a href="7-data-structures.md#7.3.19-descriptor">Descriptor</a></td><td></td><td></td></tr><tr><td>category_id</td><td>string</td><td>Category Id of the provider at the Provider Platform-level catalog</td><td></td><td></td></tr><tr><td>rating</td><td>object</td><td><a href="7-data-structures.md#7.3.43-rating">Rating</a></td><td></td><td></td></tr><tr><td>time</td><td>object</td><td><a href="7-data-structures.md#7.3.54-time">Time</a></td><td></td><td></td></tr><tr><td>categories</td><td>array</td><td><a href="7-data-structures.md#7.3.10-category">Category</a></td><td></td><td></td></tr><tr><td>fulfillments</td><td>array</td><td><a href="7-data-structures.md#7.3.25-fulfillment">Fulfillments</a></td><td></td><td></td></tr><tr><td>payments</td><td>array</td><td><a href="7-data-structures.md#7.3.38-payment">Payment</a></td><td></td><td></td></tr><tr><td>locations</td><td>array</td><td><a href="7-data-structures.md#7.3.32-location">Location</a></td><td></td><td></td></tr><tr><td>offers</td><td>array</td><td><a href="7-data-structures.md#7.3.34-offer">Offer</a></td><td></td><td></td></tr><tr><td>items</td><td>array</td><td><a href="7-data-structures.md#7.3.31-item">Item</a></td><td></td><td></td></tr><tr><td>exp</td><td>string</td><td>Time after which catalog has to be refreshed</td><td>Format: date-time</td><td></td></tr><tr><td>rateable</td><td>boolean</td><td>Whether this provider can be rated or not</td><td></td><td></td></tr><tr><td>ttl</td><td>integer</td><td>The time-to-live in seconds, for this object. This can be overriden at deeper levels. A value of -1 indicates that this object is not cacheable.</td><td></td><td></td></tr><tr><td>tags</td><td>array</td><td><a href="7-data-structures.md#7.3.53-taggroup">Tags</a></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Id of the provider</td><td></td><td></td></tr><tr><td>descriptor</td><td><a href="7-data-structures.md#7.2.19-descriptor">Descriptor</a></td><td>Description of the provider</td><td></td><td></td></tr><tr><td>category_id</td><td>string</td><td>Category Id of the provider at the Provider Platform-level catalog</td><td></td><td></td></tr><tr><td>rating</td><td><a href="7-data-structures.md#7.2.43-rating">Rating</a></td><td>Rating of the provider</td><td></td><td></td></tr><tr><td>time</td><td><a href="7-data-structures.md#7.2.54-time">Time</a></td><td>Time during which the catalog is available</td><td></td><td></td></tr><tr><td>categories</td><td><a href="7-data-structures.md#7.2.10-category">Category</a> array</td><td>Categories in the catalog</td><td></td><td></td></tr><tr><td>fulfillments</td><td><a href="7-data-structures.md#7.2.25-fulfillment">Fulfillment</a> array</td><td>List of fulfillment terms of the provider</td><td></td><td></td></tr><tr><td>payments</td><td><a href="7-data-structures.md#7.2.38-payment">Payment</a> array</td><td>List of payment terms of the provider</td><td></td><td></td></tr><tr><td>locations</td><td><a href="7-data-structures.md#7.2.32-location">Location</a> array</td><td>Locations where the provider can be accessed</td><td></td><td></td></tr><tr><td>offers</td><td><a href="7-data-structures.md#7.2.34-offer">Offer</a> array</td><td>Offers listed by the provider</td><td></td><td></td></tr><tr><td>items</td><td><a href="7-data-structures.md#7.2.31-item">Item</a> array</td><td>Items cataloged by the provider</td><td></td><td></td></tr><tr><td>exp</td><td>string</td><td>Time after which catalog has to be refreshed</td><td>Format: date-time</td><td></td></tr><tr><td>rateable</td><td>boolean</td><td>Whether this provider can be rated or not</td><td></td><td></td></tr><tr><td>ttl</td><td>integer</td><td>The time-to-live in seconds, for this object. This can be overriden at deeper levels. A value of -1 indicates that this object is not cacheable.</td><td></td><td></td></tr><tr><td>tags</td><td><a href="7-data-structures.md#7.2.53-taggroup">TagGroup</a> array</td><td>Grouped metadata related to the provider</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.42 Quotation
 
@@ -499,7 +499,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>ID of the quote.</td><td>Format: uuid</td><td></td></tr><tr><td>price</td><td>array</td><td>The total quoted <a href="7-data-structures.md#7.3.40-price">price</a></td><td></td><td></td></tr><tr><td>breakup</td><td>array</td><td>the breakup of the total quoted price</td><td></td><td></td></tr><tr><td>ttl</td><td>object</td><td><a href="7-data-structures.md#7.3.21-duration">Duration</a></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>ID of the quote.</td><td>Format: uuid</td><td></td></tr><tr><td>price</td><td><a href="7-data-structures.md#7.2.40-price">Price</a></td><td>The total quoted <a href="7-data-structures.md#7.3.40-price">price</a></td><td></td><td></td></tr><tr><td>breakup</td><td>array</td><td>the breakup of the total quoted price</td><td></td><td></td></tr><tr><td>ttl</td><td><a href="7-data-structures.md#7.2.21-duration">Duration</a></td><td>Duration for which the quotation is valid</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.43 Rating
 
@@ -523,11 +523,11 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name               | Type   | Description                                                                                                                                                                                                     |
-| ------------------ | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| fulfillment\_state | array  | The state of fulfillment during which this term is applicable. [Fulfillment State](7-data-structures.md#7.3.26-fulfillmentstate)                                                                                |
-| replace\_within    | array  | Applicable only for buyer managed returns where the buyer has to replace the item before a certain date-time, failing which they will not be eligible for replacement. [Time](7-data-structures.md#7.3.54-time) |
-| external\_ref      | object | [Media File](7-data-structures.md#7.3.33-mediafile)                                                                                                                                                             |
+| Name               | Type                                                                   | Description                                                                                                                                                             |
+| ------------------ | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fulfillment\_state | [FulfillmentState](7-data-structures.md#7.2.26-fulfillmentstate) array | The state of fulfillment during which this term is applicable.                                                                                                          |
+| replace\_within    | [Time](7-data-structures.md#7.2.54-time)                               | Applicable only for buyer managed returns where the buyer has to replace the item before a certain date-time, failing which they will not be eligible for replacement.  |
+| external\_ref      | [MediaFile](7-data-structures.md#7.2.33-mediafile)                     | Any file containing info related to the terms                                                                                                                           |
 
 ### 7.2.46 ReturnTerm
 
@@ -535,7 +535,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>xx</th></tr></thead><tbody><tr><td>fulfillment_state</td><td>array</td><td>The state of fulfillment during which this term IETF''s applicable. <a href="7-data-structures.md#7.3.26-fulfillmentstate">Fulfillment State</a></td><td></td><td></td></tr><tr><td>return_eligible</td><td>boolean</td><td>Indicates whether the item is eligible for return</td><td></td><td></td></tr><tr><td>return_time</td><td>array</td><td>Applicable only for buyer managed returns where the buyer has to return the item to the origin before a certain date-time, failing which they will not be eligible for refund.<a href="7-data-structures.md#7.3.54-time">Time</a></td><td></td><td></td></tr><tr><td>return_location</td><td>array</td><td>The <a href="7-data-structures.md#7.3.32-location">location</a> where the item or order must / will be returned to</td><td></td><td></td></tr><tr><td>fulfillment_managed_by</td><td>string</td><td>The entity that will perform the return</td><td>Enum Data Type in C: CONSUMER, PROVIDER</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>xx</th></tr></thead><tbody><tr><td>fulfillment_state</td><td><a href="7-data-structures.md#7.2.26-fulfillmentstate">FulfillmentState</a> array</td><td>The state of fulfillment during which this term IETF''s applicable. </td><td></td><td></td></tr><tr><td>return_eligible</td><td>boolean</td><td>Indicates whether the item is eligible for return</td><td></td><td></td></tr><tr><td>return_time</td><td><a href="7-data-structures.md#7.2.54-time">Time</a></td><td>Applicable only for buyer managed returns where the buyer has to return the item to the origin before a certain date-time, failing which they will not be eligible for refund.</td><td></td><td></td></tr><tr><td>return_location</td><td><a href="7-data-structures.md#7.2.32-location">Location</a></td><td>The location where the item or order must / will be returned to</td><td></td><td></td></tr><tr><td>fulfillment_managed_by</td><td>string</td><td>The entity that will perform the return</td><td>Enum Data Type in C: CONSUMER, PROVIDER</td><td></td></tr></tbody></table>
 
 ### 7.2.47 Scalar
 
@@ -543,7 +543,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Format</th></tr></thead><tbody><tr><td>type</td><td>string</td><td></td><td>Enum Data Type in C: CONSTANT, VARIABLE</td><td></td></tr><tr><td>value</td><td>object</td><td><a href="7-data-structures.md#7.3.18-decimalvalue">Decimal Value</a></td><td></td><td></td></tr><tr><td>estimated_value</td><td>object</td><td><a href="7-data-structures.md#7.3.18-decimalvalue">Decimal Value</a></td><td></td><td></td></tr><tr><td>computed_value</td><td>object</td><td><a href="7-data-structures.md#7.3.18-decimalvalue">Decimal Value</a></td><td></td><td></td></tr><tr><td>range</td><td>object</td><td></td><td></td><td></td></tr><tr><td>unit</td><td>string</td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Format</th></tr></thead><tbody><tr><td>type</td><td>string</td><td></td><td>Enum Data Type in C: CONSTANT, VARIABLE</td><td></td></tr><tr><td>value</td><td><a href="7-data-structures.md#7.2.18-decimalvalue">DecimalValue</a></td><td>Default value</td><td></td><td></td></tr><tr><td>estimated_value</td><td><a href="7-data-structures.md#7.2.18-decimalvalue">DecimalValue</a></td><td>Estimated value</td><td></td><td></td></tr><tr><td>computed_value</td><td><a href="7-data-structures.md#7.2.18-decimalvalue">DecimalValue</a></td><td>Computed value</td><td></td><td></td></tr><tr><td>range</td><td><a href="7-data-structures.md#7.2.18-decimalvalue">DecimalValue</a></td><td>Range of values</td><td></td><td></td></tr><tr><td>unit</td><td>string</td><td>unit of value</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.48 Schedule
 
@@ -551,11 +551,11 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name      | Type   | Description                                      |
-| --------- | ------ | ------------------------------------------------ |
-| frequency | object | [Duration](7-data-structures.md#7.3.21-duration) |
-| holidays  | array  |                                                  |
-| times     | array  |                                                  |
+| Name      | Type                                             | Description             |
+| --------- | ------------------------------------------------ | ----------------------- |
+| frequency | [Duration](7-data-structures.md#7.2.21-duration) | Frequency of recurrence |
+| holidays  | array                                            | Holidays                |
+| times     | [Time](7-data-structures.md#7.2.54-time) array   | Time slots              |
 
 ### 7.3.49 State
 
@@ -574,17 +574,17 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name             | Type   | Description                                                                                            |
-| ---------------- | ------ | ------------------------------------------------------------------------------------------------------ |
-| id               | string |                                                                                                        |
-| parent\_stop\_id | string |                                                                                                        |
-| location         | array  | [Location](7-data-structures.md#7.3.32-location) of the stop                                           |
-| type             | string | The type of stop. Allowed values of this property can be defined by the network policy.                |
-| time             | array  | Timings applicable at the stop. [Time](7-data-structures.md#7.3.54-time)                               |
-| instructions     | array  | Instructions that need to be followed at the stop [Descriptor](7-data-structures.md#7.3.19-descriptor) |
-| contact          | array  | Contact details of the stop [Contact](7-data-structures.md#7.3.13-contact)                             |
-| person           | array  | The details of the person present at the stop [Person](7-data-structures.md#7.3.39-person)             |
-| authorization    | object | [Authorization](7-data-structures.md#7.3.5-authorization)                                              |
+| Name             | Type                                                       | Description                                                                             |
+| ---------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| id               | string                                                     |                                                                                         |
+| parent\_stop\_id | string                                                     |                                                                                         |
+| location         | [Location](7-data-structures.md#7.2.32-location)           | [Location](7-data-structures.md#7.3.32-location) of the stop                            |
+| type             | string                                                     | The type of stop. Allowed values of this property can be defined by the network policy. |
+| time             | [Time](7-data-structures.md#7.2.54-time)                   | Timings applicable at the stop.                                                         |
+| instructions     | [Descriptor](7-data-structures.md#7.2.19-descriptor) array | Instructions that need to be followed at the stop                                       |
+| contact          | [Contact](7-data-structures.md#7.2.13-contact)             | Contact details of the stop                                                             |
+| person           | [Person](7-data-structures.md#7.2.39-person)               | The details of the person present at the stop                                           |
+| authorization    | [Authorization](7-data-structures.md#7.2.5-authorization)  | Authorization details required to commence this leg of fulfillment                      |
 
 ### 7.2.51 Support
 
@@ -600,11 +600,11 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name       | Type    | Description                                                                                                                                                                                                                |
-| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| descriptor | array   | Description of the Tag, can be used to store detailed information. [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                                                    |
-| value      | string  | The value of the tag. This set by the Provider Platform and rendered as-is by the Application Platform.                                                                                                                    |
-| display    | boolean | This value indicates if the tag is intended for display purposes. If set to `true`, then this tag must be displayed. If it is set to `false`, it should not be displayed. This value can override the group display value. |
+| Name       | Type                                                 | Description                                                                                                                                                                                                                |
+| ---------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| descriptor | [Descriptor](7-data-structures.md#7.2.19-descriptor) | Description of the Tag, can be used to store detailed information.                                                                                                                                                         |
+| value      | string                                               | The value of the tag. This set by the Provider Platform and rendered as-is by the Application Platform.                                                                                                                    |
+| display    | boolean                                              | This value indicates if the tag is intended for display purposes. If set to `true`, then this tag must be displayed. If it is set to `false`, it should not be displayed. This value can override the group display value. |
 
 ### 7.2.53 TagGroup
 
@@ -612,11 +612,11 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name       | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| display    | boolean | Indicates the display properties of the tag group. If display is set to false, then the group will not be displayed. If it is set to true, it should be displayed. However, group-level display properties can be overriden by individual tag-level display property. As this schema is purely for catalog display purposes, it is not recommended to send this value during search. Has a default value of true. |
-| descriptor | array   | Description of the TagGroup, can be used to store detailed information. [Descriptor](7-data-structures.md#7.3.19-descriptor)                                                                                                                                                                                                                                                                                      |
-| list       | array   | An array of Tag objects listed under this group. This property can be set by Application Platforms during search to narrow the `search` and achieve more relevant results. When received during `on_search`, Application Platforms must render this list under the heading described by the `name` property of this schema.                                                                                       |
+| Name       | Type                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| display    | boolean                                              | Indicates the display properties of the tag group. If display is set to false, then the group will not be displayed. If it is set to true, it should be displayed. However, group-level display properties can be overriden by individual tag-level display property. As this schema is purely for catalog display purposes, it is not recommended to send this value during search. Has a default value of true. |
+| descriptor | [Descriptor](7-data-structures.md#7.2.19-descriptor) | Description of the TagGroup, can be used to store detailed information.                                                                                                                                                                                                                                                                                                                                           |
+| list       | array                                                | An array of Tag objects listed under this group. This property can be set by Application Platforms during search to narrow the `search` and achieve more relevant results. When received during `on_search`, Application Platforms must render this list under the heading described by the `name` property of this schema.                                                                                       |
 
 ### 7.2.54 Time
 
@@ -624,7 +624,7 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>label</td><td>string</td><td></td><td></td><td></td></tr><tr><td>timestamp</td><td>string</td><td></td><td>Format: date-time</td><td></td></tr><tr><td>duration</td><td>object</td><td><a href="7-data-structures.md#7.3.21-duration">Duration</a></td><td></td><td></td></tr><tr><td>range</td><td>object</td><td></td><td></td><td></td></tr><tr><td>days</td><td>string</td><td>comma separated values representing days of the week</td><td></td><td></td></tr><tr><td>schedule</td><td>object</td><td><a href="7-data-structures.md#7.3.48-schedule">Schedule</a></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Enum</th></tr></thead><tbody><tr><td>label</td><td>string</td><td></td><td></td><td></td></tr><tr><td>timestamp</td><td>string</td><td></td><td>Format: date-time</td><td></td></tr><tr><td>duration</td><td><a href="7-data-structures.md#7.2.21-duration">Duration</a></td><td>Duration between two instances of time</td><td></td><td></td></tr><tr><td>range</td><td>object</td><td></td><td></td><td></td></tr><tr><td>days</td><td>string</td><td>comma separated values representing days of the week</td><td></td><td></td></tr><tr><td>schedule</td><td><a href="7-data-structures.md#7.2.48-schedule">Schedule</a></td><td>schedule</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.55 Tracking
 
@@ -632,12 +632,12 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name     | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                 | Format | Enum             |
-| -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------- |
-| id       | string | A unique tracking reference number                                                                                                                                                                                                                                                                                                                                                          |        |                  |
-| url      | string | A URL to the tracking endpoint. This can be a link to a tracking webpage, a webhook URL created by the Application Platform where Provider Platform can push the tracking data, or a GET url creaed by the Provider Platform which the Application Platform can poll to get the tracking data. It can also be a websocket URL where the Provider Platform can push real-time tracking data. | uri    |                  |
-| location | array  | In case there is no real-time tracking endpoint available, this field will contain the latest [location](7-data-structures.md#7.3.32-location) of the entity being tracked. The Provider Platform will update this value everytime the Application Platform calls the track API.                                                                                                            |        |                  |
-| status   | string | This value indicates if the tracking is currently active or not. If this value is `active`, then the Application Platform can begin tracking the order. If this value is `inactive`, the tracking URL is considered to be expired and the Application Platform should stop tracking the order.                                                                                              |        | active, inactive |
+| Name     | Type                                             | Description                                                                                                                                                                                                                                                                                                                                                                                 | Format | Enum             |
+| -------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------- |
+| id       | string                                           | A unique tracking reference number                                                                                                                                                                                                                                                                                                                                                          |        |                  |
+| url      | string                                           | A URL to the tracking endpoint. This can be a link to a tracking webpage, a webhook URL created by the Application Platform where Provider Platform can push the tracking data, or a GET url creaed by the Provider Platform which the Application Platform can poll to get the tracking data. It can also be a websocket URL where the Provider Platform can push real-time tracking data. | uri    |                  |
+| location | [Location](7-data-structures.md#7.2.32-location) | In case there is no real-time tracking endpoint available, this field will contain the latest location of the entity being tracked. The Provider Platform will update this value everytime the Application Platform calls the track API.                                                                                                                                                    |        |                  |
+| status   | string                                           | This value indicates if the tracking is currently active or not. If this value is `active`, then the Application Platform can begin tracking the order. If this value is `inactive`, the tracking URL is considered to be expired and the Application Platform should stop tracking the order.                                                                                              |        | active, inactive |
 
 ### 7.2.56 Vehicle
 
@@ -668,7 +668,8 @@ Every API call in Beckn Protocol has a context. It provides a high-level overvie
 
 **Fields:**
 
-| Name     | Type    | Description                                                                                            |
-| -------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| form     | object  | [Form](7-data-structures.md#7.3.24-form)                                                               |
-| required | boolean | Indicates whether the form data is mandatorily required by the Provider Platform to confirm the order. |
+| Name     | Type                                     | Description                                                                                            |
+| -------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| form     | [Form](7-data-structures.md#7.2.24-form) | Form details to capture input                                                                          |
+| required | boolean                                  | Indicates whether the form data is mandatorily required by the Provider Platform to confirm the order. |
+| head     | object                                   | Form headers                                                                                           |
