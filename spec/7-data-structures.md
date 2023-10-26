@@ -20,7 +20,7 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Notes</th></tr></thead><tbody><tr><td>status</td><td>string</td><td>The status of the acknowledgement. If the request passes the validation criteria of the Provider Platform, then this is set to ACK. If a Provider Platform responds with status = <code>ACK</code> to a request, it is required to respond with a callback. If the request fails the validation criteria, then this is set to NACK. Additionally, if a Provider Platform does not intend to respond with a callback even after the request meets the validation criteria, it should set this value to <code>NACK</code>.</td><td>Enum Data Type in C: ACK, NACK</td><td></td></tr><tr><td>tags</td><td>array</td><td>A list of <a href="7-data-structures.md#7.3.52-tag">tags</a> containing any additional information sent along with the Acknowledgement.</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th><th>Notes</th><th data-hidden>Notes</th></tr></thead><tbody><tr><td>status</td><td>string</td><td>The status of the acknowledgement. If the request passes the validation criteria of the Provider Platform, then this is set to ACK. If a Provider Platform responds with status = <code>ACK</code> to a request, it is required to respond with a callback. If the request fails the validation criteria, then this is set to NACK. Additionally, if a Provider Platform does not intend to respond with a callback even after the request meets the validation criteria, it should set this value to <code>NACK</code>.</td><td>Enum Data Type in C: ACK, NACK</td><td></td></tr><tr><td>tags</td><td><a href="7-data-structures.md#7.2.53-taggroup">TagGroup</a> array</td><td>A grouped list of tags containing any additional information sent along with the Acknowledgement.</td><td></td><td></td></tr></tbody></table>
 
 ### 7.2.2 AddOn
 
@@ -28,11 +28,11 @@ The proposed resource model showing the relationship between data objects that a
 
 **Fields:**
 
-| Name       | Type   | Description                                          |
-| ---------- | ------ | ---------------------------------------------------- |
-| id         | string | Provider-defined ID of the add-on                    |
-| descriptor | object | [Descriptor](7-data-structures.md#7.2.19-descriptor) |
-| price      | object | [Price](7-data-structures.md#7.2.40-price)           |
+| Name       | Type                                                 | Description                       |
+| ---------- | ---------------------------------------------------- | --------------------------------- |
+| id         | string                                               | Provider-defined ID of the add-on |
+| descriptor | [Descriptor](7-data-structures.md#7.2.19-descriptor) | Description of the add-on         |
+| price      | [Price](7-data-structures.md#7.2.40-price)           | Price of the add-on               |
 
 ### 7.2.3 Address
 
