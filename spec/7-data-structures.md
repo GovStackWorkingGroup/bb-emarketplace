@@ -31,8 +31,8 @@ The proposed resource model showing the relationship between data objects that a
 | Name       | Type   | Description                                          |
 | ---------- | ------ | ---------------------------------------------------- |
 | id         | string | Provider-defined ID of the add-on                    |
-| descriptor | object | [Descriptor](7-data-structures.md#7.3.19-descriptor) |
-| price      | object | [Price](7-data-structures.md#7.3.40-price)           |
+| descriptor | object | [Descriptor](7-data-structures.md#7.2.19-descriptor) |
+| price      | object | [Price](7-data-structures.md#7.2.40-price)           |
 
 ### 7.2.3 Address
 
