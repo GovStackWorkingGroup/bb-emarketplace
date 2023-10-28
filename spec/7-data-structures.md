@@ -10,7 +10,686 @@ The proposed resource model showing the relationship between data objects that a
 
 ## 7.1 E-Marketplace Building Block Data Model
 
-* **TODO**: Create a Class Diagram based on the JSON
+
+
+```mermaid
+classDiagram
+    class Ack {
+        +String status
+        +TagGroup[] tags
+    }
+    Ack --* TagGroup : Composition
+    
+    class AddOn {
+        +String id
+        +Descriptor descriptor
+        +Price price
+    }
+    AddOn --* Descriptor : Composition
+    AddOn --* Price : Composition
+
+    class Address {
+        +String description
+    }
+
+    class Agent {
+        +Person person
+        +Contact contact
+        +Organization organization
+        +Rating rating
+    }
+    Agent --* Person : Composition
+    Agent --* Contact : Composition
+    Agent --* Organization : Composition
+    Agent --* Rating : Composition   
+
+    class Authorization {
+        +String type
+        +String token
+        +String valid_from
+        +String valid_to
+        +String status
+    }
+
+
+    class Billing {
+        +String name
+        +Organization organization
+        +Address address
+        +State state
+        +City city
+        +String email
+        +String phone
+        +Time time
+        +String tax_id
+    }
+    Billing --* Organization : Composition
+    Billing --* Address : Composition
+    Billing --* State : Composition
+    Billing --* City : Composition
+    Billing --* Time : Composition
+
+    class Cancellation {
+        +String time
+        +String cancelled_by
+        +Option reason
+        +Descriptor additional_description
+    }
+    Cancellation --* Option : Composition
+    Cancellation --* Descriptor : Composition
+    
+    class CancellationTerm {
+        +FulfillmentState fulfillment_state
+        +boolean reason_required
+        +Time cancel_by
+        +Fee cancellation_fee
+        +XInput xinput
+        +MediaFile external_ref
+    }
+    CancellationTerm --* FulfillmentState : Composition
+    CancellationTerm --* Time : Composition
+    CancellationTerm --* Fee : Composition
+    CancellationTerm --* XInput : Composition
+    CancellationTerm --* MediaFile : Composition 
+
+    class Catalog {
+        +Descriptor descriptor
+        +Fulfillment[] fulfillments
+        +Payment[] payments
+        +Offer[] offers
+        +Provider[] providers
+        +String exp
+        +String ttl
+    }
+    Catalog --* Descriptor : Composition
+    Catalog --* Fulfillment : Composition
+    Catalog --* Payment : Composition
+    Catalog --* Offer : Composition
+    Catalog --* Provider : Composition
+
+    class Category {
+        +String id
+        +String parent_category_id
+        +Descriptor descriptor
+        +Time time
+        +String ttl
+        +TagGroup[] tags
+    }
+    Category --* Descriptor : Composition
+    Category --* Time : Composition
+    Category --* TagGroup : Composition
+
+    class Circle {
+        +Gps gps
+        +Scalar radius
+    }
+    Circle --* Gps : Composition
+    Circle --* Scalar : Composition
+
+    class City {
+        +String name
+        +String code
+    }
+
+    class Contact {
+        +String phone
+        +String email
+        +Object jcard
+    }
+
+
+    class Context {
+        +Domain domain
+        +Location location
+        +String action
+        +String version
+        +String bap_id
+        +String bap_uri
+        +String bpp_id
+        +String bpp_uri
+        +String transaction_id
+        +String message_id
+        +String timestamp
+        +String key
+        +String ttl
+    }
+    Context --* Domain : Composition
+    Context --* Location : Composition
+
+    class Country {
+        +String name
+        +String code
+    }
+
+    class Credential {
+        +String id
+        +String type
+        +String url
+    }
+
+    class Customer {
+        +Person person
+        +Contact contact
+    }
+    Customer --* Person : Composition
+    Customer --* Contact : Composition
+
+    class DecimalValue {
+        +String value (pattern: [+-]?([0-9]*[.])?[0-9]+)
+    }
+
+    class Descriptor {
+        +String name
+        +String code
+        +String short_desc
+        +String long_desc
+        +Object additional_desc
+        +MediaFile[] media
+        +Image[] images
+    }
+    Descriptor --* MediaFile : Composition
+    Descriptor --* Image : Composition
+
+    class Domain {
+        +String name
+        +String code
+        +MediaFile additional_info
+    }
+    Domain --* MediaFile : Composition
+
+    class Duration {
+        +String value
+    }
+
+    class Error {
+        +String code
+        +String paths
+        +String message
+    }
+
+    class Fee {
+        +DecimalValue percentage
+        +Price amount
+    }
+    Fee --* DecimalValue : Composition
+    Fee --* Price : Composition
+
+
+    class Form {
+        +String url
+        +Object data
+        +String mime_type
+        +String submission_id
+    }
+
+    class Fulfillment {
+        +String id
+        +String type
+        +Boolean rateable
+        +Rating rating
+        +FulfillmentState state
+        +Boolean tracking
+        +Customer customer
+        +Agent agent
+        +Contact contact
+        +Vehicle vehicle
+        +Stop[] stops
+        +String path
+        +TagGroup[] tags
+    }
+    Fulfillment --* Rating : Composition
+    Fulfillment --* FulfillmentState : Composition
+    Fulfillment --* Customer : Composition
+    Fulfillment --* Agent : Composition
+    Fulfillment --* Contact : Composition
+    Fulfillment --* Vehicle : Composition
+    Fulfillment --* Stop : Composition
+    Fulfillment --* TagGroup : Composition
+
+    class FulfillmentState {
+        +Descriptor descriptor
+        +String updated_at
+        +String updated_by
+    }
+    FulfillmentState --* Descriptor : Composition
+
+    class Gps {
+        +String value (pattern: ^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?$)
+    }
+
+    class Image {
+        +String url
+        +String size_type
+        +String width
+        +String height
+    }
+
+    class Intent {
+        +Descriptor descriptor
+        +Provider provider
+        +Fulfillment fulfillment
+        +Payment payment
+        +Category category
+        +Offer offer
+        +Item item
+        +TagGroup[] tags
+    }
+    Intent --* Descriptor : Composition
+    Intent --* Provider : Composition
+    Intent --* Fulfillment : Composition
+    Intent --* Payment : Composition
+    Intent --* Category : Composition
+    Intent --* Offer : Composition
+    Intent --* Item : Composition
+    Intent --* TagGroup : Composition
+
+    class ItemQuantity {
+        +Object allocated
+        +Object available
+        +Object maximum
+        +Object minimum
+        +Object selected
+        +Object unitized
+    }
+    ItemQuantity --* Scalar : Composition (for measure in allocated, available, maximum, minimum, selected, unitized)
+
+
+
+    class Item {
+        +String id
+        +Descriptor descriptor
+        +Price price
+        +ItemQuantity quantity
+        +Category[] category_ids
+        +Fulfillment[] fulfillment_ids
+        +Location[] location_ids
+        +Payment[] payment_ids
+        +AddOn[] add_ons
+        +CancellationTerm[] cancellation_terms
+        +RefundTerm[] refund_terms
+        +ReplacementTerm[] replacement_terms
+        +ReturnTerm[] return_terms
+        +XInput xinput
+        +Time time
+        +Rating rating
+        +TagGroup[] tags
+    }
+    Item --* Descriptor : Composition
+    Item --* Price : Composition
+    Item --* ItemQuantity : Composition
+    Item --* Category : Composition
+    Item --* Fulfillment : Composition
+    Item --* Location : Composition
+    Item --* Payment : Composition
+    Item --* AddOn : Composition
+    Item --* CancellationTerm : Composition
+    Item --* RefundTerm : Composition
+    Item --* ReplacementTerm : Composition
+    Item --* ReturnTerm : Composition
+    Item --* XInput : Composition
+    Item --* Time : Composition
+    Item --* Rating : Composition
+    Item --* TagGroup : Composition
+    class Location {
+        +String id
+        +Descriptor descriptor
+        +Gps gps
+        +Address address
+        +City city
+        +String district
+        +State state
+        +Country country
+        +String area_code
+        +Circle circle
+        +String polygon
+        +String 3dspace
+        +Rating rating
+    }
+    Location --* Descriptor : Composition
+    Location --* Gps : Composition
+    Location --* Address : Composition
+    Location --* City : Composition
+    Location --* State : Composition
+    Location --* Country : Composition
+    Location --* Circle : Composition
+    Location --* Rating : Composition
+
+    class MediaFile {
+        +String mimetype
+        +String url
+        +String signature
+        +String dsa
+    }
+
+    class Offer {
+        +String id
+        +Descriptor descriptor
+        +Location[] location_ids
+        +Category[] category_ids
+        +Item[] item_ids
+        +Time time
+        +TagGroup[] tags
+    }
+    Offer --* Descriptor : Composition
+    Offer --* Location : Composition
+    Offer --* Category : Composition
+    Offer --* Item : Composition
+    Offer --* Time : Composition
+    Offer --* TagGroup : Composition
+
+    class Option {
+        +String id
+        +Descriptor descriptor
+    }
+    Option --* Descriptor : Composition
+
+    class Order {
+        +String id
+        +String[] ref_order_ids
+        +String status
+        +String type
+        +Provider provider
+        +Item[] items
+        +AddOn[] add_ons
+        +Offer[] offers
+        +Billing billing
+        +Fulfillment[] fulfillments
+        +Cancellation cancellation
+        +CancellationTerm[] cancellation_terms
+        +Term[] refund_terms
+        +ReplacementTerm[] replacement_terms
+        +ReturnTerm[] return_terms
+        +Quotation quote
+        +Payment[] payments
+        +String created_at
+        +String updated_at
+        +XInput xinput
+        +TagGroup[] tags
+    }
+    Order --* Provider : Composition
+    Order --* Item : Composition
+    Order --* AddOn : Composition
+    Order --* Offer : Composition
+    Order --* Billing : Composition
+    Order --* Fulfillment : Composition
+    Order --* Cancellation : Composition
+    Order --* CancellationTerm : Composition
+    Order --* Term : Composition
+    Order --* ReplacementTerm : Composition
+    Order --* ReturnTerm : Composition
+    Order --* Quotation : Composition
+    Order --* Payment : Composition
+    Order --* XInput : Composition
+    Order --* TagGroup : Composition
+
+    class Organization {
+        +Descriptor descriptor
+        +Address address
+        +State state
+        +City city
+        +Contact contact
+    }
+    Organization --* Descriptor : Composition
+    Organization --* Address : Composition
+    Organization --* State : Composition
+    Organization --* City : Composition
+    Organization --* Contact : Composition
+
+    class Payment {
+        +String id
+        +String collected_by
+        +String url
+        +Object params
+        +String type
+        +String status
+        +Time time
+        +TagGroup[] tags
+    }
+    Payment --* Time : Composition
+    Payment --* TagGroup : Composition
+
+    class Person {
+        +String id
+        +String url
+        +String name
+        +Image image
+        +Duration age
+        +String dob
+        +String gender
+        +Credential[] creds
+        +Language[] languages
+        +Skill[] skills
+        +TagGroup[] tags
+    }
+    Person --* Image : Composition
+    Person --* Duration : Composition
+    Person --* Credential : Composition
+    Person --* Language : Composition
+    Person --* Skill : Composition
+    Person --* TagGroup : Composition
+
+    class Language {
+        +String code
+        +String name
+    }
+
+    class Skill {
+        +String code
+        +String name
+    }
+
+
+    class Price {
+        +String currency
+        +DecimalValue value
+        +DecimalValue estimated_value
+        +DecimalValue computed_value
+        +DecimalValue listed_value
+        +DecimalValue offered_value
+        +DecimalValue minimum_value
+        +DecimalValue maximum_value
+    }
+    Price --* DecimalValue : Composition
+
+    class Provider {
+        +String id
+        +Descriptor descriptor
+        +String category_id
+        +Rating rating
+        +Time time
+        +Category[] categories
+        +Fulfillment[] fulfillments
+        +Payment[] payments
+        +Location[] locations
+        +Offer[] offers
+        +Item[] items
+        +String exp
+        +Boolean rateable
+        +Integer ttl
+        +TagGroup[] tags
+    }
+    Provider --* Descriptor : Composition
+    Provider --* Rating : Composition
+    Provider --* Time : Composition
+    Provider --* Category : Composition
+    Provider --* Fulfillment : Composition
+    Provider --* Payment : Composition
+    Provider --* Location : Composition
+    Provider --* Offer : Composition
+    Provider --* Item : Composition
+    Provider --* TagGroup : Composition
+
+    class Quotation {
+        +String id
+        +Price price
+        +Breakup[] breakup
+        +Duration ttl
+    }
+    Quotation --* Price : Composition
+    Quotation --* Breakup : Composition
+    Quotation --* Duration : Composition
+
+    class Breakup {
+        +Item item
+        +String title
+        +Price price
+    }
+    Breakup --* Item : Composition
+    Breakup --* Price : Composition
+
+    class Rating {
+        +String rating_category
+        +String id
+        +String value
+    }
+
+    class Region {
+        +String dimensions
+        +String type
+        +String name
+        +String code
+        +String boundary
+        +String map_url
+    }
+
+    class ReplacementTerm {
+        +State fulfillment_state
+        +Time replace_within
+        +MediaFile external_ref
+    }
+    ReplacementTerm --* State : Composition
+    ReplacementTerm --* Time : Composition
+    ReplacementTerm --* MediaFile : Composition
+
+    class ReturnTerm {
+        +State fulfillment_state
+        +Boolean return_eligible
+        +Time return_time
+        +Location return_location
+        +String fulfillment_managed_by
+    }
+    ReturnTerm --* State : Composition
+    ReturnTerm --* Time : Composition
+    ReturnTerm --* Location : Composition
+
+    class Scalar {
+        +String type
+        +DecimalValue value
+        +DecimalValue estimated_value
+        +DecimalValue computed_value
+        +Range range
+        +String unit
+    }
+    Scalar --* DecimalValue : Composition
+    Scalar --* Range : Composition
+
+    class Range {
+        +DecimalValue min
+        +DecimalValue max
+    }
+    Range --* DecimalValue : Composition
+
+    class Schedule {
+        +Duration frequency
+        +DateTime[] holidays
+        +DateTime[] times
+    }
+    Schedule --* Duration : Composition
+
+    class State {
+        +String name
+        +String code
+    }
+
+    class Stop {
+        +String id
+        +String parent_stop_id
+        +Location location
+        +String type
+        +Time time
+        +Descriptor instructions
+        +Contact contact
+        +Person person
+        +Authorization authorization
+    }
+    Stop --* Location : Composition
+    Stop --* Time : Composition
+    Stop --* Descriptor : Composition
+    Stop --* Contact : Composition
+    Stop --* Person : Composition
+    Stop --* Authorization : Composition
+
+    class Support {
+        +String ref_id
+        +Phone callback_phone
+        +Phone phone
+        +Email email
+        +URI url
+    }
+
+    class Tag {
+        +Descriptor descriptor
+        +String value
+        +Boolean display
+    }
+    Tag --* Descriptor : Composition
+
+    class TagGroup {
+        +Boolean display
+        +Descriptor descriptor
+        +Tag[] list
+    }
+    TagGroup --* Descriptor : Composition
+    TagGroup --* Tag : Composition
+
+    class Time {
+        +String label
+        +DateTime timestamp
+        +Duration duration
+        +DateTimeRange range
+        +String days
+        +Schedule schedule
+    }
+    Time --* Duration : Composition
+    Time --* Schedule : Composition
+
+    class Tracking {
+        +String id
+        +URI url
+        +Location location
+        +String status
+    }
+    Tracking --* Location : Composition
+
+    class DateTimeRange {
+        +DateTime start
+        +DateTime end
+    }
+
+    class Vehicle {
+        +String category
+        +Integer capacity
+        +String make
+        +String model
+        +String size
+        +String variant
+        +String color
+        +String energy_type
+        +String registration
+        +String wheels_count
+        +String cargo_volumne
+        +String wheelchair_access
+        +String code
+        +String emission_standard
+    }
+
+    class XInput {
+        +Form form
+        +Boolean required
+    }
+    XInput --* Form : Composition
+   
+```
 
 ## 7.2 Data Structures
 
