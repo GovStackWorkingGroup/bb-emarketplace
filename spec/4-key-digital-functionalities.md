@@ -8,17 +8,17 @@ description: >-
 
 In General, this Building Block shall be accessible on various delivery channels such as Mobile, Kiosk, Web, and applications and should be digitally inclusive for users with different capabilities. The Building Block minor features such as physical delivery of goods and services, client feedback, etc. should be able to work on feature phones (without internet) as well. To facilitate various activities and different actors as described in section 2, the e-Marketplace Building Block must have specific Key Digital Functionalities. e-Marketplace transactions by definition should have:
 
-1. Consumer Platforms (i.e. Super-apps, Chat messengers, Storefronts, etc.) to provide a rich, demand-centric experience;
-2. Provider Platforms (i.e. a Hospital Management System, a Tendering Platform, or a Store Backend) that provide a rich, supply-centric experience;
-3. Consumers (i.e. patients, citizen applicants, procurement personnel, organizations, etc.);
-4. Providers (i.e. hospitals, government departments, stores, organizations);
-5. Agent (i.e. government service personel, sellers, drivers, doctors, etc.);
-6. Intent (i.e. a search by product, search by category, search by provider, etc.);
-7. Catalogs (i.e. products, offers, add-ons, services);
-8. Payments and Settlements (i.e. Cash on Delivery, Prepayment, T+x settlement, etc.);
-9. Order management (i.e. procurements, appointments, bids, service requests);
-10. Fulfillments (i.e. appointments, tender approval, delivery of goods and services);
-11. Management of procurement lifecycle activities (from tendering to bidding, evaluation ordering, delivery tracking to feedback, etc.).
+* Consumer Platforms (i.e. Super-apps, Chat messengers, Storefronts, etc.) to provide a rich, demand-centric experience;
+* Provider Platforms (i.e. a Hospital Management System, a Tendering Platform, or a Store Backend) that provide a rich, supply-centric experience;
+* Consumers (i.e. patients, citizen applicants, procurement personnel, organizations, etc.);
+* Providers (i.e. hospitals, government departments, stores, organizations);
+* Agent (i.e. government service personnel, sellers, drivers, doctors, etc.);
+* Intent (i.e. a search by product, search by category, search by provider, etc.);
+* Catalogs (i.e. products, offers, add-ons, services);
+* Payments and Settlements (i.e. Cash on Delivery, Prepayment, T+n settlement, etc.);
+* Order management (i.e. procurements, appointments, bids, service requests);
+* Fulfillments (i.e. appointments, tender approval, delivery of goods and services);
+* Management of procurement lifecycle activities (from tendering to bidding, evaluation ordering, delivery tracking to feedback, etc.).
 
 The e-Marketplace Building Block must utilize the above objects to primarily support various consumer-provider interactions like discovery, ordering, fulfillment, and post-fulfillment. For example, a patient (Consumer) on WhatsApp (Consumer Platform) can search (Discovery) for a doctor (Agent) by his name (Intent). This request can be sent to ORS (Healthcare Provider Platform) that returns a list of Hospitals (Providers), with the various services offered (Catalog). Once identified, the patient (Consumer) can book an appointment (Order) with the Doctor (Agent).
 
@@ -26,13 +26,13 @@ The various actors and their activities described in section 2 must be supported
 
 ## 4.1 Catalog Management
 
-This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products, and services that can operate across multiple locations and timings. This functionality does not only apply to catalogs of products and services, it can be used to publish any economic resource that has a fulfillment cycle (e.g. it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update, or delete catalogs, and any sub-component of this catalog like Items/Categories/Providers/Locations/Agents/Fulfillments/Payments/etc. For tendered procurement, the government can publish tenders along with associated documents (e.g. Request for Proposals) in the tender's catalog. Providers can search the catalog and bid accordingly through quotation management services.
+This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-Marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products, and services that can operate across multiple locations and timings. This functionality does not only apply to catalogs of products and services, it can be used to publish any economic resource that has a fulfillment cycle (e.g. it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update, or delete catalogs, and any sub-component of this catalog like Items/Categories/Providers/Locations/Agents/Fulfillments/Payments/etc. For tendered procurement, the government can publish tenders along with associated documents (e.g. Request for Proposals) in the tender's catalog. Providers can search the catalog and bid accordingly through quotation management services.
 
 In summary, the Building Block enables the cataloging of various elements such as providers/products/services/consumers/tenders/agents/etc., such that they can be searched, retrieved, and shared in appropriate workflows.&#x20;
 
 ## 4.2 Inventory Management
 
-Authorized users of provider platforms should be able to manage the inventory of various resources available in a catalog. Providers should be able to manage the availability of products, agents, vehicles, etc, dynamically/on a real-time basis<mark style="color:blue;">,</mark> in this Building Block.
+Authorized users of provider platforms should be able to manage the inventory of various resources available in a catalog. Providers should be able to manage the availability of products/agents/vehicles/etc., dynamically/on a real-time basis<mark style="color:blue;">,</mark> in this Building Block.
 
 ## 4.3 Quotation Management
 
@@ -48,7 +48,7 @@ This key digital functionality should allow the consumer to confirm an order. Bi
 
 ## 4.6 Order Fulfillment&#x20;
 
-This key digital functionality should allow the consumer of a service to receive various status updates regarding the fulfillment of a contract. This should allow providers to send various fulfillment updates to the consumer, and allow providers to allocate service agents manually/algorithmically (e.g. ambulance allocation as a response to a nearby emergency). The contract fulfilment could have a long duration of workflow (i.e. 3 years), depending upon the nature of the contract signed. The Building Block should be able to facilitate all the processes and reflect the dynamic status of a signed contract with updates/remarks/comments. For example, the sign-off agreement with feedback, and lessons learnt report shall be submitted as and when the project finishes formally.
+This key digital functionality should allow the consumer of a service to receive various status updates regarding the fulfillment of a contract. This should allow providers to send various fulfillment updates to the consumer, and allow providers to allocate service agents manually/algorithmically (e.g. ambulance allocation as a response to a nearby emergency). The contract fulfilment could have a long duration of workflow (i.e. 3 years), depending upon the nature of the contract signed. The Building Block should be able to facilitate all the processes and reflect the dynamic status of a signed contract with updates/remarks/comments. For example, the sign-off agreement with feedback, and lessons learned report shall be submitted as and when the project finishes formally.
 
 ## 4.7 Order Tracking&#x20;
 

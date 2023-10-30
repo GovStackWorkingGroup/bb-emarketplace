@@ -10,9 +10,9 @@ This section provides a reference for APIs that should be implemented by this Bu
 
 The [GovStack non-functional requirements document](https://govstack.gitbook.io/specification/architecture-and-nonfunctional-requirements/6-onboarding) provides additional information on how 'adaptors' may be used to translate an existing API to the patterns described here.
 
-* The microservice interfaces are defined as per [OPENAPI Ver3.0 standards](https://swagger.io/specification/).&#x20;
-* For implementation of Administration APIs, we have referred to [TMF630\_REST\_API\_Design\_Guidelines](https://www.tmforum.org/resources/specification/tmf630-rest-api-design-guidelines-4-2-0/).
-* For implementation of Interoperability APIs, we have referred various open-source communication protocols and data standards like [Schema.org](https://schema.org/docs/schemas.html), [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113), and [DNS](https://datatracker.ietf.org/doc/html/rfc1035). The objective is to use a generic transaction protocol that is agnostic of domain, region, or use case.  [Beckn Protocol API Specification](https://becknprotocol.io/) uses the design principles of such standards and creates a generic protocol that allows the E-Marketplace BB to be accessed by any consumer platform through a standard set of API endpoints.&#x20;
+* The microservice interfaces are defined as per [OPENAPI Ver 3.0 standards](https://swagger.io/specification/).&#x20;
+* For implementation of Administration APIs, we have referred to [TMF630 REST API Design Guidelines 4.2.0](https://www.tmforum.org/resources/specification/tmf630-rest-api-design-guidelines-4-2-0/).
+* For implementation of Interoperability APIs, we have referred to various open-source communication protocols and data standards like [Schema.org](https://schema.org/docs/schemas.html), [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113), and [DNS](https://datatracker.ietf.org/doc/html/rfc1035). The objective is to use a generic transaction protocol that is agnostic of domain, region, or use case.  [Beckn Protocol API Specification](https://becknprotocol.io/) uses the design principles of such standards and creates a generic protocol that allows the E-Marketplace BB to be accessed by any consumer platform through a standard set of API endpoints.&#x20;
 
 Each service in the e-Marketplace Building Block consists of two types of APIs namely,
 
@@ -26,7 +26,7 @@ Consists of all the endpoints that are used to configure and manage the business
 
 ## 8.1 Catalog Management
 
-**Platform Administration APIs** consists of all the endpoints that are used to provide user experience and manage the business workflows like catalog management, cart management, checkout, terms management, content management etc. These follow REST Standards for the creation, read, update, and deletion of objects in the database.&#x20;
+Platform Administration APIs consist of all the endpoints that are used to provide user experience and manage the business workflows like catalog management, cart management, checkout, terms management, content management, etc. These follow REST Standards for the creation, read, update, and deletion of objects in the database.&#x20;
 
 ### 8.1.1 Order lifecycle APIs
 
@@ -78,7 +78,7 @@ These APIs allow searching and browsing of an existing catalog.
 
 ## 8.2 Inventory Management
 
-Since inventory is a provider-centric feature, it does not interface with a customer. However, it is called by other services like quotation management, order management, and fulfillment management services
+Since inventory is a provider-centric feature, it does not interface with a customer. However, it is called by other services like quotation management, order management, and fulfillment management services.
 
 ### 8.2.1 Service Administration APIs
 

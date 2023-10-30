@@ -17,8 +17,8 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * This Building Block should allow fetching of catalogs that match the maximum number of search parameters. (RECOMMENDED)
 * The e-Marketplace must allow the creation of a catalog request for which context is required and should have a message. (REQUIRED)
 * The context is used to describe the metadata of the details provided in the message part. The context must contain an action. It also must contain a unique transaction ID received by the search request to represent a sequence of interactions. It must also contain a unique message ID to match a request with a callback. It must contain a timestamp denoting the time of the search requested for the catalog. (REQUIRED)
-* The message must contain a catalog. The catalog is used to describe the products or services provided by the platform. The catalog should be formed on the basis of the search request made by the user and the data filtered accordingly and added to the catalog. (REQUIRED)
-* The catalog should be able to provide a description, it will have the description of the product or service. it can have short/long descriptions or descriptions for images. (REQUIRED)
+* The message must contain a catalog. The catalog is used to describe the products or services provided by the platform. The catalog should be formed based on the search request made by the user and the data filtered accordingly and added to the catalog. (REQUIRED)
+* The catalog should be able to provide a description, it will have a description of the product or service, and it can have short/long descriptions or descriptions for images. (REQUIRED)
 * The catalog should provide fulfillment details, it will provide the details about the fulfillment mode if the e-Marketplace takes responsibility for the fulfillment. (RECOMMENDED)
 * The catalog should provide payment details about the payment terms offered by the e-Marketplace. The terms can be overridden by the providers' section, in case e-Marketplace does not take responsibility for the payments. (REQUIRED)
 * The catalog should provide expiry details about the time (timestamp) after which the catalog will not be valid. The consumer platform must be able to process the expiry and invalidate the catalog. E.g. A limited-time offer on a service/product. (REQUIRED)
@@ -31,7 +31,7 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 
 * The e-Marketplace must allow the sellers to add new products to their inventory. (REQUIRED)
 * It should be able to provide the current status of the inventory products, and the reporting should provide various filters based on which report can be generated. (REQUIRED)
-* It should allow updating the quantity and location of Items across multiple Providers and must restrict access to the sellers' own inventory. (REQUIRED)
+* It should allow updating the quantity and location of Items across multiple Providers and must restrict access to the sellers' internal inventory. (REQUIRED)
 * Inventory must get adjusted based on the order placed (confirm/cancel/return). (REQUIRED)
 * It must allow checking of the availability of an Item in a catalog to avoid out-of-stock and over-stocking of the product. (REQUIRED)
 * It should provide a configurable system for notification which notifies based on the defined criteria. E.g. If the product quantity is less than 50, it must notify the seller by email or SMS. (RECOMMENDED)
@@ -57,7 +57,7 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * It must allow the consumers to modify the fulfillment details. E.g a consumer that has multiple addresses stored in the application should be able to select the address or add a new address for fulfillment. Consumers should also be able to choose from the available fulfillment options. (REQUIRED)
 * It must allow the transmission of the draft order from the consumer platform to the provider platform. (REQUIRED)
 * The consumer app must recalculate the quote based on the modifications made in the fulfillment details. (REQUIRED)
-* Consumer app must check the serviceability of the order on the basis of agent availability. (REQUIRED)
+* The consumer app must check the serviceability of the order based on agent availability. (REQUIRED)
 * Provider platform must re-check the availability of items and validity of offers, and re-calculate the quote based on the selection made by the consumer. (REQUIRED)
 * Provider platform must allow creation and modification of payment terms containing the payment stage, final payable amount, payment endpoint, and payment schedule to the draft order. (REQUIRED)
 * Provider app must allow the addition of terms of service, cancellation, returns, replacements, and refunds wherever applicable. (REQUIRED)
@@ -96,13 +96,13 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 
 * The consumer platform must allow the creation of an order cancellation request for all the active orders that are yet not fulfilled. (REQUIRED)
 * The consumer platform must provide the order ID and allow the addition of the cancellation reason to the cancellation request. (REQUIRED)
-* Provider platform must handle the cancel order request and respond back to the consumer platform. (REQUIRED)
+* Provider platform must handle the cancel order request and respond to the consumer platform. (REQUIRED)
 * Provider platform must allow modification of the order status and de-allocation of fulfillment services and the agents associated with the fulfillment of the contract. (REQUIRED)
 * It must allow the calculation of cancellation terms (if applicable) depending on the reason provided and the time of the cancellation request. (REQUIRED)
 * It must be possible to add a link to the cancellation terms (including cancellation fee) document to the order. (REQUIRED)
 * It must allow transmission of the canceled order between the consumer and the provider. (REQUIRED)
 * On cancellation of an order the provider platform must adjust the inventory of the products canceled. (REQUIRED)
-* The consumer platform must handle the response from the provider platform for a cancellation request and update the order status and display the details of the cancellation of the order along with the cancellation terms (including cancellation fee). (REQUIRED)
+* The consumer platform must handle the response from the provider platform for a cancellation request, and update the order status, and display the details of the cancellation of the order along with the cancellation terms (including the cancellation fee). (REQUIRED)
 
 ### 6.9 Rating and Feedback Management&#x20;
 
@@ -114,10 +114,108 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 
 ### 6.10 Support Management&#x20;
 
-* The e-Marketplace must allow support center information like email, phone number, and chat URL in relation to an order to be transmitted between the consumer and the provider platforms. (REQUIRED)&#x20;
-* It must allow the creation/read/update/deletion of tickets in relation to an issue raised by a consumer, or an agent. (REQUIRED)
+* The e-Marketplace must allow support center information like email, phone number, and chat URL concerning an order to be transmitted between the consumer and the provider platforms. (REQUIRED)&#x20;
+* It must allow the creation/read/update/deletion of tickets concerning an issue raised by a consumer, or an agent. (REQUIRED)
 
-### 6.11 Bid Evaluation
+### 6.11 Information Mediator Interface
+
+* This sub-block runs protocols to communicate with the information mediator Building Block for exposing e-marketplace services to external Building Blocks and applications. (REQUIRED)&#x20;
+* It also provides specific calls to APIs of information mediator Building Block to access services of external applications and Building Blocks. (REQUIRED)&#x20;
+* It also handles any errors and failures in data exchange between the e-Marketplace and other Building Blocks/Apps (such as backoff and retries, etc.). (REQUIRED)&#x20;
+* &#x20;It routes error information if any to the logger sub-block. (REQUIRED)&#x20;
+* It maintains a list of endpoint addresses of Information Mediator, or other Building Blocks/Applications. (REQUIRED)
+
+### 6.12 Payment Interface
+
+* These are dedicated API interfaces defined in the Payments Building Block and hence not defined here:
+  * The Payment interface should provide the necessary protocol, data format, and information and interface to interact with the Payments Building Block for sending payment collection or settlement instructions to existing payment infrastructures like Banking Systems, Credit Card Networks, Payment Gateways, etc. to facilitate payments made during a transaction in the e-Marketplace. (RECOMMENDED)&#x20;
+
+### 6.13 E-Signature Interface
+
+* These are dedicated API interfaces defined in the e-Signature Building Block and hence not defined here:
+  * The E-Signature interface should provide the necessary protocol, data format, information, and interface to interact with the e-Signature Building Block for the digital signing and subsequent verification of each message that is transmitted between the consumer platform and the provider platform. (RECOMMENDED)
+
+### 6.14 Registration Interface
+
+* These are dedicated API interfaces defined in the Registration Building Block and hence not defined here:
+  * The Registration interface should provide the necessary protocol, data format, and information and interface to interact with the Registration Building Block to enable users on the Consumer Platform and the Provider Platform to sign up on their respective platforms with the required information necessary to perform transactions on the e-Marketplace. (RECOMMENDED)
+
+### 6.15  Digital Identity & Verification Interface
+
+* These are dedicated API interfaces defined in the Digital Identity and Verification Building Block and hence not defined here:
+  * The Digital Identity and Verification Building Block should provide the necessary protocol, data format, and information and interface to interact with the Digital Identity & Verification Building Block to enable users on the Consumer Platform and the Provider Platform interface to verify the digital identities in the e-Marketplace based on their national data registers. (RECOMMENDED)
+
+### 6.16 Promotional Communications
+
+* These are dedicated API interfaces defined in the  Communication and Outreach Building Block and hence not defined here:
+  * The Communication and Outreach Building Block should provide the necessary protocol, data format, and information and interface to interact with the Communication and Outreach Building Block to enable users on the Consumer Platform and the Provider Platform interface to integrate with social media and messaging platforms. (RECOMMENDED)
+
+### 6.17 **Content Management Interface**
+
+* These are dedicated API interfaces defined in the Content Management Interface Building Block and hence not defined here:
+  * The Content Management Interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the Content Management Interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to manage content creation. (RECOMMENDED)
+  * The interface should be able to moderate, and curate content creation. (RECOMMENDED)
+  * The interface should enable the user (citizen/supplier) to submit a document, and best practices in a prescribed format. (RECOMMENDED)
+  * The interface should be able to store the documents in an organized manner. (RECOMMENDED)
+  * It should allow any user to access the organized content. (RECOMMENDED)
+  * The interface allows the suppliers or users to add text, images, product description details, etc. to a good/service. (RECOMMENDED)
+
+### 6.18 **Workflow Interface**
+
+* These are dedicated API interfaces defined in the Workflow interface Building Block and hence not defined here:
+  * The Workflow interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the Workflow interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to define and orchestrate the workflow within the system. (RECOMMENDED)
+  * The interface should automate the processes involved in a lifecycle of technical activities, as defined by the administrator. (RECOMMENDED)
+  * The status of each process should be 'Live', accompanied by timestamp details. (RECOMMENDED)
+  * Upon a status is technically fulfilled (whether completed/achieved, failed, or canceled), the next relevant process should get triggered automatically. (RECOMMENDED)
+
+### 6.19 **Dashboard & Business Analytics Interface**
+
+* These are dedicated API interfaces defined in the Dashboard and Business Analytics interface Building Block and hence not defined here:
+  * The dashboard and business analytics interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the dashboard & business analytics interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to visualize the data in the system. (RECOMMENDED)
+  * This interface should visualize the 'live' data on the identified set of data fields such as the number of items in stock, canceled items, etc. (RECOMMENDED)
+  * This interface should analyze the data using basic mathematical operations (e.g. addition, average, and percentage) and offer insights. (RECOMMENDED)
+  * The interface may have advanced mathematical operations such as analyzing historical data, and prediction analyses using linear regression and machine learning algorithms. (OPTIONAL)
+  * This interface may be able to perform and fetch advance statistics, upon a request from the administrator, such as annual/half-yearly procurement/sales of goods and services, year-on increments, etc. (OPTIONAL)
+
+### 6.20 **GIS Building Block Interface**
+
+* These are dedicated API interfaces defined in the GIS interface Building Block and hence not defined here:
+  * The GIS interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the GIS interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to use GIS-based services like GIS tagging, tracking, etc. (RECOMMENDED)
+  * This interface should track the goods/services, with timestamps. (RECOMMENDED)
+  * The interface should tag the coordinates of entities, of persons as defined by the administrator. (RECOMMENDED)
+  * The interface should be live. (RECOMMENDED)
+
+### 6.21 Consent Management Interface
+
+* These are dedicated API interfaces defined in the Consent Management Interface Building Block and hence not defined here:
+  * The Consent Management Interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the consent management interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to capture and validate the consent of the users. (RECOMMENDED)
+  * This interface should accept data of different types and forms (biometrics, electronic messages, physical inputs). (RECOMMENDED)
+  * The interface should let the user decide to accept/reject to share their consent to the applications. (RECOMMENDED)
+  * The interface must respect the Consent protocols/related policies as defined by the administrator. (REQUIRED)
+  * The interface must validate the consent of the user, as required. (REQUIRED)
+
+### 6.22 Messaging Interface
+
+* These are dedicated API interfaces defined in the Messaging interface Building Block and hence not defined here:
+  * The Messaging interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the messaging interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to exchange messages over a secured channel and have logging features. (RECOMMENDED)
+  * This interface must act as a secured channel between sending and receiving users. (REQUIRED)
+  * This interface should facilitate messages both encrypted and non-encrypted. (RECOMMENDED)
+  * Logging, backup, retrieval of lost messages, and storage features shall be enabled by this interface. (RECOMMENDED)
+
+### 6.23 Scheduling Interface
+
+* These are dedicated API interfaces defined in the Scheduling interface Building Block and hence not defined here:
+  * The Scheduling interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the Scheduling interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to automate the process based on the events in the system. (RECOMMENDED)
+  * The buyer must be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for the next 6 months, etc. (REQUIRED)
+  * The platform should be able to connect with social media networks and reach the target audience. (RECOMMENDED)
+  * The suppliers, citizens, and entities should be able to subscribe to social media channels and to the website to receive updates from the buyer. (RECOMMENDED)
+  * The buyer should be able to send alerts, messages, and emails to subscribers about the new announcements. (RECOMMENDED)
+  * The subscriber should be able to cancel their subscriptions as and when desired.  (RECOMMENDED
+  * This interface should orchestrate processes with time stamps when triggered.  (RECOMMENDED)
+  * &#x20;It should update the processes and current list of stock items.  (RECOMMENDED)
+  * It should perform communication-related activities such as sending alerts, reminders, and automated messages, upon achieving a stage/state.  (RECOMMENDED)
+
+### 6.24 Bid Evaluation
 
 * The e-Marketplace must allow the buyer to perform an evaluation (financial, technical, any other). (REQUIRED)
 * The e-Marketplace must allow the buyer to pre-define an evaluation criteria for a good or service. (REQUIRED)
@@ -125,57 +223,57 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * It must allow the individual members to read the documents, and other details and share their scores, remarks, and ranking based on the pre-defined criteria. (REQUIRED)
 * The evaluation report/remarks shall be fed to the administrator and the final acceptance (not the details) may be communicated to the suppliers. (REQUIRED)
 
-## **The eMarketplace Building Block MUST enable Admins to**
+## **The eMarketplace Building Block must enable Admins to**
 
 * enable the registration process of both supplies and buyers.&#x20;
 * enable the verification of Foundational IDs come with no specified purpose or attached entitlement but functionalities simply let an entity prove who it is.
-* Captures only limited information about users, such as name, date of birth, address, and gender
-* For a given set of credentials, fetches a corresponding ID if it exists in the registry
-* Uses different biometric methods to identify and authenticate users through means other than user photographs (e.g. fingerprints, iris scans, facial recognition) to ensure there are no duplicates or fakes, creating a highly trustworthy database
-* open bank accounts, buy SIM cards, receive entitlements from the government, sign forms electronically, invest in mutual funds and get credit
-* Incorporate privacy into its design when the purpose of the authentication is not revealed if a service provider sends an authentication request
+* Captures only limited information about users, such as name, date of birth, address, and gender.
+* For a given set of credentials, fetches a corresponding ID if it exists in the registry.
+* Uses different biometric methods to identify and authenticate users through means other than user photographs (e.g. fingerprints, iris scans, facial recognition) to ensure there are no duplicates or fakes, creating a highly trustworthy database.
+* open bank accounts, buy SIM cards, receive entitlements from the government, sign forms electronically, invest in mutual funds, and get credit.
+* Incorporate privacy into its design when the purpose of the authentication is not revealed if a service provider sends an authentication request.
 
-**The eMarketplace must enable Building Block Admins (Supplier and Buyer) to**
+**The e-Marketplace must enable Building Block Admins (Supplier and Buyer) to**
 
-* seek consent from the entities, and people while registration
-* dynamically identify, verify, and validate the registration details against those of public registries
+* seek consent from the entities, and people while registration.
+* dynamically identify, verify, and validate the registration details against those of public registries.
 * register without duplication an entity, into its Entity List with details (e.g. name, phone, email, website, etc.). The entities host various "activities" involving their affiliated resources (client case management).
-* categorize entities for easy searching and sorting, e.g. "department" or "ministry"&#x20;
+* categorize entities for easy searching and sorting, e.g. "department" or "ministry" .
 * configure rules for performance, security, and communication management between the eMarketplace and other Building Blocks (e.g. Registries, Identity and Verification, Information Mediation), applications (across different departments/ministries), and event participants. The exact parameters may be decided at implementation time.
-* extract log reports from the system as needed for monitoring and administering the Building Block operations
-* register subscribers (persons/citizens/individuals) without duplication into eMarketplace's Subscriber list with contact details (phone/mail/URL/) as needed for communication, and reuse for enrolment to multiple activities
-* register procurement life cycle events with a defined starting and ending time and an optional deadline for participants to log in their attendance in the activity if needed
-* access a restricted number of subscribers to an activity, based on the sorting/category filter
-* define and maintain a library of a predefined stack of messages/notifications for a specific host entity so that it can be reused in multiple activities conducted by the specific host entity
-* define alert schedules for sending specific alert messages associated with a certain event at a determined date-time to associated subscribers or resources or both
-* to extract logs related to activities that help in continuous improvement in procurement lifecycle event management
-* to generate (i.e. purchase order/request), upload, and download the correspondance, circulars, and agreements in ".doc" and ".pdf" formats (document management)
-* (the supplier) to implement large-scale outreach communication, and awareness campaign activities through electronic means
-* to have a grievance readdress mechanism
-* to facilitate seek/offer/resolve/implement feedback mechanisms once the enrolled activities are completed
-* to delegate access management so that a particular role can perform only the tasks/activities that they are intended to
-* to facilitate workflow management amongst active suppliers and buyers
-* to handle exceptions when a registration fails, is unable to generate a purchase request, etc.
+* extract log reports from the system as needed for monitoring and administering the Building Block operations.
+* register subscribers (persons/citizens/individuals) without duplication into eMarketplace's Subscriber list with contact details (phone/mail/URL/) as needed for communication, and reuse for enrolment to multiple activities.
+* register procurement life cycle events with a defined starting and ending time and an optional deadline for participants to log in their attendance in the activity if needed.
+* access a restricted number of subscribers to an activity, based on the sorting/category filter.
+* define and maintain a library of a predefined stack of messages/notifications for a specific host entity so that it can be reused in multiple activities conducted by the specific host entity.
+* define alert schedules for sending specific alert messages associated with a certain event at a determined date-time to associated subscribers or resources or both.
+* to extract logs related to activities that help in continuous improvement in procurement lifecycle event management.
+* to generate (i.e. purchase order/request), upload, and download the correspondence, circulars, and agreements in ".doc" and ".pdf" formats (document management).
+* (the supplier) to implement large-scale outreach communication, and awareness campaign activities through electronic means.
+* to have a grievance readdress mechanism.
+* to facilitate seek/offer/resolve/implement feedback mechanisms once the enrolled activities are completed.
+* to delegate access management so that a particular role can perform only the tasks/activities that they are intended to.
+* to facilitate workflow management amongst active suppliers and buyers.
+* to handle exceptions when registration fails is unable to generate a purchase request, etc.
 * to facilitate communication between both parties, such as seeking clarification, responding to questions raised by the bidder on the bidding process or any other, etc.
 
-**The eMarketplace must enable buyers and subscribers to**
+**The e-Marketplace must enable buyers and subscribers to**
 
-* search and extract their own registration details in the eMarketplace
-* search and extract their own affiliation details across associated entities
-* search and extract details of activities they are enrolled into
-* search and extract details of subscribers of activities they are enrolled into
-* receive scheduled alert messages from activities they are enrolled into
-* search and list details of activities of a chosen category in a specified date-time range
-* log status/attendance updates related to activities they are enrolled into
-* view current status, details, and list of activities dynamically
+* search and extract their registration details in the eMarketplace.
+* search and extract their affiliation details across associated entities.
+* search and extract details of activities they are enrolled into.
+* search and extract details of subscribers of activities they are enrolled into.
+* receive scheduled alert messages from activities they are enrolled in.
+* search and list details of activities of a chosen category in a specified date-time range.
+* log status/attendance updates related to activities they are enrolled in.
+* view current status, details, and list of activities dynamically.
 
-#### The eMarketplace must enable the administrator to catalog goods and services&#x20;
+#### The e-Marketplace must enable the administrator to catalog goods and services&#x20;
 
-* get displayed a list of goods and/or services when an appropriate filter is used (e.g. a ministry or a type of service)
-* get displayed a list of active/closed/in progress items of procurement; with its stages for the Supplier
-* get displayed the number of days remaining of the entire project duration, payment milestones, and list of deliverables in accordance with the buyer department/ministry
+* get displayed a list of goods and/or services when an appropriate filter is used (e.g. a ministry or a type of service).
+* get displayed a list of active/closed/in progress items of procurement; with its stages for the Supplier.
+* get displayed the number of days remaining of the entire project duration, payment milestones, and list of deliverables under the buyer department/ministry.
 
-#### The eMarketplace MUST have system-automated internal functionality to
+#### The e-Marketplace must have system-automated internal functionality to
 
-* track all procurement lifecycle stages/events and send corresponding alert messages with unique **tokens/IDs** to relevant participants at appropriate times
+* track all procurement lifecycle stages/events and send corresponding alert messages with unique tokens/IDs to relevant participants at appropriate times.
 * detect communication failure with other Building Blocks and applications and perform retries according to configured rules before logging a communication failure. Associated implementation-specific details that are not specified here.&#x20;

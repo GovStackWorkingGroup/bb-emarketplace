@@ -6,38 +6,34 @@ description: >-
 
 # 9 Internal Workflows
 
-In this section, we identify workflows to manifest some of the main services. These may be enhanced or customized as needed for specific implementation needs. The following common preconditions may be needed to be met before utilizing these services:
+In this section, we identify workflows to manifest some of the main services. These may be enhanced or customized as needed for specific implementation needs. The following common preconditions may need to be met before utilizing these services:
 
-Entities are registered and active in the  in the system.
+Entities are registered and active in the system.
 
-Currently acting entities will be logged in the system and has sufficient roles to perform the action.
+Currently, acting entities will be logged in the system and have sufficient roles to act.
 
-Initiator building block and the target block must be registered in the system as network participants with status as subscribed and should be active.
+The Initiator Building Block and the target block must be registered in the system as network participants with status as subscribed and should be active.
 
 This section captures the example workflows that may take place between internal functional blocks to orchestrate key functionalities for a minimum viable product as follows. The exact workflows may be decided depending on implementation time considerations.
 
 * User search for product/service from a provider platform.
 * Viewing an item from the provider catalog.
-* Inventory management
+* Inventory management.
 * Selection of the product.
 * Initiation of the purchase request.
-* Confirmation of  the order.
-* Checking status of the order.
+* Confirmation of the order.
+* Checking the status of the order.
 * Cancellation of the order.
 * Tracking of an active order.
 * Feedback for an order.
 * support for an order.
-* Catalog management
-
-
+* Catalog management.
 
 ## 9 Order Lifecycle Workflows
 
 ### 9.1 Searching for Items
 
-The search flow allows consumers to search for available products or services . When a consumer initiates a search request, the catalog providers relevant products or services available respond to the search request by sending back detailed information about their offerings. This includes product details such as descriptions, images, specifications, prices, and any applicable offers or promotions.
-
-
+The search flow allows consumers to search for available products or services. When a consumer initiates a search request, the catalog providers relevant products or services available respond to the search request by sending back detailed information about their offerings. This includes product details such as descriptions, images, specifications, prices, and any applicable offers or promotions.
 
 ```mermaid
 sequenceDiagram
@@ -54,11 +50,9 @@ sequenceDiagram
 
 ### 9.2 Catalog Management
 
-This allow creation of a catalog for a product or a service based on the request made by the user. This allows user to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
+This allows the creation of a catalog for a product or a service based on the request made by the user. This allows users to update the catalogs of a product or service. New attributes can be added or removed from a catalog.
 
-User while searching for products can request for the catalog of the product or the services, the platform will fetch and serve back user with the required catalog.
-
-
+Users while searching for products can request the catalog of the product or the services, and the platform will fetch and serve back user with the required catalog.
 
 ```mermaid
 sequenceDiagram
@@ -71,9 +65,7 @@ UI->>consumer platform interface: catalog
 
 ### 9.3 Inventory Management
 
-This enables user to manage inventory of the products also they can add or remove products from the inventory.
-
-###
+This enables users to manage inventory of the products also they can add or remove products from the inventory.
 
 ```mermaid
 sequenceDiagram
@@ -83,10 +75,6 @@ provider interface->>Inventory: fetch inventory list
 Inventory->>provider interface: return inventory list
 provider interface->>Admin UI:Return invetory list
 ```
-
-###
-
-###
 
 ### 9.4 Quotation Management
 
@@ -128,8 +116,6 @@ The payment link serves as a gateway for the consumer to complete the transactio
 
 Alongside the payment link, the provider platform communicates any specific terms and conditions associated with the payment, ensuring that the consumer is aware of any applicable fees, refund policies, or other relevant details.
 
-
-
 ```mermaid
 sequenceDiagram
     Actor consumer
@@ -167,8 +153,6 @@ Once the consumer receives the payment link and reviews the terms and conditions
 The provider platform acknowledges the confirmation call and responds with a success message. Along with the success message, the provider platform shares the details of the order that has been placed. These order details typically include information such as the order ID, items purchased, quantity, price, and any additional relevant data.
 
 The consumer can then utilize the order details received from the provider platform to further check the status of their order. This information allows the consumer to track the progress of their order, anticipate the delivery, and stay informed about any updates or changes related to the order.
-
-
 
 ```mermaid
 sequenceDiagram
@@ -248,7 +232,7 @@ One of the primary aspects of the order status is the delivery status, which ind
 
 #### 9.8.1 Update Agent's tracking information
 
-User can update the tracking  status of an order.
+Users can update the tracking status of an order.
 
 ```mermaid
 sequenceDiagram
@@ -265,7 +249,7 @@ sequenceDiagram
 
 #### 9.8.2 Tracking an order
 
-User can make a request to get the tracking status of an order.
+Users can request to get the tracking status of an order.
 
 ```mermaid
 sequenceDiagram
@@ -289,7 +273,7 @@ sequenceDiagram
 
 ### 9.9 Updating an Order
 
-#### 9.9.1 Consumer initiated update
+#### 9.9.1 Consumer-initiated update
 
 ```mermaid
 sequenceDiagram
@@ -334,7 +318,7 @@ sequenceDiagram
 
 ### 9.10 Cancelling an Order
 
-When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow user to cancel the order before receiving an order.
+When a consumer places an order and it is confirmed, they are provided with the option to cancel their order. This will allow the user to cancel the order before receiving an order.
 
 #### 9.10.1 Consumer initiated cancellation
 
@@ -385,7 +369,7 @@ sequenceDiagram
 
 ### 9.11 Rating and Feedback Management
 
-This allows user to rate any rate able entity in the system, it can be product, service, agent etc. User can also provide the detailed feedback of the entities.
+This allows users to rate any rate-able entity in the system, it can be a product, service, agent, etc. Users can also provide detailed feedback on the entities.
 
 #### 9.11.1 Rating an Order (without feedback)
 
@@ -407,8 +391,6 @@ sequenceDiagram
 
 
 #### 9.11.2 Rating an order with feedback
-
-
 
 ```mermaid
 sequenceDiagram
@@ -432,9 +414,7 @@ sequenceDiagram
 
 ### 9.12 Support Management
 
-User can make a request for the support, this can happen anytime during the lifecycle of an order.&#x20;
-
-
+Users can request support, this can happen anytime during the lifecycle of an order.&#x20;
 
 ```mermaid
 sequenceDiagram
@@ -460,10 +440,3 @@ sequenceDiagram
     consumer interface-->>Customer Support Interface: stream real-time chat data
     
 ```
-
-
-
-####
-
-
-
