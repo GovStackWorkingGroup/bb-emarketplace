@@ -28,205 +28,133 @@ Platform Administration APIs consist of all the endpoints that are used to provi
 
 These APIs allow searching and browsing of an existing catalog.
 
-
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/search" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/{resource}/{id}" method="get" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-### 8.1.2 Service Administration APIs
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/{resource}/{id}" method="get" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/{resource}/{id}" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/{resource}/{id}" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/{resource}/{id}" method="delete" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/{resource}/{id}" method="delete" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/{resource}" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/{resource}" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/provider/{provider_id}/{resource}/{id}" method="get" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/provider/{provider_id}/{resource}/{id}" method="get" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/provider/{provider_id}/{resource}/{id}" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/provider/{provider_id}/{resource}/{id}" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/provider/{provider_id}/{resource}/{id}" method="delete" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/provider/{provider_id}/{resource}/{id}" method="delete" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/catalog/provider/{provider_id}/{resource}" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/inventory/check_availability/{resource}/{id}" method="get" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/catalog/provider/{provider_id}/{resource}" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.2 Inventory Management
 
 Since inventory is a provider-centric feature, it does not interface with a customer. However, it is called by other services like quotation management, order management, and fulfillment management services.
 
-### 8.2.1 Service Administration APIs
-
-
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/search" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/inventory/check_availability/{resource}/{id}" method="get" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/inventory/check_availability/{resource}/{id}" method="get" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/inventory/add" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/inventory/add" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/inventory/remove" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/inventory/remove" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/inventory/block" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/inventory/block" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/inventory/unblock" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/inventory/unblock" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.3 Quotation Management
 
 
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/quotation" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/quotation" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.4 Order Terms Management
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/terms/payment" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/terms/payment" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/terms/fulfillment" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/terms/fulfillment" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/terms/cancellation" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/terms/cancellation" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.5 Order Management
 
-### 8.5.1 Order Lifecycle APIs
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/select" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/init" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/confirm" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/status" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/track" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/cancel" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/update" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-### 8.5.2 Service Administration APIs
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/orders" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/orders" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.6  Order Fulfillment
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/fulfillment" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment/{order_id}" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/fulfillment/{order_id}" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment/{order_id}" method="delete" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/fulfillment/{order_id}" method="delete" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment/check_serviceability" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/fulfillment/check_serviceability" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment/{order_id}/agent/allocate" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/fulfillment/{order_id}/agent/allocate" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/fulfillment/{order_id}/agent/deallocate" method="delete" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/fulfillment/{order_id}/agent/deallocate" method="delete" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.7 Order Tracking
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/tracking/start" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/tracking/start" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/tracking/stop" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/tracking/stop" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/tracking/{order_id}/update_location" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-## 8.8 Order Cancellation
-
-### 8.8.1 Order Lifecycle APIs
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/get_cancellation_reasons" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/tracking/{order_id}/update_location" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 ## 8.9 Rating and Feedback Management
-
-### 8.10.1 Order Lifecycle APIs
-
-
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/rating" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/get_rating_categories" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
-{% endswagger %}
-
-## 8.11 Feedback Management
 
 {% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/feedback_form" method="post" %}
 [beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
@@ -234,98 +162,130 @@ Since inventory is a provider-centric feature, it does not interface with a cust
 
 ## 8.12 Support Management
 
-### 8.11.1 Order Lifecycle APIs
+These endpoints enables all customer support services to be managed.&#x20;
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support/{order_id}" method="get" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-### 8.11.2 Service Administration APIs
-
-
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/search" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support/{order_id}" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support/{order_id}" method="get" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support/{order_id}" method="delete" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support/{order_id}" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support/{order_id}/agent" method="get" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support/{order_id}" method="delete" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support/{order_id}/agent" method="put" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support/{order_id}/agent" method="get" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support/{order_id}/agent" method="delete" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support/{order_id}/agent" method="put" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+## 8.13 Order Lifecycle APIs
+
+These APIs are implemented as a beckn protocol endpoint to enable the E-Marketplace BB to become accessible by any consumer application inside or outside the GovStack ecosystem.&#x20;
+
+### 8.13.1 Requests
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/search" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/support/{order_id}/agent" method="delete" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/select" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-## 8.13 Consumer Interface
-
-
-
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_search" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/init" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_select" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/confirm" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_init" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/status" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_confirm" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/update" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_track" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/track" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_cancel" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/cancel" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_update" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/rating" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_status" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/support" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_rating" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/get_rating_categories" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/on_support" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/get_return_reasons" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/cancellation_reasons" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/get_cancellation_reasons" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/return_reasons" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+### 8.13.1 Callbacks
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_search" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
-{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml" path="/rating_categories" method="post" %}
-[beckn-e-marketplace-bb-0.2-resolved.yaml](.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved.yaml)
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_select" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_init" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_confirm" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_status" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_rating" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/on_support" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/rating_categories" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/cancellation_reasons" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
+{% endswagger %}
+
+{% swagger src=".gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml" path="/return_reasons" method="post" %}
+[beckn-e-marketplace-bb-0.2-resolved (2).yaml](<.gitbook/assets/beckn-e-marketplace-bb-0.2-resolved (2).yaml>)
 {% endswagger %}
 
 
