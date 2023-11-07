@@ -6,549 +6,6 @@
     "version" : "0.2"
   },
   "paths" : {
-    "/search" : {
-      "post" : {
-        "tags" : [ "Catalog Management" ],
-        "description" : "Consumer Interface declares the customer's intent to buy/avail products or services",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "search" ]
-                        }
-                      }
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "intent" : {
-                        "$ref" : "#/components/schemas/Intent"
-                      }
-                    }
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/select" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Consumer Interface declares the customer's cart (or equivalent) created by selecting objects from the catalog",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "select" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/init" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Initialize an order by providing billing and/or shipping details",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "init" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/confirm" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Initialize an order by providing billing and/or shipping details",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "confirm" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/status" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Fetch the latest order object",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "status" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order_id" : {
-                        "$ref" : "#/components/schemas/Order/properties/id"
-                      }
-                    },
-                    "required" : [ "order_id" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/track" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Track an active order",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "track" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order_id" : {
-                        "$ref" : "#/components/schemas/Order/properties/id"
-                      },
-                      "callback_url" : {
-                        "type" : "string",
-                        "format" : "uri"
-                      }
-                    },
-                    "required" : [ "order_id" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/cancel" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Cancel an order",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "cancel" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order_id" : {
-                        "$ref" : "#/components/schemas/Order/properties/id"
-                      },
-                      "cancellation_reason_id" : {
-                        "$ref" : "#/components/schemas/Option/properties/id"
-                      },
-                      "descriptor" : {
-                        "$ref" : "#/components/schemas/Descriptor"
-                      }
-                    },
-                    "required" : [ "order_id" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/update" : {
-      "post" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Remove object",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "update" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "update_target" : {
-                        "description" : "Comma separated values of order objects being updated. For example: ```\"update_target\":\"item,billing,fulfillment\"```",
-                        "type" : "string"
-                      },
-                      "order" : {
-                        "description" : "Updated order object",
-                        "allOf" : [ {
-                          "$ref" : "#/components/schemas/Order"
-                        } ]
-                      }
-                    },
-                    "required" : [ "update_target", "order" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/orders" : {
       "post" : {
         "tags" : [ "Order Management" ],
@@ -558,6 +15,292 @@
             "application/json" : {
               "schema" : {
                 "$ref" : "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}" : {
+      "get" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Fetch an order",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Updated order object",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/updatePayment" : {
+      "put" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Fetch order history",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Payment"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/updateFulfillment" : {
+      "put" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Fetch order history",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Fulfillment"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/updateBilling" : {
+      "put" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Fetch order history",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Billing"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/updateItems" : {
+      "put" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Fetch order history",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "items" : {
+                    "type" : "array",
+                    "items" : {
+                      "$ref" : "#/components/schemas/Item"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/updateAddOns" : {
+      "put" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Fetch order history",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "add_ons" : {
+                    "type" : "array",
+                    "items" : {
+                      "$ref" : "#/components/schemas/AddOn"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}/cancel" : {
+      "put" : {
+        "tags" : [ "Order Management" ],
+        "description" : "Cancel order",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "description" : "Return cancelled order",
+                "type" : "object",
+                "properties" : {
+                  "cancellation" : {
+                    "$ref" : "#/components/schemas/Order"
+                  }
+                }
               }
             }
           }
@@ -672,829 +415,6 @@
         }
       }
     },
-    "/rating" : {
-      "post" : {
-        "tags" : [ "Rating and Reputation Management" ],
-        "description" : "Provide feedback on a service",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "rating" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "ratings" : {
-                        "type" : "array",
-                        "items" : {
-                          "$ref" : "#/components/schemas/Rating"
-                        }
-                      }
-                    }
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/support" : {
-      "post" : {
-        "tags" : [ "Support Management" ],
-        "description" : "Fetch support information",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "support" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "support" : {
-                        "$ref" : "#/components/schemas/Support"
-                      }
-                    }
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_search" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Provider Platform sends its catalog in response to a search request.",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_search" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "catalog" : {
-                        "$ref" : "#/components/schemas/Catalog"
-                      }
-                    },
-                    "required" : [ "catalog" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_select" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Send draft order object with quoted price for selected items",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_select" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    }
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_init" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Send order object with payment details updated",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_init" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_confirm" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Send active order object",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_confirm" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_track" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Send tracking details of an active order",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_track" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "tracking" : {
-                        "$ref" : "#/components/schemas/Tracking"
-                      }
-                    },
-                    "required" : [ "tracking" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_cancel" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Send cancellation request_id with reasons list in case of cancellation request. Else send cancelled order object",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_cancel" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_update" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Returns updated service with updated runtime object",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_update" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_status" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Fetch the status of a Service",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_status" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "order" : {
-                        "$ref" : "#/components/schemas/Order"
-                      }
-                    },
-                    "required" : [ "order" ]
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_rating" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Provide feedback on a service",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_rating" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "feedback_form" : {
-                        "description" : "A feedback form to allow the user to provide additional information on the rating provided",
-                        "allOf" : [ {
-                          "$ref" : "#/components/schemas/XInput"
-                        } ]
-                      }
-                    }
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/on_support" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "Contact Support",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "on_support" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "support" : {
-                        "$ref" : "#/components/schemas/Support"
-                      }
-                    }
-                  },
-                  "error" : {
-                    "$ref" : "#/components/schemas/Error"
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/catalog/{resource}/{id}" : {
       "get" : {
         "tags" : [ "Catalog Management" ],
@@ -1524,6 +444,8 @@
               "$ref" : "#/components/schemas/Agent/properties/id"
             }, {
               "$ref" : "#/components/schemas/Payment/properties/id"
+            }, {
+              "$ref" : "#/components/schemas/XInput/properties/id"
             } ]
           }
         } ],
@@ -1545,6 +467,8 @@
                     "$ref" : "#/components/schemas/Agent"
                   }, {
                     "$ref" : "#/components/schemas/Payment"
+                  }, {
+                    "$ref" : "#/components/schemas/XInput"
                   } ]
                 }
               }
@@ -1733,15 +657,15 @@
         }
       }
     },
-    "/catalog/provider/{provider_id}/{resource}/{id}" : {
+    "/catalog/provider/{providerId}/{resource}/{id}" : {
       "get" : {
         "tags" : [ "Catalog Management" ],
         "description" : "Find catalog",
         "parameters" : [ {
-          "name" : "provider_id",
+          "name" : "providerId",
           "in" : "path",
-          "description" : "ID of the provider",
           "required" : true,
+          "description" : "ID of the provider",
           "schema" : {
             "$ref" : "#/components/schemas/Provider/properties/id"
           }
@@ -1804,7 +728,7 @@
         "tags" : [ "Catalog Management" ],
         "description" : "Update a resource to the catalog",
         "parameters" : [ {
-          "name" : "provider_id",
+          "name" : "providerId",
           "in" : "path",
           "description" : "ID of the provider where resource is being added",
           "required" : true,
@@ -1870,7 +794,7 @@
         "tags" : [ "Catalog Management" ],
         "description" : "Update a resource in the provider's catalog",
         "parameters" : [ {
-          "name" : "provider_id",
+          "name" : "providerId",
           "in" : "path",
           "description" : "ID of the provider where resource is being added",
           "required" : true,
@@ -1942,8 +866,8 @@
         }
       }
     },
-    "/catalog/provider/{provider_id}/{resource}" : {
-      "post" : {
+    "/catalog/provider/{providerId}/{resource}" : {
+      "put" : {
         "tags" : [ "Catalog Management" ],
         "description" : "Add a resource to the catalog",
         "parameters" : [ {
@@ -1956,7 +880,7 @@
             "enum" : [ "Item", "Category", "Fulfillment", "Agent", "Payment" ]
           }
         }, {
-          "name" : "provider_id",
+          "name" : "providerId",
           "in" : "path",
           "description" : "ID of the provider where resource is being added",
           "required" : true,
@@ -2011,7 +935,7 @@
         }
       }
     },
-    "/inventory/check_availability/{resource}/{id}" : {
+    "/inventory/checkAvailability/{resource}/{id}" : {
       "get" : {
         "tags" : [ "Inventory Management" ],
         "description" : "Check availability of a resource in an inventory",
@@ -2022,7 +946,7 @@
           "required" : true,
           "schema" : {
             "type" : "string",
-            "enum" : [ "Item" ]
+            "enum" : [ "Item", "AddOn" ]
           }
         }, {
           "name" : "id",
@@ -2049,7 +973,7 @@
         }
       }
     },
-    "/inventory/add" : {
+    "/inventory/item/add" : {
       "post" : {
         "tags" : [ "Inventory Management" ],
         "description" : "Add Item to inventory",
@@ -2076,10 +1000,10 @@
         }
       }
     },
-    "/inventory/remove" : {
+    "/inventory/item/remove" : {
       "post" : {
         "tags" : [ "Inventory Management" ],
-        "description" : "Add Item to inventory",
+        "description" : "Remove Item from inventory",
         "requestBody" : {
           "content" : {
             "application/json" : {
@@ -2103,10 +1027,10 @@
         }
       }
     },
-    "/inventory/block" : {
+    "/inventory/item/block" : {
       "post" : {
         "tags" : [ "Inventory Management" ],
-        "description" : "Add Item to inventory",
+        "description" : "Block Item in inventory",
         "requestBody" : {
           "content" : {
             "application/json" : {
@@ -2130,7 +1054,61 @@
         }
       }
     },
-    "/inventory/unblock" : {
+    "/inventory/addOn/unblock" : {
+      "post" : {
+        "tags" : [ "Inventory Management" ],
+        "description" : "Unblock addOn in inventory",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Item"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Successful fetch of resources from the catalog",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inventory/addOn/block" : {
+      "post" : {
+        "tags" : [ "Inventory Management" ],
+        "description" : "Block add-on in inventory",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Item"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Successful fetch of resources from the catalog",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inventory/item/unblock" : {
       "post" : {
         "tags" : [ "Inventory Management" ],
         "description" : "Add Item to inventory",
@@ -2184,39 +1162,9 @@
         }
       }
     },
-    "/terms/payment" : {
+    "/fulfillments/generate" : {
       "post" : {
-        "tags" : [ "Terms Management" ],
-        "description" : "Generate payment terms for an order",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Order"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Successful fetch of payment terms",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Order"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/terms/fulfillment" : {
-      "post" : {
-        "tags" : [ "Terms Management" ],
+        "tags" : [ "Fulfillment Management" ],
         "description" : "Generate fulfillment terms for an order",
         "requestBody" : {
           "content" : {
@@ -2274,12 +1222,37 @@
         }
       }
     },
-    "/support/{order_id}" : {
+    "/support/{orderId}" : {
+      "post" : {
+        "tags" : [ "Support Management" ],
+        "description" : "Generate a support request for an order",
+        "parameters" : [ {
+          "name" : "orderId",
+          "in" : "path",
+          "description" : "ID of the order that generated the support session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Successful closure of a chat session",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Support"
+                }
+              }
+            }
+          }
+        }
+      },
       "get" : {
         "tags" : [ "Support Management" ],
-        "description" : "Fetch a chat session",
+        "description" : "Fetch a support session",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "orderId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2304,7 +1277,7 @@
         "tags" : [ "Support Management" ],
         "description" : "Update a chat session",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "orderId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2329,7 +1302,7 @@
         "tags" : [ "Support Management" ],
         "description" : "Close a chat session",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "orderId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2351,12 +1324,12 @@
         }
       }
     },
-    "/support/{order_id}/agent" : {
+    "/support/{orderId}/agent" : {
       "get" : {
         "tags" : [ "Support Management" ],
         "description" : "Fetch the agent to a support session",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "orderId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2381,7 +1354,7 @@
         "tags" : [ "Support Management" ],
         "description" : "Update agent for a support request",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "orderId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2415,7 +1388,7 @@
         "tags" : [ "Support Management" ],
         "description" : "Remove an agent from a support request",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "orderId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2437,7 +1410,7 @@
         }
       }
     },
-    "/fulfillment" : {
+    "/fulfillments" : {
       "post" : {
         "tags" : [ "Fulfillment Management" ],
         "description" : "create fulfillment to order",
@@ -2464,17 +1437,42 @@
         }
       }
     },
-    "/fulfillment/{order_id}" : {
-      "put" : {
-        "tags" : [ "Order Management" ],
-        "description" : "Update fulfillment state for an order",
+    "/fulfillments/{fulfillmentId}" : {
+      "get" : {
+        "tags" : [ "Fulfillment Management" ],
+        "description" : "create a fulfillment",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "fulfillmentId",
           "in" : "path",
-          "description" : "ID of the order",
+          "description" : "ID of the fulfillment",
           "required" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Order/properties/id"
+            "$ref" : "#/components/schemas/Fulfillment/properties/id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Successful closure of a chat session",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Fulfillment"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Fulfillment Management" ],
+        "description" : "Update fulfillment state for an order",
+        "parameters" : [ {
+          "name" : "fulfillmentId",
+          "in" : "path",
+          "description" : "ID of the fulfillment",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Fulfillment/properties/id"
           }
         } ],
         "requestBody" : {
@@ -2492,7 +1490,7 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/Order"
+                  "$ref" : "#/components/schemas/Fulfillment"
                 }
               }
             }
@@ -2503,7 +1501,7 @@
         "tags" : [ "Fulfillment Management" ],
         "description" : "Cancel the fulfillment for an order",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "fulfillmentId",
           "in" : "path",
           "description" : "ID of the order that generated the chat session",
           "required" : true,
@@ -2525,7 +1523,7 @@
         }
       }
     },
-    "/fulfillment/check_serviceability" : {
+    "/fulfillment/checkServiceability" : {
       "post" : {
         "tags" : [ "Fulfillment Management" ],
         "description" : "Check serviceability of an order",
@@ -2548,6 +1546,9 @@
                   "properties" : {
                     "serviceable" : {
                       "type" : "boolean"
+                    },
+                    "fulfillment" : {
+                      "$ref" : "#/components/schemas/Fulfillment"
                     }
                   }
                 }
@@ -2557,16 +1558,16 @@
         }
       }
     },
-    "/fulfillment/{order_id}/agent/allocate" : {
+    "/fulfillment/{fulfillmentId}/agent/allocate" : {
       "put" : {
         "tags" : [ "Fulfillment Management" ],
         "description" : "Add fulfillment to an order",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "fulfillmentId",
           "in" : "path",
           "required" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Order/properties/id"
+            "$ref" : "#/components/schemas/Fulfillment/properties/id"
           }
         } ],
         "requestBody" : {
@@ -2592,16 +1593,16 @@
         }
       }
     },
-    "/fulfillment/{order_id}/agent/deallocate" : {
+    "/fulfillment/{fulfillmentId}/agent/deallocate" : {
       "delete" : {
         "tags" : [ "Fulfillment Management" ],
         "description" : "Add fulfillment to an order",
         "parameters" : [ {
-          "name" : "order_id",
+          "name" : "fulfillmentId",
           "in" : "path",
           "required" : true,
           "schema" : {
-            "$ref" : "#/components/schemas/Order/properties/id"
+            "$ref" : "#/components/schemas/Fulfillment/properties/id"
           }
         } ],
         "responses" : {
@@ -2618,9 +1619,825 @@
         }
       }
     },
+    "/forms" : {
+      "post" : {
+        "tags" : [ "Forms Management" ],
+        "description" : "BPP provides the list of entities that can be rated in its system to the BAP",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/XInput"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Form object",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/XInput"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/forms/{formId}" : {
+      "get" : {
+        "tags" : [ "Forms Management" ],
+        "description" : "create a form",
+        "parameters" : [ {
+          "name" : "formId",
+          "in" : "path",
+          "description" : "ID of the form",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Form/properties/id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Successful closure of a chat session",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Fulfillment"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Forms Management" ],
+        "description" : "Update fulfillment state for an order",
+        "parameters" : [ {
+          "name" : "formId",
+          "in" : "path",
+          "description" : "ID of the fulfillment",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Fulfillment/properties/id"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/FulfillmentState"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Successful closure of a chat session",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Fulfillment"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Forms Management" ],
+        "description" : "Cancel the fulfillment for an order",
+        "parameters" : [ {
+          "name" : "formId",
+          "in" : "path",
+          "description" : "ID of the order that generated the chat session",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/components/schemas/Order/properties/id"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Successful closure of a chat session",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Fulfillment"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generateFeedbackForRating" : {
+      "post" : {
+        "tags" : [ "Feedback Management" ],
+        "description" : "BPP provides the list of entities that can be rated in its system to the BAP",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Rating"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Form object",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/XInput"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Consumer Interface declares the customer's intent to buy/avail products or services",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "search" ]
+                        }
+                      }
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "intent" : {
+                        "$ref" : "#/components/schemas/Intent"
+                      }
+                    }
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/select" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Consumer Interface declares the customer's cart (or equivalent) created by selecting objects from the catalog",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "select" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/init" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Initialize an order by providing billing and/or shipping details",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "init" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/confirm" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Initialize an order by providing billing and/or shipping details",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "confirm" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Fetch the latest order object",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "status" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order_id" : {
+                        "$ref" : "#/components/schemas/Order/properties/id"
+                      }
+                    },
+                    "required" : [ "order_id" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/track" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Track an active order",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "track" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order_id" : {
+                        "$ref" : "#/components/schemas/Order/properties/id"
+                      },
+                      "callback_url" : {
+                        "type" : "string",
+                        "format" : "uri"
+                      }
+                    },
+                    "required" : [ "order_id" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cancel" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Cancel an order",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "cancel" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order_id" : {
+                        "$ref" : "#/components/schemas/Order/properties/id"
+                      },
+                      "cancellation_reason_id" : {
+                        "$ref" : "#/components/schemas/Option/properties/id"
+                      },
+                      "descriptor" : {
+                        "$ref" : "#/components/schemas/Descriptor"
+                      }
+                    },
+                    "required" : [ "order_id" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Remove object",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "update" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "update_target" : {
+                        "description" : "Comma separated values of order objects being updated. For example: ```\"update_target\":\"item,billing,fulfillment\"```",
+                        "type" : "string"
+                      },
+                      "order" : {
+                        "description" : "Updated order object",
+                        "allOf" : [ {
+                          "$ref" : "#/components/schemas/Order"
+                        } ]
+                      }
+                    },
+                    "required" : [ "update_target", "order" ]
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rating" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Provide feedback on a service",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "rating" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "ratings" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Rating"
+                        }
+                      }
+                    }
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/support" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "Fetch support information",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "support" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "support" : {
+                        "$ref" : "#/components/schemas/Support"
+                      }
+                    }
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/get_cancellation_reasons" : {
       "post" : {
-        "tags" : [ "Cancellation Management" ],
+        "tags" : [ "Order Lifecycle API (requests)" ],
         "description" : "BAP fetches the list of cancellation reasons from BPP",
         "requestBody" : {
           "content" : {
@@ -2675,78 +2492,9 @@
         }
       }
     },
-    "/cancellation_reasons" : {
-      "post" : {
-        "tags" : [ "Consumer Interface" ],
-        "description" : "BPP sends cancellation reasons to BAP",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "cancellation_reasons" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  },
-                  "message" : {
-                    "type" : "object",
-                    "properties" : {
-                      "cancellation_reasons" : {
-                        "type" : "array",
-                        "items" : {
-                          "$ref" : "#/components/schemas/Option"
-                        }
-                      }
-                    },
-                    "required" : [ "cancellation_reasons" ]
-                  }
-                },
-                "required" : [ "context", "message" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/get_return_reasons" : {
       "post" : {
-        "tags" : [ "Fulfillment Management" ],
+        "tags" : [ "Order Lifecycle API (requests)" ],
         "description" : "BAP requests BPP to provide the list of return reasons",
         "requestBody" : {
           "content" : {
@@ -2801,9 +2549,756 @@
         }
       }
     },
+    "/get_rating_categories" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (requests)" ],
+        "description" : "BAP requests BPP to provide the list of entities that can be rated on its system",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "get_rating_categories" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_search" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Provider Platform sends its catalog in response to a search request.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_search" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "catalog" : {
+                        "$ref" : "#/components/schemas/Catalog"
+                      }
+                    },
+                    "required" : [ "catalog" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_select" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Send draft order object with quoted price for selected items",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_select" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    }
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_init" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Send order object with payment details updated",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_init" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_confirm" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Send active order object",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_confirm" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_track" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Send tracking details of an active order",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_track" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "tracking" : {
+                        "$ref" : "#/components/schemas/Tracking"
+                      }
+                    },
+                    "required" : [ "tracking" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_cancel" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Send cancellation request_id with reasons list in case of cancellation request. Else send cancelled order object",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_cancel" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_update" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Returns updated service with updated runtime object",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_update" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_status" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Fetch the status of a Service",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_status" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "order" : {
+                        "$ref" : "#/components/schemas/Order"
+                      }
+                    },
+                    "required" : [ "order" ]
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_rating" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Provide feedback on a service",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_rating" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "feedback_form" : {
+                        "description" : "A feedback form to allow the user to provide additional information on the rating provided",
+                        "allOf" : [ {
+                          "$ref" : "#/components/schemas/XInput"
+                        } ]
+                      }
+                    }
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context", "message" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/on_support" : {
+      "post" : {
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "Contact Support",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "on_support" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
+                  },
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "support" : {
+                        "$ref" : "#/components/schemas/Support"
+                      }
+                    }
+                  },
+                  "error" : {
+                    "$ref" : "#/components/schemas/Error"
+                  }
+                },
+                "required" : [ "context" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "description" : "Acknowledgement of message received after successful validation of schema and signature",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/return_reasons" : {
       "post" : {
-        "tags" : [ "Consumer Interface" ],
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
         "description" : "BPP provides the list of return reasons to the BAP",
         "requestBody" : {
           "content" : {
@@ -2870,66 +3365,9 @@
         }
       }
     },
-    "/get_rating_categories" : {
-      "post" : {
-        "tags" : [ "Rating and Reputation Management" ],
-        "description" : "BAP requests BPP to provide the list of entities that can be rated on its system",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "properties" : {
-                  "context" : {
-                    "allOf" : [ {
-                      "$ref" : "#/components/schemas/Context"
-                    }, {
-                      "properties" : {
-                        "action" : {
-                          "enum" : [ "get_rating_categories" ]
-                        }
-                      },
-                      "required" : [ "action" ]
-                    } ]
-                  }
-                },
-                "required" : [ "context" ]
-              }
-            }
-          }
-        },
-        "responses" : {
-          "default" : {
-            "description" : "Acknowledgement of message received after successful validation of schema and signature",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "message" : {
-                      "type" : "object",
-                      "properties" : {
-                        "ack" : {
-                          "$ref" : "#/components/schemas/Ack"
-                        }
-                      },
-                      "required" : [ "ack" ]
-                    },
-                    "error" : {
-                      "$ref" : "#/components/schemas/Error"
-                    }
-                  },
-                  "required" : [ "message" ]
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/rating_categories" : {
       "post" : {
-        "tags" : [ "Consumer Interface" ],
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
         "description" : "BPP provides the list of entities that can be rated in its system to the BAP",
         "requestBody" : {
           "content" : {
@@ -2996,23 +3434,42 @@
         }
       }
     },
-    "/feedback_form" : {
+    "/cancellation_reasons" : {
       "post" : {
-        "tags" : [ "Feedback Management" ],
-        "description" : "BPP provides the list of entities that can be rated in its system to the BAP",
+        "tags" : [ "Order Lifecycle API (callbacks)" ],
+        "description" : "BPP sends cancellation reasons to BAP",
         "requestBody" : {
           "content" : {
             "application/json" : {
               "schema" : {
                 "type" : "object",
                 "properties" : {
-                  "order" : {
-                    "$ref" : "#/components/schemas/Order"
+                  "context" : {
+                    "allOf" : [ {
+                      "$ref" : "#/components/schemas/Context"
+                    }, {
+                      "properties" : {
+                        "action" : {
+                          "enum" : [ "cancellation_reasons" ]
+                        }
+                      },
+                      "required" : [ "action" ]
+                    } ]
                   },
-                  "rating" : {
-                    "$ref" : "#/components/schemas/Rating"
+                  "message" : {
+                    "type" : "object",
+                    "properties" : {
+                      "cancellation_reasons" : {
+                        "type" : "array",
+                        "items" : {
+                          "$ref" : "#/components/schemas/Option"
+                        }
+                      }
+                    },
+                    "required" : [ "cancellation_reasons" ]
                   }
-                }
+                },
+                "required" : [ "context", "message" ]
               }
             }
           }
@@ -3023,7 +3480,22 @@
             "content" : {
               "application/json" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/XInput"
+                  "type" : "object",
+                  "properties" : {
+                    "message" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ack" : {
+                          "$ref" : "#/components/schemas/Ack"
+                        }
+                      },
+                      "required" : [ "ack" ]
+                    },
+                    "error" : {
+                      "$ref" : "#/components/schemas/Error"
+                    }
+                  },
+                  "required" : [ "message" ]
                 }
               }
             }
@@ -3035,7 +3507,6 @@
   "components" : {
     "schemas" : {
       "Ack" : {
-        "title" : "Acknowledgement",
         "description" : "Describes the acknowledgement sent in response to an API call. If the implementation uses HTTP/S, then Ack must be returned in the same session. Every API call to a Provider Platform must be responded to with an Ack whether the Provider Platform intends to respond with a callback or not. This has one property called `status` that indicates the status of the Acknowledgement.",
         "type" : "object",
         "properties" : {
@@ -3577,6 +4048,10 @@
         "description" : "Describes a form",
         "type" : "object",
         "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "ID of the form"
+          },
           "url" : {
             "description" : "The URL from where the form can be fetched. The content fetched from the url must be processed as per the mime_type specified in this object. Once fetched, the rendering platform can choosed to render the form as-is as an embeddable element; or process it further to blend with the theme of the application. In case the interface is non-visual, the the render can process the form data and reproduce it as per the standard specified in the form.",
             "type" : "string",
@@ -5069,6 +5544,37 @@
         "description" : "Contains any additional or extended inputs required to confirm an order. This is typically a Form Input. Sometimes, selection of catalog elements is not enough for the Provider Platform to confirm an order. For example, to confirm a flight ticket, the airline requires details of the passengers along with information on baggage, identity, in addition to the class of ticket. Similarly, a logistics company may require details on the nature of shipment in order to confirm the shipping. A recruiting firm may require additional details on the applicant in order to confirm a job application. For all such purposes, the  can choose to send this object attached to any object in the catalog that is required to be sent while placing the order. This object can typically be sent at an item level or at the order level. The item level XInput will override the Order level XInput as it indicates a special requirement of information for that particular item. Hence the Consumer Interface must render a separate form for the Item and another form at the Order level before confirmation.",
         "type" : "object",
         "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "head" : {
+            "type" : "object",
+            "properties" : {
+              "descriptor" : {
+                "$ref" : "#/components/schemas/Form"
+              },
+              "index" : {
+                "type" : "object",
+                "properties" : {
+                  "cur" : {
+                    "type" : "integer"
+                  },
+                  "max" : {
+                    "type" : "integer"
+                  },
+                  "min" : {
+                    "type" : "integer"
+                  }
+                }
+              },
+              "headings" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
           "form" : {
             "$ref" : "#/components/schemas/Form"
           },
