@@ -23,18 +23,18 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * The catalog should provide payment details about the payment terms offered by the e-Marketplace. The terms can be overridden by the providers' section, in case e-Marketplace does not take responsibility for the payments. (REQUIRED)
 * The catalog should provide expiry details about the time (timestamp) after which the catalog will not be valid. The consumer platform must be able to process the expiry and invalidate the catalog. E.g. A limited-time offer on a service/product. (REQUIRED)
 * The catalog should provide details of the time to live (TTL), which describes the time to set to exist for the catalog before it is discarded by a router and expires. The consumer platform must be able to process the TTL and invalidate the catalog. (REQUIRED)
-* The seller platform must be able to call the on\_search API provided by the buyer platform to provide the catalog of the products. (REQUIRED)
-* The buyer platform should provide a mechanism to handle the response (catalog) for a search, it should display the products/services in the catalog properly and filter the products at the UI layer. (REQUIRED)
+* The provider platform must be able to call the on\_search API provided by the Consumer platform to provide the catalog of the products. (REQUIRED)
+* The Consumer platform should provide a mechanism to handle the response (catalog) for a search, it should display the products/services in the catalog properly and filter the products at the UI layer. (REQUIRED)
 * The consumer platform should be able to handle multiple responses against a search tied with a message ID made, as the response can be from multiple providers. (REQUIRED)
 
 ### 6.2 Inventory Management
 
-* The e-Marketplace must allow the sellers to add new products to their inventory. (REQUIRED)
+* The e-Marketplace must allow the providers to add new products to their inventory. (REQUIRED)
 * It should be able to provide the current status of the inventory products, and the reporting should provide various filters based on which report can be generated. (REQUIRED)
-* It should allow updating the quantity and location of Items across multiple Providers and must restrict access to the sellers' internal inventory. (REQUIRED)
+* It should allow updating the quantity and location of Items across multiple Providers and must restrict access to the providers' internal inventory. (REQUIRED)
 * Inventory must get adjusted based on the order placed (confirm/cancel/return). (REQUIRED)
 * It must allow checking of the availability of an Item in a catalog to avoid out-of-stock and over-stocking of the product. (REQUIRED)
-* It should provide a configurable system for notification which notifies based on the defined criteria. E.g. If the product quantity is less than 50, it must notify the seller by email or SMS. (RECOMMENDED)
+* It should provide a configurable system for notification which notifies based on the defined criteria. E.g. If the product quantity is less than 50, it must notify the provider by email or SMS. (RECOMMENDED)
 
 ### 6.3 Quotation Management
 
@@ -155,10 +155,10 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * These are dedicated API interfaces defined in the Content Management Interface Building Block and hence not defined here:
   * The Content Management Interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the Content Management Interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to manage content creation. (RECOMMENDED)
   * The interface should be able to moderate, and curate content creation. (RECOMMENDED)
-  * The interface should enable the user (citizen/supplier) to submit a document, and best practices in a prescribed format. (RECOMMENDED)
+  * The interface should enable the user (consumer/provider) to submit a document, and best practices in a prescribed format. (RECOMMENDED)
   * The interface should be able to store the documents in an organized manner. (RECOMMENDED)
   * It should allow any user to access the organized content. (RECOMMENDED)
-  * The interface allows the suppliers or users to add text, images, product description details, etc. to a good/service. (RECOMMENDED)
+  * The interface allows the providers to add text, images, product description details, etc. to a good/service. (RECOMMENDED)
 
 ### 6.18 **Workflow Interface**
 
@@ -206,10 +206,10 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 
 * These are dedicated API interfaces defined in the Scheduling interface Building Block and hence not defined here:
   * The Scheduling interface Building Block should provide the necessary protocol, data format, and information and interface to interact with the Scheduling interface Building Block to enable users on the Consumer Platform and the Provider Platform interface to automate the process based on the events in the system. (RECOMMENDED)
-  * The buyer must be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for the next 6 months, etc. (REQUIRED)
+  * The consumer must be able to publish advertisements/announcements on their website/mobile app/kiosk application about their requirements, vacancies, expertise, hosting events (physical or online), videos, advertisements, schedule of activities for the next 6 months, etc. (REQUIRED)
   * The platform should be able to connect with social media networks and reach the target audience. (RECOMMENDED)
-  * The suppliers, citizens, and entities should be able to subscribe to social media channels and to the website to receive updates from the buyer. (RECOMMENDED)
-  * The buyer should be able to send alerts, messages, and emails to subscribers about the new announcements. (RECOMMENDED)
+  * The providers, consumers, and entities should be able to subscribe to social media channels and to the website to receive updates from the consumer. (RECOMMENDED)
+  * The consumer should be able to send alerts, messages, and emails to subscribers about the new announcements. (RECOMMENDED)
   * The subscriber should be able to cancel their subscriptions as and when desired.  (RECOMMENDED
   * This interface should orchestrate processes with time stamps when triggered.  (RECOMMENDED)
   * &#x20;It should update the processes and current list of stock items.  (RECOMMENDED)
@@ -217,15 +217,15 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 
 ### 6.24 Bid Evaluation
 
-* The e-Marketplace must allow the buyer to perform an evaluation (financial, technical, any other). (REQUIRED)
-* The e-Marketplace must allow the buyer to pre-define an evaluation criteria for a good or service. (REQUIRED)
-* It shall facilitate the buyer and supplier to seek clarification on any of the questions, they might have. (REQUIRED)
+* The e-Marketplace must allow the consumer to perform an evaluation (financial, technical, any other). (REQUIRED)
+* The e-Marketplace must allow the consumer to pre-define an evaluation criteria for a good or service. (REQUIRED)
+* It shall facilitate the consumer and provider to seek clarification on any of the questions, they might have. (REQUIRED)
 * It must allow the individual members to read the documents, and other details and share their scores, remarks, and ranking based on the pre-defined criteria. (REQUIRED)
-* The evaluation report/remarks shall be fed to the administrator and the final acceptance (not the details) may be communicated to the suppliers. (REQUIRED)
+* The evaluation report/remarks shall be fed to the administrator and the final acceptance (not the details) may be communicated to the providers. (REQUIRED)
 
 ## **The eMarketplace Building Block must enable Admins to**
 
-* enable the registration process of both supplies and buyers.&#x20;
+* enable the registration process of both prividers and consumers.&#x20;
 * enable the verification of Foundational IDs come with no specified purpose or attached entitlement but functionalities simply let an entity prove who it is.
 * Captures only limited information about users, such as name, date of birth, address, and gender.
 * For a given set of credentials, fetches a corresponding ID if it exists in the registry.
@@ -233,7 +233,7 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * open bank accounts, buy SIM cards, receive entitlements from the government, sign forms electronically, invest in mutual funds, and get credit.
 * Incorporate privacy into its design when the purpose of the authentication is not revealed if a service provider sends an authentication request.
 
-**The e-Marketplace must enable Building Block Admins (Supplier and Buyer) to**
+**The e-Marketplace must enable Building Block Admins (Provider and Consumers) to**
 
 * seek consent from the entities, and people while registration.
 * dynamically identify, verify, and validate the registration details against those of public registries.
@@ -242,21 +242,21 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 * configure rules for performance, security, and communication management between the eMarketplace and other Building Blocks (e.g. Registries, Identity and Verification, Information Mediation), applications (across different departments/ministries), and event participants. The exact parameters may be decided at implementation time.
 * extract log reports from the system as needed for monitoring and administering the Building Block operations.
 * register subscribers (persons/citizens/individuals) without duplication into eMarketplace's Subscriber list with contact details (phone/mail/URL/) as needed for communication, and reuse for enrolment to multiple activities.
-* register procurement life cycle events with a defined starting and ending time and an optional deadline for participants to log in their attendance in the activity if needed.
+* register order life cycle events with a defined starting and ending time and an optional deadline for participants to log in their attendance in the activity if needed.
 * access a restricted number of subscribers to an activity, based on the sorting/category filter.
 * define and maintain a library of a predefined stack of messages/notifications for a specific host entity so that it can be reused in multiple activities conducted by the specific host entity.
 * define alert schedules for sending specific alert messages associated with a certain event at a determined date-time to associated subscribers or resources or both.
-* to extract logs related to activities that help in continuous improvement in procurement lifecycle event management.
+* to extract logs related to activities that help in continuous improvement in order lifecycle event management.
 * to generate (i.e. purchase order/request), upload, and download the correspondence, circulars, and agreements in ".doc" and ".pdf" formats (document management).
-* (the supplier) to implement large-scale outreach communication, and awareness campaign activities through electronic means.
+* (the provider) to implement large-scale outreach communication, and awareness campaign activities through electronic means.
 * to have a grievance readdress mechanism.
 * to facilitate seek/offer/resolve/implement feedback mechanisms once the enrolled activities are completed.
 * to delegate access management so that a particular role can perform only the tasks/activities that they are intended to.
-* to facilitate workflow management amongst active suppliers and buyers.
+* to facilitate workflow management amongst active providers and consumers.
 * to handle exceptions when registration fails is unable to generate a purchase request, etc.
 * to facilitate communication between both parties, such as seeking clarification, responding to questions raised by the bidder on the bidding process or any other, etc.
 
-**The e-Marketplace must enable buyers and subscribers to**
+**The e-Marketplace must enable consumers and subscribers to**
 
 * search and extract their registration details in the eMarketplace.
 * search and extract their affiliation details across associated entities.
@@ -270,10 +270,10 @@ The e-Marketplace does not assume any particular standard like REST (Representat
 #### The e-Marketplace must enable the administrator to catalog goods and services&#x20;
 
 * get displayed a list of goods and/or services when an appropriate filter is used (e.g. a ministry or a type of service).
-* get displayed a list of active/closed/in progress items of procurement; with its stages for the Supplier.
-* get displayed the number of days remaining of the entire project duration, payment milestones, and list of deliverables under the buyer department/ministry.
+* get displayed a list of active/closed/in progress items of ordering; with its stages for the Provider.
+* get displayed the number of days remaining of the entire project duration, payment milestones, and list of deliverables under the consumer department/ministry.
 
 #### The e-Marketplace must have system-automated internal functionality to
 
-* track all procurement lifecycle stages/events and send corresponding alert messages with unique tokens/IDs to relevant participants at appropriate times.
+* track all order lifecycle stages/events and send corresponding alert messages with unique tokens/IDs to relevant participants at appropriate times.
 * detect communication failure with other Building Blocks and applications and perform retries according to configured rules before logging a communication failure. Associated implementation-specific details that are not specified here.&#x20;

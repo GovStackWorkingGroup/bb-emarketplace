@@ -10,15 +10,15 @@ In General, this Building Block shall be accessible on various delivery channels
 
 * Consumer Platforms (i.e. Super-apps, Chat messengers, Storefronts, etc.) to provide a rich, demand-centric experience;
 * Provider Platforms (i.e. a Hospital Management System, a Tendering Platform, or a Store Backend) that provide a rich, supply-centric experience;
-* Consumers (i.e. patients, citizen applicants, procurement personnel, organizations, etc.);
+* Consumers (i.e. patients, citizen applicants, personnel, organizations, etc.);
 * Providers (i.e. hospitals, government departments, stores, organizations);
 * Agent (i.e. government service personnel, sellers, drivers, doctors, etc.);
 * Intent (i.e. a search by product, search by category, search by provider, etc.);
 * Catalogs (i.e. products, offers, add-ons, services);
 * Payments and Settlements (i.e. Cash on Delivery, Prepayment, T+n settlement, etc.);
-* Order management (i.e. procurements, appointments, bids, service requests);
+* Order management (i.e. contracts, appointments, bids, service requests);
 * Fulfillments (i.e. appointments, tender approval, delivery of goods and services);
-* Management of procurement lifecycle activities (from tendering to bidding, evaluation ordering, delivery tracking to feedback, etc.).
+* Management of order lifecycle activities (from tendering to bidding, evaluation ordering, delivery tracking to feedback, etc.).
 
 The e-Marketplace Building Block must utilize the above objects to primarily support various consumer-provider interactions like discovery, ordering, fulfillment, and post-fulfillment. For example, a patient (Consumer) on WhatsApp (Consumer Platform) can search (Discovery) for a doctor (Agent) by his name (Intent). This request can be sent to ORS (Healthcare Provider Platform) that returns a list of Hospitals (Providers), with the various services offered (Catalog). Once identified, the patient (Consumer) can book an appointment (Order) with the Doctor (Agent).
 
@@ -26,7 +26,7 @@ The various actors and their activities described in section 2 must be supported
 
 ## 4.1 Catalog Management
 
-This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-Marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products, and services that can operate across multiple locations and timings. This functionality does not only apply to catalogs of products and services, it can be used to publish any economic resource that has a fulfillment cycle (e.g. it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update, or delete catalogs, and any sub-component of this catalog like Items/Categories/Providers/Locations/Agents/Fulfillments/Payments/etc. For tendered procurement, the government can publish tenders along with associated documents (e.g. Request for Proposals) in the tender's catalog. Providers can search the catalog and bid accordingly through quotation management services.
+This key digital functionality should allow providers to quickly and efficiently return a matching catalog upon receipt of a search intent. This e-Marketplace must also allow authorized administrators of the host entity to create and manage aggregated catalogs of providers, products, and services that can operate across multiple locations and timings. This functionality does not only apply to catalogs of products and services, it can be used to publish any economic resource that has a fulfillment cycle (e.g. it should allow government departments to create and manage catalogs of tenders across multiple departments spread across multiple locations). Admins must be able to create, read, update, or delete catalogs, and any sub-component of this catalog like Items/Categories/Providers/Locations/Agents/Fulfillments/Payments/etc. For tendered purchase, the government can publish tenders along with associated documents (e.g. Request for Proposals) in the tender's catalog. Providers can search the catalog and bid accordingly through quotation management services.
 
 In summary, the Building Block enables the cataloging of various elements such as providers/products/services/consumers/tenders/agents/etc., such that they can be searched, retrieved, and shared in appropriate workflows.&#x20;
 
@@ -68,5 +68,5 @@ Users of this key digital functionality should be able to contact the support ce
 
 ## 4.11 Bid Evaluation
 
-The Building Block should facilitate the bid evaluation process (financial/technical/etc.) with defined criteria. The evaluation shall be conducted by the buyer, only. At first, the buyer defines an evaluation criteria for a good or service. Then the buyer admin/a group of professionals will receive the documents/details submitted by the seller; and evaluate them based on the pre-defined criteria. In case the buyers/suppliers have any clarifications, the concerned party should be able to seek guidance through writing questions/addendum/corrigendum. Finally, the evaluation should select the best bidder/supplier.
+The Building Block should facilitate the bid evaluation process (financial/technical/etc.) with defined criteria. The evaluation shall be conducted by the consumer, only. At first, the consumer defines an evaluation criteria for a good or service. Then the consumer admin/a group of professionals will receive the documents/details submitted by the provder; and evaluate them based on the pre-defined criteria. In case the consumers/providers have any clarifications, the concerned party should be able to seek guidance through writing questions/addendum/corrigendum. Finally, the evaluation should select the best bidder/provider.
 
