@@ -75,7 +75,7 @@ The workflows involved in this step:
 
 Go to G2P-UC3-GAM-S.1
 
-_**Step 2 -**_** Transferring property to Surplus Property Management Office**
+_**Step 2 -**_**&#x20;Transferring property to Surplus Property Management Office**
 
 The government agency that owns surplus property initiates the transfer of the property to the Surplus Property Management Office for disposal. This involves preparing the necessary documentation for the property and obtaining the required approvals.
 
@@ -96,7 +96,7 @@ The workflows involved in this step:
 
 
 
-_**Step 3 -**_** Listing property**
+_**Step 3 -**_**&#x20;Listing property**
 
 This step involves Surplus Property Management Office listing the Property on the Surplus Property Management Auctions marketplace, which is a platform for selling surplus and unneeded Gov. assets to the public. The website allows buyers to search for and bid on a wide range of Gov. assets, including Property, equipment, real estate, and more.
 
@@ -118,7 +118,7 @@ The workflows involved in this step:
 
 Go to G2P-UC3-GAM-S.3
 
-_**Step 4 -**_** Bidding on property**
+_**Step 4 -**_**&#x20;Bidding on property**
 
 This step involves the registered bidders submitting their bids on the property listed for sale by the Surplus Property Management Office on Auctions platform.
 
@@ -141,7 +141,7 @@ The workflows involved in this step:
 
 Go to G2P-UC3-GAM-S.4
 
-_**Step 5 -**_** Awarding property**
+_**Step 5 -**_**&#x20;Awarding property**
 
 The Surplus Property Management Office reviews the highest bid and selects the winning bidder to be awarded the property.
 
@@ -166,7 +166,7 @@ The workflows involved in this step:
 
 Go to G2P-UC3-GAM-S.5
 
-_**Step 6 -**_** Transfer of property**
+_**Step 6 -**_**&#x20;Transfer of property**
 
 This step involves the highest bidder paying for the property they have won in the auction and taking possession of it from the seller, in this case, the Surplus Property Management Office. It includes the payment validation and transfer of ownership to the buyer.
 
