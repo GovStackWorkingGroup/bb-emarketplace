@@ -1,0 +1,21 @@
+---
+description: >-
+  This section provides a reference for APIs that should be implemented by this
+  Building Block.
+---
+
+# 8 Service APIs
+
+This section provides a reference for APIs that should be implemented by this Building Block. The APIs defined here establish a blueprint for how the Building Block will interact with other Building Blocks. Additional APIs may be implemented by the Building Block, but the listed APIs define a minimal set of functionality that should be provided by any implementation of this Building Block.&#x20;
+
+To develop the E-Marketplace Building Block API, we have referred to various open-source specifications and data standards. The objective is to develop an API specification for this building block that is future-proof to accommodate a broad range of use cases that is agnostic of industry sector, region, and implementation technology.&#x20;
+
+To develop a common data standard, Several sector-specific marketplace specifications were referred to like [NetEx](https://www.transmodel-cen.eu/netex-standard/), [TOMP](https://github.com/TOMP-WG/TOMP-API), (for mobility), [Electronic Data Interchange](https://www.edibasics.com/what-is-edi/) for logistics, [Open Contracting and Data Standards](https://www.open-contracting.org/data-standard/) (OCDS), [Universal Business Language](http://docs.oasis-open.org/ubl/UBL-2.1.html) (UBL) for procurements, [HL7 / FHIR ](https://www.hl7.org/implement/standards/index.cfm?ref=nav)for healthcare. &#x20;
+
+To understand activities involved in administering the e-marketplace, several open-source e-marketplace software APIs like [Magento](https://business.adobe.com/products/magento/magento-commerce.html), [WooCommerce](https://woocommerce.com/), and [OpenCart](https://www.opencart.com/), were also referred.
+
+To facilitate interoperability, we have referred to various open-source communication protocols, API and data standards like, [Schema.org](http://schema.org/) , [HTTP/2](https://datatracker.ietf.org/doc/html/rfc9113), and [DNS](https://datatracker.ietf.org/doc/html/rfc1035) and [Beckn protocol](https://becknprotocol.io/).&#x20;
+
+Privacy and Security is especially important to Government E-marketplaces as they usually contain sensitive information about customers and businesses. In such a scenario, it is not recommended to create a “store-of-value” in between the consumer and the marketplace. Instead a more federated approach is needed that transforms a “Store-of-value” into a “Flow-of-value”. Such an architecture will ensure privacy and security of data, minimize concentration risk, and allow for innovation to happen at the edges rather than at the center.&#x20;
+
+The E-Marketplace building block API specification has been _adapted_ from Beckn protocol APIs and schema. Currently Beckn protocol is the only open-source specification that enables transaction interoperability in e-marketplaces through a peer-to-peer (flow-of-value) protocol. It is an open-source generic transaction protocol that when implemented, allows any application to perform discovery, ordering, fulfillment, and post-fulfillment activities _without_ the need of a central intermediary. It is a widely adopted open-source protocol specification built using design principles and standards from all of the above mentioned technologies and standards. It is agnostic of industry sector, region, or implementation technology. It is highly recommended for any e-marketplace application in GovStack to also implement a Beckn protocol interface to allow any platform inside or outside the GovStack ecosystem to access the e-marketplace without the need of a central platform intermediary. Furthermore, It can be adapted to any existing sector-specific standard like the ones mentioned above. The [GovStack non-functional requirements](https://govstack.gitbook.io/specification/architecture-and-nonfunctional-requirements/6-onboarding) document provides additional information on how 'adaptors' may be used to translate an existing API to the patterns described here.
